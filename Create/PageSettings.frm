@@ -417,8 +417,8 @@ Attribute VB_Exposed = False
 Option Explicit
 Dim showcnt As Integer, current As Integer
 
-Private Sub label2_MouseDown(Button As Integer, Shift As Integer, x As Single, Y As Single)
-        NewMessage "", vbRed, True, True
+Private Sub Label2_Click()
+    NewMessage "", vbRed, True, True
     Select Case Left(Combo1.Text, 5)
         Case "A4(21"
             PageWidth = 21 * TwipsPerCM
@@ -454,16 +454,22 @@ Private Sub label2_MouseDown(Button As Integer, Shift As Integer, x As Single, Y
     Unload Me
 End Sub
 
-Private Sub label2_MouseUp(Button As Integer, Shift As Integer, x As Single, Y As Single)
+Private Sub Label2_MouseDown(Button As Integer, Shift As Integer, X As Single, Y As Single)
+    Label2.BackStyle = 1
+    Label2.BackColor = vbBlack
+    Label2.ForeColor = vbWhite
+End Sub
+
+Private Sub Label2_MouseUp(Button As Integer, Shift As Integer, X As Single, Y As Single)
     Label2.BackStyle = 0
     Label2.ForeColor = vbBlack
 End Sub
 
-Private Sub Message_MouseMove(Button As Integer, Shift As Integer, x As Single, Y As Single)
+Private Sub Message_MouseMove(Button As Integer, Shift As Integer, X As Single, Y As Single)
     Timer1.Interval = 1000
 End Sub
 
-Private Sub Picture1_MouseMove(Button As Integer, Shift As Integer, x As Single, Y As Single)
+Private Sub Picture1_MouseMove(Button As Integer, Shift As Integer, X As Single, Y As Single)
     Timer1.Interval = 1000
 End Sub
 Sub NewMessage(Content As String, Color As Long, Optional ClearList As Boolean = False, Optional ClearOnly = False)
@@ -530,22 +536,33 @@ Private Sub PreviewButton_Click()
     RightMargin = PageWidth - Val(Text1(3).Text) * TwipsPerCM
 End Sub
 
-Private Sub PreviewButton_MouseDown(Button As Integer, Shift As Integer, x As Single, Y As Single)
+Private Sub PreviewButton_MouseDown(Button As Integer, Shift As Integer, X As Single, Y As Single)
     PreviewButton.BackStyle = 1
     PreviewButton.BackColor = vbBlack
     PreviewButton.ForeColor = vbWhite
 End Sub
 
-Private Sub PreviewButton_MouseUp(Button As Integer, Shift As Integer, x As Single, Y As Single)
+Private Sub PreviewButton_MouseUp(Button As Integer, Shift As Integer, X As Single, Y As Single)
     PreviewButton.BackStyle = 0
     PreviewButton.ForeColor = vbBlack
 End Sub
 
+
+
 Private Sub Timer1_Timer()
     If Timer1.Interval > 100 Then Timer1.Interval = Timer1.Interval - 100
     showcnt = showcnt + 1
-    If MsgContentList.ListCount = 0 Then
-        showcnt = 0
+    If MsgContentList.ListCount <= 1 Then
+        showcnt = ShowCntPerMsg
+        If MsgContentList.ListCount = 1 Then
+            current = 0
+            MsgContentList.ListIndex = current
+            MsgColorList.ListIndex = current
+            MsgTypeList.ListIndex = current
+            Message.Caption = MsgTypeList.Text & MsgContentList.Text
+            Message.ForeColor = ReverseColor(MsgColorList.Text)
+        End If
+        ProgressBar.Width = showcnt / ShowCntPerMsg * Picture1.Width
         Exit Sub
     End If
     If showcnt = ShowCntPerMsg Then

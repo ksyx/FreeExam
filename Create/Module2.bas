@@ -46,8 +46,17 @@ Attribute VB_Name = "Notes"
 'Private Sub Timer1_Timer()
 '    If Timer1.Interval > 100 Then Timer1.Interval = Timer1.Interval - 100
 '    showcnt = showcnt + 1
-'    If MsgContentList.ListCount = 0 Then
-'        showcnt = 0
+'    If MsgContentList.ListCount <= 1 Then
+'        showcnt = ShowCntPerMsg
+'        If MsgContentList.ListCount = 1 Then
+'            current = 0
+'            MsgContentList.ListIndex = current
+'            MsgColorList.ListIndex = current
+'            MsgTypeList.ListIndex = current
+'            Message.Caption = MsgTypeList.Text & MsgContentList.Text
+'            Message.ForeColor = ReverseColor(MsgColorList.Text)
+'        End If
+'        ProgressBar.Width = showcnt / ShowCntPerMsg * Picture1.Width
 '        Exit Sub
 '    End If
 '    If showcnt = ShowCntPerMsg Then

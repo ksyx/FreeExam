@@ -21,7 +21,7 @@ Begin VB.Form Main
    ScaleHeight     =   5595
    ScaleWidth      =   7875
    ShowInTaskbar   =   0   'False
-   StartUpPosition =   3  '窗口缺省
+   StartUpPosition =   2  '屏幕中心
    Begin VB.ListBox List1 
       Height          =   3180
       Left            =   45
@@ -534,7 +534,32 @@ Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Option Explicit
 Dim str() As String, wholestr As String
+Dim showcnt As Integer, current As Integer
+Sub NewMessage(Content As String, Color As Long, Optional ClearList As Boolean = False, Optional ClearOnly = False)
+    current = -1
+    If (ClearOnly And Not ClearList) Then
+        RaiseSysErr "Clear message list only and do not clear message list were both turned on.", "Create/PageSettings/NewEvent"
+        Exit Sub
+    End If
+    If ClearList Then
+        MsgContentList.Clear
+        MsgColorList.Clear
+        MsgTypeList.Clear
+        If Message.Caption <> "" Then Message.Caption = Message.Caption & "(Expired)"
+        If ClearOnly Then Exit Sub
+    End If
+    MsgContentList.AddItem Content
+    MsgColorList.AddItem Color
+    Select Case Color
+        Case vbBlack: MsgTypeList.AddItem "[Info]"
+        Case vbBlue: MsgTypeList.AddItem "[Warning]"
+        Case vbRed: MsgTypeList.AddItem "[Error]"
+    End Select
+    showcnt = 49
+    Timer1_Timer
+End Sub
 Private Sub Form_Load()
+    current = -1
     Dim i As Integer
     FontCombo.Clear
     Init.Show
@@ -547,6 +572,47 @@ Private Sub Form_Load()
     Shape1.Left = Label1.Left
     Shape1.Width = Label1.Width
 End Sub
+Private Sub Message_MouseMove(Button As Integer, Shift As Integer, X As Single, Y As Single)
+    Timer1.Interval = 1000
+End Sub
+Private Sub Picture1_MouseMove(Button As Integer, Shift As Integer, X As Single, Y As Single)
+    Timer1.Interval = 1000
+End Sub
+Private Sub Timer1_Timer()
+    If Timer1.Interval > 100 Then Timer1.Interval = Timer1.Interval - 100
+    showcnt = showcnt + 1
+    If MsgContentList.ListCount <= 1 Then
+        showcnt = ShowCntPerMsg
+        If MsgContentList.ListCount = 1 Then
+            current = 0
+            MsgContentList.ListIndex = current
+            MsgColorList.ListIndex = current
+            MsgTypeList.ListIndex = current
+            Message.Caption = MsgTypeList.Text & MsgContentList.Text
+            Message.ForeColor = ReverseColor(MsgColorList.Text)
+        End If
+        ProgressBar.Width = showcnt / ShowCntPerMsg * Picture1.Width
+        Exit Sub
+    End If
+    If showcnt = ShowCntPerMsg Then
+        current = current + 1
+        showcnt = 0
+        If MsgContentList.ListCount = 0 Then
+            ProgressBar.Width = 15
+            Message.Caption = ""
+            Exit Sub
+        End If
+        If current >= MsgContentList.ListCount Then current = 0
+        MsgContentList.ListIndex = current
+        MsgColorList.ListIndex = current
+        MsgTypeList.ListIndex = current
+        Message.Caption = MsgTypeList.Text & MsgContentList.Text
+        Message.ForeColor = ReverseColor(MsgColorList.Text)
+rrr:
+    End If
+    ProgressBar.Width = showcnt / ShowCntPerMsg * Picture1.Width
+End Sub
+
 
 Private Sub Label1_Click()
     Shape1.Left = Label1.Left
@@ -562,17 +628,34 @@ Private Sub Label1_Click()
 End Sub
 
 Private Sub Label10_Click()
+    On Error Resume Next
     Dim i As Integer
-    Dim delta As Integer
+    Dim delta As Integer, bound As Integer, start As Integer
+    NewMessage "", vbGreen, True, True
     str = Split(Text2.Text, vbCrLf)
-    For i = 1 To UBound(str)
+    bound = UBound(str)
+    If FontCombo.Text = "" Or Not IsNumeric(Text1.Text) Or AlignCombo.Text = "" Then
+        NewMessage "Invaild format.", vbRed, True
+        Exit Sub
+    End If
+    For i = bound To 0 Step -1
+        If str(i) <> "" Then Exit For Else bound = bound - 1
+    Next
+    For i = 0 To bound
+        If str(i) <> "" Then Exit For Else start = i + 1
+    Next
+    If bound - start + 1 < 1 Or Text2.Text = "" Then
+        NewMessage "Nothing can be previewed.", vbRed, True
+        Exit Sub
+    End If
+    For i = start To bound Step 1
         Text2.Text = str(i)
         Temp.FontName = FontCombo.Text
         Temp.FontSize = Val(Text1.Text)
         Temp.Alignment = Val(Left(AlignCombo.Text, 1))
         Temp.Caption = Text2.Text
         InitPreview
-        If Temp.Width > PageWidth - LeftMargin - (PageWidth - RightMargin) Then Preview.NewMessage "Your input is too long, something may be invisible.", vbBlue
+        If Temp.Width > PageWidth - LeftMargin - (PageWidth - RightMargin) Or Temp.Height + delta > PageHeight - TopMargin - (PageHeight - BotMargin) Then Preview.NewMessage "The final image is out of page, something may be invisible.", vbBlue
         With Preview.Picture2
             .BorderStyle = 0
             .FontName = FontCombo.Text
@@ -583,27 +666,43 @@ Private Sub Label10_Click()
         End With
         delta = delta + Temp.Height
     Next
-    wholestr = ""
-    For i = 0 To UBound(str)
-        wholestr = wholestr & vbCrLf & str(i)
+    wholestr = str(0)
+    If UBound(str) > 0 Then wholestr = wholestr & vbCrLf
+    For i = 1 To UBound(str)
+        wholestr = wholestr & str(i) & vbCrLf
     Next
     Text2.Text = wholestr
 End Sub
 
 Private Sub Label11_Click()
     On Error Resume Next
+    NewMessage "", vbGreen, True, True
     Dim usage As Integer
     Dim i As Integer
-    Dim delta As Integer
+    Dim delta As Integer, bound As Integer, start As Integer
     str = Split(Text2.Text, vbCrLf)
-    For i = 1 To UBound(str)
+    bound = UBound(str)
+    If FontCombo.Text = "" Or Not IsNumeric(Text1.Text) Or AlignCombo.Text = "" Then
+        NewMessage "Invaild format.", vbRed, True
+        Exit Sub
+    End If
+    For i = bound To 1 Step -1
+        If str(i) <> "" Then Exit For Else bound = bound - 1
+    Next
+    For i = 1 To bound
+        If str(i) <> "" Then Exit For Else start = i + 1
+    Next
+    If bound - start + 1 < 1 Or Text2.Text = "" Then
+        NewMessage "Nothing can be saved.", vbRed, True
+    End If
+    For i = start To bound Step 1
         Text2.Text = str(i)
         Temp.FontName = FontCombo.Text
         Temp.FontSize = Val(Text1.Text)
         Temp.Alignment = Val(Left(AlignCombo.Text, 1))
         Temp.Caption = Text2.Text
         InitPreview
-        If Temp.Width > PageWidth - LeftMargin - RightMargin Then Preview.NewMessage "Your input is too long, something may be invisible.", vbBlue
+        If Temp.Width > PageWidth - LeftMargin - RightMargin Or Temp.Height > PageHeight - TopMargin - (PageHeight - BotMargin) Then Preview.NewMessage "The final image is out of page, something may be invisible.", vbBlue
         With Preview.Picture2
             .BorderStyle = 0
             DoEvents
@@ -627,10 +726,10 @@ Private Sub Label11_Click()
         SavePicture .Image, App.Path & "\Cache\" & usage + 1 & ".jpg"
         SaveSetting "FreeExam", "Create", "TrackNumUsage", usage + 1
     End With
-    'Unload Preview
+    Unload Preview
     List1.AddItem usage + 1
-    wholestr = ""
-    For i = 0 To UBound(str)
+    wholestr = str(0)
+    For i = 1 To UBound(str)
         wholestr = wholestr & vbCrLf & str(i)
     Next
     Text2.Text = wholestr
@@ -667,19 +766,20 @@ End Sub
 Private Sub Label15_Click()
     Dim i As Integer
     On Error Resume Next
-    Dim x As Integer
-    x = TopMargin
+    Dim X As Integer
+    X = TopMargin
     InitPreview
     For i = 0 To List1.ListCount - 1
         List1.ListIndex = i
-        Debug.Print x
-        Preview.Picture2.PaintPicture LoadPicture(App.Path & "\Cache\" & List1.Text & ".jpg"), LeftMargin, x
+        Debug.Print X
+        Preview.Picture2.PaintPicture LoadPicture(App.Path & "\Cache\" & List1.Text & ".jpg"), LeftMargin, X
         Preview.Export.Width = 1
         Preview.Export.Height = 1
         Preview.Export.Visible = True
         Preview.Export.Picture = LoadPicture(App.Path & "\Cache\" & List1.Text & ".jpg")
-        x = x + Preview.Export.Height
+        X = X + Preview.Export.Height
         Debug.Print Preview.Export.Height
     Next
     Preview.Export.Visible = False
 End Sub
+

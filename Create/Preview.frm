@@ -181,18 +181,27 @@ Private Sub Form_Load()
     NewMessage "The size of the preview is NEAR the actual size.", vbBlack
 End Sub
 
-Private Sub Message_MouseMove(Button As Integer, Shift As Integer, x As Single, Y As Single)
+Private Sub Message_MouseMove(Button As Integer, Shift As Integer, X As Single, Y As Single)
     Timer1.Interval = 1000
 End Sub
 
-Private Sub Picture1_MouseMove(Button As Integer, Shift As Integer, x As Single, Y As Single)
+Private Sub Picture1_MouseMove(Button As Integer, Shift As Integer, X As Single, Y As Single)
     Timer1.Interval = 1000
 End Sub
 Private Sub Timer1_Timer()
     If Timer1.Interval > 100 Then Timer1.Interval = Timer1.Interval - 100
     showcnt = showcnt + 1
-    If MsgContentList.ListCount = 0 Then
-        showcnt = 0
+    If MsgContentList.ListCount <= 1 Then
+        showcnt = ShowCntPerMsg
+        If MsgContentList.ListCount = 1 Then
+            current = 0
+            MsgContentList.ListIndex = current
+            MsgColorList.ListIndex = current
+            MsgTypeList.ListIndex = current
+            Message.Caption = MsgTypeList.Text & MsgContentList.Text
+            Message.ForeColor = ReverseColor(MsgColorList.Text)
+        End If
+        ProgressBar.Width = showcnt / ShowCntPerMsg * Picture1.Width
         Exit Sub
     End If
     If showcnt = ShowCntPerMsg Then

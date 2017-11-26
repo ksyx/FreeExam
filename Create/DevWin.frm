@@ -22,6 +22,14 @@ Begin VB.Form DevWin
    ScaleWidth      =   5760
    ShowInTaskbar   =   0   'False
    StartUpPosition =   2  'ÆÁÄ»ÖÐÐÄ
+   Begin VB.CommandButton Command3 
+      Caption         =   "&Command3"
+      Height          =   360
+      Left            =   3015
+      TabIndex        =   8
+      Top             =   1890
+      Width           =   990
+   End
    Begin VB.PictureBox Picture1 
       BackColor       =   &H00000000&
       Height          =   285
@@ -112,7 +120,7 @@ Begin VB.Form DevWin
          Width           =   990
       End
       Begin VB.CommandButton Command1 
-         Caption         =   "PgSettings"
+         Caption         =   "PgSetting&s"
          Height          =   360
          Left            =   195
          TabIndex        =   6
@@ -169,6 +177,10 @@ Private Sub Command2_Click()
     Main.Show
 End Sub
 
+Private Sub Command3_Click()
+    MsgBox "Clickon"
+End Sub
+
 Private Sub Form_Load()
     current = -1
     If Development <> 1 Then
@@ -182,19 +194,28 @@ Private Sub Form_Load()
     NewMessage "Authentication Passed.", vbBlack
 End Sub
 
-Private Sub Message_MouseMove(Button As Integer, Shift As Integer, x As Single, Y As Single)
+Private Sub Message_MouseMove(Button As Integer, Shift As Integer, X As Single, Y As Single)
     Timer1.Interval = 1000
 End Sub
 
-Private Sub Picture1_MouseMove(Button As Integer, Shift As Integer, x As Single, Y As Single)
+Private Sub Picture1_MouseMove(Button As Integer, Shift As Integer, X As Single, Y As Single)
     Timer1.Interval = 1000
 End Sub
 
 Private Sub Timer1_Timer()
     If Timer1.Interval > 100 Then Timer1.Interval = Timer1.Interval - 100
     showcnt = showcnt + 1
-    If MsgContentList.ListCount = 0 Then
-        showcnt = 0
+    If MsgContentList.ListCount <= 1 Then
+        showcnt = ShowCntPerMsg
+        If MsgContentList.ListCount = 1 Then
+            current = 0
+            MsgContentList.ListIndex = current
+            MsgColorList.ListIndex = current
+            MsgTypeList.ListIndex = current
+            Message.Caption = MsgTypeList.Text & MsgContentList.Text
+            Message.ForeColor = ReverseColor(MsgColorList.Text)
+        End If
+        ProgressBar.Width = showcnt / ShowCntPerMsg * Picture1.Width
         Exit Sub
     End If
     If showcnt = ShowCntPerMsg Then
