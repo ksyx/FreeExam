@@ -631,6 +631,7 @@ Private Sub Label10_Click()
     On Error Resume Next
     Dim i As Integer
     Dim delta As Integer, bound As Integer, start As Integer
+    wholestr = Text2.Text
     NewMessage "", vbGreen, True, True
     str = Split(Text2.Text, vbCrLf)
     bound = UBound(str)
@@ -666,17 +667,18 @@ Private Sub Label10_Click()
         End With
         delta = delta + Temp.Height
     Next
-    wholestr = str(0)
-    If UBound(str) > 0 Then wholestr = wholestr & vbCrLf
-    For i = 1 To UBound(str)
-        wholestr = wholestr & str(i) & vbCrLf
-    Next
+'    wholestr = str(0)
+'    If UBound(str) > 0 Then wholestr = wholestr & vbCrLf
+'    For i = 1 To UBound(str)
+'        wholestr = wholestr & str(i) & vbCrLf
+'    Next
     Text2.Text = wholestr
 End Sub
 
 Private Sub Label11_Click()
     On Error Resume Next
     NewMessage "", vbGreen, True, True
+    wholestr = Text2.Text
     Dim usage As Integer
     Dim i As Integer
     Dim delta As Integer, bound As Integer, start As Integer
@@ -686,14 +688,15 @@ Private Sub Label11_Click()
         NewMessage "Invaild format.", vbRed, True
         Exit Sub
     End If
-    For i = bound To 1 Step -1
+    For i = bound To 0 Step -1
         If str(i) <> "" Then Exit For Else bound = bound - 1
     Next
-    For i = 1 To bound
+    For i = 0 To bound
         If str(i) <> "" Then Exit For Else start = i + 1
     Next
     If bound - start + 1 < 1 Or Text2.Text = "" Then
         NewMessage "Nothing can be saved.", vbRed, True
+        Exit Sub
     End If
     For i = start To bound Step 1
         Text2.Text = str(i)
@@ -728,10 +731,10 @@ Private Sub Label11_Click()
     End With
     Unload Preview
     List1.AddItem usage + 1
-    wholestr = str(0)
-    For i = 1 To UBound(str)
-        wholestr = wholestr & vbCrLf & str(i)
-    Next
+'    wholestr = str(0)
+'    For i = 1 To UBound(str)
+'        wholestr = wholestr & vbCrLf & str(i)
+'    Next
     Text2.Text = wholestr
 End Sub
 

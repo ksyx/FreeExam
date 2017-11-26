@@ -22,14 +22,6 @@ Begin VB.Form DevWin
    ScaleWidth      =   5760
    ShowInTaskbar   =   0   'False
    StartUpPosition =   2  'ÆÁÄ»ÖÐÐÄ
-   Begin VB.CommandButton Command3 
-      Caption         =   "&Command3"
-      Height          =   360
-      Left            =   3015
-      TabIndex        =   8
-      Top             =   1890
-      Width           =   990
-   End
    Begin VB.PictureBox Picture1 
       BackColor       =   &H00000000&
       Height          =   285
@@ -177,9 +169,7 @@ Private Sub Command2_Click()
     Main.Show
 End Sub
 
-Private Sub Command3_Click()
-    MsgBox "Clickon"
-End Sub
+
 
 Private Sub Form_Load()
     current = -1
