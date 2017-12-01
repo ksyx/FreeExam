@@ -5,7 +5,7 @@ Begin VB.Form MainFrm
    ClientHeight    =   5595
    ClientLeft      =   45
    ClientTop       =   390
-   ClientWidth     =   7875
+   ClientWidth     =   14835
    BeginProperty Font 
       Name            =   "Tahoma"
       Size            =   8.25
@@ -19,14 +19,256 @@ Begin VB.Form MainFrm
    MaxButton       =   0   'False
    MinButton       =   0   'False
    ScaleHeight     =   5595
-   ScaleWidth      =   7875
+   ScaleWidth      =   14835
    ShowInTaskbar   =   0   'False
    StartUpPosition =   2  'ÆÁÄ»ÖÐÐÄ
+   Begin VB.Frame InsText 
+      BorderStyle     =   0  'None
+      Caption         =   "Frame3"
+      Height          =   3420
+      Left            =   45
+      TabIndex        =   17
+      Top             =   1860
+      Width           =   7785
+      Begin VB.Frame Frame3 
+         Caption         =   "Parts"
+         Height          =   1755
+         Left            =   0
+         TabIndex        =   33
+         Top             =   1590
+         Visible         =   0   'False
+         Width           =   3405
+         Begin VB.ListBox List2 
+            Height          =   840
+            Left            =   105
+            TabIndex        =   34
+            Top             =   180
+            Width           =   3195
+         End
+         Begin VB.Label Label16 
+            BackStyle       =   0  'Transparent
+            Caption         =   "Pay attention: After selecting, it will copy to Text box, click the last one to restore your orginal text."
+            BeginProperty Font 
+               Name            =   "Tahoma"
+               Size            =   8.25
+               Charset         =   0
+               Weight          =   700
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   645
+            Left            =   90
+            TabIndex        =   35
+            Top             =   1065
+            Width           =   3165
+         End
+      End
+      Begin VB.Frame Frame1 
+         Caption         =   "Format"
+         Height          =   1545
+         Left            =   0
+         TabIndex        =   23
+         Top             =   0
+         Width           =   2895
+         Begin VB.ComboBox AlignCombo 
+            Height          =   315
+            ItemData        =   "Main.frx":0000
+            Left            =   810
+            List            =   "Main.frx":000D
+            Style           =   2  'Dropdown List
+            TabIndex        =   28
+            Top             =   1080
+            Width           =   1905
+         End
+         Begin VB.CheckBox Check2 
+            Caption         =   "B"
+            BeginProperty Font 
+               Name            =   "Tahoma"
+               Size            =   8.25
+               Charset         =   0
+               Weight          =   700
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   225
+            Left            =   825
+            Style           =   1  'Graphical
+            TabIndex        =   27
+            Top             =   855
+            Width           =   270
+         End
+         Begin VB.CheckBox Check1 
+            Caption         =   "I"
+            BeginProperty Font 
+               Name            =   "Tahoma"
+               Size            =   8.25
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   -1  'True
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   225
+            Left            =   1140
+            Style           =   1  'Graphical
+            TabIndex        =   26
+            Top             =   840
+            Width           =   270
+         End
+         Begin VB.ComboBox FontCombo 
+            Height          =   315
+            ItemData        =   "Main.frx":0042
+            Left            =   825
+            List            =   "Main.frx":004F
+            Sorted          =   -1  'True
+            Style           =   2  'Dropdown List
+            TabIndex        =   25
+            Top             =   225
+            Width           =   1905
+         End
+         Begin VB.TextBox Text1 
+            Height          =   285
+            Left            =   825
+            MaxLength       =   3
+            TabIndex        =   24
+            Top             =   570
+            Width           =   1890
+         End
+         Begin VB.Label Label5 
+            AutoSize        =   -1  'True
+            BackStyle       =   0  'Transparent
+            Caption         =   "Alignment"
+            Height          =   195
+            Left            =   90
+            TabIndex        =   32
+            Top             =   1155
+            Width           =   705
+         End
+         Begin VB.Label Label6 
+            Alignment       =   1  'Right Justify
+            AutoSize        =   -1  'True
+            BackStyle       =   0  'Transparent
+            Caption         =   "Shape"
+            Height          =   195
+            Left            =   345
+            TabIndex        =   31
+            Top             =   840
+            Width           =   450
+         End
+         Begin VB.Label Label7 
+            Alignment       =   1  'Right Justify
+            AutoSize        =   -1  'True
+            BackStyle       =   0  'Transparent
+            Caption         =   "Font"
+            Height          =   195
+            Left            =   435
+            TabIndex        =   30
+            Top             =   285
+            Width           =   330
+         End
+         Begin VB.Label Label8 
+            Alignment       =   1  'Right Justify
+            AutoSize        =   -1  'True
+            BackStyle       =   0  'Transparent
+            Caption         =   "Size"
+            Height          =   195
+            Left            =   465
+            TabIndex        =   29
+            Top             =   585
+            Width           =   285
+         End
+      End
+      Begin VB.Frame Frame2 
+         Caption         =   "Options"
+         Height          =   1560
+         Left            =   3060
+         TabIndex        =   18
+         Top             =   0
+         Width           =   4620
+         Begin VB.TextBox Text2 
+            Height          =   1050
+            Left            =   555
+            MultiLine       =   -1  'True
+            TabIndex        =   19
+            Top             =   330
+            Width           =   3900
+         End
+         Begin VB.Label Label9 
+            AutoSize        =   -1  'True
+            BackStyle       =   0  'Transparent
+            Caption         =   "Text"
+            Height          =   195
+            Left            =   150
+            TabIndex        =   20
+            Top             =   315
+            Width           =   375
+         End
+      End
+      Begin VB.Label Temp 
+         AutoSize        =   -1  'True
+         BackStyle       =   0  'Transparent
+         Caption         =   "Label11"
+         Height          =   195
+         Left            =   4155
+         TabIndex        =   36
+         Top             =   2130
+         Visible         =   0   'False
+         Width           =   555
+      End
+      Begin VB.Label Label10 
+         Appearance      =   0  'Flat
+         AutoSize        =   -1  'True
+         BackColor       =   &H80000005&
+         BackStyle       =   0  'Transparent
+         BorderStyle     =   1  'Fixed Single
+         Caption         =   " Preview(&T) "
+         BeginProperty Font 
+            Name            =   "Tahoma"
+            Size            =   10.5
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H80000008&
+         Height          =   285
+         Left            =   4365
+         TabIndex        =   22
+         Top             =   2700
+         Width           =   1125
+      End
+      Begin VB.Label Label11 
+         Appearance      =   0  'Flat
+         AutoSize        =   -1  'True
+         BackColor       =   &H80000005&
+         BackStyle       =   0  'Transparent
+         BorderStyle     =   1  'Fixed Single
+         Caption         =   " Save(&S) "
+         BeginProperty Font 
+            Name            =   "Tahoma"
+            Size            =   10.5
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H80000008&
+         Height          =   285
+         Left            =   5505
+         TabIndex        =   21
+         Top             =   2700
+         Width           =   870
+      End
+   End
    Begin VB.ListBox List1 
       Height          =   3180
-      Left            =   45
-      TabIndex        =   29
-      Top             =   1935
+      Left            =   90
+      TabIndex        =   13
+      Top             =   1965
       Visible         =   0   'False
       Width           =   2100
    End
@@ -37,7 +279,7 @@ Begin VB.Form MainFrm
       Left            =   60
       ScaleHeight     =   1380
       ScaleWidth      =   7770
-      TabIndex        =   28
+      TabIndex        =   12
       TabStop         =   0   'False
       Top             =   495
       Visible         =   0   'False
@@ -61,17 +303,17 @@ Begin VB.Form MainFrm
          ForeColor       =   &H80000008&
          Height          =   285
          Left            =   135
-         TabIndex        =   32
+         TabIndex        =   16
          Top             =   135
          Width           =   1410
       End
    End
    Begin VB.ListBox MsgContentList 
       Height          =   450
-      ItemData        =   "Main.frx":0000
+      ItemData        =   "Main.frx":0084
       Left            =   4755
-      List            =   "Main.frx":0002
-      TabIndex        =   21
+      List            =   "Main.frx":0086
+      TabIndex        =   10
       Top             =   4410
       Visible         =   0   'False
       Width           =   1125
@@ -83,20 +325,20 @@ Begin VB.Form MainFrm
    End
    Begin VB.ListBox MsgTypeList 
       Height          =   450
-      ItemData        =   "Main.frx":0004
+      ItemData        =   "Main.frx":0088
       Left            =   3330
-      List            =   "Main.frx":0006
-      TabIndex        =   19
+      List            =   "Main.frx":008A
+      TabIndex        =   9
       Top             =   -15
       Visible         =   0   'False
       Width           =   1125
    End
    Begin VB.ListBox MsgColorList 
       Height          =   450
-      ItemData        =   "Main.frx":0008
+      ItemData        =   "Main.frx":008C
       Left            =   4785
-      List            =   "Main.frx":000A
-      TabIndex        =   18
+      List            =   "Main.frx":008E
+      TabIndex        =   8
       Top             =   105
       Visible         =   0   'False
       Width           =   1125
@@ -107,7 +349,7 @@ Begin VB.Form MainFrm
       Left            =   45
       ScaleHeight     =   225
       ScaleWidth      =   7725
-      TabIndex        =   16
+      TabIndex        =   6
       TabStop         =   0   'False
       Top             =   5310
       Width           =   7785
@@ -135,125 +377,9 @@ Begin VB.Form MainFrm
          ForeColor       =   &H00FFFFFF&
          Height          =   195
          Left            =   60
-         TabIndex        =   17
+         TabIndex        =   7
          Top             =   0
          Width           =   45
-      End
-   End
-   Begin VB.Frame Frame1 
-      Caption         =   "Format"
-      Height          =   1545
-      Left            =   135
-      TabIndex        =   6
-      Top             =   1995
-      Width           =   2895
-      Begin VB.TextBox Text1 
-         Height          =   285
-         Left            =   825
-         MaxLength       =   3
-         TabIndex        =   15
-         Top             =   570
-         Width           =   1890
-      End
-      Begin VB.ComboBox FontCombo 
-         Height          =   315
-         ItemData        =   "Main.frx":000C
-         Left            =   825
-         List            =   "Main.frx":0019
-         Sorted          =   -1  'True
-         Style           =   2  'Dropdown List
-         TabIndex        =   13
-         Top             =   225
-         Width           =   1905
-      End
-      Begin VB.CheckBox Check1 
-         Caption         =   "I"
-         BeginProperty Font 
-            Name            =   "Tahoma"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   -1  'True
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   225
-         Left            =   1140
-         Style           =   1  'Graphical
-         TabIndex        =   10
-         Top             =   840
-         Width           =   270
-      End
-      Begin VB.CheckBox Check2 
-         Caption         =   "B"
-         BeginProperty Font 
-            Name            =   "Tahoma"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   225
-         Left            =   825
-         Style           =   1  'Graphical
-         TabIndex        =   11
-         Top             =   855
-         Width           =   270
-      End
-      Begin VB.ComboBox AlignCombo 
-         Height          =   315
-         ItemData        =   "Main.frx":004E
-         Left            =   810
-         List            =   "Main.frx":005B
-         Style           =   2  'Dropdown List
-         TabIndex        =   7
-         Top             =   1080
-         Width           =   1905
-      End
-      Begin VB.Label Label8 
-         Alignment       =   1  'Right Justify
-         AutoSize        =   -1  'True
-         BackStyle       =   0  'Transparent
-         Caption         =   "Size"
-         Height          =   195
-         Left            =   465
-         TabIndex        =   14
-         Top             =   585
-         Width           =   285
-      End
-      Begin VB.Label Label7 
-         Alignment       =   1  'Right Justify
-         AutoSize        =   -1  'True
-         BackStyle       =   0  'Transparent
-         Caption         =   "Font"
-         Height          =   195
-         Left            =   435
-         TabIndex        =   12
-         Top             =   285
-         Width           =   330
-      End
-      Begin VB.Label Label6 
-         Alignment       =   1  'Right Justify
-         AutoSize        =   -1  'True
-         BackStyle       =   0  'Transparent
-         Caption         =   "Shape"
-         Height          =   195
-         Left            =   345
-         TabIndex        =   9
-         Top             =   840
-         Width           =   450
-      End
-      Begin VB.Label Label5 
-         AutoSize        =   -1  'True
-         BackStyle       =   0  'Transparent
-         Caption         =   "Alignment"
-         Height          =   195
-         Left            =   90
-         TabIndex        =   8
-         Top             =   1155
-         Width           =   705
       End
    End
    Begin VB.PictureBox General 
@@ -291,32 +417,6 @@ Begin VB.Form MainFrm
          Width           =   840
       End
    End
-   Begin VB.Frame Frame2 
-      Caption         =   "Options"
-      Height          =   1485
-      Left            =   3150
-      TabIndex        =   20
-      Top             =   2055
-      Width           =   4620
-      Begin VB.TextBox Text2 
-         Height          =   1050
-         Left            =   555
-         MultiLine       =   -1  'True
-         TabIndex        =   23
-         Top             =   330
-         Width           =   3900
-      End
-      Begin VB.Label Label9 
-         AutoSize        =   -1  'True
-         BackStyle       =   0  'Transparent
-         Caption         =   "Text"
-         Height          =   195
-         Left            =   150
-         TabIndex        =   22
-         Top             =   315
-         Width           =   375
-      End
-   End
    Begin VB.Label Label13 
       Appearance      =   0  'Flat
       AutoSize        =   -1  'True
@@ -336,7 +436,7 @@ Begin VB.Form MainFrm
       ForeColor       =   &H80000008&
       Height          =   285
       Left            =   2265
-      TabIndex        =   30
+      TabIndex        =   14
       Top             =   1965
       Visible         =   0   'False
       Width           =   1125
@@ -360,7 +460,7 @@ Begin VB.Form MainFrm
       ForeColor       =   &H80000008&
       Height          =   285
       Left            =   2265
-      TabIndex        =   31
+      TabIndex        =   15
       Top             =   2340
       Visible         =   0   'False
       Width           =   1215
@@ -380,66 +480,9 @@ Begin VB.Form MainFrm
       EndProperty
       Height          =   285
       Left            =   6195
-      TabIndex        =   27
+      TabIndex        =   11
       Top             =   120
       Width           =   810
-   End
-   Begin VB.Label Label11 
-      Appearance      =   0  'Flat
-      AutoSize        =   -1  'True
-      BackColor       =   &H80000005&
-      BackStyle       =   0  'Transparent
-      BorderStyle     =   1  'Fixed Single
-      Caption         =   " Save(&S) "
-      BeginProperty Font 
-         Name            =   "Tahoma"
-         Size            =   10.5
-         Charset         =   0
-         Weight          =   400
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      ForeColor       =   &H80000008&
-      Height          =   285
-      Left            =   6315
-      TabIndex        =   26
-      Top             =   3780
-      Width           =   870
-   End
-   Begin VB.Label Temp 
-      AutoSize        =   -1  'True
-      BackStyle       =   0  'Transparent
-      Caption         =   "Label11"
-      Height          =   195
-      Left            =   735
-      TabIndex        =   25
-      Top             =   3765
-      Visible         =   0   'False
-      Width           =   555
-   End
-   Begin VB.Label Label10 
-      Appearance      =   0  'Flat
-      AutoSize        =   -1  'True
-      BackColor       =   &H80000005&
-      BackStyle       =   0  'Transparent
-      BorderStyle     =   1  'Fixed Single
-      Caption         =   " Preview(&T) "
-      BeginProperty Font 
-         Name            =   "Tahoma"
-         Size            =   10.5
-         Charset         =   0
-         Weight          =   400
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      ForeColor       =   &H80000008&
-      Height          =   285
-      Left            =   5175
-      TabIndex        =   24
-      Top             =   3780
-      Width           =   1125
    End
    Begin VB.Label Label4 
       AutoSize        =   -1  'True
@@ -533,8 +576,8 @@ Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Option Explicit
-Dim str() As String, wholestr As String
-Dim showcnt As Integer, current As Integer
+Dim str() As String, wholestr As String, outputs As String
+Dim showcnt As Integer, current As Integer, strs() As String
 Sub NewMessage(Content As String, Color As Long, Optional ClearList As Boolean = False, Optional ClearOnly = False)
     current = -1
     If (ClearOnly And Not ClearList) Then
@@ -558,6 +601,7 @@ Sub NewMessage(Content As String, Color As Long, Optional ClearList As Boolean =
     showcnt = 49
     Timer1_Timer
 End Sub
+
 Private Sub Form_Load()
     current = -1
     Dim i As Integer
@@ -572,12 +616,19 @@ Private Sub Form_Load()
     Shape1.Left = Label1.Left
     Shape1.Width = Label1.Width
 End Sub
+
+Private Sub List2_Click()
+    Text2.Text = strs(List2.ListIndex)
+End Sub
+
 Private Sub Message_MouseMove(Button As Integer, Shift As Integer, X As Single, Y As Single)
     Timer1.Interval = 1000
 End Sub
 Private Sub Picture1_MouseMove(Button As Integer, Shift As Integer, X As Single, Y As Single)
     Timer1.Interval = 1000
 End Sub
+
+
 Private Sub Timer1_Timer()
     Dim first As Integer
     If Timer1.Interval > 100 Then Timer1.Interval = Timer1.Interval - 100
@@ -633,8 +684,15 @@ End Sub
 Private Sub Label10_Click()
     On Error Resume Next
     Dim i As Integer
-    Dim delta As Integer, bound As Integer, start As Integer, length As Integer, j As Integer, xdelta As Integer, tmpstr As String
+    Dim delta As Integer, partid As Integer, bound As Integer, start As Integer, length As Integer, j As Integer, xdelta As Integer, tmpstr As String, issel As Boolean
     wholestr = Text2.Text
+    outputs = ""
+    partid = 1
+    If List2.ListIndex = List2.ListCount - 1 Or List2.Text <> Text2.Text Then
+        List2.Clear
+        Frame3.Visible = False
+        ReDim strs(0)
+    End If
     NewMessage "", vbGreen, True, True
     str = Split(Text2.Text, vbCrLf)
     bound = UBound(str)
@@ -652,12 +710,17 @@ Private Sub Label10_Click()
         NewMessage "Nothing can be previewed.", vbRed, True
         Exit Sub
     End If
+    Temp.FontName = FontCombo.Text
+        Temp.FontSize = Val(Text1.Text)
+        If Check2.Value = 1 Then Temp.FontBold = True Else Temp.FontBold = False
+        If Check1.Value = 1 Then Temp.FontItalic = True Else Temp.FontItalic = False
+        If Check2.Value = 1 Then Preview.Picture2.FontBold = True Else Preview.Picture2.FontBold = False
+        If Check1.Value = 1 Then Preview.Picture2.FontItalic = True Else Preview.Picture2.FontItalic = False
     InitPreview
     For i = start To bound Step 1
         length = Len(str(i))
         Text2.Text = str(i)
-        Temp.FontName = FontCombo.Text
-        Temp.FontSize = Val(Text1.Text)
+        
         Temp.Alignment = Val(Left(AlignCombo.Text, 1))
         Temp.Caption = Text2.Text
         With Preview.Picture2
@@ -666,6 +729,24 @@ Private Sub Label10_Click()
             .FontSize = Val(Text1.Text)
             If Temp.Alignment = 0 Then .CurrentX = LeftMargin Else If Temp.Alignment = 1 Then .CurrentX = Max(RightMargin - Temp.Width, LeftMargin) Else .CurrentX = Max((LeftMargin + RightMargin) / 2 - Temp.Width / 2, LeftMargin)
             .CurrentY = TopMargin + delta
+            If .CurrentY + Temp.Height >= BotMargin Then
+                If partid = 1 Then
+                    NewMessage "The input will be split into multi parts", vbBlue
+                    NewMessage "select parts that you want to preview in the list.", vbBlue
+                    'Exit Sub
+                End If
+                .Cls
+                delta = 0
+                partid = partid + 1
+                ReDim Preserve strs(partid - 2)
+                strs(partid - 2) = outputs
+                .CurrentY = TopMargin
+                Preview.Picture2.Print "test";
+                If Temp.Alignment = 0 Then .CurrentX = LeftMargin Else If Temp.Alignment = 1 Then .CurrentX = Max(RightMargin - Temp.Width, LeftMargin) Else .CurrentX = Max((LeftMargin + RightMargin) / 2 - Temp.Width / 2, LeftMargin)
+                List2.AddItem outputs
+                outputs = ""
+                If length = 0 Then GoTo cont
+            End If
         End With
         For j = 1 To length
             Text2.Text = Mid(str(i), j, 1)
@@ -674,42 +755,91 @@ Private Sub Label10_Click()
             Temp.FontSize = Val(Text1.Text)
             Temp.Alignment = Val(Left(AlignCombo.Text, 1))
             Temp.Caption = Text2.Text
-            If Temp.Width > PageWidth - LeftMargin - (PageWidth - RightMargin) Or Temp.Height + delta > PageHeight - TopMargin - (PageHeight - BotMargin) Then
-                NewMessage "The target size is too large, we are unable to process it.", vbRed
-                Text2.Text = wholestr
-                On Error Resume Next
-                Unload Preview
-                Exit Sub
-            End If
+            Temp.Visible = True
             With Preview.Picture2
                 tmpstr = Text2.Text
                 If Temp.Width + .CurrentX > RightMargin Then
+                    If Temp.Alignment <> 0 Then
+                        NewMessage "Auto split line is unsupportted for alignment mode 1 or 2.", vbRed
+                        Text2.Text = wholestr
+                        On Error Resume Next
+                        Unload Preview
+                        Exit Sub
+                    End If
                     delta = delta + Temp.Height
                     If Temp.Alignment = 0 Then .CurrentX = LeftMargin Else If Temp.Alignment = 1 Then .CurrentX = Max(RightMargin - Temp.Width, LeftMargin) Else .CurrentX = Max((LeftMargin + RightMargin) / 2 - Temp.Width / 2, LeftMargin)
                     .CurrentY = TopMargin + delta
+                    Print BotMargin
+                    'Preview.Picture2.Line (0, Preview.Picture2.CurrentY + Temp.Height)-(Preview.Picture2.Width, Preview.Picture2.CurrentY + Temp.Height), vbRed
+                    If .CurrentY + Temp.Height >= BotMargin Then
+                        If partid = 1 Then
+                            NewMessage "The input will be split into multi parts", vbBlue
+                            NewMessage "select parts that you want to preview in the list.", vbBlue
+                            'Exit Sub
+                        End If
+                        .Cls
+                        delta = 0
+                        partid = partid + 1
+                        ReDim Preserve strs(partid - 2)
+                        strs(partid - 2) = outputs
+                        .CurrentY = TopMargin
+                        Preview.Picture2.Print "test";
+                        If Temp.Alignment = 0 Then .CurrentX = LeftMargin Else If Temp.Alignment = 1 Then .CurrentX = Max(RightMargin - Temp.Width, LeftMargin) Else .CurrentX = Max((LeftMargin + RightMargin) / 2 - Temp.Width / 2, LeftMargin)
+                        List2.AddItem outputs
+                        outputs = ""
+                        
+                    End If
                 End If
-                Preview.Picture2.Print tmpstr;
-                'Debug.Print .CurrentX
+                If Temp.Width > PageWidth - LeftMargin - (PageWidth - RightMargin) Or Temp.Height > PageHeight - TopMargin - (PageHeight - BotMargin) Then
+                    NewMessage "The target size is too large, we are unable to process it.", vbRed
+                    Text2.Text = wholestr
+                    On Error Resume Next
+                    Unload Preview
+                    Exit Sub
+                End If
+            Preview.Picture2.Print tmpstr;
+            outputs = outputs & tmpstr
+            'Debug.Print .CurrentX
             End With
-'            DoEvents
+            DoEvents
         Next
         delta = delta + Temp.Height
+        
+        If i <> bound Then outputs = outputs & vbCrLf
+cont:
     Next
 '    wholestr = str(0)
 '    If UBound(str) > 0 Then wholestr = wholestr & vbCrLf
 '    For i = 1 To UBound(str)
 '        wholestr = wholestr & str(i) & vbCrLf
 '    Next
+    If partid > 1 Then
+        List2.AddItem outputs
+        List2.AddItem wholestr
+        ReDim Preserve strs(partid)
+        strs(partid - 1) = wholestr
+        strs(partid - 0) = wholestr
+        Frame3.Visible = True
+        On Error Resume Next
+        Unload Preview
+    End If
     Text2.Text = wholestr
 End Sub
 
 Private Sub Label11_Click()
     On Error Resume Next
-    NewMessage "", vbGreen, True, True
+    Dim i As Integer, usage As Long
+    Dim delta As Integer, lastcapt As Integer, partid As Integer, bound As Integer, start As Integer, length As Integer, j As Integer, xdelta As Integer, tmpstr As String, issel As Boolean
     wholestr = Text2.Text
-    Dim usage As Integer
-    Dim i As Integer
-    Dim delta As Integer, bound As Integer, start As Integer
+    outputs = ""
+    partid = 1
+    lastcapt = TopMargin
+    If List2.ListIndex = List2.ListCount - 1 Or List2.Text <> Text2.Text Then
+        List2.Clear
+        Frame3.Visible = False
+        ReDim strs(0)
+    End If
+    NewMessage "", vbGreen, True, True
     str = Split(Text2.Text, vbCrLf)
     bound = UBound(str)
     If FontCombo.Text = "" Or Not IsNumeric(Text1.Text) Or AlignCombo.Text = "" Then
@@ -723,42 +853,162 @@ Private Sub Label11_Click()
         If str(i) <> "" Then Exit For Else start = i + 1
     Next
     If bound - start + 1 < 1 Or Text2.Text = "" Then
-        NewMessage "Nothing can be saved.", vbRed, True
+        NewMessage "Nothing can be previewed.", vbRed, True
         Exit Sub
     End If
-    For i = start To bound Step 1
-        Text2.Text = str(i)
-        Temp.FontName = FontCombo.Text
+    Temp.FontName = FontCombo.Text
         Temp.FontSize = Val(Text1.Text)
+        If Check2.Value = 1 Then Temp.FontBold = True Else Temp.FontBold = False
+        If Check1.Value = 1 Then Temp.FontItalic = True Else Temp.FontItalic = False
+        If Check2.Value = 1 Then Preview.Picture2.FontBold = True Else Preview.Picture2.FontBold = False
+        If Check1.Value = 1 Then Preview.Picture2.FontItalic = True Else Preview.Picture2.FontItalic = False
+    InitPreview
+    For i = start To bound Step 1
+        length = Len(str(i))
+        Text2.Text = str(i)
+        
         Temp.Alignment = Val(Left(AlignCombo.Text, 1))
         Temp.Caption = Text2.Text
-        InitPreview
-        If Temp.Width > PageWidth - LeftMargin - RightMargin Or Temp.Height > PageHeight - TopMargin - (PageHeight - BotMargin) Then Preview.NewMessage "The final image is out of page, something may be invisible.", vbBlue
         With Preview.Picture2
             .BorderStyle = 0
-            DoEvents
             .FontName = FontCombo.Text
             .FontSize = Val(Text1.Text)
-            If Temp.Alignment = 0 Then .CurrentX = LeftMargin Else If Temp.Alignment = 1 Then .CurrentX = RightMargin - Temp.Width Else .CurrentX = (LeftMargin + RightMargin) / 2 - Temp.Width / 2
+            If Temp.Alignment = 0 Then .CurrentX = LeftMargin Else If Temp.Alignment = 1 Then .CurrentX = Max(RightMargin - Temp.Width, LeftMargin) Else .CurrentX = Max((LeftMargin + RightMargin) / 2 - Temp.Width / 2, LeftMargin)
             .CurrentY = TopMargin + delta
-            Preview.Picture2.Print Text2.Text
-            delta = delta + Temp.Height
+            If .CurrentY + Temp.Height >= BotMargin Then
+                If partid = 1 Then
+                    NewMessage "The input will be split into multi parts", vbBlue
+                    NewMessage "select parts that you want to preview in the list.", vbBlue
+                    'Exit Sub
+                End If
+                .Cls
+                delta = 0
+                partid = partid + 1
+                ReDim Preserve strs(partid - 2)
+                strs(partid - 2) = outputs
+                .CurrentY = TopMargin
+                Preview.Picture2.Print "test";
+                If Temp.Alignment = 0 Then .CurrentX = LeftMargin Else If Temp.Alignment = 1 Then .CurrentX = Max(RightMargin - Temp.Width, LeftMargin) Else .CurrentX = Max((LeftMargin + RightMargin) / 2 - Temp.Width / 2, LeftMargin)
+                List2.AddItem outputs
+                outputs = ""
+                If length = 0 Then GoTo cont
+            End If
         End With
-        Preview.Export.Visible = True '
+        For j = 1 To length
+            Text2.Text = Mid(str(i), j, 1)
+            'Debug.Print Text2.Text
+            Temp.FontName = FontCombo.Text
+            Temp.FontSize = Val(Text1.Text)
+            Temp.Alignment = Val(Left(AlignCombo.Text, 1))
+            Temp.Caption = Text2.Text
+            Temp.Visible = True
+            With Preview.Picture2
+                tmpstr = Text2.Text
+                If Temp.Width + .CurrentX > RightMargin Then
+                    If Temp.Alignment <> 0 Then
+                        NewMessage "Auto split line is unsupportted for alignment mode 1 or 2.", vbRed
+                        Text2.Text = wholestr
+                        On Error Resume Next
+                        Unload Preview
+                        Exit Sub
+                    End If
+                    delta = delta + Temp.Height
+                    If Temp.Alignment = 0 Then .CurrentX = LeftMargin Else If Temp.Alignment = 1 Then .CurrentX = Max(RightMargin - Temp.Width, LeftMargin) Else .CurrentX = Max((LeftMargin + RightMargin) / 2 - Temp.Width / 2, LeftMargin)
+                    .CurrentY = TopMargin + delta
+                    Print BotMargin
+                    'Preview.Picture2.Line (0, Preview.Picture2.CurrentY + Temp.Height)-(Preview.Picture2.Width, Preview.Picture2.CurrentY + Temp.Height), vbRed
+                    With Preview.Export
+                        .Width = RightMargin - LeftMargin
+                        .Height = Temp.Height
+                        DoEvents
+                        .BorderStyle = 0
+                        .PaintPicture Preview.Picture2.Image, 0, 0, , , LeftMargin, lastcapt, RightMargin - LeftMargin, Temp.Height
+                        lastcapt = lastcapt + Temp.Height
+                        usage = GetSetting("FreeExam", "Create", "TrackNumUsage", 1000)
+                        If Dir(App.Path & "\Cache", vbDirectory) = "" Then MkDir App.Path & "\Cache"
+                        SavePicture .Image, App.Path & "\Cache\" & usage + 1 & ".jpg"
+                        SaveSetting "FreeExam", "Create", "TrackNumUsage", usage + 1
+                        List1.AddItem usage + 1
+                    End With
+                    If .CurrentY + Temp.Height >= BotMargin Then
+                        If partid = 1 Then
+                            NewMessage "The input will be split into multi parts", vbBlue
+                            NewMessage "select parts that you want to preview in the list.", vbBlue
+                            'Exit Sub
+                        End If
+                        .Cls
+                        delta = 0
+                        partid = partid + 1
+                        ReDim Preserve strs(partid - 2)
+                        strs(partid - 2) = outputs
+                        .CurrentY = TopMargin
+                        Preview.Picture2.Print "test";
+                        If Temp.Alignment = 0 Then .CurrentX = LeftMargin Else If Temp.Alignment = 1 Then .CurrentX = Max(RightMargin - Temp.Width, LeftMargin) Else .CurrentX = Max((LeftMargin + RightMargin) / 2 - Temp.Width / 2, LeftMargin)
+                        List2.AddItem outputs
+                        outputs = ""
+                        
+                    End If
+                    
+                End If
+                If Temp.Width > PageWidth - LeftMargin - (PageWidth - RightMargin) Or Temp.Height > PageHeight - TopMargin - (PageHeight - BotMargin) Then
+                    NewMessage "The target size is too large, we are unable to process it.", vbRed
+                    Text2.Text = wholestr
+                    On Error Resume Next
+                    Unload Preview
+                    Exit Sub
+                End If
+            Preview.Picture2.Print tmpstr;
+            outputs = outputs & tmpstr
+            'Debug.Print .CurrentX
+            End With
+            DoEvents
+        Next
+        With Preview.Export
+            .Width = RightMargin - LeftMargin
+            .Height = Temp.Height
+            DoEvents
+            .BorderStyle = 0
+            .PaintPicture Preview.Picture2.Image, 0, 0, , , LeftMargin, lastcapt, RightMargin - LeftMargin, Temp.Height
+            lastcapt = lastcapt + Temp.Height
+            usage = GetSetting("FreeExam", "Create", "TrackNumUsage", 1000)
+            If Dir(App.Path & "\Cache", vbDirectory) = "" Then MkDir App.Path & "\Cache"
+            SavePicture .Image, App.Path & "\Cache\" & usage + 1 & ".jpg"
+            SaveSetting "FreeExam", "Create", "TrackNumUsage", usage + 1
+            List1.AddItem usage + 1
+        End With
+        delta = delta + Temp.Height
+        If i <> bound Then outputs = outputs & vbCrLf
+cont:
     Next
-    With Preview.Export
-        .Width = RightMargin - LeftMargin
-        .Height = delta
-        DoEvents
-        .BorderStyle = 0
-        .PaintPicture Preview.Picture2.Image, 0, 0, , , LeftMargin, TopMargin, RightMargin - LeftMargin, delta
-        usage = GetSetting("FreeExam", "Create", "TrackNumUsage", 1000)
-        If Dir(App.Path & "\Cache", vbDirectory) = "" Then MkDir App.Path & "\Cache"
-        SavePicture .Image, App.Path & "\Cache\" & usage + 1 & ".jpg"
-        SaveSetting "FreeExam", "Create", "TrackNumUsage", usage + 1
-    End With
+'    wholestr = str(0)
+'    If UBound(str) > 0 Then wholestr = wholestr & vbCrLf
+'    For i = 1 To UBound(str)
+'        wholestr = wholestr & str(i) & vbCrLf
+'    Next
+    If partid > 1 Then
+        List2.AddItem outputs
+        List2.AddItem wholestr
+        ReDim Preserve strs(partid)
+        strs(partid - 1) = wholestr
+        strs(partid - 0) = wholestr
+        Frame3.Visible = True
+        On Error Resume Next
+        Unload Preview
+    End If
+    Text2.Text = wholestr
+'    With Preview.Export
+'        .Width = RightMargin - LeftMargin
+'        .Height = delta
+'        DoEvents
+'        .BorderStyle = 0
+'        .PaintPicture Preview.Picture2.Image, 0, 0, , , LeftMargin, TopMargin, RightMargin - LeftMargin, delta
+'        usage = GetSetting("FreeExam", "Create", "TrackNumUsage", 1000)
+'        If Dir(App.Path & "\Cache", vbDirectory) = "" Then MkDir App.Path & "\Cache"
+'        SavePicture .Image, App.Path & "\Cache\" & usage + 1 & ".jpg"
+'        SaveSetting "FreeExam", "Create", "TrackNumUsage", usage + 1
+'    End With
     Unload Preview
-    List1.AddItem usage + 1
+   
 '    wholestr = str(0)
 '    For i = 1 To UBound(str)
 '        wholestr = wholestr & vbCrLf & str(i)
