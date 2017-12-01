@@ -9,7 +9,7 @@ Public Const ShowCntPerMsg As Integer = 50
 Public Const TwipsPerCM As Integer = 567
 Public Const Development As Integer = 1
 
-Public PageWidth As Long, PageHeight As Long, TopMargin As Long, BotMargin As Long, LeftMargin As Long, RightMargin As Long
+Public PageWidth As Long, PageHeight As Long, TopMargin As Long, BotMargin As Long, LeftMargin As Long, RightMargin As Long, AutoCls As Integer
 
 Function ReverseColor(Color As Long) As Long
     If Color = vbRed Then ReverseColor = RGB(15, 255, 255)
@@ -24,9 +24,19 @@ Sub RaiseSysErr(Detail As String, Module As String)
 End Sub
 
 Sub InitPreview()
+    If AutoCls Then Preview.Picture2.Cls
     Preview.Picture2.Height = PageHeight
     Preview.Picture2.Width = PageWidth
     Preview.HScroll1.Max = PageWidth
     Preview.VScroll1.Max = PageHeight
     Preview.Show
 End Sub
+
+Sub Main()
+    AutoCls = GetSetting("FreeExam", "Create", "AutoCls", 1)
+    DevWin.Show
+End Sub
+
+Function Max(a, b)
+    If a > b Then Max = a Else Max = b
+End Function

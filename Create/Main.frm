@@ -1,5 +1,5 @@
 VERSION 5.00
-Begin VB.Form Main 
+Begin VB.Form MainFrm 
    BorderStyle     =   4  'Fixed ToolWindow
    Caption         =   "ExamPaper Editor"
    ClientHeight    =   5595
@@ -527,7 +527,7 @@ Begin VB.Form Main
       Width           =   1035
    End
 End
-Attribute VB_Name = "Main"
+Attribute VB_Name = "MainFrm"
 Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
@@ -579,10 +579,13 @@ Private Sub Picture1_MouseMove(Button As Integer, Shift As Integer, X As Single,
     Timer1.Interval = 1000
 End Sub
 Private Sub Timer1_Timer()
+    Dim first As Integer
     If Timer1.Interval > 100 Then Timer1.Interval = Timer1.Interval - 100
     showcnt = showcnt + 1
     If MsgContentList.ListCount <= 1 Then
+        first = showcnt
         showcnt = ShowCntPerMsg
+        Message.Caption = ""
         If MsgContentList.ListCount = 1 Then
             current = 0
             MsgContentList.ListIndex = current
@@ -591,7 +594,7 @@ Private Sub Timer1_Timer()
             Message.Caption = MsgTypeList.Text & MsgContentList.Text
             Message.ForeColor = ReverseColor(MsgColorList.Text)
         End If
-        ProgressBar.Width = showcnt / ShowCntPerMsg * Picture1.Width
+        If showcnt <> first Then ProgressBar.Width = showcnt / ShowCntPerMsg * Picture1.Width
         Exit Sub
     End If
     If showcnt = ShowCntPerMsg Then
@@ -630,7 +633,7 @@ End Sub
 Private Sub Label10_Click()
     On Error Resume Next
     Dim i As Integer
-    Dim delta As Integer, bound As Integer, start As Integer
+    Dim delta As Integer, bound As Integer, start As Integer, length As Integer, j As Integer, xdelta As Integer, tmpstr As String
     wholestr = Text2.Text
     NewMessage "", vbGreen, True, True
     str = Split(Text2.Text, vbCrLf)
@@ -649,22 +652,47 @@ Private Sub Label10_Click()
         NewMessage "Nothing can be previewed.", vbRed, True
         Exit Sub
     End If
+    InitPreview
     For i = start To bound Step 1
+        length = Len(str(i))
         Text2.Text = str(i)
         Temp.FontName = FontCombo.Text
         Temp.FontSize = Val(Text1.Text)
         Temp.Alignment = Val(Left(AlignCombo.Text, 1))
         Temp.Caption = Text2.Text
-        InitPreview
-        If Temp.Width > PageWidth - LeftMargin - (PageWidth - RightMargin) Or Temp.Height + delta > PageHeight - TopMargin - (PageHeight - BotMargin) Then Preview.NewMessage "The final image is out of page, something may be invisible.", vbBlue
         With Preview.Picture2
             .BorderStyle = 0
             .FontName = FontCombo.Text
             .FontSize = Val(Text1.Text)
-            If Temp.Alignment = 0 Then .CurrentX = LeftMargin Else If Temp.Alignment = 1 Then .CurrentX = RightMargin - Temp.Width Else .CurrentX = (LeftMargin + RightMargin) / 2 - Temp.Width / 2
+            If Temp.Alignment = 0 Then .CurrentX = LeftMargin Else If Temp.Alignment = 1 Then .CurrentX = Max(RightMargin - Temp.Width, LeftMargin) Else .CurrentX = Max((LeftMargin + RightMargin) / 2 - Temp.Width / 2, LeftMargin)
             .CurrentY = TopMargin + delta
-            Preview.Picture2.Print Text2.Text
         End With
+        For j = 1 To length
+            Text2.Text = Mid(str(i), j, 1)
+            'Debug.Print Text2.Text
+            Temp.FontName = FontCombo.Text
+            Temp.FontSize = Val(Text1.Text)
+            Temp.Alignment = Val(Left(AlignCombo.Text, 1))
+            Temp.Caption = Text2.Text
+            If Temp.Width > PageWidth - LeftMargin - (PageWidth - RightMargin) Or Temp.Height + delta > PageHeight - TopMargin - (PageHeight - BotMargin) Then
+                NewMessage "The target size is too large, we are unable to process it.", vbRed
+                Text2.Text = wholestr
+                On Error Resume Next
+                Unload Preview
+                Exit Sub
+            End If
+            With Preview.Picture2
+                tmpstr = Text2.Text
+                If Temp.Width + .CurrentX > RightMargin Then
+                    delta = delta + Temp.Height
+                    If Temp.Alignment = 0 Then .CurrentX = LeftMargin Else If Temp.Alignment = 1 Then .CurrentX = Max(RightMargin - Temp.Width, LeftMargin) Else .CurrentX = Max((LeftMargin + RightMargin) / 2 - Temp.Width / 2, LeftMargin)
+                    .CurrentY = TopMargin + delta
+                End If
+                Preview.Picture2.Print tmpstr;
+                'Debug.Print .CurrentX
+            End With
+'            DoEvents
+        Next
         delta = delta + Temp.Height
     Next
 '    wholestr = str(0)

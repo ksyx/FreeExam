@@ -189,10 +189,13 @@ Private Sub Picture1_MouseMove(Button As Integer, Shift As Integer, X As Single,
     Timer1.Interval = 1000
 End Sub
 Private Sub Timer1_Timer()
+    Dim first As Integer
     If Timer1.Interval > 100 Then Timer1.Interval = Timer1.Interval - 100
     showcnt = showcnt + 1
     If MsgContentList.ListCount <= 1 Then
+        first = showcnt
         showcnt = ShowCntPerMsg
+        Message.Caption = ""
         If MsgContentList.ListCount = 1 Then
             current = 0
             MsgContentList.ListIndex = current
@@ -201,7 +204,7 @@ Private Sub Timer1_Timer()
             Message.Caption = MsgTypeList.Text & MsgContentList.Text
             Message.ForeColor = ReverseColor(MsgColorList.Text)
         End If
-        ProgressBar.Width = showcnt / ShowCntPerMsg * Picture1.Width
+        If showcnt <> first Then ProgressBar.Width = showcnt / ShowCntPerMsg * Picture1.Width
         Exit Sub
     End If
     If showcnt = ShowCntPerMsg Then

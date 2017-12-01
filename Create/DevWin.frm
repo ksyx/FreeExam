@@ -22,6 +22,15 @@ Begin VB.Form DevWin
    ScaleWidth      =   5760
    ShowInTaskbar   =   0   'False
    StartUpPosition =   2  'ÆÁÄ»ÖÐÐÄ
+   Begin VB.CheckBox Check1 
+      Caption         =   "AutoCls"
+      Height          =   330
+      Left            =   90
+      TabIndex        =   8
+      Top             =   1320
+      Value           =   1  'Checked
+      Width           =   2145
+   End
    Begin VB.PictureBox Picture1 
       BackColor       =   &H00000000&
       Height          =   285
@@ -161,15 +170,18 @@ Sub NewMessage(Content As String, Color As Long, Optional ClearList As Boolean =
     Timer1_Timer
 End Sub
 
+Private Sub Check1_Click()
+    AutoCls = Check1.Value
+    SaveSetting "FreeExam", "Create", "AutoCls", AutoCls
+End Sub
+
 Private Sub Command1_Click()
     PageSettings.Show
 End Sub
 
 Private Sub Command2_Click()
-    Main.Show
+    MainFrm.Show
 End Sub
-
-
 
 Private Sub Form_Load()
     current = -1
@@ -182,6 +194,7 @@ Private Sub Form_Load()
        RaiseSysErr "Access Denied - You don't have enough privilege to access here. By the way, there is nothing interesting.", "DevWin/PrivCheck"
     End If
     NewMessage "Authentication Passed.", vbBlack
+    Check1.Value = AutoCls
 End Sub
 
 Private Sub Message_MouseMove(Button As Integer, Shift As Integer, X As Single, Y As Single)
@@ -193,10 +206,13 @@ Private Sub Picture1_MouseMove(Button As Integer, Shift As Integer, X As Single,
 End Sub
 
 Private Sub Timer1_Timer()
+    Dim first As Integer
     If Timer1.Interval > 100 Then Timer1.Interval = Timer1.Interval - 100
     showcnt = showcnt + 1
     If MsgContentList.ListCount <= 1 Then
+        first = showcnt
         showcnt = ShowCntPerMsg
+        Message.Caption = ""
         If MsgContentList.ListCount = 1 Then
             current = 0
             MsgContentList.ListIndex = current
@@ -205,7 +221,7 @@ Private Sub Timer1_Timer()
             Message.Caption = MsgTypeList.Text & MsgContentList.Text
             Message.ForeColor = ReverseColor(MsgColorList.Text)
         End If
-        ProgressBar.Width = showcnt / ShowCntPerMsg * Picture1.Width
+        If showcnt <> first Then ProgressBar.Width = showcnt / ShowCntPerMsg * Picture1.Width
         Exit Sub
     End If
     If showcnt = ShowCntPerMsg Then
