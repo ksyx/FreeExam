@@ -8,6 +8,8 @@ Option Explicit
 Public Const ShowCntPerMsg As Integer = 50
 Public Const TwipsPerCM As Integer = 567
 Public Const Development As Integer = 1
+Public Const TitleHi As Integer = 495
+
 
 Public PageWidth As Long, PageHeight As Long, TopMargin As Long, BotMargin As Long, LeftMargin As Long, RightMargin As Long, AutoCls As Integer
 
