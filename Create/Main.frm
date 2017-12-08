@@ -5,7 +5,7 @@ Begin VB.Form MainFrm
    ClientHeight    =   5595
    ClientLeft      =   45
    ClientTop       =   390
-   ClientWidth     =   7920
+   ClientWidth     =   14835
    BeginProperty Font 
       Name            =   "Tahoma"
       Size            =   8.25
@@ -19,7 +19,7 @@ Begin VB.Form MainFrm
    MaxButton       =   0   'False
    MinButton       =   0   'False
    ScaleHeight     =   5595
-   ScaleWidth      =   7920
+   ScaleWidth      =   14835
    ShowInTaskbar   =   0   'False
    StartUpPosition =   2  'ÆÁÄ»ÖÐÐÄ
    Begin VB.Frame InsText 
@@ -606,15 +606,13 @@ Private Sub Form_Load()
     current = -1
     Dim i As Integer
     FontCombo.Clear
-    Integrated.Show
-    Integrated.WinMode = 1
-    Integrated.InitWindow
+    Init.Show
     For i = 1 To Screen.FontCount
-        Integrated.Message.Caption = "Loading Fonts(" & i & "/" & Screen.FontCount & ")"
+        Init.Message.Caption = "Loading Fonts(" & i & "/" & Screen.FontCount & ")"
         DoEvents
         FontCombo.AddItem Screen.Fonts(i)
     Next
-    Unload Integrated
+    Unload Init
     Shape1.Left = Label1.Left
     Shape1.Width = Label1.Width
 End Sub
