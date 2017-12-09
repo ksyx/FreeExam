@@ -26,7 +26,7 @@ Sub RaiseSysErr(Detail As String, Module As String)
 End Sub
 
 Sub InitPreview()
-    If AutoCls Then Preview.Picture2.Cls
+    If AutoCls = 1 Then Preview.Picture2.Cls
     Preview.Picture2.Height = PageHeight
     Preview.Picture2.Width = PageWidth
     Preview.HScroll1.Max = PageWidth

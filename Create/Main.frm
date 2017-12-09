@@ -2,7 +2,7 @@ VERSION 5.00
 Begin VB.Form MainFrm 
    BorderStyle     =   4  'Fixed ToolWindow
    Caption         =   "ExamPaper Editor"
-   ClientHeight    =   5595
+   ClientHeight    =   8700
    ClientLeft      =   45
    ClientTop       =   390
    ClientWidth     =   7920
@@ -18,24 +18,145 @@ Begin VB.Form MainFrm
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    MinButton       =   0   'False
-   ScaleHeight     =   5595
+   ScaleHeight     =   8700
    ScaleWidth      =   7920
    ShowInTaskbar   =   0   'False
    StartUpPosition =   2  'ÆÁÄ»ÖÐÐÄ
    Begin VB.Frame InsText 
       BorderStyle     =   0  'None
       Caption         =   "Frame3"
-      Height          =   3420
-      Left            =   45
+      Height          =   6315
+      Left            =   60
       TabIndex        =   17
       Top             =   1860
       Width           =   7785
+      Begin VB.Frame Frame4 
+         Caption         =   "Text with Image"
+         Height          =   2850
+         Left            =   15
+         TabIndex        =   37
+         Top             =   1575
+         Width           =   7695
+         Begin VB.Frame Frame5 
+            Height          =   1185
+            Left            =   2640
+            TabIndex        =   38
+            Top             =   375
+            Width           =   2160
+            Begin VB.Label Label17 
+               Appearance      =   0  'Flat
+               AutoSize        =   -1  'True
+               BackColor       =   &H80000005&
+               BackStyle       =   0  'Transparent
+               BorderStyle     =   1  'Fixed Single
+               Caption         =   " With Image(&I) "
+               BeginProperty Font 
+                  Name            =   "Tahoma"
+                  Size            =   10.5
+                  Charset         =   0
+                  Weight          =   400
+                  Underline       =   0   'False
+                  Italic          =   0   'False
+                  Strikethrough   =   0   'False
+               EndProperty
+               ForeColor       =   &H80000008&
+               Height          =   285
+               Left            =   315
+               TabIndex        =   39
+               Top             =   480
+               Width           =   1425
+            End
+         End
+         Begin VB.Frame Frame7 
+            Caption         =   "Options"
+            Height          =   2490
+            Left            =   5490
+            TabIndex        =   43
+            Top             =   210
+            Width           =   2070
+            Begin VB.ComboBox Combo1 
+               Height          =   315
+               ItemData        =   "Main.frx":0000
+               Left            =   75
+               List            =   "Main.frx":000A
+               Style           =   2  'Dropdown List
+               TabIndex        =   44
+               Top             =   540
+               Width           =   1905
+            End
+            Begin VB.Label Label19 
+               Appearance      =   0  'Flat
+               AutoSize        =   -1  'True
+               BackColor       =   &H80000005&
+               BackStyle       =   0  'Transparent
+               BorderStyle     =   1  'Fixed Single
+               Caption         =   " Without Image(&X) "
+               BeginProperty Font 
+                  Name            =   "Tahoma"
+                  Size            =   10.5
+                  Charset         =   0
+                  Weight          =   400
+                  Underline       =   0   'False
+                  Italic          =   0   'False
+                  Strikethrough   =   0   'False
+               EndProperty
+               ForeColor       =   &H80000008&
+               Height          =   285
+               Left            =   105
+               TabIndex        =   46
+               Top             =   2025
+               Width           =   1800
+            End
+            Begin VB.Label Label18 
+               AutoSize        =   -1  'True
+               BackStyle       =   0  'Transparent
+               Caption         =   "Position"
+               Height          =   195
+               Left            =   120
+               TabIndex        =   45
+               Top             =   300
+               Width           =   555
+            End
+         End
+         Begin VB.Frame Frame6 
+            Caption         =   "Select a image"
+            Height          =   2520
+            Left            =   90
+            TabIndex        =   40
+            Top             =   210
+            Width           =   5310
+            Begin VB.FileListBox File1 
+               Appearance      =   0  'Flat
+               Height          =   1980
+               Left            =   2655
+               TabIndex        =   47
+               Top             =   255
+               Width           =   2370
+            End
+            Begin VB.DirListBox Dir1 
+               Appearance      =   0  'Flat
+               Height          =   1665
+               Left            =   105
+               TabIndex        =   42
+               Top             =   570
+               Width           =   2565
+            End
+            Begin VB.DriveListBox Drive1 
+               Appearance      =   0  'Flat
+               Height          =   315
+               Left            =   120
+               TabIndex        =   41
+               Top             =   240
+               Width           =   2535
+            End
+         End
+      End
       Begin VB.Frame Frame3 
          Caption         =   "Parts"
-         Height          =   1755
-         Left            =   0
+         Height          =   1785
+         Left            =   30
          TabIndex        =   33
-         Top             =   1590
+         Top             =   4425
          Visible         =   0   'False
          Width           =   3405
          Begin VB.ListBox List2 
@@ -47,7 +168,7 @@ Begin VB.Form MainFrm
          End
          Begin VB.Label Label16 
             BackStyle       =   0  'Transparent
-            Caption         =   "Pay attention: After selecting, it will copy to Text box, click the last one to restore your orginal text."
+            Caption         =   "Pay attention: After selecting, it will be copied to Text box, click the last one to restore your orginal text."
             BeginProperty Font 
                Name            =   "Tahoma"
                Size            =   8.25
@@ -73,9 +194,9 @@ Begin VB.Form MainFrm
          Width           =   2895
          Begin VB.ComboBox AlignCombo 
             Height          =   315
-            ItemData        =   "Main.frx":0000
+            ItemData        =   "Main.frx":0038
             Left            =   810
-            List            =   "Main.frx":000D
+            List            =   "Main.frx":0045
             Style           =   2  'Dropdown List
             TabIndex        =   28
             Top             =   1080
@@ -119,9 +240,9 @@ Begin VB.Form MainFrm
          End
          Begin VB.ComboBox FontCombo 
             Height          =   315
-            ItemData        =   "Main.frx":0042
+            ItemData        =   "Main.frx":007A
             Left            =   825
-            List            =   "Main.frx":004F
+            List            =   "Main.frx":0087
             Sorted          =   -1  'True
             Style           =   2  'Dropdown List
             TabIndex        =   25
@@ -209,13 +330,13 @@ Begin VB.Form MainFrm
       Begin VB.Label Temp 
          AutoSize        =   -1  'True
          BackStyle       =   0  'Transparent
-         Caption         =   "Label11"
+         Caption         =   "[Preview]"
          Height          =   195
-         Left            =   4155
+         Left            =   5400
          TabIndex        =   36
-         Top             =   2130
+         Top             =   5010
          Visible         =   0   'False
-         Width           =   555
+         Width           =   690
       End
       Begin VB.Label Label10 
          Appearance      =   0  'Flat
@@ -235,9 +356,9 @@ Begin VB.Form MainFrm
          EndProperty
          ForeColor       =   &H80000008&
          Height          =   285
-         Left            =   4365
+         Left            =   5235
          TabIndex        =   22
-         Top             =   2700
+         Top             =   5790
          Width           =   1125
       End
       Begin VB.Label Label11 
@@ -258,9 +379,9 @@ Begin VB.Form MainFrm
          EndProperty
          ForeColor       =   &H80000008&
          Height          =   285
-         Left            =   5505
+         Left            =   6450
          TabIndex        =   21
-         Top             =   2700
+         Top             =   5790
          Width           =   870
       End
    End
@@ -310,9 +431,9 @@ Begin VB.Form MainFrm
    End
    Begin VB.ListBox MsgContentList 
       Height          =   450
-      ItemData        =   "Main.frx":0084
+      ItemData        =   "Main.frx":00BC
       Left            =   4755
-      List            =   "Main.frx":0086
+      List            =   "Main.frx":00BE
       TabIndex        =   10
       Top             =   4410
       Visible         =   0   'False
@@ -325,9 +446,9 @@ Begin VB.Form MainFrm
    End
    Begin VB.ListBox MsgTypeList 
       Height          =   450
-      ItemData        =   "Main.frx":0088
+      ItemData        =   "Main.frx":00C0
       Left            =   3330
-      List            =   "Main.frx":008A
+      List            =   "Main.frx":00C2
       TabIndex        =   9
       Top             =   -15
       Visible         =   0   'False
@@ -335,9 +456,9 @@ Begin VB.Form MainFrm
    End
    Begin VB.ListBox MsgColorList 
       Height          =   450
-      ItemData        =   "Main.frx":008C
+      ItemData        =   "Main.frx":00C4
       Left            =   4785
-      List            =   "Main.frx":008E
+      List            =   "Main.frx":00C6
       TabIndex        =   8
       Top             =   105
       Visible         =   0   'False
@@ -346,12 +467,12 @@ Begin VB.Form MainFrm
    Begin VB.PictureBox Picture1 
       BackColor       =   &H00000000&
       Height          =   285
-      Left            =   45
+      Left            =   90
       ScaleHeight     =   225
       ScaleWidth      =   7725
       TabIndex        =   6
       TabStop         =   0   'False
-      Top             =   5310
+      Top             =   8310
       Width           =   7785
       Begin VB.Shape ProgressBar 
          DrawMode        =   6  'Mask Pen Not
@@ -577,7 +698,7 @@ Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Option Explicit
 Dim str() As String, wholestr As String, outputs As String
-Dim showcnt As Integer, current As Integer, strs() As String
+Dim showcnt As Integer, current As Integer, strs() As String, special() As Integer, specialinfo() As Integer
 Sub NewMessage(Content As String, Color As Long, Optional ClearList As Boolean = False, Optional ClearOnly = False)
     current = -1
     If (ClearOnly And Not ClearList) Then
@@ -602,6 +723,14 @@ Sub NewMessage(Content As String, Color As Long, Optional ClearList As Boolean =
     Timer1_Timer
 End Sub
 
+Private Sub Dir1_Change()
+    File1.Path = Dir1.Path
+End Sub
+
+Private Sub Drive1_Change()
+    Dir1.Path = Drive1.Drive
+End Sub
+
 Private Sub Form_Load()
     current = -1
     Dim i As Integer
@@ -617,6 +746,14 @@ Private Sub Form_Load()
     Unload Integrated
     Shape1.Left = Label1.Left
     Shape1.Width = Label1.Width
+End Sub
+
+Private Sub Label17_Click()
+    Frame5.Visible = False
+End Sub
+
+Private Sub Label19_Click()
+    Frame5.Visible = True
 End Sub
 
 Private Sub List2_Click()
@@ -681,12 +818,13 @@ Private Sub Label1_Click()
     Label14.Visible = Not True
     Label13.Visible = Not True
     Manage.Visible = Not True
+    General.Visible = True
 End Sub
 
 Private Sub Label10_Click()
     On Error Resume Next
     Dim i As Integer
-    Dim delta As Integer, partid As Integer, bound As Integer, start As Integer, length As Integer, j As Integer, xdelta As Integer, tmpstr As String, issel As Boolean
+    Dim delta As Integer, reced As Boolean, partid As Integer, bound As Integer, start As Integer, length As Integer, j As Integer, xdelta As Integer, tmpstr As String, issel As Boolean
     wholestr = Text2.Text
     outputs = ""
     partid = 1
@@ -712,13 +850,40 @@ Private Sub Label10_Click()
         NewMessage "Nothing can be previewed.", vbRed, True
         Exit Sub
     End If
-    Temp.FontName = FontCombo.Text
-        Temp.FontSize = Val(Text1.Text)
-        If Check2.Value = 1 Then Temp.FontBold = True Else Temp.FontBold = False
-        If Check1.Value = 1 Then Temp.FontItalic = True Else Temp.FontItalic = False
-        If Check2.Value = 1 Then Preview.Picture2.FontBold = True Else Preview.Picture2.FontBold = False
-        If Check1.Value = 1 Then Preview.Picture2.FontItalic = True Else Preview.Picture2.FontItalic = False
+    If Frame5.Visible = False And Combo1.Text = "" Then
+        NewMessage "You have not selected the position of the image.", vbRed
+        Exit Sub
+    End If
     InitPreview
+    If Frame5.Visible = False Then
+        On Error GoTo err
+        reced = False
+        Preview.Exports.Picture = LoadPicture(File1.Path & "\" & File1.FileName)
+        If Left(Combo1.Text, 1) = "0" Then
+            Preview.Picture2.PaintPicture Preview.Exports.Picture, LeftMargin, TopMargin
+            LeftMargin = LeftMargin + Preview.Exports.Width
+        Else
+            Preview.Picture2.PaintPicture Preview.Exports.Picture, RightMargin - Preview.Exports.Width, TopMargin
+            RightMargin = RightMargin - Preview.Exports.Width
+            Debug.Print RightMargin
+        End If
+        GoTo ooi
+err:
+        NewMessage "[TYPE=RUNTIME_ERROR][ERRORID=" & err.Number & "][ERRDESC.=" & err.Description & "]", vbRed
+        On Error Resume Next
+        Unload Preview
+        Exit Sub
+    Else
+        reced = True
+    End If
+ooi:
+    Temp.FontName = FontCombo.Text
+    Temp.FontSize = Val(Text1.Text)
+    If Check2.Value = 1 Then Temp.FontBold = True Else Temp.FontBold = False
+    If Check1.Value = 1 Then Temp.FontItalic = True Else Temp.FontItalic = False
+    If Check2.Value = 1 Then Preview.Picture2.FontBold = True Else Preview.Picture2.FontBold = False
+    If Check1.Value = 1 Then Preview.Picture2.FontItalic = True Else Preview.Picture2.FontItalic = False
+    
     For i = start To bound Step 1
         length = Len(str(i))
         Text2.Text = str(i)
@@ -769,6 +934,16 @@ Private Sub Label10_Click()
                         Exit Sub
                     End If
                     delta = delta + Temp.Height
+                    If Not reced And delta > Preview.Exports.Height Then
+                        reced = True
+                        If Left(Combo1.Text, 1) = "0" Then
+                            'Preview.Picture2.PaintPicture Preview.Exports.Picture, TopMargin, LeftMargin
+                            LeftMargin = LeftMargin - Preview.Exports.Width
+                        Else
+                            'Preview.Picture2.PaintPicture Preview.Exports.Picture, TopMargin, RightMargin - Preview.Exports.Width
+                            RightMargin = RightMargin + Preview.Exports.Width
+                        End If
+                    End If
                     If Temp.Alignment = 0 Then .CurrentX = LeftMargin Else If Temp.Alignment = 1 Then .CurrentX = Max(RightMargin - Temp.Width, LeftMargin) Else .CurrentX = Max((LeftMargin + RightMargin) / 2 - Temp.Width / 2, LeftMargin)
                     .CurrentY = TopMargin + delta
                     Print BotMargin
@@ -806,7 +981,16 @@ Private Sub Label10_Click()
             DoEvents
         Next
         delta = delta + Temp.Height
-        
+        If Not reced And delta > Preview.Exports.Height Then
+            reced = True
+            If Left(Combo1.Text, 1) = "0" Then
+                'Preview.Picture2.PaintPicture Preview.Exports.Picture, TopMargin, LeftMargin
+                LeftMargin = LeftMargin - Preview.Exports.Width
+            Else
+                'Preview.Picture2.PaintPicture Preview.Exports.Picture, TopMargin, RightMargin - Preview.Exports.Width
+                RightMargin = RightMargin + Preview.Exports.Width
+            End If
+        End If
         If i <> bound Then outputs = outputs & vbCrLf
 cont:
     Next
@@ -825,13 +1009,24 @@ cont:
         On Error Resume Next
         Unload Preview
     End If
+    If Not reced Then
+        reced = True
+        If Left(Combo1.Text, 1) = "0" Then
+            'Preview.Picture2.PaintPicture Preview.Exports.Picture, TopMargin, LeftMargin
+            LeftMargin = LeftMargin - Preview.Exports.Width
+        Else
+            'Preview.Picture2.PaintPicture Preview.Exports.Picture, TopMargin, RightMargin - Preview.Exports.Width
+            RightMargin = RightMargin + Preview.Exports.Width
+        End If
+    End If
     Text2.Text = wholestr
 End Sub
 
 Private Sub Label11_Click()
     On Error Resume Next
     Dim i As Integer, usage As Long
-    Dim delta As Integer, lastcapt As Integer, partid As Integer, bound As Integer, start As Integer, length As Integer, j As Integer, xdelta As Integer, tmpstr As String, issel As Boolean
+    Dim delta As Integer, recordid As Integer, lastcapt As Integer, orglen As Integer, reced As Boolean, partid As Integer, bound As Integer, start As Integer, length As Integer, j As Integer, xdelta As Integer, tmpstr As String, issel As Boolean
+    orglen = RightMargin - LeftMargin
     wholestr = Text2.Text
     outputs = ""
     partid = 1
@@ -858,13 +1053,45 @@ Private Sub Label11_Click()
         NewMessage "Nothing can be previewed.", vbRed, True
         Exit Sub
     End If
-    Temp.FontName = FontCombo.Text
-        Temp.FontSize = Val(Text1.Text)
-        If Check2.Value = 1 Then Temp.FontBold = True Else Temp.FontBold = False
-        If Check1.Value = 1 Then Temp.FontItalic = True Else Temp.FontItalic = False
-        If Check2.Value = 1 Then Preview.Picture2.FontBold = True Else Preview.Picture2.FontBold = False
-        If Check1.Value = 1 Then Preview.Picture2.FontItalic = True Else Preview.Picture2.FontItalic = False
+    If Frame5.Visible = False And Combo1.Text = "" Then
+        NewMessage "You have not selected the position of the image.", vbRed
+        Exit Sub
+    End If
     InitPreview
+    If Frame5.Visible = False Then
+        On Error GoTo err
+        reced = False
+        Preview.Exports.Picture = LoadPicture(File1.Path & "\" & File1.FileName)
+        If Left(Combo1.Text, 1) = "0" Then
+            'Preview.Picture2.PaintPicture Preview.Exports.Picture, LeftMargin, TopMargin
+            LeftMargin = LeftMargin + Preview.Exports.Width
+        Else
+            'Preview.Picture2.PaintPicture Preview.Exports.Picture, RightMargin - Preview.Exports.Width, TopMargin
+            RightMargin = RightMargin - Preview.Exports.Width
+            Debug.Print RightMargin
+        End If
+        usage = GetSetting("FreeExam", "Create", "TrackNumUsage", 1000)
+        If Dir(App.Path & "\Cache", vbDirectory) = "" Then MkDir App.Path & "\Cache"
+        SavePicture Preview.Exports.Picture, App.Path & "\Cache\" & usage + 1 & ".jpg"
+        SaveSetting "FreeExam", "Create", "TrackNumUsage", usage + 1
+        List1.AddItem "P" & Left(Combo1.Text, 1) & usage + 1
+        recordid = List1.ListCount - 1
+        GoTo ooi
+err:
+        NewMessage "[TYPE=RUNTIME_ERROR][ERRORID=" & err.Number & "][ERRDESC.=" & err.Description & "]", vbRed
+        On Error Resume Next
+        Unload Preview
+        Exit Sub
+    Else
+        reced = True
+    End If
+ooi:
+    Temp.FontName = FontCombo.Text
+    Temp.FontSize = Val(Text1.Text)
+    If Check2.Value = 1 Then Temp.FontBold = True Else Temp.FontBold = False
+    If Check1.Value = 1 Then Temp.FontItalic = True Else Temp.FontItalic = False
+    If Check2.Value = 1 Then Preview.Picture2.FontBold = True Else Preview.Picture2.FontBold = False
+    If Check1.Value = 1 Then Preview.Picture2.FontItalic = True Else Preview.Picture2.FontItalic = False
     For i = start To bound Step 1
         length = Len(str(i))
         Text2.Text = str(i)
@@ -915,16 +1142,49 @@ Private Sub Label11_Click()
                         Exit Sub
                     End If
                     delta = delta + Temp.Height
+                    If Not reced And delta > Preview.Exports.Height Then
+                        reced = True
+                        If Left(Combo1.Text, 1) = "0" Then
+                            'Preview.Picture2.PaintPicture Preview.Exports.Picture, TopMargin, LeftMargin
+                            LeftMargin = LeftMargin - Preview.Exports.Width
+                        Else
+                            'Preview.Picture2.PaintPicture Preview.Exports.Picture, TopMargin, RightMargin - Preview.Exports.Width
+                            RightMargin = RightMargin + Preview.Exports.Width
+                        End If
+                    End If
                     If Temp.Alignment = 0 Then .CurrentX = LeftMargin Else If Temp.Alignment = 1 Then .CurrentX = Max(RightMargin - Temp.Width, LeftMargin) Else .CurrentX = Max((LeftMargin + RightMargin) / 2 - Temp.Width / 2, LeftMargin)
                     .CurrentY = TopMargin + delta
                     Print BotMargin
                     'Preview.Picture2.Line (0, Preview.Picture2.CurrentY + Temp.Height)-(Preview.Picture2.Width, Preview.Picture2.CurrentY + Temp.Height), vbRed
                     With Preview.Export
-                        .Width = RightMargin - LeftMargin
+                        'Temp.Caption = outputs
+                        .Width = orglen
                         .Height = Temp.Height
                         DoEvents
                         .BorderStyle = 0
-                        .PaintPicture Preview.Picture2.Image, 0, 0, , , LeftMargin, lastcapt, RightMargin - LeftMargin, Temp.Height
+                        If Not reced Then
+                            If Left(Combo1.Text, 1) = "0" Then
+                                'Preview.Picture2.PaintPicture Preview.Exports.Picture, LeftMargin, TopMargin
+                                LeftMargin = LeftMargin - Preview.Exports.Width
+                                Debug.Print "from " & LeftMargin
+                            Else
+                                'Preview.Picture2.PaintPicture Preview.Exports.Picture, RightMargin - Preview.Exports.Width, TopMargin
+                                RightMargin = RightMargin + Preview.Exports.Width
+                                Debug.Print "from " & RightMargin
+                            End If
+                        End If
+                        .PaintPicture Preview.Picture2.Image, 0, 0, , , LeftMargin, lastcapt, orglen, Temp.Height
+                        If Not reced Then
+                            If Left(Combo1.Text, 1) = "0" Then
+                                'Preview.Picture2.PaintPicture Preview.Exports.Picture, LeftMargin, TopMargin
+                                LeftMargin = LeftMargin + Preview.Exports.Width
+                                Debug.Print " to " & LeftMargin
+                            Else
+                                'Preview.Picture2.PaintPicture Preview.Exports.Picture, RightMargin - Preview.Exports.Width, TopMargin
+                                RightMargin = RightMargin - Preview.Exports.Width
+                                Debug.Print " to " & RightMargin
+                            End If
+                        End If
                         lastcapt = lastcapt + Temp.Height
                         usage = GetSetting("FreeExam", "Create", "TrackNumUsage", 1000)
                         If Dir(App.Path & "\Cache", vbDirectory) = "" Then MkDir App.Path & "\Cache"
@@ -966,11 +1226,33 @@ Private Sub Label11_Click()
             DoEvents
         Next
         With Preview.Export
-            .Width = RightMargin - LeftMargin
+            .Width = orglen
             .Height = Temp.Height
             DoEvents
             .BorderStyle = 0
-            .PaintPicture Preview.Picture2.Image, 0, 0, , , LeftMargin, lastcapt, RightMargin - LeftMargin, Temp.Height
+            If Not reced Then
+                If Left(Combo1.Text, 1) = "0" Then
+                    'Preview.Picture2.PaintPicture Preview.Exports.Picture, LeftMargin, TopMargin
+                    LeftMargin = LeftMargin - Preview.Exports.Width
+                    Debug.Print "from " & LeftMargin
+                Else
+                    'Preview.Picture2.PaintPicture Preview.Exports.Picture, RightMargin - Preview.Exports.Width, TopMargin
+                    RightMargin = RightMargin + Preview.Exports.Width
+                    Debug.Print "from " & RightMargin
+                End If
+            End If
+            .PaintPicture Preview.Picture2.Image, 0, 0, , , LeftMargin, lastcapt, orglen, Temp.Height
+            If Not reced Then
+                If Left(Combo1.Text, 1) = "0" Then
+                    'Preview.Picture2.PaintPicture Preview.Exports.Picture, LeftMargin, TopMargin
+                    LeftMargin = LeftMargin + Preview.Exports.Width
+                    Debug.Print " to " & LeftMargin
+                Else
+                    'Preview.Picture2.PaintPicture Preview.Exports.Picture, RightMargin - Preview.Exports.Width, TopMargin
+                    RightMargin = RightMargin - Preview.Exports.Width
+                    Debug.Print " to " & RightMargin
+                End If
+            End If
             lastcapt = lastcapt + Temp.Height
             usage = GetSetting("FreeExam", "Create", "TrackNumUsage", 1000)
             If Dir(App.Path & "\Cache", vbDirectory) = "" Then MkDir App.Path & "\Cache"
@@ -979,6 +1261,16 @@ Private Sub Label11_Click()
             List1.AddItem usage + 1
         End With
         delta = delta + Temp.Height
+        If Not reced And delta > Preview.Exports.Height Then
+            reced = True
+            If Left(Combo1.Text, 1) = "0" Then
+                'Preview.Picture2.PaintPicture Preview.Exports.Picture, TopMargin, LeftMargin
+                LeftMargin = LeftMargin - Preview.Exports.Width
+            Else
+                'Preview.Picture2.PaintPicture Preview.Exports.Picture, TopMargin, RightMargin - Preview.Exports.Width
+                RightMargin = RightMargin + Preview.Exports.Width
+            End If
+        End If
         If i <> bound Then outputs = outputs & vbCrLf
 cont:
     Next
@@ -996,6 +1288,17 @@ cont:
         Frame3.Visible = True
         On Error Resume Next
         Unload Preview
+    End If
+    If Not reced Then
+        reced = True
+        List1.AddItem "BT" & Preview.Exports.Height
+        If Left(Combo1.Text, 1) = "0" Then
+            'Preview.Picture2.PaintPicture Preview.Exports.Picture, TopMargin, LeftMargin
+            LeftMargin = LeftMargin - Preview.Exports.Width
+        Else
+            'Preview.Picture2.PaintPicture Preview.Exports.Picture, TopMargin, RightMargin - Preview.Exports.Width
+            RightMargin = RightMargin + Preview.Exports.Width
+        End If
     End If
     Text2.Text = wholestr
 '    With Preview.Export
@@ -1029,6 +1332,7 @@ Private Sub Label12_Click()
     Label13.Visible = True
     Label14.Visible = True
     Manage.Visible = True
+    General.Visible = False
 End Sub
 
 Private Sub Label13_Click()
@@ -1049,12 +1353,28 @@ End Sub
 Private Sub Label15_Click()
     Dim i As Integer
     On Error Resume Next
-    Dim X As Integer
+    Dim X As Integer, cnt As Integer, pos As Integer
     X = TopMargin
     InitPreview
+    ReDim special(0)
+    ReDim specialinfo(0)
     For i = 0 To List1.ListCount - 1
         List1.ListIndex = i
         Debug.Print X
+        If Left(List1.Text, 1) = "P" Then
+            cnt = cnt + 1
+            ReDim Preserve special(cnt)
+            ReDim Preserve specialinfo(cnt)
+            special(cnt) = i
+            specialinfo(cnt) = X
+            Debug.Print "CNT=" & List1.ListIndex
+            GoTo nfor
+        End If
+        If Left(List1.Text, 1) = "B" Then
+            If Mid(List1.Text, 2, 1) = "T" Then X = X + Val(Right(List1.Text, Len(List1.Text) - 2))
+        End If
+        DoEvents
+        Debug.Print "CurrentI" & i
         Preview.Picture2.PaintPicture LoadPicture(App.Path & "\Cache\" & List1.Text & ".jpg"), LeftMargin, X
         Preview.Export.Width = 1
         Preview.Export.Height = 1
@@ -1062,6 +1382,18 @@ Private Sub Label15_Click()
         Preview.Export.Picture = LoadPicture(App.Path & "\Cache\" & List1.Text & ".jpg")
         X = X + Preview.Export.Height
         Debug.Print Preview.Export.Height
+nfor:
+    Next
+    For i = 1 To cnt Step 1
+        List1.ListIndex = special(i)
+        Debug.Print "Index=" & List1.ListIndex
+        If Left(List1.Text, 1) = "P" Then
+            X = specialinfo(i)
+            Preview.Exports.Picture = LoadPicture(App.Path & "\Cache\" & Right(List1.Text, Len(List1.Text) - 2) & ".jpg")
+            If Mid(List1.Text, 2, 1) = "0" Then pos = LeftMargin Else pos = RightMargin - Preview.Exports.Width
+            Debug.Print "TrackID=" & Right(List1.Text, Len(List1.Text) - 2)
+            Preview.Picture2.PaintPicture Preview.Exports.Picture, pos, X
+        End If
     Next
     Preview.Export.Visible = False
 End Sub

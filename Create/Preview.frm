@@ -20,6 +20,19 @@ Begin VB.Form Preview
    ScaleWidth      =   7290
    StartUpPosition =   2  'ÆÁÄ»ÖÐÐÄ
    WindowState     =   2  'Maximized
+   Begin VB.PictureBox Exports 
+      AutoRedraw      =   -1  'True
+      AutoSize        =   -1  'True
+      Height          =   2325
+      Left            =   0
+      ScaleHeight     =   2265
+      ScaleWidth      =   6360
+      TabIndex        =   10
+      TabStop         =   0   'False
+      Top             =   0
+      Visible         =   0   'False
+      Width           =   6420
+   End
    Begin VB.PictureBox Export 
       AutoRedraw      =   -1  'True
       AutoSize        =   -1  'True
