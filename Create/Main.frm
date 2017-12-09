@@ -38,11 +38,11 @@ Begin VB.Form MainFrm
          Top             =   1575
          Width           =   7695
          Begin VB.Frame Frame5 
-            Height          =   1185
-            Left            =   2640
+            Height          =   2775
+            Left            =   15
             TabIndex        =   38
-            Top             =   375
-            Width           =   2160
+            Top             =   30
+            Width           =   7635
             Begin VB.Label Label17 
                Appearance      =   0  'Flat
                AutoSize        =   -1  'True
@@ -52,7 +52,7 @@ Begin VB.Form MainFrm
                Caption         =   " With Image(&I) "
                BeginProperty Font 
                   Name            =   "Tahoma"
-                  Size            =   10.5
+                  Size            =   21.75
                   Charset         =   0
                   Weight          =   400
                   Underline       =   0   'False
@@ -60,11 +60,11 @@ Begin VB.Form MainFrm
                   Strikethrough   =   0   'False
                EndProperty
                ForeColor       =   &H80000008&
-               Height          =   285
-               Left            =   315
+               Height          =   555
+               Left            =   2220
                TabIndex        =   39
-               Top             =   480
-               Width           =   1425
+               Top             =   1170
+               Width           =   3030
             End
          End
          Begin VB.Frame Frame7 
@@ -129,6 +129,7 @@ Begin VB.Form MainFrm
                Appearance      =   0  'Flat
                Height          =   1980
                Left            =   2655
+               Pattern         =   "*.JPG;*.PNG"
                TabIndex        =   47
                Top             =   255
                Width           =   2370
@@ -768,6 +769,19 @@ Private Sub Picture1_MouseMove(Button As Integer, Shift As Integer, X As Single,
 End Sub
 
 
+Private Sub Text2_KeyUp(KeyCode As Integer, Shift As Integer)
+    If KeyCode = vbKeyF2 Then
+        Integrated.WinMode = 2
+        Integrated.InitWindow
+        Integrated.Show 1
+    End If
+    If 1 + 1 = 3 Then
+        Integrated.WinMode = 3
+        Integrated.InitWindow
+        Integrated.Show 1
+    End If
+End Sub
+
 Private Sub Timer1_Timer()
     Dim first As Integer
     If Timer1.Interval > 100 Then Timer1.Interval = Timer1.Interval - 100
@@ -818,7 +832,7 @@ Private Sub Label1_Click()
     Label14.Visible = Not True
     Label13.Visible = Not True
     Manage.Visible = Not True
-    General.Visible = True
+    InsText.Visible = True
 End Sub
 
 Private Sub Label10_Click()
@@ -859,6 +873,13 @@ Private Sub Label10_Click()
         On Error GoTo err
         reced = False
         Preview.Exports.Picture = LoadPicture(File1.Path & "\" & File1.FileName)
+        If Preview.Exports.Height > BotMargin - TopMargin Or Preview.Exports.Width > RightMargin - LeftMargin Then
+            NewMessage "Your input is so large that we can't process it.", vbRed
+            On Error Resume Next
+            Unload Preview
+            Exit Sub
+        End If
+        Debug.Print Preview.Exports.Height, BotMargin - TopMargin, Preview.Exports.Width, RightMargin - LeftMargin
         If Left(Combo1.Text, 1) = "0" Then
             Preview.Picture2.PaintPicture Preview.Exports.Picture, LeftMargin, TopMargin
             LeftMargin = LeftMargin + Preview.Exports.Width
@@ -930,6 +951,16 @@ ooi:
                         NewMessage "Auto split line is unsupportted for alignment mode 1 or 2.", vbRed
                         Text2.Text = wholestr
                         On Error Resume Next
+                        If Not reced Then
+                            reced = True
+                            If Left(Combo1.Text, 1) = "0" Then
+                                'Preview.Picture2.PaintPicture Preview.Exports.Picture, TopMargin, LeftMargin
+                                LeftMargin = LeftMargin - Preview.Exports.Width
+                            Else
+                                'Preview.Picture2.PaintPicture Preview.Exports.Picture, TopMargin, RightMargin - Preview.Exports.Width
+                                RightMargin = RightMargin + Preview.Exports.Width
+                            End If
+                        End If
                         Unload Preview
                         Exit Sub
                     End If
@@ -972,6 +1003,16 @@ ooi:
                     Text2.Text = wholestr
                     On Error Resume Next
                     Unload Preview
+                    If Not reced Then
+                        reced = True
+                        If Left(Combo1.Text, 1) = "0" Then
+                            'Preview.Picture2.PaintPicture Preview.Exports.Picture, TopMargin, LeftMargin
+                            LeftMargin = LeftMargin - Preview.Exports.Width
+                        Else
+                            'Preview.Picture2.PaintPicture Preview.Exports.Picture, TopMargin, RightMargin - Preview.Exports.Width
+                            RightMargin = RightMargin + Preview.Exports.Width
+                        End If
+                    End If
                     Exit Sub
                 End If
             Preview.Picture2.Print tmpstr;
@@ -1062,6 +1103,12 @@ Private Sub Label11_Click()
         On Error GoTo err
         reced = False
         Preview.Exports.Picture = LoadPicture(File1.Path & "\" & File1.FileName)
+        If Preview.Exports.Height > BotMargin - TopMargin Or Preview.Exports.Width > RightMargin - LeftMargin Then
+            NewMessage "Your input is so large that we can't process it.", vbRed
+            On Error Resume Next
+            Unload Preview
+            Exit Sub
+        End If
         If Left(Combo1.Text, 1) = "0" Then
             'Preview.Picture2.PaintPicture Preview.Exports.Picture, LeftMargin, TopMargin
             LeftMargin = LeftMargin + Preview.Exports.Width
@@ -1139,6 +1186,16 @@ ooi:
                         Text2.Text = wholestr
                         On Error Resume Next
                         Unload Preview
+                        If Not reced Then
+                            reced = True
+                            If Left(Combo1.Text, 1) = "0" Then
+                                'Preview.Picture2.PaintPicture Preview.Exports.Picture, TopMargin, LeftMargin
+                                LeftMargin = LeftMargin - Preview.Exports.Width
+                            Else
+                                'Preview.Picture2.PaintPicture Preview.Exports.Picture, TopMargin, RightMargin - Preview.Exports.Width
+                                RightMargin = RightMargin + Preview.Exports.Width
+                            End If
+                        End If
                         Exit Sub
                     End If
                     delta = delta + Temp.Height
@@ -1215,6 +1272,16 @@ ooi:
                 If Temp.Width > PageWidth - LeftMargin - (PageWidth - RightMargin) Or Temp.Height > PageHeight - TopMargin - (PageHeight - BotMargin) Then
                     NewMessage "The target size is too large, we are unable to process it.", vbRed
                     Text2.Text = wholestr
+                    If Not reced Then
+                        reced = True
+                        If Left(Combo1.Text, 1) = "0" Then
+                            'Preview.Picture2.PaintPicture Preview.Exports.Picture, TopMargin, LeftMargin
+                            LeftMargin = LeftMargin - Preview.Exports.Width
+                        Else
+                            'Preview.Picture2.PaintPicture Preview.Exports.Picture, TopMargin, RightMargin - Preview.Exports.Width
+                            RightMargin = RightMargin + Preview.Exports.Width
+                        End If
+                    End If
                     On Error Resume Next
                     Unload Preview
                     Exit Sub
@@ -1332,7 +1399,7 @@ Private Sub Label12_Click()
     Label13.Visible = True
     Label14.Visible = True
     Manage.Visible = True
-    General.Visible = False
+    InsText.Visible = False
 End Sub
 
 Private Sub Label13_Click()
