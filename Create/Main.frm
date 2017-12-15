@@ -357,7 +357,7 @@ Begin VB.Form MainFrm
          EndProperty
          ForeColor       =   &H80000008&
          Height          =   285
-         Left            =   5235
+         Left            =   5220
          TabIndex        =   22
          Top             =   5790
          Width           =   1125
@@ -699,7 +699,7 @@ Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Option Explicit
 Dim str() As String, wholestr As String, outputs As String
-Dim showcnt As Integer, current As Integer, strs() As String, special() As Integer, specialinfo() As Integer
+Dim showcnt As Integer, deltachange As Integer, current As Integer, strs() As String, heightdata As Integer, special() As Integer, specialinfo() As Integer, stats() As Boolean
 Sub NewMessage(Content As String, Color As Long, Optional ClearList As Boolean = False, Optional ClearOnly = False)
     current = -1
     If (ClearOnly And Not ClearList) Then
@@ -775,7 +775,7 @@ Private Sub Text2_KeyUp(KeyCode As Integer, Shift As Integer)
         Integrated.InitWindow
         Integrated.Show 1
     End If
-    If 1 + 1 = 3 Then
+    If KeyCode = vbKeyF3 Then
         Integrated.WinMode = 3
         Integrated.InitWindow
         Integrated.Show 1
@@ -835,12 +835,55 @@ Private Sub Label1_Click()
     InsText.Visible = True
 End Sub
 
+Sub RegisterStat(StatName As String)
+    If StatName = "b" Then
+        Temp.FontBold = Not Temp.FontBold
+        Preview.Picture2.FontBold = Not Preview.Picture2.FontBold
+    End If
+    If StatName = "i" Then
+        Temp.FontItalic = Not Temp.FontItalic
+        Preview.Picture2.FontItalic = Not Preview.Picture2.FontItalic
+    End If
+    If StatName = "u" Then
+        Temp.FontUnderline = Not Temp.FontUnderline
+        Preview.Picture2.FontUnderline = Not Preview.Picture2.FontUnderline
+    End If
+    If StatName = "ee" Then
+        Temp.FontSize = Temp.FontSize * 0.7
+        Preview.Picture2.FontSize = Preview.Picture2.FontSize * 0.7
+    End If
+    If StatName = "ed" Then
+        Temp.FontSize = Temp.FontSize / 0.7
+        Preview.Picture2.FontSize = Preview.Picture2.FontSize / 0.7
+    End If
+    If StatName = "se" Then
+        heightdata = Temp.Height
+        Temp.FontSize = Temp.FontSize * 0.7
+        deltachange = deltachange + heightdata - Temp.Height
+        'delta = delta + heightdata - Temp.Height
+        Preview.Picture2.FontSize = Preview.Picture2.FontSize * 0.7
+        stats(1) = True
+    End If
+    If StatName = "sd" Then
+        Temp.AutoSize = True
+        deltachange = deltachange - (heightdata - Temp.Height)
+        'delta = delta - (heightdata - Temp.Height)
+        Temp.FontSize = Temp.FontSize / 0.7
+        Preview.Picture2.FontSize = Preview.Picture2.FontSize / 0.7
+        stats(1) = False
+    End If
+End Sub
+
 Private Sub Label10_Click()
     On Error Resume Next
     Dim i As Integer
-    Dim delta As Integer, reced As Boolean, partid As Integer, bound As Integer, start As Integer, length As Integer, j As Integer, xdelta As Integer, tmpstr As String, issel As Boolean
+    ReDim stats(DefCnt)
+    Dim statstr As String, recording As Boolean, delta As Integer, reced As Boolean, partid As Integer, bound As Integer, start As Integer, length As Integer, j As Integer, xdelta As Integer, tmpstr As String, issel As Boolean
+    delta = 0
+    deltachange = 0
     wholestr = Text2.Text
     outputs = ""
+    recording = False
     partid = 1
     If List2.ListIndex = List2.ListCount - 1 Or List2.Text <> Text2.Text Then
         List2.Clear
@@ -898,8 +941,12 @@ err:
         reced = True
     End If
 ooi:
+'Debug.Print Text2.Text
     Temp.FontName = FontCombo.Text
     Temp.FontSize = Val(Text1.Text)
+    Temp.Alignment = Val(Left(AlignCombo.Text, 1))
+    
+    Temp.Visible = True
     If Check2.Value = 1 Then Temp.FontBold = True Else Temp.FontBold = False
     If Check1.Value = 1 Then Temp.FontItalic = True Else Temp.FontItalic = False
     If Check2.Value = 1 Then Preview.Picture2.FontBold = True Else Preview.Picture2.FontBold = False
@@ -929,7 +976,7 @@ ooi:
                 ReDim Preserve strs(partid - 2)
                 strs(partid - 2) = outputs
                 .CurrentY = TopMargin
-                Preview.Picture2.Print "test";
+                'Preview.Picture2.Print "test";
                 If Temp.Alignment = 0 Then .CurrentX = LeftMargin Else If Temp.Alignment = 1 Then .CurrentX = Max(RightMargin - Temp.Width, LeftMargin) Else .CurrentX = Max((LeftMargin + RightMargin) / 2 - Temp.Width / 2, LeftMargin)
                 List2.AddItem outputs
                 outputs = ""
@@ -937,13 +984,24 @@ ooi:
             End If
         End With
         For j = 1 To length
+            If Mid(str(i), j, 1) = "^" Then
+                If statstr = "" Then
+                    recording = True
+                    GoTo nextj
+                End If
+                If statstr <> "" Then
+                    RegisterStat statstr
+                    statstr = ""
+                    recording = False
+                    GoTo nextj
+                End If
+            End If
+            If recording Then
+                statstr = statstr & Mid(str(i), j, 1)
+                GoTo nextj
+            End If
             Text2.Text = Mid(str(i), j, 1)
-            'Debug.Print Text2.Text
-            Temp.FontName = FontCombo.Text
-            Temp.FontSize = Val(Text1.Text)
-            Temp.Alignment = Val(Left(AlignCombo.Text, 1))
             Temp.Caption = Text2.Text
-            Temp.Visible = True
             With Preview.Picture2
                 tmpstr = Text2.Text
                 If Temp.Width + .CurrentX > RightMargin Then
@@ -977,7 +1035,7 @@ ooi:
                     End If
                     If Temp.Alignment = 0 Then .CurrentX = LeftMargin Else If Temp.Alignment = 1 Then .CurrentX = Max(RightMargin - Temp.Width, LeftMargin) Else .CurrentX = Max((LeftMargin + RightMargin) / 2 - Temp.Width / 2, LeftMargin)
                     .CurrentY = TopMargin + delta
-                    Print BotMargin
+                    'Print BotMargin
                     'Preview.Picture2.Line (0, Preview.Picture2.CurrentY + Temp.Height)-(Preview.Picture2.Width, Preview.Picture2.CurrentY + Temp.Height), vbRed
                     If .CurrentY + Temp.Height >= BotMargin Then
                         If partid = 1 Then
@@ -991,7 +1049,7 @@ ooi:
                         ReDim Preserve strs(partid - 2)
                         strs(partid - 2) = outputs
                         .CurrentY = TopMargin
-                        Preview.Picture2.Print "test";
+                        'Preview.Picture2.Print "test";
                         If Temp.Alignment = 0 Then .CurrentX = LeftMargin Else If Temp.Alignment = 1 Then .CurrentX = Max(RightMargin - Temp.Width, LeftMargin) Else .CurrentX = Max((LeftMargin + RightMargin) / 2 - Temp.Width / 2, LeftMargin)
                         List2.AddItem outputs
                         outputs = ""
@@ -1015,11 +1073,14 @@ ooi:
                     End If
                     Exit Sub
                 End If
+            Preview.Picture2.CurrentY = Preview.Picture2.CurrentY + deltachange
             Preview.Picture2.Print tmpstr;
+            Preview.Picture2.CurrentY = Preview.Picture2.CurrentY - deltachange
             outputs = outputs & tmpstr
             'Debug.Print .CurrentX
             End With
             DoEvents
+nextj:
         Next
         delta = delta + Temp.Height
         If Not reced And delta > Preview.Exports.Height Then
@@ -1066,8 +1127,9 @@ End Sub
 Private Sub Label11_Click()
     On Error Resume Next
     Dim i As Integer, usage As Long
-    Dim delta As Integer, recordid As Integer, lastcapt As Integer, orglen As Integer, reced As Boolean, partid As Integer, bound As Integer, start As Integer, length As Integer, j As Integer, xdelta As Integer, tmpstr As String, issel As Boolean
+    Dim delta As Integer, recordid As Integer, recording As Boolean, statstr As String, lastcapt As Integer, orglen As Integer, reced As Boolean, partid As Integer, bound As Integer, start As Integer, length As Integer, j As Integer, xdelta As Integer, tmpstr As String, issel As Boolean
     orglen = RightMargin - LeftMargin
+    deltachange = 0
     wholestr = Text2.Text
     outputs = ""
     partid = 1
@@ -1133,8 +1195,11 @@ err:
         reced = True
     End If
 ooi:
+    'Debug.Print Text2.Text
     Temp.FontName = FontCombo.Text
     Temp.FontSize = Val(Text1.Text)
+    Temp.Alignment = Val(Left(AlignCombo.Text, 1))
+    
     If Check2.Value = 1 Then Temp.FontBold = True Else Temp.FontBold = False
     If Check1.Value = 1 Then Temp.FontItalic = True Else Temp.FontItalic = False
     If Check2.Value = 1 Then Preview.Picture2.FontBold = True Else Preview.Picture2.FontBold = False
@@ -1171,11 +1236,23 @@ ooi:
             End If
         End With
         For j = 1 To length
+            If Mid(str(i), j, 1) = "^" Then
+                If statstr = "" Then
+                    recording = True
+                    GoTo nextj
+                End If
+                If statstr <> "" Then
+                    RegisterStat statstr
+                    statstr = ""
+                    recording = False
+                    GoTo nextj
+                End If
+            End If
+            If recording Then
+                statstr = statstr & Mid(str(i), j, 1)
+                GoTo nextj
+            End If
             Text2.Text = Mid(str(i), j, 1)
-            'Debug.Print Text2.Text
-            Temp.FontName = FontCombo.Text
-            Temp.FontSize = Val(Text1.Text)
-            Temp.Alignment = Val(Left(AlignCombo.Text, 1))
             Temp.Caption = Text2.Text
             Temp.Visible = True
             With Preview.Picture2
@@ -1291,6 +1368,7 @@ ooi:
             'Debug.Print .CurrentX
             End With
             DoEvents
+nextj:
         Next
         With Preview.Export
             .Width = orglen
