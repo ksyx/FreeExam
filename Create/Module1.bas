@@ -32,6 +32,7 @@ Sub InitPreview()
     Preview.HScroll1.Max = PageWidth
     Preview.VScroll1.Max = PageHeight
     Preview.Show
+    MainFrm.WIP.Left = 0
 End Sub
 
 Sub Main()

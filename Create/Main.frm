@@ -22,6 +22,54 @@ Begin VB.Form MainFrm
    ScaleWidth      =   7920
    ShowInTaskbar   =   0   'False
    StartUpPosition =   2  'ÆÁÄ»ÖÐÐÄ
+   Begin VB.PictureBox WIP 
+      Height          =   8250
+      Left            =   99999
+      ScaleHeight     =   8190
+      ScaleWidth      =   7815
+      TabIndex        =   48
+      TabStop         =   0   'False
+      Top             =   0
+      Width           =   7875
+      Begin VB.Label Label21 
+         BackStyle       =   0  'Transparent
+         Caption         =   "The preview window is opening. You should close it before using this window."
+         BeginProperty Font 
+            Name            =   "Tahoma"
+            Size            =   15
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   765
+         Left            =   15
+         TabIndex        =   50
+         Top             =   1125
+         Width           =   7755
+      End
+      Begin VB.Label Label20 
+         Alignment       =   2  'Center
+         AutoSize        =   -1  'True
+         BackStyle       =   0  'Transparent
+         Caption         =   "Work in progress"
+         BeginProperty Font 
+            Name            =   "Tahoma"
+            Size            =   26.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   630
+         Left            =   1890
+         TabIndex        =   49
+         Top             =   465
+         Width           =   3975
+      End
+   End
    Begin VB.Frame InsText 
       BorderStyle     =   0  'None
       Caption         =   "Frame3"

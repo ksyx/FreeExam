@@ -194,6 +194,10 @@ Private Sub Form_Load()
     NewMessage "The size of the preview is NEAR the actual size.", vbBlack
 End Sub
 
+Private Sub Form_Unload(Cancel As Integer)
+    MainFrm.WIP.Left = 99999
+End Sub
+
 Private Sub Message_MouseMove(Button As Integer, Shift As Integer, X As Single, Y As Single)
     Timer1.Interval = 1000
 End Sub
