@@ -48,9 +48,10 @@ Begin VB.Form Integrated
          Width           =   3570
       End
       Begin VB.Label Label8 
+         Alignment       =   1  'Right Justify
          AutoSize        =   -1  'True
          BackStyle       =   0  'Transparent
-         Caption         =   "Name"
+         Caption         =   "Code"
          BeginProperty Font 
             Name            =   "Tahoma"
             Size            =   18
@@ -64,7 +65,7 @@ Begin VB.Form Integrated
          Left            =   435
          TabIndex        =   13
          Top             =   240
-         Width           =   930
+         Width           =   840
       End
       Begin VB.Label Label7 
          AutoSize        =   -1  'True
@@ -352,3 +353,22 @@ Private Sub Text1_KeyUp(KeyCode As Integer, Shift As Integer)
     If KeyCode = vbKeyEscape Then Unload Me
 End Sub
 
+Private Sub Text2_KeyUp(KeyCode As Integer, Shift As Integer)
+    If KeyCode = vbKeyReturn Then
+        MainFrm.Text2.SelText = Label6.Caption
+        MainFrm.Text2.SelStart = MainFrm.Text2.SelStart - Len(Label6.Caption) / 2
+        KeyCode = 0
+        Unload Me
+    End If
+    If KeyCode = vbKeyEscape Then Unload Me
+End Sub
+
+Private Sub Text2_Change()
+    Select Case LCase(Text2.Text)
+        Case "b": Label6.Caption = "^b^^b^"
+        Case "i": Label6.Caption = "^i^^i^"
+        Case "u": Label6.Caption = "^u^^u^"
+        Case "e": Label6.Caption = "^ee^^ed^"
+        Case "s": Label6.Caption = "^se^^sd^"
+    End Select
+End Sub
