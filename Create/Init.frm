@@ -43,6 +43,7 @@ Begin VB.Form Integrated
          EndProperty
          Height          =   540
          Left            =   1500
+         MultiLine       =   -1  'True
          TabIndex        =   9
          Top             =   180
          Width           =   3570
@@ -144,6 +145,7 @@ Begin VB.Form Integrated
          EndProperty
          Height          =   540
          Left            =   1500
+         MultiLine       =   -1  'True
          TabIndex        =   3
          Top             =   180
          Width           =   3570
@@ -168,7 +170,6 @@ Begin VB.Form Integrated
          Width           =   2685
       End
       Begin VB.Label Label3 
-         AutoSize        =   -1  'True
          BackStyle       =   0  'Transparent
          BeginProperty Font 
             Name            =   "Tahoma"
@@ -183,7 +184,7 @@ Begin VB.Form Integrated
          Left            =   1530
          TabIndex        =   6
          Top             =   720
-         Width           =   225
+         Width           =   3570
       End
       Begin VB.Label Label2 
          AutoSize        =   -1  'True
@@ -290,6 +291,10 @@ Sub InitWindow()
 End Sub
 
 Private Sub Text1_Change()
+Debug.Print "CHANGE"
+    'Me.Height = Me.Height - Label3.Height
+    Label3.FontSize = 23
+    'Frame1.Height = Frame1.Height - Label3.Height
     Select Case LCase(Text1.Text)
         Case "delta": Label3.Caption = "Δ"
         Case "pi": Label3.Caption = "π"
@@ -342,9 +347,40 @@ Private Sub Text1_Change()
         Case "o": Label3.Caption = "°"
         Case Else: Label3.Caption = ""
     End Select
+    Label3.FontSize = 12
+    If Left(Text1.Text, 3) = "tot" Then
+        Label3.Caption = "共"
+    End If
+    If Left(Text1.Text, 3) = "no" Then
+        Label3.Caption = "第"
+    End If
+    If Left(Text1.Text, 6) = "listen" Then
+        Label3.Caption = "听第" & (Right(Text1.Text, Len(Text1.Text) - 6)) & "段对话，回答第"
+    End If
+    If Left(Text1.Text, 3) = "pts" Then
+        Label3.Caption = (Right(Text1.Text, Len(Text1.Text) - 3)) & "分"
+    End If
+    If Left(Text1.Text, 3) = "sub" Then
+        Label3.Caption = (Right(Text1.Text, Len(Text1.Text) - 3)) & "小题"
+    End If
+    If Left(Text1.Text, 3) = "big" Then
+        Label3.Caption = (Right(Text1.Text, Len(Text1.Text) - 3)) & "小题"
+    End If
+    If Left(Text1.Text, 3) = "spc" Then
+        Label3.Caption = (Right(Text1.Text, Len(Text1.Text) - 3)) & "空"
+    End If
+    If Left(Text1.Text, 4) = "prob" Then
+        Label3.Caption = (Right(Text1.Text, Len(Text1.Text) - 4)) & "题"
+    End If
+    If Left(Text1.Text, 3) = "sel" Then
+        Label3.Caption = "每个小题有四个备选答案，从其中选出最符合题意的一个。"
+    End If
+    
+   ' Me.Height = Label3.Height + Me.Height
+    'Frame1.Height = Label3.Height + Frame1.Height
 End Sub
 
-Private Sub Text1_KeyUp(KeyCode As Integer, Shift As Integer)
+Private Sub Text1_KeyDown(KeyCode As Integer, Shift As Integer)
     If KeyCode = vbKeyReturn Then
         MainFrm.Text2.SelText = Label3.Caption
         KeyCode = 0
@@ -353,7 +389,7 @@ Private Sub Text1_KeyUp(KeyCode As Integer, Shift As Integer)
     If KeyCode = vbKeyEscape Then Unload Me
 End Sub
 
-Private Sub Text2_KeyUp(KeyCode As Integer, Shift As Integer)
+Private Sub Text2_KeyDown(KeyCode As Integer, Shift As Integer)
     If KeyCode = vbKeyReturn Then
         MainFrm.Text2.SelText = Label6.Caption
         MainFrm.Text2.SelStart = MainFrm.Text2.SelStart - Len(Label6.Caption) / 2

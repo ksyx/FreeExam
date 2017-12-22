@@ -23,10 +23,11 @@ Begin VB.Form Preview
    Begin VB.PictureBox Exports 
       AutoRedraw      =   -1  'True
       AutoSize        =   -1  'True
+      BorderStyle     =   0  'None
       Height          =   2325
       Left            =   0
-      ScaleHeight     =   2265
-      ScaleWidth      =   6360
+      ScaleHeight     =   2325
+      ScaleWidth      =   6420
       TabIndex        =   10
       TabStop         =   0   'False
       Top             =   0
@@ -36,10 +37,11 @@ Begin VB.Form Preview
    Begin VB.PictureBox Export 
       AutoRedraw      =   -1  'True
       AutoSize        =   -1  'True
+      BorderStyle     =   0  'None
       Height          =   2325
       Left            =   675
-      ScaleHeight     =   2265
-      ScaleWidth      =   6360
+      ScaleHeight     =   2325
+      ScaleWidth      =   6420
       TabIndex        =   9
       TabStop         =   0   'False
       Top             =   855
