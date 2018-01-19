@@ -30,6 +30,14 @@ Begin VB.Form MainFrm
       TabIndex        =   53
       Top             =   1875
       Width           =   7920
+      Begin VB.CheckBox Check15 
+         Caption         =   "cm"
+         Height          =   255
+         Left            =   2475
+         TabIndex        =   74
+         Top             =   135
+         Width           =   1755
+      End
       Begin VB.TextBox Text4 
          Height          =   285
          Left            =   45
@@ -233,9 +241,9 @@ Begin VB.Form MainFrm
          EndProperty
          ForeColor       =   &H80000008&
          Height          =   285
-         Left            =   2550
+         Left            =   930
          TabIndex        =   64
-         Top             =   450
+         Top             =   2865
          Width           =   855
       End
       Begin VB.Label Label24 
@@ -256,9 +264,9 @@ Begin VB.Form MainFrm
          EndProperty
          ForeColor       =   &H80000008&
          Height          =   285
-         Left            =   2550
+         Left            =   60
          TabIndex        =   63
-         Top             =   120
+         Top             =   2865
          Width           =   855
       End
       Begin VB.Label Label23 
@@ -1094,16 +1102,18 @@ Private Sub Label24_Click()
         NewMessage "Invaild Format.", vbRed, True
         Exit Sub
     End If
-    Label26.FontSize = Val(Text3.Text)
-    Dim lim As Integer
+    'Label26.FontSize = Val(Text3.Text)
+    Dim lim As Integer, succ As Boolean
+    succ = False
     lim = Val(Text4.Text)
     If lim = -1 Then lim = 32767
     InitPreview
     Dim p As Integer
     p = LeftMargin
-    Label26.Width = Val(Text3.Text)
-    Label26.Height = Val(Text3.Text)
+    Label26.Width = Val(Text3.Text) * (1 + (TwipsPerCM - 1) * Check15.Value)
+    Label26.Height = Val(Text3.Text) * (1 + (TwipsPerCM - 1) * Check15.Value)
     While p + Label26.Width <= RightMargin And lim > 0
+        succ = True
         lim = lim - 1
         If Check9.Value = 1 Then
             Preview.Picture2.Line (p, TopMargin)-(p + Label26.Width, TopMargin)
@@ -1131,23 +1141,30 @@ Private Sub Label24_Click()
         End If
         p = p + Label26.Width
     Wend
+    If Not succ Then
+        NewMessage "The size you've input is too large", vbRed
+        On Error Resume Next
+        Unload Preview
+    End If
 End Sub
 
 Private Sub Label25_Click()
-        If Not IsNumeric(Text3.Text) Or Not IsNumeric(Text4.Text) Then
+    If Not IsNumeric(Text3.Text) Or Not IsNumeric(Text4.Text) Then
         NewMessage "Invaild Format.", vbRed, True
         Exit Sub
     End If
-    Label26.FontSize = Val(Text3.Text)
-    Dim lim As Integer
+    'Label26.FontSize = Val(Text3.Text)
+    Dim lim As Integer, succ As Boolean
+    succ = False
     lim = Val(Text4.Text)
     If lim = -1 Then lim = 32767
     InitPreview
     Dim p As Integer
     p = LeftMargin
-    Label26.Width = Val(Text3.Text)
-    Label26.Height = Val(Text3.Text)
+    Label26.Width = Val(Text3.Text) * (1 + (TwipsPerCM - 1) * Check15.Value)
+    Label26.Height = Val(Text3.Text) * (1 + (TwipsPerCM - 1) * Check15.Value)
     While p + Label26.Width <= RightMargin And lim > 0
+        succ = True
         lim = lim - 1
         If Check9.Value = 1 Then
             Preview.Picture2.Line (p, TopMargin)-(p + Label26.Width, TopMargin)
@@ -1180,6 +1197,11 @@ Private Sub Label25_Click()
     'Preview.Exports.BorderStyle = 0
     Preview.Exports.PaintPicture Preview.Picture2.Image, 0, 0, , , LeftMargin, TopMargin, p, Label26.Height + 50
     Preview.Exports.Visible = True
+    If Not succ Then
+        NewMessage "The size you've input is too large", vbRed
+        On Error Resume Next
+        Unload Preview
+    End If
     Dim usage As Integer
     usage = GetSetting("FreeExam", "Create", "TrackNumUsage", 1000)
     If Dir(App.Path & "\Cache", vbDirectory) = "" Then MkDir App.Path & "\Cache"
@@ -1188,10 +1210,6 @@ Private Sub Label25_Click()
     List1.AddItem usage + 1
     On Error Resume Next
     Unload Preview
-End Sub
-
-Private Sub Label27_Click()
-
 End Sub
 
 Private Sub List2_Click()
@@ -1228,20 +1246,26 @@ Private Sub Timer1_Timer()
     Dim first As Integer
     If Timer1.Interval > 100 Then Timer1.Interval = Timer1.Interval - 100
     showcnt = showcnt + 1
-    If MsgContentList.ListCount <= 1 Then
-        first = showcnt
-        showcnt = ShowCntPerMsg
-        Message.Caption = ""
-        If MsgContentList.ListCount = 1 Then
-            current = 0
-            MsgContentList.ListIndex = current
-            MsgColorList.ListIndex = current
-            MsgTypeList.ListIndex = current
-            Message.Caption = MsgTypeList.Text & MsgContentList.Text
-            Message.ForeColor = ReverseColor(MsgColorList.Text)
-        End If
-        If showcnt <> first Then ProgressBar.Width = showcnt / ShowCntPerMsg * Picture1.Width
-        Exit Sub
+'    If MsgContentList.ListCount <= 1 Then
+'        first = showcnt
+'        showcnt = ShowCntPerMsg
+'        Message.Caption = ""
+'        If MsgContentList.ListCount = 1 Then
+'            current = 0
+'            MsgContentList.ListIndex = current
+'            MsgColorList.ListIndex = current
+'            MsgTypeList.ListIndex = current
+'            Message.Caption = MsgTypeList.Text & MsgContentList.Text
+'            Message.ForeColor = ReverseColor(MsgColorList.Text)
+'        End If
+'        If showcnt <> first Then ProgressBar.Width = showcnt / ShowCntPerMsg * Picture1.Width
+'        Exit Sub
+'    End If
+    If MsgContentList.ListCount = 0 Then
+        Message.Caption = "No new messages."
+        Message.ForeColor = vbWhite
+        showcnt = ShowCntPerMsg - 1
+        GoTo rrr
     End If
     If showcnt = ShowCntPerMsg Then
         current = current + 1
@@ -1251,7 +1275,12 @@ Private Sub Timer1_Timer()
             Message.Caption = ""
             Exit Sub
         End If
-        If current >= MsgContentList.ListCount Then current = 0
+        If current >= MsgContentList.ListCount Then
+            Message.Caption = "No new messages."
+            Message.ForeColor = vbWhite
+            showcnt = ShowCntPerMsg - 1
+            GoTo rrr
+        End If
         MsgContentList.ListIndex = current
         MsgColorList.ListIndex = current
         MsgTypeList.ListIndex = current

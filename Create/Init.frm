@@ -27,11 +27,12 @@ Begin VB.Form Integrated
       BorderStyle     =   0  'None
       Caption         =   "Frame2"
       Height          =   1800
-      Left            =   0
+      Left            =   -15
       TabIndex        =   8
       Top             =   0
       Width           =   5655
       Begin VB.TextBox Text2 
+         BorderStyle     =   0  'None
          BeginProperty Font 
             Name            =   "Tahoma"
             Size            =   20.25
@@ -134,6 +135,7 @@ Begin VB.Form Integrated
       Top             =   30
       Width           =   5655
       Begin VB.TextBox Text1 
+         BorderStyle     =   0  'None
          BeginProperty Font 
             Name            =   "Tahoma"
             Size            =   20.25
@@ -384,9 +386,9 @@ Private Sub Text1_KeyDown(KeyCode As Integer, Shift As Integer)
     If KeyCode = vbKeyReturn Then
         MainFrm.Text2.SelText = Label3.Caption
         KeyCode = 0
-        Unload Me
+        Me.Hide
     End If
-    If KeyCode = vbKeyEscape Then Unload Me
+    If KeyCode = vbKeyEscape Then Me.Hide
 End Sub
 
 Private Sub Text2_KeyDown(KeyCode As Integer, Shift As Integer)
@@ -394,9 +396,10 @@ Private Sub Text2_KeyDown(KeyCode As Integer, Shift As Integer)
         MainFrm.Text2.SelText = Label6.Caption
         MainFrm.Text2.SelStart = MainFrm.Text2.SelStart - Len(Label6.Caption) / 2
         KeyCode = 0
-        Unload Me
+        Me.Hide
     End If
-    If KeyCode = vbKeyEscape Then Unload Me
+    If KeyCode = vbKeyEscape Then Me.Hide
+    
 End Sub
 
 Private Sub Text2_Change()

@@ -47,20 +47,26 @@ Attribute VB_Name = "Notes"
 '    Dim first As Integer
 '    If Timer1.Interval > 100 Then Timer1.Interval = Timer1.Interval - 100
 '    showcnt = showcnt + 1
-'    If MsgContentList.ListCount <= 1 Then
-'        first = showcnt
-'        showcnt = ShowCntPerMsg
-'        Message.Caption = ""
-'        If MsgContentList.ListCount = 1 Then
-'            current = 0
-'            MsgContentList.ListIndex = current
-'            MsgColorList.ListIndex = current
-'            MsgTypeList.ListIndex = current
-'            Message.Caption = MsgTypeList.Text & MsgContentList.Text
-'            Message.ForeColor = ReverseColor(MsgColorList.Text)
-'        End If
-'        If showcnt <> first Then ProgressBar.Width = showcnt / ShowCntPerMsg * Picture1.Width
-'        Exit Sub
+''    If MsgContentList.ListCount <= 1 Then
+''        first = showcnt
+''        showcnt = ShowCntPerMsg
+''        Message.Caption = ""
+''        If MsgContentList.ListCount = 1 Then
+''            current = 0
+''            MsgContentList.ListIndex = current
+''            MsgColorList.ListIndex = current
+''            MsgTypeList.ListIndex = current
+''            Message.Caption = MsgTypeList.Text & MsgContentList.Text
+''            Message.ForeColor = ReverseColor(MsgColorList.Text)
+''        End If
+''        If showcnt <> first Then ProgressBar.Width = showcnt / ShowCntPerMsg * Picture1.Width
+''        Exit Sub
+''    End If
+'    If MsgContentList.ListCount = 0 Then
+'        Message.Caption = "No new messages."
+'        Message.ForeColor = vbWhite
+'        showcnt = ShowCntPerMsg - 1
+'        GoTo rrr
 '    End If
 '    If showcnt = ShowCntPerMsg Then
 '        current = current + 1
@@ -70,7 +76,12 @@ Attribute VB_Name = "Notes"
 '            Message.Caption = ""
 '            Exit Sub
 '        End If
-'        If current >= MsgContentList.ListCount Then current = 0
+'        If current >= MsgContentList.ListCount Then
+'            Message.Caption = "No new messages."
+'            Message.ForeColor = vbWhite
+'            showcnt = ShowCntPerMsg - 1
+'            GoTo rrr
+'        End If
 '        MsgContentList.ListIndex = current
 '        MsgColorList.ListIndex = current
 '        MsgTypeList.ListIndex = current
