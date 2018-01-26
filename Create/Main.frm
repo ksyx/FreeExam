@@ -339,6 +339,7 @@ Begin VB.Form MainFrm
          Begin VB.TextBox Text2 
             Height          =   1050
             Left            =   555
+            MultiLine       =   -1  'True
             TabIndex        =   14
             Top             =   330
             Width           =   3900
@@ -2048,6 +2049,7 @@ ooi:
     If Check2.Value = 1 Then Preview.Picture2.FontBold = True Else Preview.Picture2.FontBold = False
     If Check1.Value = 1 Then Preview.Picture2.FontItalic = True Else Preview.Picture2.FontItalic = False
     For i = start To bound Step 1
+        str(i) = str(i) & " "
         length = Len(str(i))
         Text2.Text = str(i)
         
