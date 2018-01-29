@@ -20,17 +20,33 @@ Begin VB.Form Preview
    ScaleWidth      =   7290
    StartUpPosition =   2  'ÆÁÄ»ÖÐÐÄ
    WindowState     =   2  'Maximized
+   Begin VB.TextBox Text2 
+      Height          =   315
+      Left            =   225
+      TabIndex        =   12
+      Text            =   "0"
+      Top             =   735
+      Width           =   195
+   End
+   Begin VB.TextBox Text1 
+      Height          =   240
+      Left            =   225
+      TabIndex        =   11
+      Text            =   "0"
+      Top             =   495
+      Width           =   480
+   End
    Begin VB.PictureBox Exports 
       AutoRedraw      =   -1  'True
       AutoSize        =   -1  'True
       BorderStyle     =   0  'None
       Height          =   2325
-      Left            =   0
+      Left            =   360
       ScaleHeight     =   2325
       ScaleWidth      =   6420
       TabIndex        =   10
       TabStop         =   0   'False
-      Top             =   0
+      Top             =   630
       Visible         =   0   'False
       Width           =   6420
    End
@@ -166,7 +182,7 @@ Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Option Explicit
-Dim showcnt As Integer, current As Integer
+Dim showcnt As Long, current As Long
 Sub NewMessage(Content As String, Color As Long, Optional ClearList As Boolean = False, Optional ClearOnly = False)
     current = -1
     If (ClearOnly And Not ClearList) Then
@@ -207,8 +223,21 @@ End Sub
 Private Sub Picture1_MouseMove(Button As Integer, Shift As Integer, X As Single, Y As Single)
     Timer1.Interval = 1000
 End Sub
+
+Private Sub Text1_Change()
+    If IsNumeric(Text1.Text) Then
+        Picture2.Left = -Val(Text1.Text)
+    End If
+End Sub
+
+Private Sub Text2_Change()
+    If IsNumeric(Text2.Text) Then
+    Picture2.Top = -Val(Text2.Text)
+    End If
+End Sub
+
 Private Sub Timer1_Timer()
-    Dim first As Integer
+    Dim first As Long
     If Timer1.Interval > 100 Then Timer1.Interval = Timer1.Interval - 100
     showcnt = showcnt + 1
 '    If MsgContentList.ListCount <= 1 Then
@@ -226,6 +255,12 @@ Private Sub Timer1_Timer()
 '        If showcnt <> first Then ProgressBar.Width = showcnt / ShowCntPerMsg * Picture1.Width
 '        Exit Sub
 '    End If
+    If current >= MsgContentList.ListCount Then
+        Message.Caption = "No new messages."
+        Message.ForeColor = vbWhite
+        showcnt = ShowCntPerMsg - 1
+        GoTo rrr
+    End If
     If showcnt = ShowCntPerMsg Then
         current = current + 1
         showcnt = 0
@@ -261,8 +296,10 @@ End Sub
 
 Private Sub HScroll1_Change()
     Picture2.Left = -HScroll1.Value
+    Text1.Text = HScroll1.Value
 End Sub
 
 Private Sub VScroll1_Change()
     Picture2.Top = -VScroll1.Value
+    Text2.Text = VScroll1.Value
 End Sub

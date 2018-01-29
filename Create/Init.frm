@@ -263,7 +263,7 @@ Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Option Explicit
 
-Public WinMode As Integer
+Public WinMode As Long
 
 Sub InitWindow()
     If WinMode = 1 Then 'ProgressMode
@@ -331,10 +331,9 @@ Debug.Print "CHANGE"
         Case "%。": Label3.Caption = "‰"
         Case "duc": Label3.Caption = "℃"
         Case "degreec": Label3.Caption = "℃"
-        Case "f": Label3.Caption = "℃"
-        Case "duf": Label3.Caption = "℃"
-        Case "degreef": Label3.Caption = "℃"
-        Case "f": Label3.Caption = "℃"
+        Case "f": Label3.Caption = "℉"
+        Case "duf": Label3.Caption = "℉"
+        Case "degreef": Label3.Caption = "℉"
         Case "'": Label3.Caption = "′"
         Case "''": Label3.Caption = "″"
         Case "+": Label3.Caption = "＋"
@@ -347,6 +346,31 @@ Debug.Print "CHANGE"
         Case "-=": Label3.Caption = "≡"
         Case "/=": Label3.Caption = "≠"
         Case "o": Label3.Caption = "°"
+        Case "a1": Label3.Caption = "ā"
+        Case "a2": Label3.Caption = "á"
+        Case "a3": Label3.Caption = "ǎ"
+        Case "a4": Label3.Caption = "à"
+        Case "u1": Label3.Caption = "ū"
+        Case "u2": Label3.Caption = "ú"
+        Case "u3": Label3.Caption = "ǔ"
+        Case "u4": Label3.Caption = "ù"
+        Case "o1": Label3.Caption = "ō"
+        Case "o2": Label3.Caption = "ó"
+        Case "o3": Label3.Caption = "ǒ"
+        Case "o4": Label3.Caption = "ò"
+        Case "i1": Label3.Caption = "ī"
+        Case "i2": Label3.Caption = "í"
+        Case "i3": Label3.Caption = "ǐ"
+        Case "i4": Label3.Caption = "ì"
+        Case "e1": Label3.Caption = "ē"
+        Case "e2": Label3.Caption = "é"
+        Case "e3": Label3.Caption = "ě"
+        Case "e4": Label3.Caption = "è"
+        Case "v1": Label3.Caption = "ǖ"
+        Case "v2": Label3.Caption = "ǘ"
+        Case "v3": Label3.Caption = "ǚ"
+        Case "v4": Label3.Caption = "ǜ"
+        Case "v0": Label3.Caption = "ü"
         Case Else: Label3.Caption = ""
     End Select
     Label3.FontSize = 12
@@ -366,7 +390,7 @@ Debug.Print "CHANGE"
         Label3.Caption = (Right(Text1.Text, Len(Text1.Text) - 3)) & "小题"
     End If
     If Left(Text1.Text, 3) = "big" Then
-        Label3.Caption = (Right(Text1.Text, Len(Text1.Text) - 3)) & "小题"
+        Label3.Caption = (Right(Text1.Text, Len(Text1.Text) - 3)) & "大题"
     End If
     If Left(Text1.Text, 3) = "spc" Then
         Label3.Caption = (Right(Text1.Text, Len(Text1.Text) - 3)) & "空"

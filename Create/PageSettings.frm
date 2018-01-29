@@ -415,7 +415,7 @@ Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Option Explicit
-Dim showcnt As Integer, current As Integer
+Dim showcnt As Long, current As Long
 
 Private Sub Label2_Click()
     NewMessage "", vbRed, True, True
@@ -550,7 +550,7 @@ End Sub
 
 
 Private Sub Timer1_Timer()
-    Dim first As Integer
+    Dim first As Long
     If Timer1.Interval > 100 Then Timer1.Interval = Timer1.Interval - 100
     showcnt = showcnt + 1
 '    If MsgContentList.ListCount <= 1 Then
@@ -569,6 +569,12 @@ Private Sub Timer1_Timer()
 '        Exit Sub
 '    End If
     If MsgContentList.ListCount = 0 Then
+        Message.Caption = "No new messages."
+        Message.ForeColor = vbWhite
+        showcnt = ShowCntPerMsg - 1
+        GoTo rrr
+    End If
+    If current >= MsgContentList.ListCount Then
         Message.Caption = "No new messages."
         Message.ForeColor = vbWhite
         showcnt = ShowCntPerMsg - 1

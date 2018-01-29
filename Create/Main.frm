@@ -685,81 +685,6 @@ Begin VB.Form MainFrm
          Width           =   870
       End
    End
-   Begin VB.Frame Frame8 
-      BorderStyle     =   0  'None
-      Caption         =   "Frame8"
-      Height          =   6255
-      Left            =   45
-      TabIndex        =   48
-      Top             =   1875
-      Width           =   7800
-      Begin VB.ListBox MsgContentList 
-         Height          =   450
-         ItemData        =   "Main.frx":00C4
-         Left            =   2775
-         List            =   "Main.frx":00C6
-         TabIndex        =   50
-         Top             =   1830
-         Visible         =   0   'False
-         Width           =   1125
-      End
-      Begin VB.ListBox List1 
-         Height          =   3180
-         Left            =   525
-         TabIndex        =   49
-         Top             =   1020
-         Visible         =   0   'False
-         Width           =   2100
-      End
-      Begin VB.Label Label14 
-         Appearance      =   0  'Flat
-         AutoSize        =   -1  'True
-         BackColor       =   &H80000005&
-         BackStyle       =   0  'Transparent
-         BorderStyle     =   1  'Fixed Single
-         Caption         =   " Remove(&D) "
-         BeginProperty Font 
-            Name            =   "Tahoma"
-            Size            =   10.5
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         ForeColor       =   &H80000008&
-         Height          =   285
-         Left            =   2700
-         TabIndex        =   52
-         Top             =   1410
-         Visible         =   0   'False
-         Width           =   1215
-      End
-      Begin VB.Label Label13 
-         Appearance      =   0  'Flat
-         AutoSize        =   -1  'True
-         BackColor       =   &H80000005&
-         BackStyle       =   0  'Transparent
-         BorderStyle     =   1  'Fixed Single
-         Caption         =   " Preview(&T) "
-         BeginProperty Font 
-            Name            =   "Tahoma"
-            Size            =   10.5
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         ForeColor       =   &H80000008&
-         Height          =   285
-         Left            =   2685
-         TabIndex        =   51
-         Top             =   1035
-         Visible         =   0   'False
-         Width           =   1155
-      End
-   End
    Begin VB.Frame LogMgr 
       BorderStyle     =   0  'None
       Caption         =   "Frame11"
@@ -782,6 +707,7 @@ Begin VB.Form MainFrm
             Left            =   75
             Locked          =   -1  'True
             MultiLine       =   -1  'True
+            ScrollBars      =   3  'Both
             TabIndex        =   86
             Top             =   165
             Width           =   7395
@@ -904,6 +830,81 @@ Begin VB.Form MainFrm
             Visible         =   0   'False
             Width           =   7170
          End
+      End
+   End
+   Begin VB.Frame Frame8 
+      BorderStyle     =   0  'None
+      Caption         =   "Frame8"
+      Height          =   6255
+      Left            =   45
+      TabIndex        =   48
+      Top             =   1875
+      Width           =   7800
+      Begin VB.ListBox MsgContentList 
+         Height          =   450
+         ItemData        =   "Main.frx":00C4
+         Left            =   2775
+         List            =   "Main.frx":00C6
+         TabIndex        =   50
+         Top             =   1830
+         Visible         =   0   'False
+         Width           =   1125
+      End
+      Begin VB.ListBox List1 
+         Height          =   3180
+         Left            =   525
+         TabIndex        =   49
+         Top             =   1020
+         Visible         =   0   'False
+         Width           =   2100
+      End
+      Begin VB.Label Label14 
+         Appearance      =   0  'Flat
+         AutoSize        =   -1  'True
+         BackColor       =   &H80000005&
+         BackStyle       =   0  'Transparent
+         BorderStyle     =   1  'Fixed Single
+         Caption         =   " Remove(&D) "
+         BeginProperty Font 
+            Name            =   "Tahoma"
+            Size            =   10.5
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H80000008&
+         Height          =   285
+         Left            =   2700
+         TabIndex        =   52
+         Top             =   1410
+         Visible         =   0   'False
+         Width           =   1215
+      End
+      Begin VB.Label Label13 
+         Appearance      =   0  'Flat
+         AutoSize        =   -1  'True
+         BackColor       =   &H80000005&
+         BackStyle       =   0  'Transparent
+         BorderStyle     =   1  'Fixed Single
+         Caption         =   " Preview(&T) "
+         BeginProperty Font 
+            Name            =   "Tahoma"
+            Size            =   10.5
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H80000008&
+         Height          =   285
+         Left            =   2685
+         TabIndex        =   51
+         Top             =   1035
+         Visible         =   0   'False
+         Width           =   1155
       End
    End
    Begin VB.Frame AnswerLine 
@@ -1089,6 +1090,32 @@ Begin VB.Form MainFrm
             Y1              =   285
             Y2              =   1635
          End
+      End
+      Begin VB.Label Label34 
+         AutoSize        =   -1  'True
+         Caption         =   "----"
+         BeginProperty Font 
+            Name            =   "Tahoma"
+            Size            =   27.75
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   675
+         Left            =   1110
+         TabIndex        =   95
+         Top             =   3600
+         Width           =   780
+      End
+      Begin VB.Label Label33 
+         Caption         =   "TrackNumber"
+         Height          =   285
+         Left            =   105
+         TabIndex        =   94
+         Top             =   4095
+         Width           =   1335
       End
       Begin VB.Label Label27 
          Caption         =   "Count(-1 for as much as possible)"
@@ -1357,7 +1384,7 @@ End Sub
 
 Private Sub Form_Load()
     current = -1
-    Dim i As Integer
+    Dim i As Long
     FontCombo.Clear
     Integrated.Show
     Integrated.WinMode = 1
@@ -1395,12 +1422,12 @@ Private Sub Label24_Click()
         Exit Sub
     End If
     'Label26.FontSize = Val(Text3.Text)
-    Dim lim As Integer, succ As Boolean
+    Dim lim As Long, succ As Boolean
     succ = False
     lim = Val(Text4.Text)
     If lim = -1 Then lim = 32767
     InitPreview
-    Dim p As Integer
+    Dim p As Long
     p = LeftMargin
     Label26.Width = Val(Text3.Text) * (1 + (TwipsPerCM - 1) * Check15.Value)
     Label26.Height = Val(Text3.Text) * (1 + (TwipsPerCM - 1) * Check15.Value)
@@ -1446,12 +1473,12 @@ Private Sub Label25_Click()
         Exit Sub
     End If
     'Label26.FontSize = Val(Text3.Text)
-    Dim lim As Integer, succ As Boolean
+    Dim lim As Long, succ As Boolean
     succ = False
     lim = Val(Text4.Text)
     If lim = -1 Then lim = 32767
     InitPreview
-    Dim p As Integer
+    Dim p As Long
     p = LeftMargin
     Label26.Width = Val(Text3.Text) * (1 + (TwipsPerCM - 1) * Check15.Value)
     Label26.Height = Val(Text3.Text) * (1 + (TwipsPerCM - 1) * Check15.Value)
@@ -1494,11 +1521,12 @@ Private Sub Label25_Click()
         On Error Resume Next
         Unload Preview
     End If
-    Dim usage As Integer
+    Dim usage As Long
     usage = GetSetting("FreeExam", "Create", "TrackNumUsage", 1000)
     If Dir(App.Path & "\Cache", vbDirectory) = "" Then MkDir App.Path & "\Cache"
     SavePicture Preview.Exports.Image, App.Path & "\Cache\" & usage + 1 & ".jpg"
     SaveSetting "FreeExam", "Create", "TrackNumUsage", usage + 1
+    Label34.Caption = usage + 1
     List1.AddItem usage + 1
     On Error Resume Next
     Unload Preview
@@ -1528,7 +1556,7 @@ Private Sub List2_Click()
 End Sub
 
 Private Sub ListFormat_Click()
-    Dim qqq() As String, i As Integer
+    Dim qqq() As String, i As Long
     Text5.Text = ""
     qqq = Split(ListFormat.Text, ",")
     Text5.Text = Text5.Text & "FontName: " & qqq(0) & vbCrLf
@@ -1540,7 +1568,7 @@ Private Sub ListFormat_Click()
 End Sub
 
 Private Sub ListPage_Click()
-    Dim qqq() As String, i As Integer
+    Dim qqq() As String, i As Long
     Text5.Text = ""
     qqq = Split(ListPage.Text, ",")
     Text5.Text = Text5.Text & "FontName: " & qqq(0) & vbCrLf
@@ -1601,7 +1629,7 @@ Private Sub Text2_KeyUp(KeyCode As Integer, Shift As Integer)
 End Sub
 
 Private Sub Timer1_Timer()
-    Dim first As Integer
+    Dim first As Long
     If Timer1.Interval > 100 Then Timer1.Interval = Timer1.Interval - 100
     showcnt = showcnt + 1
 '    If MsgContentList.ListCount <= 1 Then
@@ -1620,6 +1648,12 @@ Private Sub Timer1_Timer()
 '        Exit Sub
 '    End If
     If MsgContentList.ListCount = 0 Then
+        Message.Caption = "No new messages."
+        Message.ForeColor = vbWhite
+        showcnt = ShowCntPerMsg - 1
+        GoTo rrr
+    End If
+    If current >= MsgContentList.ListCount Then
         Message.Caption = "No new messages."
         Message.ForeColor = vbWhite
         showcnt = ShowCntPerMsg - 1
@@ -1708,9 +1742,9 @@ End Sub
 
 Private Sub Label10_Click()
     On Error Resume Next
-    Dim i As Integer
+    Dim i As Long
     ReDim stats(DefCnt)
-    Dim statstr As String, recording As Boolean, delta As Integer, reced As Boolean, partid As Integer, bound As Integer, start As Integer, length As Integer, j As Integer, xdelta As Integer, tmpstr As String, issel As Boolean
+    Dim statstr As String, recording As Boolean, delta As Long, reced As Boolean, partid As Long, bound As Long, start As Long, length As Long, j As Long, xdelta As Long, tmpstr As String, issel As Boolean
     delta = 0
     deltachange = 0
     wholestr = Text2.Text
@@ -1743,7 +1777,7 @@ Private Sub Label10_Click()
         NewMessage "You have not selected the position of the image.", vbRed
         Exit Sub
     End If
-    If Check17.Value = 1 Then Label10_Click
+    If Check17.Value = 1 Then Label29_Click
     InitPreview
     If Frame5.Visible = False Then
         On Error GoTo err
@@ -1799,17 +1833,18 @@ ooi:
             If Temp.Alignment = 0 Then .CurrentX = LeftMargin Else If Temp.Alignment = 1 Then .CurrentX = Max(RightMargin - Temp.Width, LeftMargin) Else .CurrentX = Max((LeftMargin + RightMargin) / 2 - Temp.Width / 2, LeftMargin)
             .CurrentY = TopMargin + delta
             If .CurrentY + Temp.Height >= BotMargin Then
-                If partid = 1 Then
-                    NewMessage "The input will be split into multi parts", vbBlue
-                    NewMessage "select parts that you want to preview in the list.", vbBlue
-                    'Exit Sub
-                End If
-                .Cls
-                delta = 0
+'                If partid = 1 Then
+'                    NewMessage "The input will be split into multi parts", vbBlue
+'                    NewMessage "select parts that you want to preview in the list.", vbBlue
+'                    'Exit Sub
+'                End If
+                .Height = .Height + PageHeight
+                '.Cls
+                'delta = 0
                 partid = partid + 1
                 ReDim Preserve strs(partid - 2)
                 strs(partid - 2) = outputs
-                .CurrentY = TopMargin
+                '.CurrentY = TopMargin
                 'Preview.Picture2.Print "test";
                 If Temp.Alignment = 0 Then .CurrentX = LeftMargin Else If Temp.Alignment = 1 Then .CurrentX = Max(RightMargin - Temp.Width, LeftMargin) Else .CurrentX = Max((LeftMargin + RightMargin) / 2 - Temp.Width / 2, LeftMargin)
                 List2.AddItem outputs
@@ -1818,6 +1853,7 @@ ooi:
             End If
         End With
         For j = 1 To length
+            Preview.Picture2.Top = -delta
             If Mid(str(i), j, 1) = "^" Then
                 If statstr = "" Then
                     recording = True
@@ -1836,7 +1872,7 @@ ooi:
             End If
             Text2.Text = Mid(str(i), j, 1)
             If GetCharID(Text2.Text) = 200 And Check16.Value = 1 Then
-                Dim ptr As Integer
+                Dim ptr As Long
                 ptr = j + 1
                 While ptr <= length And (GetCharID(Mid(str(i), ptr, 1)) = 1233 Or GetCharID(Mid(str(i), ptr, 1)) = 200)
                     Text2.Text = Text2.Text & Mid(str(i), ptr, 1)
@@ -1886,12 +1922,12 @@ ooi:
                             NewMessage "select parts that you want to preview in the list.", vbBlue
                             'Exit Sub
                         End If
-                        .Cls
-                        delta = 0
+                        '.Cls
+                        .Height = .Height + PageHeight
                         partid = partid + 1
                         ReDim Preserve strs(partid - 2)
                         strs(partid - 2) = outputs
-                        .CurrentY = TopMargin
+                        '.CurrentY = TopMargin
                         'Preview.Picture2.Print "test";
                         If Temp.Alignment = 0 Then .CurrentX = LeftMargin Else If Temp.Alignment = 1 Then .CurrentX = Max(RightMargin - Temp.Width, LeftMargin) Else .CurrentX = Max((LeftMargin + RightMargin) / 2 - Temp.Width / 2, LeftMargin)
                         List2.AddItem outputs
@@ -1945,14 +1981,14 @@ cont:
 '        wholestr = wholestr & str(i) & vbCrLf
 '    Next
     If partid > 1 Then
-        List2.AddItem outputs
-        List2.AddItem wholestr
-        ReDim Preserve strs(partid)
-        strs(partid - 1) = wholestr
-        strs(partid - 0) = wholestr
-        Frame3.Visible = True
-        On Error Resume Next
-        Unload Preview
+'        List2.AddItem outputs
+'        List2.AddItem wholestr
+'        ReDim Preserve strs(partid)
+'        strs(partid - 1) = wholestr
+'        strs(partid - 0) = wholestr
+'        Frame3.Visible = True
+'        On Error Resume Next
+'        Unload Preview
     End If
     If Not reced Then
         reced = True
@@ -1964,13 +2000,14 @@ cont:
             RightMargin = RightMargin + Preview.Exports.Width
         End If
     End If
+    Preview.VScroll1.Max = Preview.Picture2.Height
     Text2.Text = wholestr
 End Sub
 
 Private Sub Label11_Click()
     On Error Resume Next
-    Dim i As Integer, usage As Long
-    Dim delta As Integer, recordid As Integer, recording As Boolean, statstr As String, lastcapt As Integer, orglen As Integer, reced As Boolean, partid As Integer, bound As Integer, start As Integer, length As Integer, j As Integer, xdelta As Integer, tmpstr As String, issel As Boolean
+    Dim i As Long, usage As Long
+    Dim delta As Long, recordid As Long, recording As Boolean, statstr As String, lastcapt As Long, orglen As Long, reced As Boolean, partid As Long, bound As Long, start As Long, length As Long, j As Long, xdelta As Long, tmpstr As String, issel As Boolean
     orglen = RightMargin - LeftMargin
     deltachange = 0
     wholestr = Text2.Text
@@ -2003,7 +2040,7 @@ Private Sub Label11_Click()
         NewMessage "You have not selected the position of the image.", vbRed
         Exit Sub
     End If
-    If Check17.Value = 1 Then Label10_Click
+    If Check17.Value = 1 Then Label29_Click
     InitPreview
     If Frame5.Visible = False Then
         On Error GoTo err
@@ -2067,13 +2104,14 @@ ooi:
                     NewMessage "select parts that you want to preview in the list.", vbBlue
                     'Exit Sub
                 End If
-                .Cls
-                delta = 0
+                '.Cls
+                'delta = 0
                 partid = partid + 1
+                .Height = .Height + PageWidth
                 ReDim Preserve strs(partid - 2)
                 strs(partid - 2) = outputs
-                .CurrentY = TopMargin
-                Preview.Picture2.Print "test";
+                '.CurrentY = TopMargin
+                'Preview.Picture2.Print "test";
                 If Temp.Alignment = 0 Then .CurrentX = LeftMargin Else If Temp.Alignment = 1 Then .CurrentX = Max(RightMargin - Temp.Width, LeftMargin) Else .CurrentX = Max((LeftMargin + RightMargin) / 2 - Temp.Width / 2, LeftMargin)
                 List2.AddItem outputs
                 outputs = ""
@@ -2081,6 +2119,7 @@ ooi:
             End If
         End With
         For j = 1 To length
+            Preview.Picture2.Top = -delta
             If Mid(str(i), j, 1) = "^" Then
                 If statstr = "" Then
                     recording = True
@@ -2099,7 +2138,7 @@ ooi:
             End If
             Text2.Text = Mid(str(i), j, 1)
             If GetCharID(Text2.Text) = 200 And Check16.Value = 1 Then
-                Dim ptr As Integer
+                Dim ptr As Long
                 ptr = j + 1
                 While ptr <= length And (GetCharID(Mid(str(i), ptr, 1)) = 1233 Or GetCharID(Mid(str(i), ptr, 1)) = 200)
                     Text2.Text = Text2.Text & Mid(str(i), ptr, 1)
@@ -2186,13 +2225,14 @@ ooi:
                             NewMessage "select parts that you want to preview in the list.", vbBlue
                             'Exit Sub
                         End If
-                        .Cls
-                        delta = 0
+                        '.Cls
+                        'delta = 0
+                        .Height = .Height + PageHeight
                         partid = partid + 1
                         ReDim Preserve strs(partid - 2)
                         strs(partid - 2) = outputs
-                        .CurrentY = TopMargin
-                        Preview.Picture2.Print "test";
+                        '.CurrentY = TopMargin
+                        'Preview.Picture2.Print "test";
                         If Temp.Alignment = 0 Then .CurrentX = LeftMargin Else If Temp.Alignment = 1 Then .CurrentX = Max(RightMargin - Temp.Width, LeftMargin) Else .CurrentX = Max((LeftMargin + RightMargin) / 2 - Temp.Width / 2, LeftMargin)
                         List2.AddItem outputs
                         outputs = ""
@@ -2278,16 +2318,16 @@ cont:
 '    For i = 1 To UBound(str)
 '        wholestr = wholestr & str(i) & vbCrLf
 '    Next
-    If partid > 1 Then
-        List2.AddItem outputs
-        List2.AddItem wholestr
-        ReDim Preserve strs(partid)
-        strs(partid - 1) = wholestr
-        strs(partid - 0) = wholestr
-        Frame3.Visible = True
-        On Error Resume Next
-        Unload Preview
-    End If
+'    If partid > 1 Then
+'        List2.AddItem outputs
+'        List2.AddItem wholestr
+'        ReDim Preserve strs(partid)
+'        strs(partid - 1) = wholestr
+'        strs(partid - 0) = wholestr
+'        Frame3.Visible = True
+'        On Error Resume Next
+'        Unload Preview
+'    End If
     If Not reced Then
         reced = True
         List1.AddItem "BT" & Preview.Exports.Height
@@ -2352,9 +2392,9 @@ Private Sub Label14_Click()
 End Sub
 
 Private Sub Label15_Click()
-    Dim i As Integer
+    Dim i As Long
     On Error Resume Next
-    Dim X As Integer, cnt As Integer, pos As Integer
+    Dim X As Long, cnt As Long, pos As Long
     X = TopMargin
     InitPreview
     ReDim special(0)
@@ -2374,6 +2414,10 @@ Private Sub Label15_Click()
         If Left(List1.Text, 1) = "B" Then
             If Mid(List1.Text, 2, 1) = "T" Then X = X + Val(Right(List1.Text, Len(List1.Text) - 2))
         End If
+        If X > Preview.Picture2.Height Then
+            Preview.Picture2.Height = Preview.Picture2.Height + PageWidth
+        End If
+        Preview.Picture2.Top = -X
         DoEvents
         Debug.Print "CurrentI" & i
         Preview.Picture2.PaintPicture LoadPicture(App.Path & "\Cache\" & List1.Text & ".jpg"), LeftMargin, X

@@ -230,6 +230,12 @@ Private Sub Timer1_Timer()
 '        If showcnt <> first Then ProgressBar.Width = showcnt / ShowCntPerMsg * Picture1.Width
 '        Exit Sub
 '    End If
+    If current >= MsgContentList.ListCount Then
+        Message.Caption = "No new messages."
+        Message.ForeColor = vbWhite
+        showcnt = ShowCntPerMsg - 1
+        GoTo rrr
+    End If
     If showcnt = ShowCntPerMsg Then
         current = current + 1
         showcnt = 0

@@ -5,13 +5,13 @@ Option Explicit
 'WARNING &H0000FFFF& (SENDPAR=BLUE)
 'ERROR &H00FFFF00& (SENDPAR=RED)
 
-Public Const ShowCntPerMsg As Integer = 50
-Public Const TwipsPerCM As Integer = 567
-Public Const Development As Integer = 1
-Public Const TitleHi As Integer = 495
-Public Const DefCnt As Integer = 1
+Public Const ShowCntPerMsg As Long = 50
+Public Const TwipsPerCM As Long = 567
+Public Const Development As Long = 1
+Public Const TitleHi As Long = 495
+Public Const DefCnt As Long = 1
 
-Public PageWidth As Long, PageHeight As Long, TopMargin As Long, BotMargin As Long, LeftMargin As Long, RightMargin As Long, AutoCls As Integer
+Public PageWidth As Long, PageHeight As Long, TopMargin As Long, BotMargin As Long, LeftMargin As Long, RightMargin As Long, AutoCls As Long
 
 Function ReverseColor(Color As Long) As Long
     If Color = vbRed Then ReverseColor = RGB(15, 255, 255)
