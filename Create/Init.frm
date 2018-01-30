@@ -281,6 +281,7 @@ Sub InitWindow()
         Me.Width = Frame2.Width
         Me.Height = Frame2.Height + TitleHi
         Me.Caption = "Special Input"
+        Text1.Text = ""
     End If
     If WinMode = 3 Then 'SpecialInput
         Frame1.Visible = False
@@ -289,6 +290,7 @@ Sub InitWindow()
         Me.Width = Frame3.Width
         Me.Height = Frame3.Height + TitleHi
         Me.Caption = "Format"
+        Text2.Text = ""
     End If
 End Sub
 

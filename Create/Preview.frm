@@ -20,22 +20,6 @@ Begin VB.Form Preview
    ScaleWidth      =   7290
    StartUpPosition =   2  'ÆÁÄ»ÖÐÐÄ
    WindowState     =   2  'Maximized
-   Begin VB.TextBox Text2 
-      Height          =   315
-      Left            =   225
-      TabIndex        =   12
-      Text            =   "0"
-      Top             =   735
-      Width           =   195
-   End
-   Begin VB.TextBox Text1 
-      Height          =   240
-      Left            =   225
-      TabIndex        =   11
-      Text            =   "0"
-      Top             =   495
-      Width           =   480
-   End
    Begin VB.PictureBox Exports 
       AutoRedraw      =   -1  'True
       AutoSize        =   -1  'True
@@ -49,6 +33,52 @@ Begin VB.Form Preview
       Top             =   630
       Visible         =   0   'False
       Width           =   6420
+      Begin VB.Frame Frame1 
+         Caption         =   "Advanced View"
+         Height          =   825
+         Left            =   675
+         TabIndex        =   11
+         Top             =   240
+         Width           =   1785
+         Begin VB.TextBox Text2 
+            Height          =   285
+            Left            =   0
+            TabIndex        =   16
+            Text            =   "0"
+            Top             =   0
+            Width           =   465
+         End
+         Begin VB.TextBox Text1 
+            Height          =   240
+            Left            =   0
+            TabIndex        =   15
+            Text            =   "0"
+            Top             =   0
+            Width           =   480
+         End
+         Begin VB.Label Label3 
+            Caption         =   "Up"
+            Height          =   210
+            Left            =   0
+            TabIndex        =   14
+            Top             =   195
+            Width           =   315
+         End
+         Begin VB.Label Label2 
+            Height          =   225
+            Left            =   1005
+            TabIndex        =   13
+            Top             =   420
+            Width           =   720
+         End
+         Begin VB.Label Label1 
+            Height          =   225
+            Left            =   960
+            TabIndex        =   12
+            Top             =   225
+            Width           =   720
+         End
+      End
    End
    Begin VB.PictureBox Export 
       AutoRedraw      =   -1  'True
@@ -164,6 +194,7 @@ Begin VB.Form Preview
    Begin VB.VScrollBar VScroll1 
       Height          =   2940
       Left            =   0
+      Max             =   10000
       TabIndex        =   1
       Top             =   495
       Width           =   240
@@ -171,6 +202,7 @@ Begin VB.Form Preview
    Begin VB.HScrollBar HScroll1 
       Height          =   240
       Left            =   240
+      Max             =   100
       TabIndex        =   0
       Top             =   270
       Width           =   6915
@@ -295,11 +327,11 @@ Private Sub Form_Resize()
 End Sub
 
 Private Sub HScroll1_Change()
-    Picture2.Left = -HScroll1.Value
+    Picture2.Left = -(Picture2.Width / HScroll1.Value)
     Text1.Text = HScroll1.Value
 End Sub
 
 Private Sub VScroll1_Change()
-    Picture2.Top = -VScroll1.Value
+    Picture2.Top = -(Picture2.Height / VScroll1.Value)
     Text2.Text = VScroll1.Value
 End Sub

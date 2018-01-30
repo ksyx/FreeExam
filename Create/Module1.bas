@@ -29,8 +29,8 @@ Sub InitPreview()
     If AutoCls = 1 Then Preview.Picture2.Cls
     Preview.Picture2.Height = PageHeight
     Preview.Picture2.Width = PageWidth
-    Preview.HScroll1.Max = PageWidth
-    Preview.VScroll1.Max = PageHeight
+'    Preview.HScroll1.Max = PageWidth
+ '   Preview.VScroll1.Max = PageHeight
     Preview.Show
     MainFrm.WIP.Left = 0
 End Sub
