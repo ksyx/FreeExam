@@ -1,5 +1,6 @@
 VERSION 5.00
 Begin VB.Form PageSettings 
+   BackColor       =   &H00A0ACBA&
    BorderStyle     =   4  'Fixed ToolWindow
    Caption         =   "PageSettings"
    ClientHeight    =   5745
@@ -91,7 +92,9 @@ Begin VB.Form PageSettings
       End
    End
    Begin VB.Frame Frame2 
+      BackColor       =   &H00A0ACBA&
       Caption         =   "Margins"
+      ForeColor       =   &H00656D76&
       Height          =   3225
       Left            =   135
       TabIndex        =   3
@@ -99,6 +102,8 @@ Begin VB.Form PageSettings
       Width           =   6705
       Begin VB.TextBox Text1 
          Appearance      =   0  'Flat
+         BackColor       =   &H00B4BFCC&
+         BorderStyle     =   0  'None
          BeginProperty Font 
             Name            =   "Tahoma"
             Size            =   12.75
@@ -108,6 +113,7 @@ Begin VB.Form PageSettings
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
+         ForeColor       =   &H00656D76&
          Height          =   375
          Index           =   3
          Left            =   1095
@@ -118,6 +124,8 @@ Begin VB.Form PageSettings
       End
       Begin VB.TextBox Text1 
          Appearance      =   0  'Flat
+         BackColor       =   &H00B4BFCC&
+         BorderStyle     =   0  'None
          BeginProperty Font 
             Name            =   "Tahoma"
             Size            =   12.75
@@ -127,6 +135,7 @@ Begin VB.Form PageSettings
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
+         ForeColor       =   &H00656D76&
          Height          =   375
          Index           =   2
          Left            =   1095
@@ -137,6 +146,8 @@ Begin VB.Form PageSettings
       End
       Begin VB.TextBox Text1 
          Appearance      =   0  'Flat
+         BackColor       =   &H00B4BFCC&
+         BorderStyle     =   0  'None
          BeginProperty Font 
             Name            =   "Tahoma"
             Size            =   12.75
@@ -146,6 +157,7 @@ Begin VB.Form PageSettings
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
+         ForeColor       =   &H00656D76&
          Height          =   375
          Index           =   1
          Left            =   1095
@@ -156,6 +168,8 @@ Begin VB.Form PageSettings
       End
       Begin VB.TextBox Text1 
          Appearance      =   0  'Flat
+         BackColor       =   &H00B4BFCC&
+         BorderStyle     =   0  'None
          BeginProperty Font 
             Name            =   "Tahoma"
             Size            =   12.75
@@ -165,12 +179,13 @@ Begin VB.Form PageSettings
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
+         ForeColor       =   &H00656D76&
          Height          =   375
          Index           =   0
          Left            =   1095
          TabIndex        =   15
          Text            =   "3.17"
-         Top             =   660
+         Top             =   645
          Width           =   2175
       End
       Begin VB.Label Label10 
@@ -186,6 +201,7 @@ Begin VB.Form PageSettings
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
+         ForeColor       =   &H00656D76&
          Height          =   360
          Left            =   3315
          TabIndex        =   22
@@ -205,6 +221,7 @@ Begin VB.Form PageSettings
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
+         ForeColor       =   &H00656D76&
          Height          =   360
          Left            =   3300
          TabIndex        =   21
@@ -224,6 +241,7 @@ Begin VB.Form PageSettings
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
+         ForeColor       =   &H00656D76&
          Height          =   360
          Left            =   3300
          TabIndex        =   20
@@ -243,6 +261,7 @@ Begin VB.Form PageSettings
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
+         ForeColor       =   &H00656D76&
          Height          =   360
          Left            =   3315
          TabIndex        =   19
@@ -262,6 +281,7 @@ Begin VB.Form PageSettings
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
+         ForeColor       =   &H00656D76&
          Height          =   360
          Left            =   525
          TabIndex        =   14
@@ -281,6 +301,7 @@ Begin VB.Form PageSettings
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
+         ForeColor       =   &H00656D76&
          Height          =   360
          Left            =   375
          TabIndex        =   13
@@ -300,6 +321,7 @@ Begin VB.Form PageSettings
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
+         ForeColor       =   &H00656D76&
          Height          =   360
          Left            =   540
          TabIndex        =   12
@@ -319,6 +341,7 @@ Begin VB.Form PageSettings
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
+         ForeColor       =   &H00656D76&
          Height          =   360
          Left            =   60
          TabIndex        =   11
@@ -327,13 +350,17 @@ Begin VB.Form PageSettings
       End
    End
    Begin VB.Frame Frame1 
+      BackColor       =   &H00A0ACBA&
       Caption         =   "PageType"
+      ForeColor       =   &H00656D76&
       Height          =   1455
       Left            =   135
       TabIndex        =   0
       Top             =   15
       Width           =   6735
       Begin VB.ComboBox Combo1 
+         BackColor       =   &H00B4BFCC&
+         ForeColor       =   &H00656D76&
          Height          =   315
          ItemData        =   "PageSettings.frx":0000
          Left            =   120
@@ -355,6 +382,7 @@ Begin VB.Form PageSettings
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
+         ForeColor       =   &H00656D76&
          Height          =   615
          Left            =   180
          TabIndex        =   2
@@ -365,9 +393,7 @@ Begin VB.Form PageSettings
    Begin VB.Label PreviewButton 
       Appearance      =   0  'Flat
       AutoSize        =   -1  'True
-      BackColor       =   &H80000005&
-      BackStyle       =   0  'Transparent
-      BorderStyle     =   1  'Fixed Single
+      BackColor       =   &H00B4BFCC&
       Caption         =   " Preview(&P) "
       BeginProperty Font 
          Name            =   "Tahoma"
@@ -378,19 +404,17 @@ Begin VB.Form PageSettings
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      ForeColor       =   &H80000008&
-      Height          =   285
+      ForeColor       =   &H00656D76&
+      Height          =   255
       Left            =   4905
       TabIndex        =   10
       Top             =   4905
-      Width           =   1125
+      Width           =   1095
    End
    Begin VB.Label Label2 
       Appearance      =   0  'Flat
       AutoSize        =   -1  'True
-      BackColor       =   &H80000005&
-      BackStyle       =   0  'Transparent
-      BorderStyle     =   1  'Fixed Single
+      BackColor       =   &H00B4BFCC&
       Caption         =   " OK(&S) "
       BeginProperty Font 
          Name            =   "Tahoma"
@@ -401,12 +425,12 @@ Begin VB.Form PageSettings
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      ForeColor       =   &H80000008&
-      Height          =   285
+      ForeColor       =   &H00656D76&
+      Height          =   255
       Left            =   6135
       TabIndex        =   4
       Top             =   4905
-      Width           =   690
+      Width           =   660
    End
 End
 Attribute VB_Name = "PageSettings"
@@ -452,17 +476,6 @@ Private Sub Label2_Click()
     LeftMargin = Val(Text1(2).Text) * TwipsPerCM
     RightMargin = PageWidth - Val(Text1(3).Text) * TwipsPerCM
     Unload Me
-End Sub
-
-Private Sub Label2_MouseDown(Button As Integer, Shift As Integer, X As Single, Y As Single)
-    Label2.BackStyle = 1
-    Label2.BackColor = vbBlack
-    Label2.ForeColor = vbWhite
-End Sub
-
-Private Sub Label2_MouseUp(Button As Integer, Shift As Integer, X As Single, Y As Single)
-    Label2.BackStyle = 0
-    Label2.ForeColor = vbBlack
 End Sub
 
 Private Sub Message_MouseMove(Button As Integer, Shift As Integer, X As Single, Y As Single)
@@ -536,16 +549,6 @@ Private Sub PreviewButton_Click()
     RightMargin = PageWidth - Val(Text1(3).Text) * TwipsPerCM
 End Sub
 
-Private Sub PreviewButton_MouseDown(Button As Integer, Shift As Integer, X As Single, Y As Single)
-    PreviewButton.BackStyle = 1
-    PreviewButton.BackColor = vbBlack
-    PreviewButton.ForeColor = vbWhite
-End Sub
-
-Private Sub PreviewButton_MouseUp(Button As Integer, Shift As Integer, X As Single, Y As Single)
-    PreviewButton.BackStyle = 0
-    PreviewButton.ForeColor = vbBlack
-End Sub
 
 
 

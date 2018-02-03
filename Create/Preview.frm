@@ -1,10 +1,11 @@
 VERSION 5.00
 Begin VB.Form Preview 
+   BackColor       =   &H00A0ACBA&
    Caption         =   "Preview Window"
-   ClientHeight    =   3135
+   ClientHeight    =   7065
    ClientLeft      =   60
    ClientTop       =   405
-   ClientWidth     =   7290
+   ClientWidth     =   13605
    BeginProperty Font 
       Name            =   "Tahoma"
       Size            =   8.25
@@ -16,24 +17,26 @@ Begin VB.Form Preview
    EndProperty
    LinkTopic       =   "Form1"
    MinButton       =   0   'False
-   ScaleHeight     =   3135
-   ScaleWidth      =   7290
+   ScaleHeight     =   7065
+   ScaleWidth      =   13605
    StartUpPosition =   2  'ÆÁÄ»ÖÐÐÄ
    WindowState     =   2  'Maximized
    Begin VB.PictureBox Exports 
       AutoRedraw      =   -1  'True
       AutoSize        =   -1  'True
+      BackColor       =   &H00A0ACBA&
       BorderStyle     =   0  'None
       Height          =   2325
-      Left            =   360
+      Left            =   720
       ScaleHeight     =   2325
       ScaleWidth      =   6420
       TabIndex        =   10
       TabStop         =   0   'False
-      Top             =   630
+      Top             =   3630
       Visible         =   0   'False
       Width           =   6420
       Begin VB.Frame Frame1 
+         BackColor       =   &H00A0ACBA&
          Caption         =   "Advanced View"
          Height          =   825
          Left            =   675
@@ -83,14 +86,15 @@ Begin VB.Form Preview
    Begin VB.PictureBox Export 
       AutoRedraw      =   -1  'True
       AutoSize        =   -1  'True
+      BackColor       =   &H00A0ACBA&
       BorderStyle     =   0  'None
       Height          =   2325
-      Left            =   675
+      Left            =   -60
       ScaleHeight     =   2325
       ScaleWidth      =   6420
       TabIndex        =   9
       TabStop         =   0   'False
-      Top             =   855
+      Top             =   1800
       Visible         =   0   'False
       Width           =   6420
    End
@@ -169,6 +173,7 @@ Begin VB.Form Preview
       Top             =   -15
    End
    Begin VB.PictureBox Picture1 
+      BackColor       =   &H00A0ACBA&
       BorderStyle     =   0  'None
       Height          =   2820
       Left            =   210

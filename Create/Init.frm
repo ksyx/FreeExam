@@ -1,8 +1,9 @@
 VERSION 5.00
 Begin VB.Form Integrated 
+   BackColor       =   &H00A0ACBA&
    BorderStyle     =   4  'Fixed ToolWindow
    Caption         =   "Initiating"
-   ClientHeight    =   1815
+   ClientHeight    =   1770
    ClientLeft      =   45
    ClientTop       =   390
    ClientWidth     =   5655
@@ -19,19 +20,52 @@ Begin VB.Form Integrated
    LinkTopic       =   "Form2"
    MaxButton       =   0   'False
    MinButton       =   0   'False
-   ScaleHeight     =   1815
+   ScaleHeight     =   1770
    ScaleWidth      =   5655
    ShowInTaskbar   =   0   'False
    StartUpPosition =   2  'ÆÁÄ»ÖÐÐÄ
-   Begin VB.Frame Frame3 
+   Begin VB.Frame Frame1 
+      BackColor       =   &H00A0ACBA&
+      BorderStyle     =   0  'None
+      Caption         =   "Frame1"
+      ForeColor       =   &H00656D76&
+      Height          =   525
+      Left            =   0
+      TabIndex        =   0
+      Top             =   15
+      Width           =   5565
+      Begin VB.Label Message 
+         AutoSize        =   -1  'True
+         BackStyle       =   0  'Transparent
+         Caption         =   "Loading Fonts...(233/233)"
+         BeginProperty Font 
+            Name            =   "Tahoma"
+            Size            =   21.75
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H00656D76&
+         Height          =   525
+         Left            =   0
+         TabIndex        =   1
+         Top             =   0
+         Width           =   5025
+      End
+   End
+   Begin VB.Frame Frame2 
+      BackColor       =   &H00A0ACBA&
       BorderStyle     =   0  'None
       Caption         =   "Frame2"
       Height          =   1800
-      Left            =   -15
-      TabIndex        =   8
-      Top             =   0
+      Left            =   15
+      TabIndex        =   2
+      Top             =   -45
       Width           =   5655
-      Begin VB.TextBox Text2 
+      Begin VB.TextBox Text1 
+         BackColor       =   &H00B4BFCC&
          BorderStyle     =   0  'None
          BeginProperty Font 
             Name            =   "Tahoma"
@@ -42,6 +76,115 @@ Begin VB.Form Integrated
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
+         ForeColor       =   &H00656D76&
+         Height          =   540
+         Left            =   1500
+         MultiLine       =   -1  'True
+         TabIndex        =   3
+         Top             =   180
+         Width           =   3570
+      End
+      Begin VB.Label Label4 
+         AutoSize        =   -1  'True
+         BackStyle       =   0  'Transparent
+         Caption         =   "Press Enter to insert, Esc to exit"
+         BeginProperty Font 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H00656D76&
+         Height          =   195
+         Left            =   2940
+         TabIndex        =   7
+         Top             =   1530
+         Width           =   2685
+      End
+      Begin VB.Label Label3 
+         BackStyle       =   0  'Transparent
+         BeginProperty Font 
+            Name            =   "Tahoma"
+            Size            =   36
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H00656D76&
+         Height          =   870
+         Left            =   1500
+         TabIndex        =   6
+         Top             =   810
+         Width           =   3570
+      End
+      Begin VB.Label Label2 
+         AutoSize        =   -1  'True
+         BackStyle       =   0  'Transparent
+         Caption         =   "Result"
+         BeginProperty Font 
+            Name            =   "Tahoma"
+            Size            =   18
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H00656D76&
+         Height          =   435
+         Left            =   390
+         TabIndex        =   5
+         Top             =   885
+         Width           =   975
+      End
+      Begin VB.Label Label1 
+         AutoSize        =   -1  'True
+         BackStyle       =   0  'Transparent
+         Caption         =   "Name"
+         BeginProperty Font 
+            Name            =   "Tahoma"
+            Size            =   18
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H00656D76&
+         Height          =   435
+         Left            =   435
+         TabIndex        =   4
+         Top             =   240
+         Width           =   930
+      End
+   End
+   Begin VB.Frame Frame3 
+      BackColor       =   &H00A0ACBA&
+      BorderStyle     =   0  'None
+      Caption         =   "Frame2"
+      Height          =   1800
+      Left            =   0
+      TabIndex        =   8
+      Top             =   0
+      Width           =   5655
+      Begin VB.TextBox Text2 
+         BackColor       =   &H00B4BFCC&
+         BorderStyle     =   0  'None
+         BeginProperty Font 
+            Name            =   "Tahoma"
+            Size            =   20.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H00656D76&
          Height          =   540
          Left            =   1500
          MultiLine       =   -1  'True
@@ -63,6 +206,7 @@ Begin VB.Form Integrated
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
+         ForeColor       =   &H00656D76&
          Height          =   435
          Left            =   435
          TabIndex        =   13
@@ -82,6 +226,7 @@ Begin VB.Form Integrated
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
+         ForeColor       =   &H00656D76&
          Height          =   435
          Left            =   390
          TabIndex        =   12
@@ -100,6 +245,7 @@ Begin VB.Form Integrated
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
+         ForeColor       =   &H00656D76&
          Height          =   870
          Left            =   1530
          TabIndex        =   11
@@ -119,140 +265,12 @@ Begin VB.Form Integrated
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
+         ForeColor       =   &H00656D76&
          Height          =   195
-         Left            =   2940
+         Left            =   2925
          TabIndex        =   10
-         Top             =   1530
+         Top             =   1545
          Width           =   2685
-      End
-   End
-   Begin VB.Frame Frame2 
-      BorderStyle     =   0  'None
-      Caption         =   "Frame2"
-      Height          =   1800
-      Left            =   15
-      TabIndex        =   2
-      Top             =   30
-      Width           =   5655
-      Begin VB.TextBox Text1 
-         BorderStyle     =   0  'None
-         BeginProperty Font 
-            Name            =   "Tahoma"
-            Size            =   20.25
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   540
-         Left            =   1500
-         MultiLine       =   -1  'True
-         TabIndex        =   3
-         Top             =   180
-         Width           =   3570
-      End
-      Begin VB.Label Label4 
-         AutoSize        =   -1  'True
-         BackStyle       =   0  'Transparent
-         Caption         =   "Press Enter to insert, Esc to exit"
-         BeginProperty Font 
-            Name            =   "Tahoma"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   195
-         Left            =   2940
-         TabIndex        =   7
-         Top             =   1530
-         Width           =   2685
-      End
-      Begin VB.Label Label3 
-         BackStyle       =   0  'Transparent
-         BeginProperty Font 
-            Name            =   "Tahoma"
-            Size            =   36
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   870
-         Left            =   1530
-         TabIndex        =   6
-         Top             =   720
-         Width           =   3570
-      End
-      Begin VB.Label Label2 
-         AutoSize        =   -1  'True
-         BackStyle       =   0  'Transparent
-         Caption         =   "Result"
-         BeginProperty Font 
-            Name            =   "Tahoma"
-            Size            =   18
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   435
-         Left            =   390
-         TabIndex        =   5
-         Top             =   885
-         Width           =   975
-      End
-      Begin VB.Label Label1 
-         AutoSize        =   -1  'True
-         BackStyle       =   0  'Transparent
-         Caption         =   "Name"
-         BeginProperty Font 
-            Name            =   "Tahoma"
-            Size            =   18
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   435
-         Left            =   435
-         TabIndex        =   4
-         Top             =   240
-         Width           =   930
-      End
-   End
-   Begin VB.Frame Frame1 
-      BorderStyle     =   0  'None
-      Caption         =   "Frame1"
-      Height          =   525
-      Left            =   60
-      TabIndex        =   0
-      Top             =   0
-      Width           =   5565
-      Begin VB.Label Message 
-         AutoSize        =   -1  'True
-         BackStyle       =   0  'Transparent
-         Caption         =   "Loading Fonts...(233/233)"
-         BeginProperty Font 
-            Name            =   "Tahoma"
-            Size            =   21.75
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   525
-         Left            =   0
-         TabIndex        =   1
-         Top             =   0
-         Width           =   5025
       End
    End
 End

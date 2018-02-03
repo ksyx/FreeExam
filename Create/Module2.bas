@@ -6,6 +6,10 @@ Attribute VB_Name = "Notes"
 '
 '
 '
+'COLOR ARRANGEMENT
+'TextBox &HB4BFCC
+'ForeColors &H656D76
+'BackGround &HA0ACBA
 
 
 

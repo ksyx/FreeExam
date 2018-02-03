@@ -1,5 +1,6 @@
 VERSION 5.00
 Begin VB.Form MainFrm 
+   BackColor       =   &H00A0ACBA&
    BorderStyle     =   4  'Fixed ToolWindow
    Caption         =   "ExamPaper Editor"
    ClientHeight    =   8700
@@ -72,8 +73,8 @@ Begin VB.Form MainFrm
    End
    Begin VB.Timer Timer1 
       Interval        =   100
-      Left            =   510
-      Top             =   3570
+      Left            =   2235
+      Top             =   3135
    End
    Begin VB.ListBox MsgTypeList 
       Height          =   450
@@ -134,112 +135,8 @@ Begin VB.Form MainFrm
          Width           =   45
       End
    End
-   Begin VB.PictureBox General 
-      BackColor       =   &H00E0E0E0&
-      BorderStyle     =   0  'None
-      Height          =   1380
-      Left            =   75
-      ScaleHeight     =   1380
-      ScaleWidth      =   7770
-      TabIndex        =   2
-      TabStop         =   0   'False
-      Top             =   525
-      Width           =   7770
-      Begin VB.Label Label38 
-         Appearance      =   0  'Flat
-         AutoSize        =   -1  'True
-         BackColor       =   &H80000005&
-         BackStyle       =   0  'Transparent
-         BorderStyle     =   1  'Fixed Single
-         Caption         =   " Blank Area(&B) "
-         BeginProperty Font 
-            Name            =   "Tahoma"
-            Size            =   10.5
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         ForeColor       =   &H80000008&
-         Height          =   285
-         Left            =   3390
-         TabIndex        =   97
-         Top             =   60
-         Width           =   1365
-      End
-      Begin VB.Label Label35 
-         Appearance      =   0  'Flat
-         AutoSize        =   -1  'True
-         BackColor       =   &H80000005&
-         BackStyle       =   0  'Transparent
-         BorderStyle     =   1  'Fixed Single
-         Caption         =   " Picture(&P) "
-         BeginProperty Font 
-            Name            =   "Tahoma"
-            Size            =   10.5
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         ForeColor       =   &H80000008&
-         Height          =   285
-         Left            =   2310
-         TabIndex        =   95
-         Top             =   45
-         Width           =   1050
-      End
-      Begin VB.Label Label22 
-         Appearance      =   0  'Flat
-         AutoSize        =   -1  'True
-         BackColor       =   &H80000005&
-         BackStyle       =   0  'Transparent
-         BorderStyle     =   1  'Fixed Single
-         Caption         =   " Answerline(&T) "
-         BeginProperty Font 
-            Name            =   "Tahoma"
-            Size            =   10.5
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         ForeColor       =   &H80000008&
-         Height          =   285
-         Left            =   930
-         TabIndex        =   46
-         Top             =   45
-         Width           =   1365
-      End
-      Begin VB.Label PreviewButton 
-         Appearance      =   0  'Flat
-         AutoSize        =   -1  'True
-         BackColor       =   &H80000005&
-         BackStyle       =   0  'Transparent
-         BorderStyle     =   1  'Fixed Single
-         Caption         =   " Text(&T) "
-         BeginProperty Font 
-            Name            =   "Tahoma"
-            Size            =   10.5
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         ForeColor       =   &H80000008&
-         Height          =   285
-         Left            =   60
-         TabIndex        =   45
-         Top             =   45
-         Width           =   840
-      End
-   End
    Begin VB.PictureBox Manage 
-      BackColor       =   &H00E0E0E0&
+      BackColor       =   &H00A0ACBA&
       BorderStyle     =   0  'None
       Height          =   1380
       Left            =   75
@@ -253,9 +150,7 @@ Begin VB.Form MainFrm
       Begin VB.Label Label30 
          Appearance      =   0  'Flat
          AutoSize        =   -1  'True
-         BackColor       =   &H80000005&
-         BackStyle       =   0  'Transparent
-         BorderStyle     =   1  'Fixed Single
+         BackColor       =   &H00B4BFCC&
          Caption         =   " Logs "
          BeginProperty Font 
             Name            =   "Tahoma"
@@ -266,19 +161,17 @@ Begin VB.Form MainFrm
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         ForeColor       =   &H80000008&
-         Height          =   285
+         ForeColor       =   &H00656D76&
+         Height          =   255
          Left            =   1590
          TabIndex        =   62
          Top             =   120
-         Width           =   585
+         Width           =   555
       End
       Begin VB.Label Label15 
          Appearance      =   0  'Flat
          AutoSize        =   -1  'True
-         BackColor       =   &H80000005&
-         BackStyle       =   0  'Transparent
-         BorderStyle     =   1  'Fixed Single
+         BackColor       =   &H00B4BFCC&
          Caption         =   " MergePreview "
          BeginProperty Font 
             Name            =   "Tahoma"
@@ -289,272 +182,16 @@ Begin VB.Form MainFrm
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         ForeColor       =   &H80000008&
-         Height          =   285
+         ForeColor       =   &H00656D76&
+         Height          =   255
          Left            =   105
          TabIndex        =   10
          Top             =   120
-         Width           =   1410
-      End
-   End
-   Begin VB.Frame Frame8 
-      BorderStyle     =   0  'None
-      Caption         =   "Frame8"
-      Height          =   6255
-      Left            =   45
-      TabIndex        =   47
-      Top             =   1875
-      Width           =   7800
-      Begin VB.ListBox MsgContentList 
-         Height          =   450
-         ItemData        =   "Main.frx":0008
-         Left            =   2775
-         List            =   "Main.frx":000A
-         TabIndex        =   49
-         Top             =   1830
-         Visible         =   0   'False
-         Width           =   1125
-      End
-      Begin VB.ListBox List1 
-         Height          =   3180
-         Left            =   525
-         TabIndex        =   48
-         Top             =   1020
-         Visible         =   0   'False
-         Width           =   2100
-      End
-      Begin VB.Label Label14 
-         Appearance      =   0  'Flat
-         AutoSize        =   -1  'True
-         BackColor       =   &H80000005&
-         BackStyle       =   0  'Transparent
-         BorderStyle     =   1  'Fixed Single
-         Caption         =   " Remove(&D) "
-         BeginProperty Font 
-            Name            =   "Tahoma"
-            Size            =   10.5
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         ForeColor       =   &H80000008&
-         Height          =   285
-         Left            =   2700
-         TabIndex        =   51
-         Top             =   1410
-         Visible         =   0   'False
-         Width           =   1215
-      End
-      Begin VB.Label Label13 
-         Appearance      =   0  'Flat
-         AutoSize        =   -1  'True
-         BackColor       =   &H80000005&
-         BackStyle       =   0  'Transparent
-         BorderStyle     =   1  'Fixed Single
-         Caption         =   " Preview(&T) "
-         BeginProperty Font 
-            Name            =   "Tahoma"
-            Size            =   10.5
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         ForeColor       =   &H80000008&
-         Height          =   285
-         Left            =   2685
-         TabIndex        =   50
-         Top             =   1035
-         Visible         =   0   'False
-         Width           =   1155
-      End
-   End
-   Begin VB.Frame Blk 
-      BorderStyle     =   0  'None
-      Caption         =   "Frame11"
-      Height          =   6465
-      Left            =   -30
-      TabIndex        =   106
-      Top             =   1920
-      Width           =   7905
-      Begin VB.TextBox Text7 
-         Enabled         =   0   'False
-         Height          =   285
-         Left            =   2685
-         TabIndex        =   111
-         Text            =   "1"
-         Top             =   195
-         Visible         =   0   'False
-         Width           =   1440
-      End
-      Begin VB.CheckBox Check18 
-         Caption         =   "cm"
-         Height          =   195
-         Left            =   1980
-         TabIndex        =   109
-         Top             =   255
-         Width           =   510
-      End
-      Begin VB.TextBox Text6 
-         Height          =   285
-         Left            =   495
-         TabIndex        =   108
-         Top             =   195
-         Width           =   1440
-      End
-      Begin VB.Label Label42 
-         Appearance      =   0  'Flat
-         AutoSize        =   -1  'True
-         BackColor       =   &H80000005&
-         BackStyle       =   0  'Transparent
-         BorderStyle     =   1  'Fixed Single
-         Caption         =   " Save(&S) "
-         BeginProperty Font 
-            Name            =   "Tahoma"
-            Size            =   10.5
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         ForeColor       =   &H80000008&
-         Height          =   285
-         Left            =   150
-         TabIndex        =   113
-         Top             =   570
-         Width           =   870
-      End
-      Begin VB.Label Label41 
-         Caption         =   "Lines"
-         Height          =   180
-         Left            =   4200
-         TabIndex        =   112
-         Top             =   270
-         Visible         =   0   'False
-         Width           =   360
-      End
-      Begin VB.Label Label40 
-         Caption         =   "X"
-         Height          =   180
-         Left            =   2520
-         TabIndex        =   110
-         Top             =   255
-         Visible         =   0   'False
-         Width           =   360
-      End
-      Begin VB.Label Label39 
-         Caption         =   "Size"
-         Height          =   180
-         Left            =   195
-         TabIndex        =   107
-         Top             =   225
-         Width           =   360
-      End
-   End
-   Begin VB.Frame InsPic 
-      BorderStyle     =   0  'None
-      Caption         =   "Insert Picture"
-      Height          =   6240
-      Left            =   -15
-      TabIndex        =   98
-      Top             =   1995
-      Width           =   7800
-      Begin VB.Frame Frame20 
-         Caption         =   "Select a image"
-         Height          =   2325
-         Left            =   15
-         TabIndex        =   100
-         Top             =   -15
-         Width           =   7755
-         Begin VB.DriveListBox Drive2 
-            Appearance      =   0  'Flat
-            Height          =   315
-            Left            =   120
-            TabIndex        =   103
-            Top             =   240
-            Width           =   3945
-         End
-         Begin VB.DirListBox Dir2 
-            Appearance      =   0  'Flat
-            Height          =   1665
-            Left            =   105
-            TabIndex        =   102
-            Top             =   570
-            Width           =   3960
-         End
-         Begin VB.FileListBox File2 
-            Appearance      =   0  'Flat
-            Height          =   1980
-            Left            =   4080
-            Pattern         =   "*.JPG;*.PNG"
-            TabIndex        =   101
-            Top             =   255
-            Width           =   3630
-         End
-      End
-      Begin VB.ComboBox Combo2 
-         Appearance      =   0  'Flat
-         Height          =   315
-         ItemData        =   "Main.frx":000C
-         Left            =   15
-         List            =   "Main.frx":0019
-         Style           =   2  'Dropdown List
-         TabIndex        =   99
-         Top             =   2340
-         Width           =   7740
-      End
-      Begin VB.Label Label36 
-         Appearance      =   0  'Flat
-         AutoSize        =   -1  'True
-         BackColor       =   &H80000005&
-         BackStyle       =   0  'Transparent
-         BorderStyle     =   1  'Fixed Single
-         Caption         =   " Preview "
-         BeginProperty Font 
-            Name            =   "Tahoma"
-            Size            =   10.5
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         ForeColor       =   &H80000008&
-         Height          =   285
-         Left            =   6120
-         TabIndex        =   105
-         Top             =   2760
-         Width           =   855
-      End
-      Begin VB.Label Label37 
-         Appearance      =   0  'Flat
-         AutoSize        =   -1  'True
-         BackColor       =   &H80000005&
-         BackStyle       =   0  'Transparent
-         BorderStyle     =   1  'Fixed Single
-         Caption         =   " Save "
-         BeginProperty Font 
-            Name            =   "Tahoma"
-            Size            =   10.5
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         ForeColor       =   &H80000008&
-         Height          =   285
-         Left            =   7005
-         TabIndex        =   104
-         Top             =   2760
-         Width           =   600
+         Width           =   1380
       End
    End
    Begin VB.Frame InsText 
+      BackColor       =   &H00A0ACBA&
       BorderStyle     =   0  'None
       Caption         =   "Frame3"
       Height          =   6315
@@ -563,26 +200,29 @@ Begin VB.Form MainFrm
       Top             =   1950
       Width           =   7785
       Begin VB.Frame Frame10 
+         BackColor       =   &H00A0ACBA&
          Caption         =   "Logger"
+         ForeColor       =   &H00656D76&
          Height          =   825
-         Left            =   3630
+         Left            =   3645
          TabIndex        =   59
          Top             =   4545
          Width           =   3675
          Begin VB.CheckBox Check17 
+            Appearance      =   0  'Flat
+            BackColor       =   &H00B4BFCC&
             Caption         =   "Auto"
-            Height          =   210
-            Left            =   1920
+            ForeColor       =   &H00656D76&
+            Height          =   255
+            Left            =   1875
             TabIndex        =   63
-            Top             =   270
+            Top             =   240
             Width           =   795
          End
          Begin VB.Label Label29 
             Appearance      =   0  'Flat
             AutoSize        =   -1  'True
-            BackColor       =   &H80000005&
-            BackStyle       =   0  'Transparent
-            BorderStyle     =   1  'Fixed Single
+            BackColor       =   &H00B4BFCC&
             Caption         =   " ThisPage "
             BeginProperty Font 
                Name            =   "Tahoma"
@@ -593,19 +233,17 @@ Begin VB.Form MainFrm
                Italic          =   0   'False
                Strikethrough   =   0   'False
             EndProperty
-            ForeColor       =   &H80000008&
-            Height          =   285
+            ForeColor       =   &H00656D76&
+            Height          =   255
             Left            =   975
             TabIndex        =   61
             Top             =   225
-            Width           =   1755
+            Width           =   930
          End
          Begin VB.Label Label28 
             Appearance      =   0  'Flat
             AutoSize        =   -1  'True
-            BackColor       =   &H80000005&
-            BackStyle       =   0  'Transparent
-            BorderStyle     =   1  'Fixed Single
+            BackColor       =   &H00B4BFCC&
             Caption         =   " Format "
             BeginProperty Font 
                Name            =   "Tahoma"
@@ -616,30 +254,38 @@ Begin VB.Form MainFrm
                Italic          =   0   'False
                Strikethrough   =   0   'False
             EndProperty
-            ForeColor       =   &H80000008&
-            Height          =   285
+            ForeColor       =   &H00656D76&
+            Height          =   255
             Left            =   105
             TabIndex        =   60
             Top             =   225
-            Width           =   810
+            Width           =   780
          End
       End
       Begin VB.CheckBox Check16 
+         Appearance      =   0  'Flat
+         BackColor       =   &H00A0ACBA&
          Caption         =   "English Mode"
+         ForeColor       =   &H00656D76&
          Height          =   285
-         Left            =   3600
+         Left            =   3705
          TabIndex        =   58
-         Top             =   5415
+         Top             =   5475
          Width           =   1320
       End
       Begin VB.Frame Frame2 
+         BackColor       =   &H00A0ACBA&
          Caption         =   "Options"
+         ForeColor       =   &H00656D76&
          Height          =   1560
          Left            =   3045
          TabIndex        =   12
          Top             =   0
          Width           =   4620
          Begin VB.TextBox Text2 
+            BackColor       =   &H00B4BFCC&
+            BorderStyle     =   0  'None
+            ForeColor       =   &H00656D76&
             Height          =   1050
             Left            =   555
             MultiLine       =   -1  'True
@@ -651,6 +297,7 @@ Begin VB.Form MainFrm
             AutoSize        =   -1  'True
             BackStyle       =   0  'Transparent
             Caption         =   "Text"
+            ForeColor       =   &H00656D76&
             Height          =   195
             Left            =   150
             TabIndex        =   14
@@ -659,6 +306,7 @@ Begin VB.Form MainFrm
          End
       End
       Begin VB.Frame Frame4 
+         BackColor       =   &H00A0ACBA&
          Caption         =   "Text with Image"
          Height          =   2850
          Left            =   15
@@ -666,17 +314,17 @@ Begin VB.Form MainFrm
          Top             =   1575
          Width           =   7695
          Begin VB.Frame Frame5 
-            Height          =   2745
-            Left            =   15
+            BackColor       =   &H00A0ACBA&
+            ForeColor       =   &H00656D76&
+            Height          =   2790
+            Left            =   30
             TabIndex        =   32
-            Top             =   60
-            Width           =   7650
+            Top             =   30
+            Width           =   7635
             Begin VB.Label Label17 
                Appearance      =   0  'Flat
                AutoSize        =   -1  'True
-               BackColor       =   &H80000005&
-               BackStyle       =   0  'Transparent
-               BorderStyle     =   1  'Fixed Single
+               BackColor       =   &H00B4BFCC&
                Caption         =   " With Image(&I) "
                BeginProperty Font 
                   Name            =   "Tahoma"
@@ -687,26 +335,30 @@ Begin VB.Form MainFrm
                   Italic          =   0   'False
                   Strikethrough   =   0   'False
                EndProperty
-               ForeColor       =   &H80000008&
-               Height          =   555
+               ForeColor       =   &H00656D76&
+               Height          =   525
                Left            =   2220
                TabIndex        =   33
                Top             =   1170
-               Width           =   3030
+               Width           =   3000
             End
          End
          Begin VB.Frame Frame7 
+            BackColor       =   &H00A0ACBA&
             Caption         =   "Options"
+            ForeColor       =   &H00656D76&
             Height          =   2490
             Left            =   5490
             TabIndex        =   37
             Top             =   210
             Width           =   2070
             Begin VB.ComboBox Combo1 
+               BackColor       =   &H00B4BFCC&
+               ForeColor       =   &H00656D76&
                Height          =   315
-               ItemData        =   "Main.frx":004E
+               ItemData        =   "Main.frx":0008
                Left            =   75
-               List            =   "Main.frx":0058
+               List            =   "Main.frx":0012
                Style           =   2  'Dropdown List
                TabIndex        =   38
                Top             =   540
@@ -715,8 +367,7 @@ Begin VB.Form MainFrm
             Begin VB.Label Label19 
                Appearance      =   0  'Flat
                AutoSize        =   -1  'True
-               BackColor       =   &H80000005&
-               BackStyle       =   0  'Transparent
+               BackColor       =   &H00B4BFCC&
                BorderStyle     =   1  'Fixed Single
                Caption         =   " Without Image(&X) "
                BeginProperty Font 
@@ -728,7 +379,7 @@ Begin VB.Form MainFrm
                   Italic          =   0   'False
                   Strikethrough   =   0   'False
                EndProperty
-               ForeColor       =   &H80000008&
+               ForeColor       =   &H00656D76&
                Height          =   285
                Left            =   105
                TabIndex        =   40
@@ -739,6 +390,7 @@ Begin VB.Form MainFrm
                AutoSize        =   -1  'True
                BackStyle       =   0  'Transparent
                Caption         =   "Position"
+               ForeColor       =   &H00656D76&
                Height          =   195
                Left            =   120
                TabIndex        =   39
@@ -747,7 +399,9 @@ Begin VB.Form MainFrm
             End
          End
          Begin VB.Frame Frame6 
+            BackColor       =   &H00A0ACBA&
             Caption         =   "Select a image"
+            ForeColor       =   &H00656D76&
             Height          =   2520
             Left            =   90
             TabIndex        =   34
@@ -755,6 +409,8 @@ Begin VB.Form MainFrm
             Width           =   5310
             Begin VB.FileListBox File1 
                Appearance      =   0  'Flat
+               BackColor       =   &H00B4BFCC&
+               ForeColor       =   &H00656D76&
                Height          =   1980
                Left            =   2655
                Pattern         =   "*.JPG;*.PNG"
@@ -764,6 +420,8 @@ Begin VB.Form MainFrm
             End
             Begin VB.DirListBox Dir1 
                Appearance      =   0  'Flat
+               BackColor       =   &H00B4BFCC&
+               ForeColor       =   &H00656D76&
                Height          =   1665
                Left            =   105
                TabIndex        =   36
@@ -772,6 +430,8 @@ Begin VB.Form MainFrm
             End
             Begin VB.DriveListBox Drive1 
                Appearance      =   0  'Flat
+               BackColor       =   &H00B4BFCC&
+               ForeColor       =   &H00656D76&
                Height          =   315
                Left            =   120
                TabIndex        =   35
@@ -781,7 +441,9 @@ Begin VB.Form MainFrm
          End
       End
       Begin VB.Frame Frame3 
+         BackColor       =   &H00A0ACBA&
          Caption         =   "Parts"
+         ForeColor       =   &H00656D76&
          Height          =   1785
          Left            =   30
          TabIndex        =   27
@@ -789,7 +451,10 @@ Begin VB.Form MainFrm
          Visible         =   0   'False
          Width           =   3405
          Begin VB.ListBox List2 
-            Height          =   840
+            Appearance      =   0  'Flat
+            BackColor       =   &H00B4BFCC&
+            ForeColor       =   &H00656D76&
+            Height          =   810
             Left            =   105
             TabIndex        =   28
             Top             =   180
@@ -807,6 +472,7 @@ Begin VB.Form MainFrm
                Italic          =   0   'False
                Strikethrough   =   0   'False
             EndProperty
+            ForeColor       =   &H00656D76&
             Height          =   645
             Left            =   90
             TabIndex        =   29
@@ -815,23 +481,29 @@ Begin VB.Form MainFrm
          End
       End
       Begin VB.Frame Frame1 
+         BackColor       =   &H00A0ACBA&
          Caption         =   "Format"
+         ForeColor       =   &H00656D76&
          Height          =   1545
-         Left            =   0
+         Left            =   30
          TabIndex        =   17
          Top             =   0
          Width           =   2895
          Begin VB.ComboBox AlignCombo 
+            BackColor       =   &H00B4BFCC&
+            ForeColor       =   &H00656D76&
             Height          =   315
-            ItemData        =   "Main.frx":0086
+            ItemData        =   "Main.frx":0040
             Left            =   810
-            List            =   "Main.frx":0093
+            List            =   "Main.frx":004D
             Style           =   2  'Dropdown List
             TabIndex        =   22
             Top             =   1080
             Width           =   1905
          End
          Begin VB.CheckBox Check2 
+            Appearance      =   0  'Flat
+            BackColor       =   &H00B4BFCC&
             Caption         =   "B"
             BeginProperty Font 
                Name            =   "Tahoma"
@@ -842,6 +514,7 @@ Begin VB.Form MainFrm
                Italic          =   0   'False
                Strikethrough   =   0   'False
             EndProperty
+            ForeColor       =   &H00656D76&
             Height          =   225
             Left            =   825
             Style           =   1  'Graphical
@@ -850,6 +523,7 @@ Begin VB.Form MainFrm
             Width           =   270
          End
          Begin VB.CheckBox Check1 
+            BackColor       =   &H00B4BFCC&
             Caption         =   "I"
             BeginProperty Font 
                Name            =   "Tahoma"
@@ -860,18 +534,21 @@ Begin VB.Form MainFrm
                Italic          =   -1  'True
                Strikethrough   =   0   'False
             EndProperty
+            ForeColor       =   &H00656D76&
             Height          =   225
-            Left            =   1140
+            Left            =   1110
             Style           =   1  'Graphical
             TabIndex        =   20
-            Top             =   840
+            Top             =   855
             Width           =   270
          End
          Begin VB.ComboBox FontCombo 
+            BackColor       =   &H00B4BFCC&
+            ForeColor       =   &H00656D76&
             Height          =   315
-            ItemData        =   "Main.frx":00C8
+            ItemData        =   "Main.frx":0082
             Left            =   825
-            List            =   "Main.frx":00D5
+            List            =   "Main.frx":008F
             Sorted          =   -1  'True
             Style           =   2  'Dropdown List
             TabIndex        =   19
@@ -879,6 +556,8 @@ Begin VB.Form MainFrm
             Width           =   1905
          End
          Begin VB.TextBox Text1 
+            BackColor       =   &H00B4BFCC&
+            ForeColor       =   &H00656D76&
             Height          =   285
             Left            =   825
             MaxLength       =   3
@@ -890,6 +569,7 @@ Begin VB.Form MainFrm
             AutoSize        =   -1  'True
             BackStyle       =   0  'Transparent
             Caption         =   "Alignment"
+            ForeColor       =   &H00656D76&
             Height          =   195
             Left            =   90
             TabIndex        =   26
@@ -901,6 +581,7 @@ Begin VB.Form MainFrm
             AutoSize        =   -1  'True
             BackStyle       =   0  'Transparent
             Caption         =   "Shape"
+            ForeColor       =   &H00656D76&
             Height          =   195
             Left            =   345
             TabIndex        =   25
@@ -912,6 +593,7 @@ Begin VB.Form MainFrm
             AutoSize        =   -1  'True
             BackStyle       =   0  'Transparent
             Caption         =   "Font"
+            ForeColor       =   &H00656D76&
             Height          =   195
             Left            =   435
             TabIndex        =   24
@@ -923,6 +605,7 @@ Begin VB.Form MainFrm
             AutoSize        =   -1  'True
             BackStyle       =   0  'Transparent
             Caption         =   "Size"
+            ForeColor       =   &H00656D76&
             Height          =   195
             Left            =   465
             TabIndex        =   23
@@ -944,9 +627,7 @@ Begin VB.Form MainFrm
       Begin VB.Label Label10 
          Appearance      =   0  'Flat
          AutoSize        =   -1  'True
-         BackColor       =   &H80000005&
-         BackStyle       =   0  'Transparent
-         BorderStyle     =   1  'Fixed Single
+         BackColor       =   &H00B4BFCC&
          Caption         =   " Preview(&T) "
          BeginProperty Font 
             Name            =   "Tahoma"
@@ -957,19 +638,17 @@ Begin VB.Form MainFrm
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         ForeColor       =   &H80000008&
-         Height          =   285
+         ForeColor       =   &H00656D76&
+         Height          =   255
          Left            =   5220
          TabIndex        =   16
          Top             =   5790
-         Width           =   1125
+         Width           =   1095
       End
       Begin VB.Label Label11 
          Appearance      =   0  'Flat
          AutoSize        =   -1  'True
-         BackColor       =   &H80000005&
-         BackStyle       =   0  'Transparent
-         BorderStyle     =   1  'Fixed Single
+         BackColor       =   &H00B4BFCC&
          Caption         =   " Save(&S) "
          BeginProperty Font 
             Name            =   "Tahoma"
@@ -980,23 +659,28 @@ Begin VB.Form MainFrm
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         ForeColor       =   &H80000008&
-         Height          =   285
+         ForeColor       =   &H00656D76&
+         Height          =   255
          Left            =   6450
          TabIndex        =   15
          Top             =   5790
-         Width           =   870
+         Width           =   840
       End
    End
    Begin VB.Frame AnswerLine 
+      BackColor       =   &H00A0ACBA&
       BorderStyle     =   0  'None
       Caption         =   "Frame9"
       Height          =   6195
-      Left            =   0
+      Left            =   -30
       TabIndex        =   52
-      Top             =   1890
+      Top             =   1860
       Width           =   7920
       Begin VB.TextBox Text4 
+         Appearance      =   0  'Flat
+         BackColor       =   &H00B4BFCC&
+         BorderStyle     =   0  'None
+         ForeColor       =   &H00656D76&
          Height          =   285
          Left            =   2490
          MaxLength       =   3
@@ -1005,6 +689,10 @@ Begin VB.Form MainFrm
          Width           =   2445
       End
       Begin VB.TextBox Text3 
+         Appearance      =   0  'Flat
+         BackColor       =   &H00B4BFCC&
+         BorderStyle     =   0  'None
+         ForeColor       =   &H00656D76&
          Height          =   285
          Left            =   450
          MaxLength       =   3
@@ -1013,7 +701,10 @@ Begin VB.Form MainFrm
          Width           =   1890
       End
       Begin VB.CheckBox Check15 
+         Appearance      =   0  'Flat
+         BackColor       =   &H00A0ACBA&
          Caption         =   "cm"
+         ForeColor       =   &H00656D76&
          Height          =   255
          Left            =   2415
          TabIndex        =   64
@@ -1021,14 +712,19 @@ Begin VB.Form MainFrm
          Width           =   1755
       End
       Begin VB.Frame Frame9 
+         BackColor       =   &H00A0ACBA&
          Caption         =   "Options"
+         ForeColor       =   &H00656D76&
          Height          =   1830
          Left            =   90
          TabIndex        =   67
          Top             =   780
          Width           =   2490
          Begin VB.CheckBox Check3 
+            Appearance      =   0  'Flat
+            BackColor       =   &H00A0ACBA&
             Caption         =   "Check3"
+            ForeColor       =   &H80000008&
             Height          =   195
             Left            =   1230
             TabIndex        =   79
@@ -1036,7 +732,10 @@ Begin VB.Form MainFrm
             Width           =   195
          End
          Begin VB.CheckBox Check5 
+            Appearance      =   0  'Flat
+            BackColor       =   &H00A0ACBA&
             Caption         =   "Check4"
+            ForeColor       =   &H80000008&
             Height          =   240
             Left            =   420
             TabIndex        =   78
@@ -1044,7 +743,10 @@ Begin VB.Form MainFrm
             Width           =   225
          End
          Begin VB.CheckBox Check6 
+            Appearance      =   0  'Flat
+            BackColor       =   &H00A0ACBA&
             Caption         =   "Check4"
+            ForeColor       =   &H80000008&
             Height          =   240
             Left            =   810
             TabIndex        =   77
@@ -1052,7 +754,10 @@ Begin VB.Form MainFrm
             Width           =   225
          End
          Begin VB.CheckBox Check4 
+            Appearance      =   0  'Flat
+            BackColor       =   &H00A0ACBA&
             Caption         =   "Check3"
+            ForeColor       =   &H80000008&
             Height          =   195
             Left            =   1245
             TabIndex        =   76
@@ -1060,7 +765,10 @@ Begin VB.Form MainFrm
             Width           =   195
          End
          Begin VB.CheckBox Check7 
+            Appearance      =   0  'Flat
+            BackColor       =   &H00A0ACBA&
             Caption         =   "Check4"
+            ForeColor       =   &H80000008&
             Height          =   240
             Left            =   375
             TabIndex        =   75
@@ -1068,7 +776,10 @@ Begin VB.Form MainFrm
             Width           =   225
          End
          Begin VB.CheckBox Check8 
+            Appearance      =   0  'Flat
+            BackColor       =   &H00A0ACBA&
             Caption         =   "Check4"
+            ForeColor       =   &H80000008&
             Height          =   240
             Left            =   795
             TabIndex        =   74
@@ -1076,7 +787,10 @@ Begin VB.Form MainFrm
             Width           =   225
          End
          Begin VB.CheckBox Check9 
+            Appearance      =   0  'Flat
+            BackColor       =   &H00A0ACBA&
             Caption         =   "Check4"
+            ForeColor       =   &H80000008&
             Height          =   240
             Left            =   780
             TabIndex        =   73
@@ -1084,7 +798,10 @@ Begin VB.Form MainFrm
             Width           =   225
          End
          Begin VB.CheckBox Check10 
+            Appearance      =   0  'Flat
+            BackColor       =   &H00A0ACBA&
             Caption         =   "Check4"
+            ForeColor       =   &H80000008&
             Height          =   240
             Left            =   795
             TabIndex        =   72
@@ -1092,7 +809,10 @@ Begin VB.Form MainFrm
             Width           =   225
          End
          Begin VB.CheckBox Check11 
+            Appearance      =   0  'Flat
+            BackColor       =   &H00A0ACBA&
             Caption         =   "Check4"
+            ForeColor       =   &H80000008&
             Height          =   240
             Left            =   1485
             TabIndex        =   71
@@ -1100,7 +820,10 @@ Begin VB.Form MainFrm
             Width           =   225
          End
          Begin VB.CheckBox Check12 
+            Appearance      =   0  'Flat
+            BackColor       =   &H00A0ACBA&
             Caption         =   "Check4"
+            ForeColor       =   &H80000008&
             Height          =   240
             Left            =   135
             TabIndex        =   70
@@ -1108,7 +831,10 @@ Begin VB.Form MainFrm
             Width           =   225
          End
          Begin VB.CheckBox Check13 
+            Appearance      =   0  'Flat
+            BackColor       =   &H00A0ACBA&
             Caption         =   "Check4"
+            ForeColor       =   &H80000008&
             Height          =   240
             Left            =   420
             TabIndex        =   69
@@ -1116,7 +842,10 @@ Begin VB.Form MainFrm
             Width           =   225
          End
          Begin VB.CheckBox Check14 
+            Appearance      =   0  'Flat
+            BackColor       =   &H00A0ACBA&
             Caption         =   "Check4"
+            ForeColor       =   &H80000008&
             Height          =   240
             Left            =   1215
             TabIndex        =   68
@@ -1174,6 +903,7 @@ Begin VB.Form MainFrm
       End
       Begin VB.Label Label34 
          AutoSize        =   -1  'True
+         BackColor       =   &H00A0ACBA&
          Caption         =   "----"
          BeginProperty Font 
             Name            =   "Tahoma"
@@ -1184,6 +914,7 @@ Begin VB.Form MainFrm
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
+         ForeColor       =   &H00656D76&
          Height          =   675
          Left            =   1110
          TabIndex        =   94
@@ -1191,7 +922,9 @@ Begin VB.Form MainFrm
          Width           =   780
       End
       Begin VB.Label Label33 
+         BackColor       =   &H00A0ACBA&
          Caption         =   "TrackNumber"
+         ForeColor       =   &H00656D76&
          Height          =   285
          Left            =   105
          TabIndex        =   93
@@ -1199,7 +932,9 @@ Begin VB.Form MainFrm
          Width           =   1335
       End
       Begin VB.Label Label27 
+         BackColor       =   &H00A0ACBA&
          Caption         =   "Count(-1 for as much as possible)"
+         ForeColor       =   &H00656D76&
          Height          =   225
          Left            =   45
          TabIndex        =   57
@@ -1207,7 +942,9 @@ Begin VB.Form MainFrm
          Width           =   2475
       End
       Begin VB.Label Label26 
+         BackColor       =   &H00A0ACBA&
          Caption         =   "Label26"
+         ForeColor       =   &H00656D76&
          Height          =   885
          Left            =   5370
          TabIndex        =   56
@@ -1218,9 +955,7 @@ Begin VB.Form MainFrm
          Alignment       =   2  'Center
          Appearance      =   0  'Flat
          AutoSize        =   -1  'True
-         BackColor       =   &H80000005&
-         BackStyle       =   0  'Transparent
-         BorderStyle     =   1  'Fixed Single
+         BackColor       =   &H00B4BFCC&
          Caption         =   " Save "
          BeginProperty Font 
             Name            =   "Tahoma"
@@ -1231,19 +966,17 @@ Begin VB.Form MainFrm
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         ForeColor       =   &H80000008&
-         Height          =   285
-         Left            =   960
+         ForeColor       =   &H00656D76&
+         Height          =   255
+         Left            =   1095
          TabIndex        =   55
          Top             =   2850
-         Width           =   855
+         Width           =   585
       End
       Begin VB.Label Label24 
          Appearance      =   0  'Flat
          AutoSize        =   -1  'True
-         BackColor       =   &H80000005&
-         BackStyle       =   0  'Transparent
-         BorderStyle     =   1  'Fixed Single
+         BackColor       =   &H00B4BFCC&
          Caption         =   " Preview "
          BeginProperty Font 
             Name            =   "Tahoma"
@@ -1254,15 +987,17 @@ Begin VB.Form MainFrm
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         ForeColor       =   &H80000008&
-         Height          =   285
+         ForeColor       =   &H00656D76&
+         Height          =   255
          Left            =   75
          TabIndex        =   54
          Top             =   2850
-         Width           =   855
+         Width           =   825
       End
       Begin VB.Label Label23 
+         BackColor       =   &H00A0ACBA&
          Caption         =   "Size"
+         ForeColor       =   &H00656D76&
          Height          =   225
          Left            =   60
          TabIndex        =   53
@@ -1270,7 +1005,289 @@ Begin VB.Form MainFrm
          Width           =   1710
       End
    End
+   Begin VB.Frame Blk 
+      BackColor       =   &H00A0ACBA&
+      BorderStyle     =   0  'None
+      Caption         =   "Frame11"
+      Height          =   6465
+      Left            =   -30
+      TabIndex        =   106
+      Top             =   1920
+      Width           =   7905
+      Begin VB.TextBox Text7 
+         Appearance      =   0  'Flat
+         BackColor       =   &H00B4BFCC&
+         Enabled         =   0   'False
+         ForeColor       =   &H00656D76&
+         Height          =   285
+         Left            =   2685
+         TabIndex        =   111
+         Text            =   "1"
+         Top             =   195
+         Visible         =   0   'False
+         Width           =   1440
+      End
+      Begin VB.CheckBox Check18 
+         Appearance      =   0  'Flat
+         BackColor       =   &H00A0ACBA&
+         Caption         =   "cm"
+         ForeColor       =   &H00656D76&
+         Height          =   195
+         Left            =   1980
+         TabIndex        =   109
+         Top             =   255
+         Width           =   510
+      End
+      Begin VB.TextBox Text6 
+         Appearance      =   0  'Flat
+         BackColor       =   &H00B4BFCC&
+         ForeColor       =   &H00656D76&
+         Height          =   285
+         Left            =   495
+         TabIndex        =   108
+         Top             =   195
+         Width           =   1440
+      End
+      Begin VB.Label Label42 
+         Appearance      =   0  'Flat
+         AutoSize        =   -1  'True
+         BackColor       =   &H00B4BFCC&
+         Caption         =   " Save(&S) "
+         BeginProperty Font 
+            Name            =   "Tahoma"
+            Size            =   10.5
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H00656D76&
+         Height          =   255
+         Left            =   150
+         TabIndex        =   113
+         Top             =   570
+         Width           =   840
+      End
+      Begin VB.Label Label41 
+         Appearance      =   0  'Flat
+         BackColor       =   &H00A0ACBA&
+         Caption         =   "Lines"
+         ForeColor       =   &H00656D76&
+         Height          =   180
+         Left            =   4200
+         TabIndex        =   112
+         Top             =   270
+         Visible         =   0   'False
+         Width           =   360
+      End
+      Begin VB.Label Label40 
+         Appearance      =   0  'Flat
+         BackColor       =   &H00A0ACBA&
+         Caption         =   "X"
+         ForeColor       =   &H00656D76&
+         Height          =   180
+         Left            =   2520
+         TabIndex        =   110
+         Top             =   255
+         Visible         =   0   'False
+         Width           =   360
+      End
+      Begin VB.Label Label39 
+         Appearance      =   0  'Flat
+         BackColor       =   &H00A0ACBA&
+         Caption         =   "Size"
+         ForeColor       =   &H00656D76&
+         Height          =   180
+         Left            =   195
+         TabIndex        =   107
+         Top             =   225
+         Width           =   360
+      End
+   End
+   Begin VB.Frame InsPic 
+      BackColor       =   &H00A0ACBA&
+      BorderStyle     =   0  'None
+      Caption         =   "Insert Picture"
+      Height          =   6240
+      Left            =   -15
+      TabIndex        =   98
+      Top             =   1995
+      Width           =   7800
+      Begin VB.Frame Frame20 
+         BackColor       =   &H00A0ACBA&
+         Caption         =   "Select a image"
+         ForeColor       =   &H00656D76&
+         Height          =   2325
+         Left            =   15
+         TabIndex        =   100
+         Top             =   -15
+         Width           =   7755
+         Begin VB.DriveListBox Drive2 
+            Appearance      =   0  'Flat
+            BackColor       =   &H00A0ACBA&
+            ForeColor       =   &H00656D76&
+            Height          =   315
+            Left            =   120
+            TabIndex        =   103
+            Top             =   240
+            Width           =   3945
+         End
+         Begin VB.DirListBox Dir2 
+            Appearance      =   0  'Flat
+            BackColor       =   &H00A0ACBA&
+            ForeColor       =   &H00656D76&
+            Height          =   1665
+            Left            =   105
+            TabIndex        =   102
+            Top             =   570
+            Width           =   3960
+         End
+         Begin VB.FileListBox File2 
+            Appearance      =   0  'Flat
+            BackColor       =   &H00A0ACBA&
+            ForeColor       =   &H00656D76&
+            Height          =   1980
+            Left            =   4080
+            Pattern         =   "*.JPG;*.PNG"
+            TabIndex        =   101
+            Top             =   255
+            Width           =   3630
+         End
+      End
+      Begin VB.ComboBox Combo2 
+         Appearance      =   0  'Flat
+         BackColor       =   &H00A0ACBA&
+         ForeColor       =   &H00656D76&
+         Height          =   315
+         ItemData        =   "Main.frx":00C4
+         Left            =   30
+         List            =   "Main.frx":00D1
+         Style           =   2  'Dropdown List
+         TabIndex        =   99
+         Top             =   2340
+         Width           =   7740
+      End
+      Begin VB.Label Label36 
+         Appearance      =   0  'Flat
+         AutoSize        =   -1  'True
+         BackColor       =   &H00B4BFCC&
+         Caption         =   " Preview "
+         BeginProperty Font 
+            Name            =   "Tahoma"
+            Size            =   10.5
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H00656D76&
+         Height          =   255
+         Left            =   6120
+         TabIndex        =   105
+         Top             =   2760
+         Width           =   825
+      End
+      Begin VB.Label Label37 
+         BackColor       =   &H00B4BFCC&
+         Caption         =   " Save "
+         BeginProperty Font 
+            Name            =   "Tahoma"
+            Size            =   10.5
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H00656D76&
+         Height          =   255
+         Left            =   7005
+         TabIndex        =   104
+         Top             =   2760
+         Width           =   570
+      End
+   End
+   Begin VB.Frame Frame8 
+      BackColor       =   &H00A0ACBA&
+      BorderStyle     =   0  'None
+      Caption         =   "Frame8"
+      ForeColor       =   &H00A0ACBA&
+      Height          =   6255
+      Left            =   45
+      TabIndex        =   47
+      Top             =   1875
+      Width           =   7800
+      Begin VB.ListBox MsgContentList 
+         Height          =   450
+         ItemData        =   "Main.frx":0106
+         Left            =   2775
+         List            =   "Main.frx":0108
+         TabIndex        =   49
+         Top             =   1830
+         Visible         =   0   'False
+         Width           =   1125
+      End
+      Begin VB.ListBox List1 
+         Appearance      =   0  'Flat
+         BackColor       =   &H00B4BFCC&
+         ForeColor       =   &H00656D76&
+         Height          =   3150
+         Left            =   525
+         TabIndex        =   48
+         Top             =   1020
+         Visible         =   0   'False
+         Width           =   2100
+      End
+      Begin VB.Label Label14 
+         Appearance      =   0  'Flat
+         AutoSize        =   -1  'True
+         BackColor       =   &H00B4BFCC&
+         Caption         =   " Remove(&D) "
+         BeginProperty Font 
+            Name            =   "Tahoma"
+            Size            =   10.5
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H00656D76&
+         Height          =   255
+         Left            =   2700
+         TabIndex        =   51
+         Top             =   1335
+         Visible         =   0   'False
+         Width           =   1185
+      End
+      Begin VB.Label Label13 
+         Alignment       =   2  'Center
+         Appearance      =   0  'Flat
+         AutoSize        =   -1  'True
+         BackColor       =   &H00B4BFCC&
+         Caption         =   " Preview(&T) "
+         BeginProperty Font 
+            Name            =   "Tahoma"
+            Size            =   10.5
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H00656D76&
+         Height          =   255
+         Left            =   2700
+         TabIndex        =   50
+         Top             =   1020
+         Visible         =   0   'False
+         Width           =   1170
+      End
+   End
    Begin VB.Frame LogMgr 
+      BackColor       =   &H00A0ACBA&
       BorderStyle     =   0  'None
       Caption         =   "Frame11"
       Height          =   6210
@@ -1278,27 +1295,8 @@ Begin VB.Form MainFrm
       TabIndex        =   80
       Top             =   1920
       Width           =   7725
-      Begin VB.Frame Frame14 
-         Caption         =   "Details"
-         Height          =   3060
-         Left            =   15
-         TabIndex        =   84
-         Top             =   2940
-         Width           =   7530
-         Begin VB.TextBox Text5 
-            BackColor       =   &H8000000F&
-            BorderStyle     =   0  'None
-            Height          =   2820
-            Left            =   75
-            Locked          =   -1  'True
-            MultiLine       =   -1  'True
-            ScrollBars      =   3  'Both
-            TabIndex        =   85
-            Top             =   165
-            Width           =   7395
-         End
-      End
       Begin VB.Frame Frame12 
+         BackColor       =   &H00A0ACBA&
          BorderStyle     =   0  'None
          Caption         =   "Frame12"
          Height          =   285
@@ -1306,16 +1304,11 @@ Begin VB.Form MainFrm
          TabIndex        =   81
          Top             =   2730
          Width           =   1815
-         Begin VB.OptionButton Option2 
-            Caption         =   "Formats"
-            Height          =   195
-            Left            =   855
-            TabIndex        =   83
-            Top             =   45
-            Width           =   930
-         End
          Begin VB.OptionButton Option1 
+            Appearance      =   0  'Flat
+            BackColor       =   &H00B4BFCC&
             Caption         =   "Pages"
+            ForeColor       =   &H00656D76&
             Height          =   195
             Left            =   30
             TabIndex        =   82
@@ -1323,9 +1316,22 @@ Begin VB.Form MainFrm
             Value           =   -1  'True
             Width           =   810
          End
+         Begin VB.OptionButton Option2 
+            Appearance      =   0  'Flat
+            BackColor       =   &H00B4BFCC&
+            Caption         =   "Formats"
+            ForeColor       =   &H00656D76&
+            Height          =   195
+            Left            =   840
+            TabIndex        =   83
+            Top             =   45
+            Width           =   915
+         End
       End
       Begin VB.Frame Frame13 
+         BackColor       =   &H00A0ACBA&
          Caption         =   "Log List"
+         ForeColor       =   &H00656D76&
          Height          =   2865
          Left            =   15
          TabIndex        =   86
@@ -1400,6 +1406,8 @@ Begin VB.Form MainFrm
          End
          Begin VB.ListBox ListPage 
             Appearance      =   0  'Flat
+            BackColor       =   &H00B4BFCC&
+            ForeColor       =   &H00656D76&
             Height          =   2370
             Left            =   75
             TabIndex        =   91
@@ -1408,6 +1416,8 @@ Begin VB.Form MainFrm
          End
          Begin VB.ListBox ListFormat 
             Appearance      =   0  'Flat
+            BackColor       =   &H00B4BFCC&
+            ForeColor       =   &H00656D76&
             Height          =   2370
             Left            =   75
             TabIndex        =   92
@@ -1415,6 +1425,125 @@ Begin VB.Form MainFrm
             Visible         =   0   'False
             Width           =   7170
          End
+      End
+      Begin VB.Frame Frame14 
+         BackColor       =   &H00A0ACBA&
+         Caption         =   "Details"
+         ForeColor       =   &H00656D76&
+         Height          =   3060
+         Left            =   15
+         TabIndex        =   84
+         Top             =   2940
+         Width           =   7530
+         Begin VB.TextBox Text5 
+            BackColor       =   &H00A0ACBA&
+            BorderStyle     =   0  'None
+            ForeColor       =   &H00656D76&
+            Height          =   2820
+            Left            =   45
+            Locked          =   -1  'True
+            MultiLine       =   -1  'True
+            ScrollBars      =   3  'Both
+            TabIndex        =   85
+            Top             =   195
+            Width           =   7395
+         End
+      End
+   End
+   Begin VB.PictureBox General 
+      BackColor       =   &H00A0ACBA&
+      BorderStyle     =   0  'None
+      Height          =   1380
+      Left            =   75
+      ScaleHeight     =   1380
+      ScaleWidth      =   7770
+      TabIndex        =   2
+      TabStop         =   0   'False
+      Top             =   525
+      Width           =   7770
+      Begin VB.Label Label38 
+         Appearance      =   0  'Flat
+         AutoSize        =   -1  'True
+         BackColor       =   &H00B4BFCC&
+         Caption         =   " Blank Area(&B) "
+         BeginProperty Font 
+            Name            =   "Tahoma"
+            Size            =   10.5
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H00656D76&
+         Height          =   255
+         Left            =   3390
+         TabIndex        =   97
+         Top             =   60
+         Width           =   1335
+      End
+      Begin VB.Label Label35 
+         Appearance      =   0  'Flat
+         AutoSize        =   -1  'True
+         BackColor       =   &H00B4BFCC&
+         Caption         =   " Picture(&P) "
+         BeginProperty Font 
+            Name            =   "Tahoma"
+            Size            =   10.5
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H00656D76&
+         Height          =   255
+         Left            =   2310
+         TabIndex        =   95
+         Top             =   45
+         Width           =   1020
+      End
+      Begin VB.Label Label22 
+         Appearance      =   0  'Flat
+         AutoSize        =   -1  'True
+         BackColor       =   &H00B4BFCC&
+         Caption         =   " Answerline(&T) "
+         BeginProperty Font 
+            Name            =   "Tahoma"
+            Size            =   10.5
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H00656D76&
+         Height          =   255
+         Left            =   930
+         TabIndex        =   46
+         Top             =   45
+         Width           =   1335
+      End
+      Begin VB.Label PreviewButton 
+         Appearance      =   0  'Flat
+         AutoSize        =   -1  'True
+         BackColor       =   &H00B4BFCC&
+         Caption         =   " Text(&T) "
+         BeginProperty Font 
+            Name            =   "Tahoma"
+            Size            =   10.5
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H00656D76&
+         Height          =   255
+         Left            =   60
+         TabIndex        =   45
+         Top             =   45
+         Width           =   810
       End
    End
    Begin VB.Label Label1 
@@ -1430,6 +1559,7 @@ Begin VB.Form MainFrm
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
+      ForeColor       =   &H00656D76&
       Height          =   285
       Left            =   180
       TabIndex        =   96
@@ -1449,6 +1579,7 @@ Begin VB.Form MainFrm
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
+      ForeColor       =   &H00656D76&
       Height          =   285
       Left            =   6195
       TabIndex        =   8
@@ -1468,6 +1599,7 @@ Begin VB.Form MainFrm
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
+      ForeColor       =   &H00656D76&
       Height          =   285
       Left            =   7095
       TabIndex        =   3
@@ -1487,6 +1619,7 @@ Begin VB.Form MainFrm
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
+      ForeColor       =   &H00656D76&
       Height          =   285
       Left            =   2130
       TabIndex        =   1
@@ -1506,6 +1639,7 @@ Begin VB.Form MainFrm
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
+      ForeColor       =   &H00656D76&
       Height          =   285
       Left            =   1140
       TabIndex        =   0
@@ -1513,10 +1647,10 @@ Begin VB.Form MainFrm
       Width           =   915
    End
    Begin VB.Shape Shape1 
-      BackColor       =   &H00E0E0E0&
+      BackColor       =   &H00B4BFCC&
       BackStyle       =   1  'Opaque
-      BorderColor     =   &H00E0E0E0&
-      Height          =   345
+      BorderColor     =   &H00A0ACBA&
+      Height          =   315
       Left            =   60
       Top             =   120
       Width           =   1035
@@ -1603,19 +1737,31 @@ Private Sub Check8_Click()
 End Sub
 
 Private Sub Dir1_Change()
+    On Error GoTo err
     File1.Path = Dir1.Path
+err:
+    NewMessage "[SysErr]" & err.Description, vbRed
 End Sub
 
 Private Sub Dir2_Change()
+    On Error GoTo err
     File2.Path = Dir2.Path
+err:
+    NewMessage "[SysErr]" & err.Description, vbRed
 End Sub
 
 Private Sub Drive1_Change()
+    On Error GoTo err
     Dir1.Path = Drive1.Drive
+    Exit Sub
+err:
+    NewMessage "[SysErr]" & err.Description, vbRed
 End Sub
 
 Private Sub Drive2_Change()
     Dir2.Path = Drive2.Drive
+err:
+    NewMessage "[SysErr]" & err.Description, vbRed
 End Sub
 
 Private Sub Form_Load()
@@ -1630,9 +1776,10 @@ Private Sub Form_Load()
         DoEvents
         FontCombo.AddItem Screen.Fonts(i)
     Next
+    Label1_Click
     Unload Integrated
-    Shape1.Left = Label1.Left
-    Shape1.Width = Label1.Width
+'    Shape1.Left = Label1.Left
+'    Shape1.Width = Label1.Width
     PreviewButton_Click
 End Sub
 
@@ -2002,8 +2149,8 @@ End Sub
 
 
 Private Sub Label1_Click()
-    Shape1.Left = Label1.Left
-    Shape1.Width = Label1.Width
+    Shape1.Left = Label1.Left - 120
+    Shape1.Width = Label1.Width + 240
     Frame1.Visible = Not False
     Frame2.Visible = Not False
     Label10.Visible = Not False
@@ -2680,8 +2827,8 @@ cont:
 End Sub
 
 Private Sub Label12_Click()
-    Shape1.Left = Label12.Left
-    Shape1.Width = Label12.Width
+    Shape1.Left = Label12.Left - 100
+    Shape1.Width = Label12.Width + 200
     Frame1.Visible = False
     Frame2.Visible = False
     Label10.Visible = False
