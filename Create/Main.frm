@@ -135,61 +135,6 @@ Begin VB.Form MainFrm
          Width           =   45
       End
    End
-   Begin VB.PictureBox Manage 
-      BackColor       =   &H00A0ACBA&
-      BorderStyle     =   0  'None
-      Height          =   1380
-      Left            =   75
-      ScaleHeight     =   1380
-      ScaleWidth      =   7770
-      TabIndex        =   9
-      TabStop         =   0   'False
-      Top             =   510
-      Visible         =   0   'False
-      Width           =   7770
-      Begin VB.Label Label30 
-         Appearance      =   0  'Flat
-         AutoSize        =   -1  'True
-         BackColor       =   &H00B4BFCC&
-         Caption         =   " Logs "
-         BeginProperty Font 
-            Name            =   "Tahoma"
-            Size            =   10.5
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         ForeColor       =   &H00656D76&
-         Height          =   255
-         Left            =   1590
-         TabIndex        =   62
-         Top             =   120
-         Width           =   555
-      End
-      Begin VB.Label Label15 
-         Appearance      =   0  'Flat
-         AutoSize        =   -1  'True
-         BackColor       =   &H00B4BFCC&
-         Caption         =   " MergePreview "
-         BeginProperty Font 
-            Name            =   "Tahoma"
-            Size            =   10.5
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         ForeColor       =   &H00656D76&
-         Height          =   255
-         Left            =   105
-         TabIndex        =   10
-         Top             =   120
-         Width           =   1380
-      End
-   End
    Begin VB.Frame InsText 
       BackColor       =   &H00A0ACBA&
       BorderStyle     =   0  'None
@@ -308,6 +253,7 @@ Begin VB.Form MainFrm
       Begin VB.Frame Frame4 
          BackColor       =   &H00A0ACBA&
          Caption         =   "Text with Image"
+         ForeColor       =   &H00656D76&
          Height          =   2850
          Left            =   15
          TabIndex        =   31
@@ -317,7 +263,7 @@ Begin VB.Form MainFrm
             BackColor       =   &H00A0ACBA&
             ForeColor       =   &H00656D76&
             Height          =   2790
-            Left            =   30
+            Left            =   0
             TabIndex        =   32
             Top             =   30
             Width           =   7635
@@ -1540,10 +1486,65 @@ Begin VB.Form MainFrm
          EndProperty
          ForeColor       =   &H00656D76&
          Height          =   255
-         Left            =   60
+         Left            =   45
          TabIndex        =   45
          Top             =   45
          Width           =   810
+      End
+   End
+   Begin VB.PictureBox Manage 
+      BackColor       =   &H00A0ACBA&
+      BorderStyle     =   0  'None
+      Height          =   1380
+      Left            =   75
+      ScaleHeight     =   1380
+      ScaleWidth      =   7770
+      TabIndex        =   9
+      TabStop         =   0   'False
+      Top             =   510
+      Visible         =   0   'False
+      Width           =   7770
+      Begin VB.Label Label30 
+         Appearance      =   0  'Flat
+         AutoSize        =   -1  'True
+         BackColor       =   &H00B4BFCC&
+         Caption         =   " Logs "
+         BeginProperty Font 
+            Name            =   "Tahoma"
+            Size            =   10.5
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H00656D76&
+         Height          =   255
+         Left            =   1590
+         TabIndex        =   62
+         Top             =   120
+         Width           =   555
+      End
+      Begin VB.Label Label15 
+         Appearance      =   0  'Flat
+         AutoSize        =   -1  'True
+         BackColor       =   &H00B4BFCC&
+         Caption         =   " MergePreview "
+         BeginProperty Font 
+            Name            =   "Tahoma"
+            Size            =   10.5
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H00656D76&
+         Height          =   255
+         Left            =   105
+         TabIndex        =   10
+         Top             =   120
+         Width           =   1380
       End
    End
    Begin VB.Label Label1 
@@ -1739,6 +1740,7 @@ End Sub
 Private Sub Dir1_Change()
     On Error GoTo err
     File1.Path = Dir1.Path
+    Exit Sub
 err:
     NewMessage "[SysErr]" & err.Description, vbRed
 End Sub
@@ -1746,6 +1748,7 @@ End Sub
 Private Sub Dir2_Change()
     On Error GoTo err
     File2.Path = Dir2.Path
+    Exit Sub
 err:
     NewMessage "[SysErr]" & err.Description, vbRed
 End Sub
@@ -1759,7 +1762,9 @@ err:
 End Sub
 
 Private Sub Drive2_Change()
+    On Error GoTo err
     Dir2.Path = Drive2.Drive
+    Exit Sub
 err:
     NewMessage "[SysErr]" & err.Description, vbRed
 End Sub
@@ -1984,6 +1989,7 @@ Private Sub Label38_Click()
     LogMgr.Visible = False
     InsPic.Visible = False
     Blk.Visible = True
+    InsText.Visible = False
 End Sub
 
 Private Sub Label42_Click()
