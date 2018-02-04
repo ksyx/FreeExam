@@ -8,6 +8,7 @@ Module=Notes; Module2.bas
 Form=DevWin.frm
 Form=Main.frm
 Form=Init.frm
+Form=InputWin.frm
 IconForm="PageSettings"
 Startup="Sub Main"
 HelpFile=""

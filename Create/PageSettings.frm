@@ -53,7 +53,7 @@ Begin VB.Form PageSettings
       Width           =   1125
    End
    Begin VB.PictureBox Picture1 
-      BackColor       =   &H00000000&
+      BackColor       =   &H00656D76&
       Height          =   285
       Left            =   0
       ScaleHeight     =   225

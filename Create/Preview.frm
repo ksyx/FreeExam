@@ -119,7 +119,7 @@ Begin VB.Form Preview
       Width           =   1125
    End
    Begin VB.PictureBox Picture3 
-      BackColor       =   &H00000000&
+      BackColor       =   &H00656D76&
       Height          =   285
       Left            =   -15
       ScaleHeight     =   225
@@ -198,8 +198,10 @@ Begin VB.Form Preview
    End
    Begin VB.VScrollBar VScroll1 
       Height          =   2940
+      LargeChange     =   100
       Left            =   0
       Max             =   10000
+      SmallChange     =   10
       TabIndex        =   1
       Top             =   495
       Width           =   240

@@ -10,8 +10,14 @@ Attribute VB_Name = "Notes"
 'TextBox &HB4BFCC
 'ForeColors &H656D76
 'BackGround &HA0ACBA
-
-
+'
+'NOTE0 SAVE A IMAGE
+'Dim usage As Long
+'usage = GetSetting("FreeExam", "Create", "TrackNumUsage", 1000)
+'If Dir(App.Path & "\Cache", vbDirectory) = "" Then MkDir App.Path & "\Cache"
+'SavePicture Preview.Exports.Picture, App.Path & "\Cache\" & usage + 1 & ".jpg"
+'SaveSetting "FreeExam", "Create", "TrackNumUsage", usage + 1
+'List1.AddItem "P" & Left(Combo1.Text, 1) & usage + 1
 
 ''===============================NOTE1 COMMON MESSAGE SENDER===============================
 'Dim showcnt As long, current As long

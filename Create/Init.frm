@@ -428,7 +428,8 @@ End Sub
 
 Private Sub Text1_KeyDown(KeyCode As Integer, Shift As Integer)
     If KeyCode = vbKeyReturn Then
-        MainFrm.Text2.SelText = Label3.Caption
+        InputWin.Text2.SelText = Label3.Caption
+        InputWin.Text1.SelText = Label3.Caption
         KeyCode = 0
         Me.Hide
     End If
@@ -437,8 +438,9 @@ End Sub
 
 Private Sub Text2_KeyDown(KeyCode As Integer, Shift As Integer)
     If KeyCode = vbKeyReturn Then
-        MainFrm.Text2.SelText = Label6.Caption
-        MainFrm.Text2.SelStart = MainFrm.Text2.SelStart - Len(Label6.Caption) / 2
+        InputWin.Text2.SelText = Label6.Caption
+        InputWin.Text1.SelText = Label6.Caption
+        InputWin.Text2.SelStart = InputWin.Text2.SelStart - Len(Label6.Caption) / 2
         KeyCode = 0
         Me.Hide
     End If

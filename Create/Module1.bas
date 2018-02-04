@@ -25,6 +25,19 @@ Sub RaiseSysErr(Detail As String, Module As String)
     SystemError.Show 1
 End Sub
 
+Function InputText(StartText As String, Optional MultiLine As Boolean = True) As String
+    InputWin.Text2.Text = StartText
+    If MultiLine = False Then
+        InputWin.Text1.Visible = True
+        InputWin.Text2.Visible = False
+        InputWin.Text1.Text = StartText
+    End If
+    InputWin.Show 1
+    If MultiLine = False Then InputWin.Text2.Text = InputWin.Text1.Text
+    If InputWin.Caption = "UserCancel" Then InputText = StartText Else InputText = InputWin.Text2.Text
+    Unload InputWin
+End Function
+
 Sub InitPreview()
     If AutoCls = 1 Then Preview.Picture2.Cls
     Preview.Picture2.Height = PageHeight
