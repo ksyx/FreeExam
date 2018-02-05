@@ -28,7 +28,6 @@ Begin VB.Form InputWin
       Width           =   9705
    End
    Begin VB.TextBox Text2 
-      Alignment       =   2  'Center
       BackColor       =   &H00B4BFCC&
       BorderStyle     =   0  'None
       ForeColor       =   &H00656D76&

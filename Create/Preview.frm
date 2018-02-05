@@ -21,80 +21,96 @@ Begin VB.Form Preview
    ScaleWidth      =   13605
    StartUpPosition =   2  'ÆÁÄ»ÖÐÐÄ
    WindowState     =   2  'Maximized
+   Begin VB.PictureBox Exporter 
+      AutoRedraw      =   -1  'True
+      AutoSize        =   -1  'True
+      BackColor       =   &H00FFFFFF&
+      BorderStyle     =   0  'None
+      Height          =   2325
+      Left            =   0
+      ScaleHeight     =   2325
+      ScaleWidth      =   6420
+      TabIndex        =   17
+      TabStop         =   0   'False
+      Top             =   0
+      Visible         =   0   'False
+      Width           =   6420
+   End
+   Begin VB.Frame Frame1 
+      BackColor       =   &H00A0ACBA&
+      Caption         =   "Advanced View"
+      Height          =   825
+      Left            =   0
+      TabIndex        =   11
+      Top             =   0
+      Visible         =   0   'False
+      Width           =   1785
+      Begin VB.TextBox Text1 
+         Height          =   240
+         Left            =   0
+         TabIndex        =   13
+         Text            =   "0"
+         Top             =   0
+         Width           =   480
+      End
+      Begin VB.TextBox Text2 
+         Height          =   285
+         Left            =   0
+         TabIndex        =   12
+         Text            =   "0"
+         Top             =   0
+         Width           =   465
+      End
+      Begin VB.Label Label1 
+         Height          =   225
+         Left            =   960
+         TabIndex        =   16
+         Top             =   225
+         Width           =   720
+      End
+      Begin VB.Label Label2 
+         Height          =   225
+         Left            =   1005
+         TabIndex        =   15
+         Top             =   420
+         Width           =   720
+      End
+      Begin VB.Label Label3 
+         Caption         =   "Up"
+         Height          =   210
+         Left            =   0
+         TabIndex        =   14
+         Top             =   195
+         Width           =   315
+      End
+   End
    Begin VB.PictureBox Exports 
       AutoRedraw      =   -1  'True
       AutoSize        =   -1  'True
-      BackColor       =   &H00A0ACBA&
+      BackColor       =   &H00FFFFFF&
       BorderStyle     =   0  'None
       Height          =   2325
-      Left            =   720
+      Left            =   1080
       ScaleHeight     =   2325
       ScaleWidth      =   6420
       TabIndex        =   10
       TabStop         =   0   'False
-      Top             =   3630
+      Top             =   3900
       Visible         =   0   'False
       Width           =   6420
-      Begin VB.Frame Frame1 
-         BackColor       =   &H00A0ACBA&
-         Caption         =   "Advanced View"
-         Height          =   825
-         Left            =   675
-         TabIndex        =   11
-         Top             =   240
-         Width           =   1785
-         Begin VB.TextBox Text2 
-            Height          =   285
-            Left            =   0
-            TabIndex        =   16
-            Text            =   "0"
-            Top             =   0
-            Width           =   465
-         End
-         Begin VB.TextBox Text1 
-            Height          =   240
-            Left            =   0
-            TabIndex        =   15
-            Text            =   "0"
-            Top             =   0
-            Width           =   480
-         End
-         Begin VB.Label Label3 
-            Caption         =   "Up"
-            Height          =   210
-            Left            =   0
-            TabIndex        =   14
-            Top             =   195
-            Width           =   315
-         End
-         Begin VB.Label Label2 
-            Height          =   225
-            Left            =   1005
-            TabIndex        =   13
-            Top             =   420
-            Width           =   720
-         End
-         Begin VB.Label Label1 
-            Height          =   225
-            Left            =   960
-            TabIndex        =   12
-            Top             =   225
-            Width           =   720
-         End
-      End
    End
    Begin VB.PictureBox Export 
       AutoRedraw      =   -1  'True
       AutoSize        =   -1  'True
-      BackColor       =   &H00A0ACBA&
+      BackColor       =   &H00FFFFFF&
       BorderStyle     =   0  'None
       Height          =   2325
-      Left            =   -60
+      Left            =   7350
       ScaleHeight     =   2325
       ScaleWidth      =   6420
       TabIndex        =   9
       TabStop         =   0   'False
-      Top             =   1800
+      Top             =   1740
       Visible         =   0   'False
       Width           =   6420
    End

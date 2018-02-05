@@ -53,6 +53,10 @@ Sub Main()
     DevWin.Show
 End Sub
 
+Function Min(a, b)
+    If a < b Then Min = a Else Min = b
+End Function
+
 Function Max(a, b)
     If a > b Then Max = a Else Max = b
 End Function
