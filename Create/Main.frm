@@ -23,6 +23,40 @@ Begin VB.Form MainFrm
    ScaleWidth      =   7920
    ShowInTaskbar   =   0   'False
    StartUpPosition =   2  'ÆÁÄ»ÖÐÐÄ
+   Begin VB.PictureBox Copyright 
+      BackColor       =   &H00A0ACBA&
+      BorderStyle     =   0  'None
+      Height          =   7590
+      Left            =   30
+      ScaleHeight     =   7590
+      ScaleWidth      =   7770
+      TabIndex        =   159
+      TabStop         =   0   'False
+      Top             =   600
+      Visible         =   0   'False
+      Width           =   7770
+      Begin VB.Label Label68 
+         Appearance      =   0  'Flat
+         AutoSize        =   -1  'True
+         BackColor       =   &H00A0ACBA&
+         Caption         =   " Copyright (c) ksyx 2018, All Rights Reserved. "
+         BeginProperty Font 
+            Name            =   "Tahoma"
+            Size            =   10.5
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H00656D76&
+         Height          =   255
+         Left            =   120
+         TabIndex        =   160
+         Top             =   105
+         Width           =   4290
+      End
+   End
    Begin VB.PictureBox WIP 
       BackColor       =   &H00A0ACBA&
       ForeColor       =   &H00B4BFCC&
@@ -93,10 +127,10 @@ Begin VB.Form MainFrm
    Begin VB.ListBox MsgColorList 
       Height          =   450
       ItemData        =   "Main.frx":0004
-      Left            =   4785
+      Left            =   2760
       List            =   "Main.frx":0006
       TabIndex        =   6
-      Top             =   105
+      Top             =   120
       Visible         =   0   'False
       Width           =   1125
    End
@@ -2245,9 +2279,9 @@ Begin VB.Form MainFrm
       EndProperty
       ForeColor       =   &H00656D76&
       Height          =   285
-      Left            =   6195
+      Left            =   5220
       TabIndex        =   8
-      Top             =   120
+      Top             =   165
       Width           =   1650
    End
    Begin VB.Label Label4 
@@ -2265,15 +2299,15 @@ Begin VB.Form MainFrm
       EndProperty
       ForeColor       =   &H00656D76&
       Height          =   285
-      Left            =   7095
+      Left            =   6135
       TabIndex        =   3
-      Top             =   135
+      Top             =   165
       Width           =   690
    End
    Begin VB.Label Label3 
       AutoSize        =   -1  'True
       BackStyle       =   0  'Transparent
-      Caption         =   "SubjectN"
+      Caption         =   "About"
       BeginProperty Font 
          Name            =   "Tahoma"
          Size            =   12
@@ -2285,11 +2319,10 @@ Begin VB.Form MainFrm
       EndProperty
       ForeColor       =   &H00656D76&
       Height          =   285
-      Left            =   2130
+      Left            =   7065
       TabIndex        =   1
       Top             =   135
-      Visible         =   0   'False
-      Width           =   945
+      Width           =   645
    End
    Begin VB.Label Label2 
       AutoSize        =   -1  'True
@@ -2620,6 +2653,27 @@ Private Sub Label29_Click()
     Dim outstr As String
     outstr = FontCombo.Text & "," & Text1.Text & "," & Check2.Value & "," & Check1.Value & "," & AlignCombo.Text & "," & Text2.Text & "," & Frame5.Visible & "," & Drive1.Drive & "," & Dir1.Path & "," & File1.FileName & "," & Combo1.Text
     ListPage.AddItem outstr
+End Sub
+
+Private Sub Label3_Click()
+    Shape1.Left = Label3.Left - 100
+    Shape1.Width = Label3.Width + 200
+    Frame1.Visible = False
+    Frame2.Visible = False
+    Label10.Visible = False
+    Label11.Visible = False
+    List1.Visible = False
+    Label13.Visible = False
+    Label14.Visible = False
+    Frame8.Visible = False
+    Manage.Visible = False
+    InsText.Visible = False
+    AnswerLine.Visible = False
+    General.Visible = False
+    InsPic.Visible = False
+    Blk.Visible = False
+    Merge.Visible = False
+    Copyright.Visible = True
 End Sub
 
 Private Sub Label30_Click()
@@ -3446,6 +3500,7 @@ Private Sub Label1_Click()
     LogMgr.Visible = False
     General.Visible = True
     Merge.Visible = False
+    Copyright.Visible = False
 End Sub
 
 Sub RegisterStat(StatName As String)
@@ -4126,6 +4181,7 @@ Private Sub Label12_Click()
     InsPic.Visible = False
     Blk.Visible = False
     Merge.Visible = False
+    Copyright.Visible = False
 End Sub
 
 Private Sub Label13_Click()
