@@ -22,6 +22,14 @@ Begin VB.Form DevWin
    ScaleWidth      =   5760
    ShowInTaskbar   =   0   'False
    StartUpPosition =   2  'ÆÁÄ»ÖÐÐÄ
+   Begin VB.CheckBox Check2 
+      Caption         =   "EnableTranslation"
+      Height          =   330
+      Left            =   2670
+      TabIndex        =   9
+      Top             =   1350
+      Width           =   2145
+   End
    Begin VB.CheckBox Check1 
       Caption         =   "AutoCls"
       Height          =   330
@@ -149,22 +157,22 @@ Dim showcnt As Integer, current As Integer
 Sub NewMessage(Content As String, Color As Long, Optional ClearList As Boolean = False, Optional ClearOnly = False)
     current = -1
     If (ClearOnly And Not ClearList) Then
-        RaiseSysErr "Clear message list only and do not clear message list were both turned on.", "Create/PageSettings/NewEvent"
+        RaiseSysErr translate("Clear message list only and do not clear message list were both turned on."), translate("Create/PageSettings/NewEvent")
         Exit Sub
     End If
     If ClearList Then
         MsgContentList.Clear
         MsgColorList.Clear
         MsgTypeList.Clear
-        If Message.Caption <> "" Then Message.Caption = Message.Caption & "(Expired)"
+        If Message.Caption <> "" Then Message.Caption = Message.Caption & translate("(Expired)")
         If ClearOnly Then Exit Sub
     End If
     MsgContentList.AddItem Content
     MsgColorList.AddItem Color
     Select Case Color
-        Case vbBlack: MsgTypeList.AddItem "[Info]"
-        Case vbBlue: MsgTypeList.AddItem "[Warning]"
-        Case vbRed: MsgTypeList.AddItem "[Error]"
+        Case vbBlack: MsgTypeList.AddItem translate("[Info]")
+        Case vbBlue: MsgTypeList.AddItem translate("[Warning]")
+        Case vbRed: MsgTypeList.AddItem translate("[Error]")
     End Select
     showcnt = 49
     Timer1_Timer
@@ -172,7 +180,11 @@ End Sub
 
 Private Sub Check1_Click()
     AutoCls = Check1.Value
-    SaveSetting "FreeExam", "Create", "AutoCls", AutoCls
+    SaveSetting translate("FreeExam"), translate("Create"), translate("AutoCls"), AutoCls
+End Sub
+
+Private Sub Check2_Click()
+    EnableTranslation = Check2.Value
 End Sub
 
 Private Sub Command1_Click()
@@ -190,10 +202,10 @@ Private Sub Form_Load()
        Shape1.Top = 0
        Shape1.Height = Me.Height
        Shape1.Width = Me.Width
-       Me.Caption = "Contents can't be shown"
-       RaiseSysErr "Access Denied - You don't have enough privilege to access here. By the way, there is nothing interesting.", "DevWin/PrivCheck"
+       Me.Caption = translate("Contents can't be shown")
+       RaiseSysErr translate("Access Denied - You don't have enough privilege to access here. By the way, there is nothing interesting."), translate("DevWin/PrivCheck")
     End If
-    NewMessage "Authentication Passed.", vbBlack
+    NewMessage translate("Authentication Passed."), vbBlack
     Check1.Value = AutoCls
 End Sub
 
@@ -210,7 +222,7 @@ Private Sub Timer1_Timer()
     If Timer1.Interval > 100 Then Timer1.Interval = Timer1.Interval - 100
     showcnt = showcnt + 1
     If MsgContentList.ListCount = 0 Then
-        Message.Caption = "No new messages."
+        Message.Caption = translate("No new messages.")
         Message.ForeColor = vbWhite
         showcnt = ShowCntPerMsg - 1
         GoTo rrr
@@ -231,7 +243,7 @@ Private Sub Timer1_Timer()
 '        Exit Sub
 '    End If
     If current >= MsgContentList.ListCount Then
-        Message.Caption = "No new messages."
+        Message.Caption = translate("No new messages.")
         Message.ForeColor = vbWhite
         showcnt = ShowCntPerMsg - 1
         GoTo rrr
@@ -245,7 +257,7 @@ Private Sub Timer1_Timer()
             Exit Sub
         End If
         If current >= MsgContentList.ListCount Then
-            Message.Caption = "No new messages."
+            Message.Caption = translate("No new messages.")
             Message.ForeColor = vbWhite
             showcnt = ShowCntPerMsg - 1
             GoTo rrr

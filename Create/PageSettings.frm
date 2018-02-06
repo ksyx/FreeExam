@@ -454,11 +454,11 @@ Private Sub Label2_Click()
             PageWidth = 21 * TwipsPerCM
             PageHeight = 28.5 * TwipsPerCM
         Case Else
-            NewMessage "Unable to get the page size that you've chosen.", vbRed
+            NewMessage translate("Unable to get the page size that you've chosen."), vbRed
             Exit Sub
     End Select
     If Not IsNumeric(Text1(0).Text) Or Not IsNumeric(Text1(1).Text) Or Not IsNumeric(Text1(2).Text) Or Not IsNumeric(Text1(3).Text) Then
-        NewMessage "The margin that you've inputed is invaild", vbRed
+        NewMessage translate("The margin that you've inputed is invaild"), vbRed
         Exit Sub
     End If
     TopMargin = Val(Text1(0).Text) * TwipsPerCM
@@ -501,9 +501,9 @@ Sub NewMessage(Content As String, Color As Long, Optional ClearList As Boolean =
     MsgContentList.AddItem Content
     MsgColorList.AddItem Color
     Select Case Color
-        Case vbBlack: MsgTypeList.AddItem "[Info]"
-        Case vbBlue: MsgTypeList.AddItem "[Warning]"
-        Case vbRed: MsgTypeList.AddItem "[Error]"
+        Case vbBlack: MsgTypeList.AddItem translate("[Info]")
+        Case vbBlue: MsgTypeList.AddItem translate("[Warning]")
+        Case vbRed: MsgTypeList.AddItem translate("[Error]")
     End Select
     showcnt = 49
     Timer1_Timer
@@ -526,11 +526,11 @@ Private Sub PreviewButton_Click()
             PageWidth = 21 * TwipsPerCM
             PageHeight = 28.5 * TwipsPerCM
         Case Else
-            NewMessage "Unable to get the page size that you've chosen.", vbRed
+            NewMessage translate("Unable to get the page size that you've chosen."), vbRed
             Exit Sub
     End Select
     If Not IsNumeric(Text1(0).Text) Or Not IsNumeric(Text1(1).Text) Or Not IsNumeric(Text1(2).Text) Or Not IsNumeric(Text1(3).Text) Then
-        NewMessage "The margin that you've inputed is invaild", vbRed
+        NewMessage translate("The margin that you've inputed is invaild"), vbRed
         Exit Sub
     End If
     TopMargin = Val(Text1(0).Text) * TwipsPerCM
@@ -542,7 +542,7 @@ Private Sub PreviewButton_Click()
     Preview.Picture2.Line (Preview.Picture2.Width - RightMargin, TopMargin)-(Preview.Picture2.Width - RightMargin, Preview.Picture2.Height - BotMargin)
     Preview.Picture2.Line (LeftMargin, TopMargin)-(Preview.Picture2.Width - RightMargin, TopMargin)
     Preview.Picture2.Line (LeftMargin, Preview.Picture2.Height - BotMargin)-(Preview.Picture2.Width - RightMargin, Preview.Picture2.Height - BotMargin)
-    Preview.NewMessage "Available area to edit is the area in the rectangle.", vbBlack
+    Preview.NewMessage translate("Available area to edit is the area in the rectangle."), vbBlack
     TopMargin = Val(Text1(0).Text) * TwipsPerCM
     BotMargin = PageHeight - Val(Text1(1).Text) * TwipsPerCM
     LeftMargin = Val(Text1(2).Text) * TwipsPerCM
@@ -572,13 +572,13 @@ Private Sub Timer1_Timer()
 '        Exit Sub
 '    End If
     If MsgContentList.ListCount = 0 Then
-        Message.Caption = "No new messages."
+        Message.Caption = translate("No new messages.")
         Message.ForeColor = vbWhite
         showcnt = ShowCntPerMsg - 1
         GoTo rrr
     End If
     If current >= MsgContentList.ListCount Then
-        Message.Caption = "No new messages."
+        Message.Caption = translate("No new messages.")
         Message.ForeColor = vbWhite
         showcnt = ShowCntPerMsg - 1
         GoTo rrr
@@ -592,7 +592,7 @@ Private Sub Timer1_Timer()
             Exit Sub
         End If
         If current >= MsgContentList.ListCount Then
-            Message.Caption = "No new messages."
+            Message.Caption = translate("No new messages.")
             Message.ForeColor = vbWhite
             showcnt = ShowCntPerMsg - 1
             GoTo rrr

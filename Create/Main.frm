@@ -2373,15 +2373,15 @@ Sub NewMessage(Content As String, Color As Long, Optional ClearList As Boolean =
         MsgContentList.Clear
         MsgColorList.Clear
         MsgTypeList.Clear
-        If Message.Caption <> "" Then Message.Caption = Message.Caption & "(Expired)"
+        If Message.Caption <> "" Then Message.Caption = Message.Caption & translate("(Expired)")
         If ClearOnly Then Exit Sub
     End If
     MsgContentList.AddItem Content
     MsgColorList.AddItem Color
     Select Case Color
-        Case vbBlack: MsgTypeList.AddItem "[Info]"
-        Case vbBlue: MsgTypeList.AddItem "[Warning]"
-        Case vbRed: MsgTypeList.AddItem "[Error]"
+        Case vbBlack: MsgTypeList.AddItem translate("[Info]")
+        Case vbBlue: MsgTypeList.AddItem translate("[Warning]")
+        Case vbRed: MsgTypeList.AddItem translate("[Error]")
     End Select
     showcnt = 49
     Timer1_Timer
@@ -2413,7 +2413,7 @@ End Sub
 
 Private Sub Check21_Click()
     If Check21.Value = 1 Then Label55.Enabled = True Else Label55.Enabled = False
-    If Check21.Value = 1 Then Label55.Caption = "Click to edit" Else Label55.Caption = "Disabled"
+    If Check21.Value = 1 Then Label55.Caption = translate("Click to edit") Else Label55.Caption = translate("Disabled")
     If Check21.Value = 1 Then Option3.Caption = "ABCD" Else Option3.Caption = "ABC"
     If Check21.Value = 1 Then Option4.Caption = "ABCD" Else Option4.Caption = "ABC"
     If Check21.Value = 1 Then Option4.Value = True Else Option3.Value = True
@@ -2464,7 +2464,7 @@ Private Sub Dir1_Change()
     File1.Path = Dir1.Path
     Exit Sub
 err:
-    NewMessage "[SysErr]" & err.Description, vbRed
+    NewMessage translate("[SysErr]") & err.Description, vbRed
 End Sub
 
 Private Sub Dir2_Change()
@@ -2472,7 +2472,7 @@ Private Sub Dir2_Change()
     File2.Path = Dir2.Path
     Exit Sub
 err:
-    NewMessage "[SysErr]" & err.Description, vbRed
+    NewMessage translate("[SysErr]") & err.Description, vbRed
 End Sub
 
 Private Sub Drive1_Change()
@@ -2480,7 +2480,7 @@ Private Sub Drive1_Change()
     Dir1.Path = Drive1.Drive
     Exit Sub
 err:
-    NewMessage "[SysErr]" & err.Description, vbRed
+    NewMessage translate("[SysErr]") & err.Description, vbRed
 End Sub
 
 Private Sub Drive2_Change()
@@ -2488,7 +2488,7 @@ Private Sub Drive2_Change()
     Dir2.Path = Drive2.Drive
     Exit Sub
 err:
-    NewMessage "[SysErr]" & err.Description, vbRed
+    NewMessage translate("[SysErr]") & err.Description, vbRed
 End Sub
 
 Private Sub Form_Load()
@@ -2499,7 +2499,7 @@ Private Sub Form_Load()
     Integrated.WinMode = 1
     Integrated.InitWindow
     For i = 1 To Screen.FontCount
-        Integrated.Message.Caption = "Loading Fonts(" & i & "/" & Screen.FontCount & ")"
+        Integrated.Message.Caption = translate("Loading Fonts(") & i & "/" & Screen.FontCount & ")"
         DoEvents
         FontCombo.AddItem Screen.Fonts(i)
         Combo4.AddItem Screen.Fonts(i)
@@ -2529,7 +2529,7 @@ End Sub
 
 Private Sub Label24_Click()
     If Not IsNumeric(Text3.Text) Or Not IsNumeric(Text4.Text) Then
-        NewMessage "Invaild Format.", vbRed, True
+        NewMessage translate("Invaild Format."), vbRed, True
         Exit Sub
     End If
     'Label26.FontSize = Val(Text3.Text)
@@ -2572,7 +2572,7 @@ Private Sub Label24_Click()
         p = p + Label26.Width
     Wend
     If Not succ Then
-        NewMessage "The size you've input is too large", vbRed
+        NewMessage translate("The size you've input is too large"), vbRed
         On Error Resume Next
         Unload Preview
     End If
@@ -2580,7 +2580,7 @@ End Sub
 
 Private Sub Label25_Click()
     If Not IsNumeric(Text3.Text) Or Not IsNumeric(Text4.Text) Then
-        NewMessage "Invaild Format.", vbRed, True
+        NewMessage translate("Invaild Format."), vbRed, True
         Exit Sub
     End If
     'Label26.FontSize = Val(Text3.Text)
@@ -2694,7 +2694,7 @@ End Sub
 
 Private Sub Label36_Click()
     If Combo2.Text = "" Then
-        NewMessage "Invaild Format.", vbRed
+        NewMessage translate("Invaild Format."), vbRed
         Exit Sub
     End If
     InitPreview
@@ -2711,12 +2711,12 @@ Private Sub Label36_Click()
     End If
     Exit Sub
 err:
-    NewMessage "[SysErr]" & err.Description, vbRed
+    NewMessage translate("[SysErr]") & err.Description, vbRed
 End Sub
 
 Private Sub Label37_Click()
     If Combo2.Text = "" Then
-        NewMessage "Invaild Format.", vbRed
+        NewMessage translate("Invaild Format."), vbRed
         Exit Sub
     End If
     InitPreview
@@ -2745,7 +2745,7 @@ Private Sub Label37_Click()
     Unload Preview
     Exit Sub
 err:
-    NewMessage "[SysErr]" & err.Description, vbRed
+    NewMessage translate("[SysErr]") & err.Description, vbRed
 End Sub
 
 Private Sub Label38_Click()
@@ -2761,7 +2761,7 @@ End Sub
 
 Private Sub Label42_Click()
     If Not IsNumeric(Text6.Text) Or Not IsNumeric(Text7.Text) Or Val(Text6.Text) <> Int(Val(Text6.Text)) Or Val(Text7.Text) <> Int(Val(Text7.Text)) Then
-        NewMessage "Invaild Format", vbRed
+        NewMessage translate("Invaild Format"), vbRed
         Exit Sub
     End If
     Dim i As Long, v1 As Long
@@ -2822,7 +2822,7 @@ Private Sub Label56_Click()
     
     Dim i As Long, l As Long, c As String, r As String, v0 As Long, delta As Long, maxheight As Long, totwidth As Long, srr As String
     If Combo4.Text = "" Or Not IsNumeric(Text9.Text) Then
-        NewMessage "Invaild Format.", vbRed
+        NewMessage translate("Invaild Format."), vbRed
         Exit Sub
     End If
     If Option3.Value Then v0 = 4 Else v0 = 2
@@ -2865,7 +2865,7 @@ Private Sub Label56_Click()
             Preview.Picture2.Print c;
             maxheight = Max(maxheight, Temp.Height)
             If (v0 = 2 And Preview.Picture2.CurrentX - LeftMargin > (RightMargin - LeftMargin) / v0) Or (v0 = 4 And Preview.Picture2.CurrentX - LeftMargin > (RightMargin - LeftMargin) / 2) Then 'NOTE THAT!!
-                NewMessage "The input A is too large that we can't process that.", vbRed
+                NewMessage translate("The input A is too large that we can't process that."), vbRed
                 On Error Resume Next
                 Unload Preview
                 Text8.Text = srr
@@ -2912,7 +2912,7 @@ nexti:
             Preview.Picture2.Print c;
             Debug.Print c
             If (v0 = 2 And Preview.Picture2.CurrentX > RightMargin) Or (v0 = 4 And Preview.Picture2.CurrentX > (RightMargin - LeftMargin) / 2 + LeftMargin) Then 'NOTE THAT!!
-                NewMessage "The input B is too large that we can't process that.", vbRed
+                NewMessage translate("The input B is too large that we can't process that."), vbRed
                 Debug.Print v0
                 Debug.Print .CurrentX
                 On Error Resume Next
@@ -2962,7 +2962,7 @@ nextir:
             Preview.Picture2.Print c;
             Debug.Print c
             If (v0 = 2 And Preview.Picture2.CurrentX > (RightMargin - LeftMargin) / 2) Or (v0 = 4 And Preview.Picture2.CurrentX > (RightMargin - LeftMargin) / 4 * 3 + LeftMargin) Then 'NOTE THAT!!
-                NewMessage "The input C is too large that we can't process that.", vbRed
+                NewMessage translate("The input C is too large that we can't process that."), vbRed
                 Debug.Print v0
                 Debug.Print .CurrentX
                 On Error Resume Next
@@ -3014,7 +3014,7 @@ nextirr:
                 Preview.Picture2.Print c;
                 Debug.Print c
                 If (v0 = 2 And Preview.Picture2.CurrentX > RightMargin) Or (v0 = 4 And Preview.Picture2.CurrentX > RightMargin) Then 'NOTE THAT!!
-                    NewMessage "The input D is too large that we can't process that.", vbRed
+                    NewMessage translate("The input D is too large that we can't process that."), vbRed
                     Debug.Print v0
                     Debug.Print .CurrentX
                     On Error Resume Next
@@ -3035,7 +3035,7 @@ Private Sub Label57_Click()
     
     Dim i As Long, c As String, r As String, l As Long, v0 As Long, delta As Long, maxheight As Long, totwidth As Long, srr As String, maxheightr As Long
     If Combo4.Text = "" Or Not IsNumeric(Text9.Text) Then
-        NewMessage "Invaild Format.", vbRed
+        NewMessage translate("Invaild Format."), vbRed
         Exit Sub
     End If
     If Option3.Value Then v0 = 4 Else v0 = 2
@@ -3078,7 +3078,7 @@ Private Sub Label57_Click()
             Preview.Picture2.Print c;
             maxheight = Max(maxheight, Temp.Height)
             If (v0 = 2 And Preview.Picture2.CurrentX - LeftMargin > (RightMargin - LeftMargin) / v0) Or (v0 = 4 And Preview.Picture2.CurrentX - LeftMargin > (RightMargin - LeftMargin) / 2) Then 'NOTE THAT!!
-                NewMessage "The input A is too large that we can't process that.", vbRed
+                NewMessage translate("The input A is too large that we can't process that."), vbRed
                 On Error Resume Next
                 Unload Preview
                 Text8.Text = srr
@@ -3125,7 +3125,7 @@ nexti:
             Preview.Picture2.Print c;
             Debug.Print c
             If (v0 = 2 And Preview.Picture2.CurrentX > RightMargin) Or (v0 = 4 And Preview.Picture2.CurrentX > (RightMargin - LeftMargin) / 2 + LeftMargin) Then 'NOTE THAT!!
-                NewMessage "The input B is too large that we can't process that.", vbRed
+                NewMessage translate("The input B is too large that we can't process that."), vbRed
                 Debug.Print v0
                 Debug.Print .CurrentX
                 On Error Resume Next
@@ -3176,7 +3176,7 @@ nextir:
             Preview.Picture2.Print c;
             Debug.Print c
             If (v0 = 2 And Preview.Picture2.CurrentX > (RightMargin - LeftMargin) / 2) Or (v0 = 4 And Preview.Picture2.CurrentX > (RightMargin - LeftMargin) / 4 * 3 + LeftMargin) Then 'NOTE THAT!!
-                NewMessage "The input C is too large that we can't process that.", vbRed
+                NewMessage translate("The input C is too large that we can't process that."), vbRed
                 Debug.Print v0
                 Debug.Print .CurrentX
                 On Error Resume Next
@@ -3228,7 +3228,7 @@ nextirr:
                 Preview.Picture2.Print c;
                 Debug.Print c
                 If (v0 = 2 And Preview.Picture2.CurrentX > RightMargin) Or (v0 = 4 And Preview.Picture2.CurrentX > RightMargin) Then 'NOTE THAT!!
-                    NewMessage "The input D is too large that we can't process that.", vbRed
+                    NewMessage translate("The input D is too large that we can't process that."), vbRed
                     Debug.Print v0
                     Debug.Print .CurrentX
                     On Error Resume Next
@@ -3321,7 +3321,7 @@ Private Sub Label59_Click()
         SavePicture Preview.Exporter.Image, App.Path & "\Result\" & usage + 1 & "\" & cnt & ".jpg"
         Y = Y + BotMargin - TopMargin
     Wend
-    NewMessage "Generated and saved in the following path: ", vbBlack
+    NewMessage translate("Generated and saved in the following path: "), vbBlack
     NewMessage App.Path & "\Result\" & usage + 1, vbBlack
     On Error Resume Next
     Unload Preview
@@ -3351,34 +3351,34 @@ Private Sub ListFormat_Click()
     Dim qqq() As String, i As Long
     Text5.Text = ""
     qqq = Split(ListFormat.Text, ",")
-    Text5.Text = Text5.Text & "FontName: " & qqq(0) & vbCrLf
-    Text5.Text = Text5.Text & "FontSize: " & qqq(1) & vbCrLf
-    Text5.Text = Text5.Text & "Bold: " & qqq(2) & vbCrLf
-    Text5.Text = Text5.Text & "italic: " & qqq(3) & vbCrLf
-    Text5.Text = Text5.Text & "Alignment: " & qqq(4) & vbCrLf
-    Text5.Text = Text5.Text & "* For italic/Bold: 1 is true, 0 is false"
+    Text5.Text = Text5.Text & translate("FontName: ") & qqq(0) & vbCrLf
+    Text5.Text = Text5.Text & translate("FontSize: ") & qqq(1) & vbCrLf
+    Text5.Text = Text5.Text & translate("Bold: ") & qqq(2) & vbCrLf
+    Text5.Text = Text5.Text & translate("italic: ") & qqq(3) & vbCrLf
+    Text5.Text = Text5.Text & translate("Alignment: ") & qqq(4) & vbCrLf
+    Text5.Text = Text5.Text & translate("* For italic/Bold: 1 is true, 0 is false")
 End Sub
 
 Private Sub ListPage_Click()
     Dim qqq() As String, i As Long
     Text5.Text = ""
     qqq = Split(ListPage.Text, ",")
-    Text5.Text = Text5.Text & "FontName: " & qqq(0) & vbCrLf
-    Text5.Text = Text5.Text & "FontSize: " & qqq(1) & vbCrLf
-    Text5.Text = Text5.Text & "Bold: " & qqq(2) & vbCrLf
-    Text5.Text = Text5.Text & "italic: " & qqq(3) & vbCrLf
-    Text5.Text = Text5.Text & "Alignment: " & qqq(4) & vbCrLf
-    Text5.Text = Text5.Text & "Text: " & qqq(5) & vbCrLf
-    Text5.Text = Text5.Text & "DisabledImage: " & qqq(6) & vbCrLf
+    Text5.Text = Text5.Text & translate("FontName: ") & qqq(0) & vbCrLf
+    Text5.Text = Text5.Text & translate("FontSize: ") & qqq(1) & vbCrLf
+    Text5.Text = Text5.Text & translate("Bold: ") & qqq(2) & vbCrLf
+    Text5.Text = Text5.Text & translate("italic: ") & qqq(3) & vbCrLf
+    Text5.Text = Text5.Text & translate("Alignment: ") & qqq(4) & vbCrLf
+    Text5.Text = Text5.Text & translate("Text: ") & qqq(5) & vbCrLf
+    Text5.Text = Text5.Text & translate("DisabledImage: ") & qqq(6) & vbCrLf
     If qqq(6) = "False" Then
-        Text5.Text = Text5.Text & "Drive: " & qqq(7) & vbCrLf
-        Text5.Text = Text5.Text & "Path: " & qqq(8) & vbCrLf
-        Text5.Text = Text5.Text & "File: " & qqq(9) & vbCrLf
-        Text5.Text = Text5.Text & "Position: " & qqq(10) & vbCrLf
+        Text5.Text = Text5.Text & translate("Drive: ") & qqq(7) & vbCrLf
+        Text5.Text = Text5.Text & translate("Path: ") & qqq(8) & vbCrLf
+        Text5.Text = Text5.Text & translate("File: ") & qqq(9) & vbCrLf
+        Text5.Text = Text5.Text & translate("Position: ") & qqq(10) & vbCrLf
     Else
-        Text5.Text = Text5.Text & "[Image Information Unavailable]" & vbCrLf
+        Text5.Text = Text5.Text & translate("[Image Information Unavailable]") & vbCrLf
     End If
-    Text5.Text = Text5.Text & "* For italic/Bold: 1 is true, 0 is false"
+    Text5.Text = Text5.Text & translate("* For italic/Bold: 1 is true, 0 is false")
 End Sub
 
 Private Sub Message_MouseMove(Button As Integer, Shift As Integer, X As Single, Y As Single)
@@ -3447,13 +3447,13 @@ Private Sub Timer1_Timer()
 '        Exit Sub
 '    End If
     If MsgContentList.ListCount = 0 Then
-        Message.Caption = "No new messages."
+        Message.Caption = translate("No new messages.")
         Message.ForeColor = vbWhite
         showcnt = ShowCntPerMsg - 1
         GoTo rrr
     End If
     If current >= MsgContentList.ListCount Then
-        Message.Caption = "No new messages."
+        Message.Caption = translate("No new messages.")
         Message.ForeColor = vbWhite
         showcnt = ShowCntPerMsg - 1
         GoTo rrr
@@ -3467,7 +3467,7 @@ Private Sub Timer1_Timer()
             Exit Sub
         End If
         If current >= MsgContentList.ListCount Then
-            Message.Caption = "No new messages."
+            Message.Caption = translate("No new messages.")
             Message.ForeColor = vbWhite
             showcnt = ShowCntPerMsg - 1
             GoTo rrr
@@ -3562,7 +3562,7 @@ Private Sub Label10_Click()
     str = Split(Text2.Text, vbCrLf)
     bound = UBound(str)
     If FontCombo.Text = "" Or Not IsNumeric(Text1.Text) Or AlignCombo.Text = "" Then
-        NewMessage "Invaild format.", vbRed, True
+        NewMessage translate("Invaild Format."), vbRed, True
         Exit Sub
     End If
     For i = bound To 0 Step -1
@@ -3572,11 +3572,11 @@ Private Sub Label10_Click()
         If str(i) <> "" Then Exit For Else start = i + 1
     Next
     If bound - start + 1 < 1 Or Text2.Text = "" Then
-        NewMessage "Nothing can be previewed.", vbRed, True
+        NewMessage translate("Nothing can be previewed."), vbRed, True
         Exit Sub
     End If
     If Frame5.Visible = False And Combo1.Text = "" Then
-        NewMessage "You have not selected the position of the image.", vbRed
+        NewMessage translate("You have not selected the position of the image."), vbRed
         Exit Sub
     End If
     If Check17.Value = 1 Then Label29_Click
@@ -3586,7 +3586,7 @@ Private Sub Label10_Click()
         reced = False
         Preview.Exports.Picture = LoadPicture(File1.Path & "\" & File1.FileName)
         If Preview.Exports.Height > BotMargin - TopMargin Or Preview.Exports.Width > RightMargin - LeftMargin Then
-            NewMessage "Your input is so large that we can't process it.", vbRed
+            NewMessage translate("Your input is so large that we can't process it."), vbRed
             On Error Resume Next
             Unload Preview
             Exit Sub
@@ -3602,7 +3602,7 @@ Private Sub Label10_Click()
         End If
         GoTo ooi
 err:
-        NewMessage "[TYPE=RUNTIME_ERROR][ERRORID=" & err.Number & "][ERRDESC.=" & err.Description & "]", vbRed
+        NewMessage translate("[TYPE=RUNTIME_ERROR][ERRORID=") & err.Number & translate("][ERRDESC.=") & err.Description & "]", vbRed
         On Error Resume Next
         Unload Preview
         Exit Sub
@@ -3687,7 +3687,7 @@ ooi:
                 tmpstr = Text2.Text
                 If Temp.Width + .CurrentX > RightMargin Then
                     If Temp.Alignment <> 0 Then
-                        NewMessage "Auto split line is unsupportted for alignment mode 1 or 2.", vbRed
+                        NewMessage translate("Auto split line is unsupportted for alignment mode 1 or 2."), vbRed
                         Text2.Text = wholestr
                         On Error Resume Next
                         If Not reced Then
@@ -3720,8 +3720,8 @@ ooi:
                     'Preview.Picture2.Line (0, Preview.Picture2.CurrentY + Temp.Height)-(Preview.Picture2.Width, Preview.Picture2.CurrentY + Temp.Height), vbRed
                     If .CurrentY + Temp.Height >= BotMargin Then
                         If partid = 1 Then
-                            NewMessage "The input will be split into multi parts", vbBlue
-                            NewMessage "select parts that you want to preview in the list.", vbBlue
+                            NewMessage translate("The input will be split into multi parts"), vbBlue
+                            NewMessage translate("select parts that you want to preview in the list."), vbBlue
                             'Exit Sub
                         End If
                         '.Cls
@@ -3738,7 +3738,7 @@ ooi:
                     End If
                 End If
                 If Temp.Width > PageWidth - LeftMargin - (PageWidth - RightMargin) Or Temp.Height > PageHeight - TopMargin - (PageHeight - BotMargin) Then
-                    NewMessage "The target size is too large, we are unable to process it.", vbRed
+                    NewMessage translate("The target size is too large, we are unable to process it."), vbRed
                     Text2.Text = wholestr
                     On Error Resume Next
                     Unload Preview
@@ -3826,7 +3826,7 @@ Private Sub Label11_Click()
     str = Split(Text2.Text, vbCrLf)
     bound = UBound(str)
     If FontCombo.Text = "" Or Not IsNumeric(Text1.Text) Or AlignCombo.Text = "" Then
-        NewMessage "Invaild format.", vbRed, True
+        NewMessage translate("Invaild Format."), vbRed, True
         Exit Sub
     End If
     For i = bound To 0 Step -1
@@ -3836,11 +3836,11 @@ Private Sub Label11_Click()
         If str(i) <> "" Then Exit For Else start = i + 1
     Next
     If bound - start + 1 < 1 Or Text2.Text = "" Then
-        NewMessage "Nothing can be previewed.", vbRed, True
+        NewMessage translate("Nothing can be previewed."), vbRed, True
         Exit Sub
     End If
     If Frame5.Visible = False And Combo1.Text = "" Then
-        NewMessage "You have not selected the position of the image.", vbRed
+        NewMessage translate("You have not selected the position of the image."), vbRed
         Exit Sub
     End If
     If Check17.Value = 1 Then Label29_Click
@@ -3850,7 +3850,7 @@ Private Sub Label11_Click()
         reced = False
         Preview.Exports.Picture = LoadPicture(File1.Path & "\" & File1.FileName)
         If Preview.Exports.Height > BotMargin - TopMargin Or Preview.Exports.Width > RightMargin - LeftMargin Then
-            NewMessage "Your input is so large that we can't process it.", vbRed
+            NewMessage translate("Your input is so large that we can't process it."), vbRed
             On Error Resume Next
             Unload Preview
             Exit Sub
@@ -3871,7 +3871,7 @@ Private Sub Label11_Click()
         recordid = List1.ListCount - 1
         GoTo ooi
 err:
-        NewMessage "[TYPE=RUNTIME_ERROR][ERRORID=" & err.Number & "][ERRDESC.=" & err.Description & "]", vbRed
+        NewMessage translate("[TYPE=RUNTIME_ERROR][ERRORID=") & err.Number & translate("][ERRDESC.=") & err.Description & "]", vbRed
         On Error Resume Next
         Unload Preview
         Exit Sub
@@ -3903,8 +3903,8 @@ ooi:
             .CurrentY = TopMargin + delta
             If .CurrentY + Temp.Height >= BotMargin Then
                 If partid = 1 Then
-                    NewMessage "The input will be split into multi parts", vbBlue
-                    NewMessage "select parts that you want to preview in the list.", vbBlue
+                    NewMessage translate("The input will be split into multi parts"), vbBlue
+                    NewMessage translate("select parts that you want to preview in the list."), vbBlue
                     'Exit Sub
                 End If
                 '.Cls
@@ -3955,7 +3955,7 @@ ooi:
                 tmpstr = Text2.Text
                 If Temp.Width + .CurrentX > RightMargin Then
                     If Temp.Alignment <> 0 Then
-                        NewMessage "Auto split line is unsupportted for alignment mode 1 or 2.", vbRed
+                        NewMessage translate("Auto split line is unsupportted for alignment mode 1 or 2."), vbRed
                         Text2.Text = wholestr
                         On Error Resume Next
                         Unload Preview
@@ -4024,8 +4024,8 @@ ooi:
                     End With
                     If .CurrentY + Temp.Height >= BotMargin Then
                         If partid = 1 Then
-                            NewMessage "The input will be split into multi parts", vbBlue
-                            NewMessage "select parts that you want to preview in the list.", vbBlue
+                            NewMessage translate("The input will be split into multi parts"), vbBlue
+                            NewMessage translate("select parts that you want to preview in the list."), vbBlue
                             'Exit Sub
                         End If
                         '.Cls
@@ -4044,7 +4044,7 @@ ooi:
                     
                 End If
                 If Temp.Width > PageWidth - LeftMargin - (PageWidth - RightMargin) Or Temp.Height > PageHeight - TopMargin - (PageHeight - BotMargin) Then
-                    NewMessage "The target size is too large, we are unable to process it.", vbRed
+                    NewMessage translate("The target size is too large, we are unable to process it."), vbRed
                     Text2.Text = wholestr
                     If Not reced Then
                         reced = True
@@ -4092,7 +4092,7 @@ nextj:
                 Else
                     'Preview.Picture2.PaintPicture Preview.Exports.Picture, RightMargin - Preview.Exports.Width, TopMargin
                     RightMargin = RightMargin - Preview.Exports.Width
-                    Debug.Print " to " & RightMargin
+                    Debug.Print translate(" to ") & RightMargin
                 End If
             End If
             lastcapt = lastcapt + Temp.Height
@@ -4191,7 +4191,7 @@ Private Sub Label13_Click()
     Preview.Picture2.Picture = LoadPicture(App.Path & "\Cache\" & List1.Text & ".jpg")
     Preview.Picture2.AutoSize = False
 err:
-    Preview.NewMessage "Image which tracknumber=" & List1.Text & " not found", vbBlue
+    Preview.NewMessage translate("Image which tracknumber=") & List1.Text & translate(" not found"), vbBlue
 End Sub
 
 Private Sub Label14_Click()

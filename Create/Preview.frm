@@ -248,15 +248,15 @@ Sub NewMessage(Content As String, Color As Long, Optional ClearList As Boolean =
         MsgContentList.Clear
         MsgColorList.Clear
         MsgTypeList.Clear
-        If Message.Caption <> "" Then Message.Caption = Message.Caption & "(Expired)"
+        If Message.Caption <> "" Then Message.Caption = Message.Caption & translate("(Expired)")
         If ClearOnly Then Exit Sub
     End If
     MsgContentList.AddItem Content
     MsgColorList.AddItem Color
     Select Case Color
-        Case vbBlack: MsgTypeList.AddItem "[Info]"
-        Case vbBlue: MsgTypeList.AddItem "[Warning]"
-        Case vbRed: MsgTypeList.AddItem "[Error]"
+        Case vbBlack: MsgTypeList.AddItem translate("[Info]")
+        Case vbBlue: MsgTypeList.AddItem translate("[Warning]")
+        Case vbRed: MsgTypeList.AddItem translate("[Error]")
     End Select
     showcnt = 49
     Timer1_Timer
@@ -264,7 +264,7 @@ End Sub
 
 Private Sub Form_Load()
     current = -1
-    NewMessage "The size of the preview is NEAR the actual size.", vbBlack
+    NewMessage translate("The size of the preview is NEAR the actual size."), vbBlack
 End Sub
 
 Private Sub Form_Unload(Cancel As Integer)
@@ -311,7 +311,7 @@ Private Sub Timer1_Timer()
 '        Exit Sub
 '    End If
     If current >= MsgContentList.ListCount Then
-        Message.Caption = "No new messages."
+        Message.Caption = translate("No new messages.")
         Message.ForeColor = vbWhite
         showcnt = ShowCntPerMsg - 1
         GoTo rrr
@@ -325,7 +325,7 @@ Private Sub Timer1_Timer()
             Exit Sub
         End If
         If current >= MsgContentList.ListCount Then
-            Message.Caption = "No new messages."
+            Message.Caption = translate("No new messages.")
             Message.ForeColor = vbWhite
             showcnt = ShowCntPerMsg - 1
             GoTo rrr

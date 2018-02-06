@@ -89,7 +89,7 @@ Attribute VB_Exposed = False
 Option Explicit
 
 Private Sub Label1_Click()
-    Me.Caption = "UserCancel"
+    Me.Caption = translate("UserCancel")
     Me.Hide
 End Sub
 
