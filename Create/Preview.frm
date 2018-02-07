@@ -264,6 +264,7 @@ End Sub
 
 Private Sub Form_Load()
     current = -1
+    translatecontrol Me.Name
     NewMessage translate("The size of the preview is NEAR the actual size."), vbBlack
 End Sub
 

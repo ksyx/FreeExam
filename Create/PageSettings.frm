@@ -269,6 +269,7 @@ Begin VB.Form PageSettings
          Width           =   390
       End
       Begin VB.Label Label4 
+         Alignment       =   1  'Right Justify
          AutoSize        =   -1  'True
          BackStyle       =   0  'Transparent
          Caption         =   "Top"
@@ -283,12 +284,13 @@ Begin VB.Form PageSettings
          EndProperty
          ForeColor       =   &H00656D76&
          Height          =   360
-         Left            =   525
+         Left            =   90
          TabIndex        =   14
          Top             =   615
-         Width           =   510
+         Width           =   945
       End
       Begin VB.Label Label6 
+         Alignment       =   1  'Right Justify
          AutoSize        =   -1  'True
          BackStyle       =   0  'Transparent
          Caption         =   "Right"
@@ -303,12 +305,13 @@ Begin VB.Form PageSettings
          EndProperty
          ForeColor       =   &H00656D76&
          Height          =   360
-         Left            =   375
+         Left            =   60
          TabIndex        =   13
          Top             =   1725
-         Width           =   690
+         Width           =   1005
       End
       Begin VB.Label Label5 
+         Alignment       =   1  'Right Justify
          AutoSize        =   -1  'True
          BackStyle       =   0  'Transparent
          Caption         =   "Left"
@@ -323,10 +326,10 @@ Begin VB.Form PageSettings
          EndProperty
          ForeColor       =   &H00656D76&
          Height          =   360
-         Left            =   540
+         Left            =   60
          TabIndex        =   12
          Top             =   1365
-         Width           =   510
+         Width           =   990
       End
       Begin VB.Label Label3 
          AutoSize        =   -1  'True
@@ -390,6 +393,25 @@ Begin VB.Form PageSettings
          Width           =   6345
       End
    End
+   Begin VB.Label Label11 
+      BackStyle       =   0  'Transparent
+      Caption         =   "Warning: You are unable get back to here after clicking OK!"
+      BeginProperty Font 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   &H00656D76&
+      Height          =   480
+      Left            =   105
+      TabIndex        =   23
+      Top             =   4890
+      Width           =   4740
+   End
    Begin VB.Label PreviewButton 
       Appearance      =   0  'Flat
       AutoSize        =   -1  'True
@@ -432,6 +454,26 @@ Begin VB.Form PageSettings
       Top             =   4905
       Width           =   660
    End
+   Begin VB.Shape Shape0 
+      BackColor       =   &H00B4BFCC&
+      BackStyle       =   1  'Opaque
+      BorderColor     =   &H00B4BFCC&
+      Height          =   285
+      Index           =   22
+      Left            =   4905
+      Top             =   4905
+      Width           =   1080
+   End
+   Begin VB.Shape Shape0 
+      BackColor       =   &H00B4BFCC&
+      BackStyle       =   1  'Opaque
+      BorderColor     =   &H00B4BFCC&
+      Height          =   315
+      Index           =   0
+      Left            =   6120
+      Top             =   4890
+      Width           =   690
+   End
 End
 Attribute VB_Name = "PageSettings"
 Attribute VB_GlobalNameSpace = False
@@ -461,6 +503,7 @@ Private Sub Label2_Click()
         NewMessage translate("The margin that you've inputed is invaild"), vbRed
         Exit Sub
     End If
+    
     TopMargin = Val(Text1(0).Text) * TwipsPerCM
     BotMargin = Val(Text1(1).Text) * TwipsPerCM
     LeftMargin = Val(Text1(2).Text) * TwipsPerCM
@@ -475,6 +518,7 @@ Private Sub Label2_Click()
     BotMargin = PageHeight - Val(Text1(1).Text) * TwipsPerCM
     LeftMargin = Val(Text1(2).Text) * TwipsPerCM
     RightMargin = PageWidth - Val(Text1(3).Text) * TwipsPerCM
+    MainFrm.Show
     Unload Me
 End Sub
 
@@ -511,6 +555,7 @@ End Sub
 
 Private Sub Form_Load()
     current = -1
+    translatecontrol Me.Name
 End Sub
 
 Private Sub PreviewButton_Click()

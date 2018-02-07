@@ -9,6 +9,7 @@ Form=DevWin.frm
 Form=Main.frm
 Form=Init.frm
 Form=InputWin.frm
+Form=Lang.frm
 IconForm="PageSettings"
 Startup="Sub Main"
 HelpFile=""
