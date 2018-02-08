@@ -21,7 +21,6 @@ Begin VB.Form MainFrm
    MinButton       =   0   'False
    ScaleHeight     =   8700
    ScaleWidth      =   7920
-   ShowInTaskbar   =   0   'False
    StartUpPosition =   2  'ÆÁÄ»ÖÐÐÄ
    Begin VB.PictureBox WIP 
       BackColor       =   &H00A0ACBA&

@@ -21,7 +21,6 @@ Begin VB.Form PageSettings
    MinButton       =   0   'False
    ScaleHeight     =   5745
    ScaleWidth      =   7095
-   ShowInTaskbar   =   0   'False
    StartUpPosition =   2  'ÆÁÄ»ÖÐÐÄ
    Begin VB.Timer Timer1 
       Interval        =   100

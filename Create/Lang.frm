@@ -12,7 +12,6 @@ Begin VB.Form Lang
    MinButton       =   0   'False
    ScaleHeight     =   1185
    ScaleWidth      =   3465
-   ShowInTaskbar   =   0   'False
    StartUpPosition =   2  'ÆÁÄ»ÖÐÐÄ
    Begin VB.OptionButton Option2 
       Appearance      =   0  'Flat
