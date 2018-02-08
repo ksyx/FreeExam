@@ -201,8 +201,8 @@ Private Sub Text9_Change()
     For i = 1 To v
         newstr = newstr & " "
     Next
-    newstr = newstr & "^u^ "
-    oldstr = oldstr & "^u^ "
+    newstr = newstr & "^u^"
+    oldstr = oldstr & "^u^"
     Text1.Text = Replace(Text1.Text, oldstr, newstr)
     Text2.Text = Replace(Text2.Text, oldstr, newstr)
 save:

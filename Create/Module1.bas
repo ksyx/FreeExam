@@ -64,86 +64,86 @@ End Function
 
 Function translatecontrol(src As String)
     If EnableTranslation = 1 Then
-
-        
-
-
-
     
-
-
-
-
-        If src = "InputWin" Then
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    If src = "InputWin" Then
         InputWin.Caption = "输入"
         InputWin.Label1.AutoSize = True
-InputWin.Label28.AutoSize = True
-InputWin.Label1.Alignment = 2
-InputWin.Label28.Alignment = 2
-    InputWin.Label1.Font = "黑体"
-InputWin.Label28.Font = "黑体"
-InputWin.Label68.Font = "黑体"
+        InputWin.Label28.AutoSize = True
+        InputWin.Label1.Alignment = 2
+        InputWin.Label28.Alignment = 2
+        InputWin.Label1.FontName = "黑体"
+        InputWin.Label28.FontName = "黑体"
+        InputWin.Label68.FontName = "黑体"
         InputWin.Label1.Caption = "取消"
         InputWin.Label28.Caption = "确定"
         InputWin.Label68.Caption = "自动空格"
-        End If
-        If src = "Integrated" Then
+    End If
+    If src = "Integrated" Then
         Integrated.Label1.AutoSize = True
-Integrated.Label2.AutoSize = True
-Integrated.Label4.AutoSize = True
-Integrated.Label8.AutoSize = True
-Integrated.Label7.AutoSize = True
-Integrated.Label5.AutoSize = True
-Integrated.Label1.Alignment = 2
-Integrated.Label2.Alignment = 2
-Integrated.Label4.Alignment = 2
-Integrated.Label8.Alignment = 2
-Integrated.Label7.Alignment = 2
-Integrated.Label5.Alignment = 2
-Integrated.Label1.Font = "黑体"
-Integrated.Label2.Font = "黑体"
-Integrated.Label4.Font = "黑体"
-Integrated.Label8.Font = "黑体"
-Integrated.Label7.Font = "黑体"
-Integrated.Label5.Font = "黑体"
+        Integrated.Label2.AutoSize = True
+        Integrated.Label4.AutoSize = True
+        Integrated.Label8.AutoSize = True
+        Integrated.Label7.AutoSize = True
+        Integrated.Label5.AutoSize = True
+        Integrated.Label1.Alignment = 2
+        Integrated.Label2.Alignment = 2
+        Integrated.Label4.Alignment = 2
+        Integrated.Label8.Alignment = 2
+        Integrated.Label7.Alignment = 2
+        Integrated.Label5.Alignment = 2
+        Integrated.Label1.FontName = "黑体"
+        Integrated.Label2.FontName = "黑体"
+        Integrated.Label4.FontName = "黑体"
+        Integrated.Label8.FontName = "黑体"
+        Integrated.Label7.FontName = "黑体"
+        Integrated.Label5.FontName = "黑体"
         Integrated.Label1.Caption = "代码"
         Integrated.Label2.Caption = "结果"
         Integrated.Label4.Caption = "按Enter插入，按Esc退出"
         Integrated.Label8.Caption = "代码"
         Integrated.Label7.Caption = "结果"
         Integrated.Label5.Caption = "按Enter插入，按Esc退出"
-        End If
-        If src = "PageSettings" Then
+    End If
+    If src = "PageSettings" Then
         PageSettings.Caption = "页面设置"
         'PageSettings.Frame1.AutoSize = true
-'PageSettings.Label1.AutoSize = True
-'PageSettings.Frame2.AutoSize = true
-'PageSettings.Label4.AutoSize = True
-'PageSettings.Label3.AutoSize = True
-'PageSettings.Label5.AutoSize = True
-PageSettings.Label6.AutoSize = True
-PageSettings.PreviewButton.AutoSize = True
-PageSettings.Label2.AutoSize = True
-'PageSettings.Frame1.Alignment = 2
-'PageSettings.Label1.Alignment = 2
-'PageSettings.Frame2.Alignment = 2
-PageSettings.Label4.Alignment = 1
-PageSettings.Label3.Alignment = 1
-PageSettings.Label5.Alignment = 1
-PageSettings.Label6.Alignment = 1
-PageSettings.PreviewButton.Alignment = 2
-PageSettings.Label2.Alignment = 2
-PageSettings.Message.Font = "黑体"
-        PageSettings.Frame1.Font = "黑体"
-PageSettings.Label1.Font = "黑体"
-PageSettings.Frame2.Font = "黑体"
-PageSettings.Label4.Font = "黑体"
-PageSettings.Label3.Font = "黑体"
-PageSettings.Label5.Font = "黑体"
-PageSettings.Label6.Font = "黑体"
-PageSettings.Label11.Font = "黑体"
-PageSettings.PreviewButton.Font = "黑体"
-PageSettings.Label2.Font = "黑体"
+        'PageSettings.Label1.AutoSize = True
+        'PageSettings.Frame2.AutoSize = true
+        'PageSettings.Label4.AutoSize = True
+        'PageSettings.Label3.AutoSize = True
+        'PageSettings.Label5.AutoSize = True
+        PageSettings.Label6.AutoSize = True
+        PageSettings.PreviewButton.AutoSize = True
+        PageSettings.Label2.AutoSize = True
+        'PageSettings.Frame1.Alignment = 2
+        'PageSettings.Label1.Alignment = 2
+        'PageSettings.Frame2.Alignment = 2
+        PageSettings.Label4.Alignment = 1
+        PageSettings.Label3.Alignment = 1
+        PageSettings.Label5.Alignment = 1
+        PageSettings.Label6.Alignment = 1
+        PageSettings.PreviewButton.Alignment = 2
+        PageSettings.Label2.Alignment = 2
+        PageSettings.Message.FontName = "黑体"
+        PageSettings.Frame1.FontName = "黑体"
+        PageSettings.Label1.FontName = "黑体"
+        PageSettings.Frame2.FontName = "黑体"
+        PageSettings.Label4.FontName = "黑体"
+        PageSettings.Label3.FontName = "黑体"
+        PageSettings.Label5.FontName = "黑体"
+        PageSettings.Label6.FontName = "黑体"
+        PageSettings.Label11.FontName = "黑体"
+        PageSettings.PreviewButton.FontName = "黑体"
+        PageSettings.Label2.FontName = "黑体"
         PageSettings.Frame1.Caption = "页面类型"
         PageSettings.Label1.Caption = "注意：8K的宽度是真实宽度的一半，你选择的8K尺寸已减半。显示的尺寸格式为尺寸名称（长×宽），暂不支持自定义尺寸。"
         PageSettings.Frame2.Caption = "边距"
@@ -154,246 +154,258 @@ PageSettings.Label2.Font = "黑体"
         PageSettings.Label6.Caption = "右"
         PageSettings.PreviewButton.Caption = "预览"
         PageSettings.Label2.Caption = "确定"
-        End If
-        If src = "MainFrm" Then
+    End If
+    If src = "MainFrm" Then
         MainFrm.Caption = "自由考 创建考卷"
         MainFrm.Label12.AutoSize = True
-MainFrm.Label3.AutoSize = True
-MainFrm.Label1.AutoSize = True
-MainFrm.Label15.AutoSize = True
-MainFrm.Label30.AutoSize = True
-MainFrm.Label60.AutoSize = True
-MainFrm.Label63.AutoSize = True
-MainFrm.PreviewButton.AutoSize = True
-MainFrm.Label22.AutoSize = True
-MainFrm.Label35.AutoSize = True
-MainFrm.Label38.AutoSize = True
-MainFrm.Label43.AutoSize = True
-'MainFrm.Frame19.AutoSize = true
-'MainFrm.Frame11.AutoSize = true
-'MainFrm.Check22.AutoSize = true
-'MainFrm.Check23.AutoSize = true
-MainFrm.Label61.AutoSize = True
-MainFrm.Label59.AutoSize = True
-MainFrm.Label23.AutoSize = True
-MainFrm.Label27.AutoSize = True
-'MainFrm.Frame9.AutoSize = true
-MainFrm.Label24.AutoSize = True
-MainFrm.Label25.AutoSize = True
-MainFrm.Label33.AutoSize = True
-MainFrm.Label39.AutoSize = True
-MainFrm.Label42.AutoSize = True
-'MainFrm.Frame20.AutoSize = true
-MainFrm.Label36.AutoSize = True
-MainFrm.Label37.AutoSize = True
-MainFrm.Label13.AutoSize = True
-MainFrm.Label14.AutoSize = True
-'MainFrm.Frame17.AutoSize = true
-MainFrm.Label46.AutoSize = True
-MainFrm.Label47.AutoSize = True
-MainFrm.Label45.AutoSize = True
-'MainFrm.Frame18.AutoSize = true
-MainFrm.Label52.AutoSize = True
-MainFrm.Label53.AutoSize = True
-MainFrm.Label54.AutoSize = True
-MainFrm.Label55.AutoSize = True
-MainFrm.Label56.AutoSize = True
-MainFrm.Label57.AutoSize = True
-'MainFrm.Frame13.AutoSize = true
-'MainFrm.Option1.AutoSize = true
-'MainFrm.Option2.AutoSize = true
-'MainFrm.Frame14.AutoSize = true
-'MainFrm.Frame1.AutoSize = true
-MainFrm.Label7.AutoSize = True
-MainFrm.Label8.AutoSize = True
-MainFrm.Label9.AutoSize = True
-MainFrm.Label10.AutoSize = True
-'MainFrm.Frame2.AutoSize = true
-MainFrm.Label9.AutoSize = True
-MainFrm.Label51.AutoSize = True
-MainFrm.Label17.AutoSize = True
-'MainFrm.Frame6.AutoSize = true
-'MainFrm.Frame7.AutoSize = true
-MainFrm.Label18.AutoSize = True
-MainFrm.Label19.AutoSize = True
-'MainFrm.Frame10.AutoSize = true
-MainFrm.Label28.AutoSize = True
-MainFrm.Label29.AutoSize = True
-'MainFrm.Check17.AutoSize = true
-MainFrm.Label10.AutoSize = True
-MainFrm.Label11.AutoSize = True
-MainFrm.Label12.Alignment = 2
-MainFrm.Label3.Alignment = 2
-MainFrm.Label1.Alignment = 2
-MainFrm.Label15.Alignment = 2
-MainFrm.Label30.Alignment = 2
-MainFrm.Label60.Alignment = 2
-MainFrm.Label63.Alignment = 2
-MainFrm.PreviewButton.Alignment = 2
-MainFrm.Label22.Alignment = 2
-MainFrm.Label35.Alignment = 2
-MainFrm.Label38.Alignment = 2
-MainFrm.Label43.Alignment = 2
-'MainFrm.Frame19.Alignment = 2
-'MainFrm.Frame11.Alignment = 2
-'MainFrm.Check22.Alignment = 2
-'MainFrm.Check23.Alignment = 2
-MainFrm.Label61.Alignment = 2
-MainFrm.Label59.Alignment = 2
-MainFrm.Label23.Alignment = 2
-MainFrm.Label27.Alignment = 1
-'MainFrm.Frame9.Alignment = 2
-MainFrm.Label24.Alignment = 2
-MainFrm.Label25.Alignment = 2
-MainFrm.Label33.Alignment = 2
-MainFrm.Label39.Alignment = 2
-MainFrm.Label42.Alignment = 2
-'MainFrm.Frame20.Alignment = 2
-MainFrm.Label36.Alignment = 2
-MainFrm.Label37.Alignment = 2
-MainFrm.Label13.Alignment = 2
-MainFrm.Label14.Alignment = 2
-'MainFrm.Frame17.Alignment = 2
-MainFrm.Label46.Alignment = 2
-MainFrm.Label47.Alignment = 2
-MainFrm.Label45.Alignment = 2
-'MainFrm.Frame18.Alignment = 2
-MainFrm.Label52.Alignment = 2
-MainFrm.Label53.Alignment = 2
-MainFrm.Label54.Alignment = 2
-MainFrm.Label55.Alignment = 2
-MainFrm.Label56.Alignment = 2
-MainFrm.Label57.Alignment = 2
-'MainFrm.Frame13.Alignment = 2
-'MainFrm.Option1.Alignment = 2
-'MainFrm.Option2.Alignment = 2
-'MainFrm.Frame14.Alignment = 2
-'MainFrm.Frame1.Alignment = 2
-MainFrm.Label7.Alignment = 2
-MainFrm.Label8.Alignment = 2
-MainFrm.Label9.Alignment = 2
-MainFrm.Label10.Alignment = 2
-'MainFrm.Frame2.Alignment = 2
-MainFrm.Label9.Alignment = 2
-MainFrm.Label51.Alignment = 2
-MainFrm.Label17.Alignment = 2
-'MainFrm.Frame6.Alignment = 2
-'MainFrm.Frame7.Alignment = 2
-MainFrm.Label18.Alignment = 2
-MainFrm.Label19.Alignment = 2
-'MainFrm.Frame10.Alignment = 2
-MainFrm.Label28.Alignment = 2
-MainFrm.Label29.Alignment = 2
-'MainFrm.Check17.Alignment = 2
-MainFrm.Label10.Alignment = 2
-MainFrm.Label11.Alignment = 2
-
-MainFrm.Label5.Alignment = 2
-MainFrm.Label6.Alignment = 2
-MainFrm.Label12.FontName = "黑体"
-MainFrm.Label3.FontName = "黑体"
-MainFrm.Label1.FontName = "黑体"
-MainFrm.Label15.FontName = "黑体"
-MainFrm.Label30.FontName = "黑体"
-MainFrm.Label60.FontName = "黑体"
-MainFrm.Label63.FontName = "黑体"
-MainFrm.PreviewButton.FontName = "黑体"
-MainFrm.Label22.FontName = "黑体"
-MainFrm.Label35.FontName = "黑体"
-MainFrm.Label38.FontName = "黑体"
-MainFrm.Label43.FontName = "黑体"
-
-
-
-MainFrm.Frame19.Font = "黑体"
-MainFrm.Frame11.Font = "黑体"
-MainFrm.Check22.Font = "黑体"
-MainFrm.Check23.Font = "黑体"
-MainFrm.Label61.Font = "黑体"
-MainFrm.Label59.Font = "黑体"
-MainFrm.Label23.Font = "黑体"
-MainFrm.Label27.Font = "黑体"
-MainFrm.Frame9.Font = "黑体"
-MainFrm.Label24.Font = "黑体"
-MainFrm.Label25.Font = "黑体"
-MainFrm.Label33.Font = "黑体"
-MainFrm.Label39.Font = "黑体"
-MainFrm.Label42.Font = "黑体"
-MainFrm.Frame20.Font = "黑体"
-MainFrm.Label36.Font = "黑体"
-MainFrm.Label37.Font = "黑体"
-MainFrm.Label13.Font = "黑体"
-MainFrm.Label14.Font = "黑体"
-MainFrm.Frame17.Font = "黑体"
-MainFrm.Label46.Font = "黑体"
-MainFrm.Label47.Font = "黑体"
-MainFrm.Label45.Font = "黑体"
-MainFrm.Frame18.Font = "黑体"
-MainFrm.Label52.Font = "黑体"
-MainFrm.Label53.Font = "黑体"
-MainFrm.Label54.Font = "黑体"
-MainFrm.Label55.Font = "黑体"
-MainFrm.Label56.Font = "黑体"
-MainFrm.Label57.Font = "黑体"
-MainFrm.Frame13.Font = "黑体"
-MainFrm.Option1.Font = "黑体"
-MainFrm.Option2.Font = "黑体"
-MainFrm.Frame14.Font = "黑体"
-MainFrm.Frame1.Font = "黑体"
-MainFrm.Label7.Font = "黑体"
-MainFrm.Label8.Font = "黑体"
-MainFrm.Label9.Font = "黑体"
-MainFrm.Label10.Font = "黑体"
-MainFrm.Frame2.Font = "黑体"
-MainFrm.Label9.Font = "黑体"
-MainFrm.Label51.Font = "黑体"
-MainFrm.Label17.Font = "黑体"
-MainFrm.Frame6.Font = "黑体"
-MainFrm.Frame7.Font = "黑体"
-MainFrm.Label18.Font = "黑体"
-MainFrm.Label19.Font = "黑体"
-MainFrm.Frame10.Font = "黑体"
-MainFrm.Label28.Font = "黑体"
-MainFrm.Label29.Font = "黑体"
-MainFrm.Check17.Font = "黑体"
-MainFrm.Label10.Font = "黑体"
-MainFrm.Label11.Font = "黑体"
-MainFrm.Label21.Font = "黑体"
-MainFrm.Label5.Font = "黑体"
-MainFrm.Label6.Font = "黑体"
-MainFrm.Label20.Font = "黑体"
-MainFrm.Message.Font = "黑体"
-MainFrm.AlignCombo.Font = "黑体"
-MainFrm.Combo2.Font = "黑体"
-MainFrm.Combo1.Font = "黑体"
-MainFrm.AlignCombo.Clear
-MainFrm.AlignCombo.AddItem "0 - 左对齐"
-MainFrm.AlignCombo.AddItem "1 - 右对齐"
-MainFrm.AlignCombo.AddItem "2 - 居中"
-MainFrm.Combo2.Clear
-MainFrm.Combo2.AddItem "0 - 左对齐"
-MainFrm.Combo2.AddItem "1 - 右对齐"
-MainFrm.Combo2.AddItem "2 - 居中"
-MainFrm.Combo1.Clear
-MainFrm.Combo1.AddItem "0 - [图片][文字]"
-MainFrm.Combo1.AddItem "1 - [文字][图片]"
-MainFrm.Frame6.Caption = "选择一张图片"
-MainFrm.Label20.Caption = "工作进行中"
-MainFrm.Label21.Caption = "预览窗口处于打开状态。在继续使用本窗口前你应该关闭它。"
+        MainFrm.Label3.AutoSize = True
+        MainFrm.Label1.AutoSize = True
+        MainFrm.Label15.AutoSize = True
+        MainFrm.Label30.AutoSize = True
+        MainFrm.Label60.AutoSize = True
+        MainFrm.Label64.AutoSize = True
+        MainFrm.Label63.AutoSize = True
+        MainFrm.PreviewButton.AutoSize = True
+        MainFrm.Label22.AutoSize = True
+        MainFrm.Label35.AutoSize = True
+        MainFrm.Label38.AutoSize = True
+        MainFrm.Label43.AutoSize = True
+        'MainFrm.Frame19.AutoSize = true
+        'MainFrm.Frame11.AutoSize = true
+        'MainFrm.Check22.AutoSize = true
+        'MainFrm.Check23.AutoSize = true
+        MainFrm.Label61.AutoSize = True
+        MainFrm.Label59.AutoSize = True
+        MainFrm.Label23.AutoSize = True
+        MainFrm.Label27.AutoSize = True
+        'MainFrm.Frame9.AutoSize = true
+        MainFrm.Label24.AutoSize = True
+        MainFrm.Label25.AutoSize = True
+        MainFrm.Label33.AutoSize = True
+        MainFrm.Label39.AutoSize = True
+        MainFrm.Label42.AutoSize = True
+        'MainFrm.Frame20.AutoSize = true
+        MainFrm.Label36.AutoSize = True
+        MainFrm.Label37.AutoSize = True
+        MainFrm.Label13.AutoSize = True
+        MainFrm.Label14.AutoSize = True
+        'MainFrm.Frame17.AutoSize = true
+        MainFrm.Label46.AutoSize = True
+        MainFrm.Label47.AutoSize = True
+        MainFrm.Label45.AutoSize = True
+        'MainFrm.Frame18.AutoSize = true
+        MainFrm.Label52.AutoSize = True
+        MainFrm.Label53.AutoSize = True
+        MainFrm.Label54.AutoSize = True
+        MainFrm.Label55.AutoSize = True
+        MainFrm.Label56.AutoSize = True
+        MainFrm.Label57.AutoSize = True
+        'MainFrm.Frame13.AutoSize = true
+        'MainFrm.Option1.AutoSize = true
+        'MainFrm.Option2.AutoSize = true
+        'MainFrm.Frame14.AutoSize = true
+        'MainFrm.Frame1.AutoSize = true
+        MainFrm.Label7.AutoSize = True
+        MainFrm.Label8.AutoSize = True
+        MainFrm.Label9.AutoSize = True
+        MainFrm.Label10.AutoSize = True
+        'MainFrm.Frame2.AutoSize = true
+        MainFrm.Label9.AutoSize = True
+        MainFrm.Label51.AutoSize = True
+        MainFrm.Label17.AutoSize = True
+        MainFrm.Label66.AutoSize = True
+        MainFrm.Label69.AutoSize = True
+        'MainFrm.Frame6.AutoSize = true
+        'MainFrm.Frame7.AutoSize = true
+        MainFrm.Label18.AutoSize = True
+        MainFrm.Label19.AutoSize = True
+        'MainFrm.Frame10.AutoSize = true
+        MainFrm.Label28.AutoSize = True
+        MainFrm.Label29.AutoSize = True
+        'MainFrm.Check17.AutoSize = true
+        MainFrm.Label10.AutoSize = True
+        MainFrm.Label11.AutoSize = True
+        MainFrm.Label12.Alignment = 2
+        MainFrm.Label3.Alignment = 2
+        MainFrm.Label1.Alignment = 2
+        MainFrm.Label15.Alignment = 2
+        MainFrm.Label30.Alignment = 2
+        MainFrm.Label60.Alignment = 2
+        MainFrm.Label63.Alignment = 2
+        MainFrm.PreviewButton.Alignment = 2
+        MainFrm.Label22.Alignment = 2
+        MainFrm.Label35.Alignment = 2
+        MainFrm.Label38.Alignment = 2
+        MainFrm.Label43.Alignment = 2
+        MainFrm.Label64.Alignment = 2
+        'MainFrm.Frame19.Alignment = 2
+        'MainFrm.Frame11.Alignment = 2
+        'MainFrm.Check22.Alignment = 2
+        'MainFrm.Check23.Alignment = 2
+        MainFrm.Label61.Alignment = 2
+        MainFrm.Label59.Alignment = 2
+        MainFrm.Label23.Alignment = 2
+        MainFrm.Label27.Alignment = 1
+        'MainFrm.Frame9.Alignment = 2
+        MainFrm.Label24.Alignment = 2
+        MainFrm.Label25.Alignment = 2
+        MainFrm.Label33.Alignment = 2
+        MainFrm.Label39.Alignment = 2
+        MainFrm.Label42.Alignment = 2
+        'MainFrm.Frame20.Alignment = 2
+        MainFrm.Label36.Alignment = 2
+        MainFrm.Label37.Alignment = 2
+        MainFrm.Label13.Alignment = 2
+        MainFrm.Label14.Alignment = 2
+        'MainFrm.Frame17.Alignment = 2
+        MainFrm.Label46.Alignment = 2
+        MainFrm.Label47.Alignment = 2
+        MainFrm.Label45.Alignment = 2
+        'MainFrm.Frame18.Alignment = 2
+        MainFrm.Label52.Alignment = 2
+        MainFrm.Label53.Alignment = 2
+        MainFrm.Label54.Alignment = 2
+        MainFrm.Label55.Alignment = 2
+        MainFrm.Label56.Alignment = 2
+        MainFrm.Label57.Alignment = 2
+        'MainFrm.Frame13.Alignment = 2
+        'MainFrm.Option1.Alignment = 2
+        'MainFrm.Option2.Alignment = 2
+        'MainFrm.Frame14.Alignment = 2
+        'MainFrm.Frame1.Alignment = 2
+        MainFrm.Label7.Alignment = 2
+        MainFrm.Label8.Alignment = 2
+        MainFrm.Label9.Alignment = 2
+        MainFrm.Label10.Alignment = 2
+        'MainFrm.Frame2.Alignment = 2
+        MainFrm.Label9.Alignment = 2
+        MainFrm.Label51.Alignment = 2
+        MainFrm.Label17.Alignment = 2
+        'MainFrm.Frame6.Alignment = 2
+        'MainFrm.Frame7.Alignment = 2
+        MainFrm.Label18.Alignment = 2
+        MainFrm.Label19.Alignment = 2
+        'MainFrm.Frame10.Alignment = 2
+        MainFrm.Label28.Alignment = 2
+        MainFrm.Label29.Alignment = 2
+        'MainFrm.Check17.Alignment = 2
+        MainFrm.Label10.Alignment = 2
+        MainFrm.Label11.Alignment = 2
+        
+        MainFrm.Label5.Alignment = 2
+        MainFrm.Label6.Alignment = 2
+        MainFrm.Label12.FontName = "黑体"
+        MainFrm.Label3.FontName = "黑体"
+        MainFrm.Label1.FontName = "黑体"
+        MainFrm.Label15.FontName = "黑体"
+        MainFrm.Label30.FontName = "黑体"
+        MainFrm.Label60.FontName = "黑体"
+        MainFrm.Label63.FontName = "黑体"
+        MainFrm.PreviewButton.FontName = "黑体"
+        MainFrm.Label22.FontName = "黑体"
+        MainFrm.Label35.FontName = "黑体"
+        MainFrm.Label38.FontName = "黑体"
+        MainFrm.Label43.FontName = "黑体"
+        MainFrm.Frame22.FontName = "黑体"
+        MainFrm.Frame23.FontName = "黑体"
+        MainFrm.Label70.FontName = "黑体"
+        MainFrm.Frame19.FontName = "黑体"
+        MainFrm.Frame11.FontName = "黑体"
+        MainFrm.Check22.FontName = "黑体"
+        MainFrm.Check23.FontName = "黑体"
+        MainFrm.Label61.FontName = "黑体"
+        MainFrm.Label59.FontName = "黑体"
+        MainFrm.Label23.FontName = "黑体"
+        MainFrm.Label27.FontName = "黑体"
+        MainFrm.Frame9.FontName = "黑体"
+        MainFrm.Label24.FontName = "黑体"
+        MainFrm.Label25.FontName = "黑体"
+        MainFrm.Label33.FontName = "黑体"
+        MainFrm.Label39.FontName = "黑体"
+        MainFrm.Label42.FontName = "黑体"
+        MainFrm.Frame20.FontName = "黑体"
+        MainFrm.Label36.FontName = "黑体"
+        MainFrm.Label37.FontName = "黑体"
+        MainFrm.Label13.FontName = "黑体"
+        MainFrm.Label14.FontName = "黑体"
+        MainFrm.Frame17.FontName = "黑体"
+        MainFrm.Label46.FontName = "黑体"
+        MainFrm.Label47.FontName = "黑体"
+        MainFrm.Label45.FontName = "黑体"
+        MainFrm.Label69.FontName = "黑体"
+        MainFrm.Label66.FontName = "黑体"
+        MainFrm.Frame18.FontName = "黑体"
+        MainFrm.Label52.FontName = "黑体"
+        MainFrm.Label53.FontName = "黑体"
+        MainFrm.Label54.FontName = "黑体"
+        MainFrm.Label55.FontName = "黑体"
+        MainFrm.Label56.FontName = "黑体"
+        MainFrm.Label57.FontName = "黑体"
+        MainFrm.Frame13.FontName = "黑体"
+        MainFrm.Option1.FontName = "黑体"
+        MainFrm.Option2.FontName = "黑体"
+        MainFrm.Frame14.FontName = "黑体"
+        MainFrm.Frame1.FontName = "黑体"
+        MainFrm.Label7.FontName = "黑体"
+        MainFrm.Label8.FontName = "黑体"
+        MainFrm.Label9.FontName = "黑体"
+        MainFrm.Label10.FontName = "黑体"
+        MainFrm.Frame2.FontName = "黑体"
+        MainFrm.Label9.FontName = "黑体"
+        MainFrm.Label51.FontName = "黑体"
+        MainFrm.Label17.FontName = "黑体"
+        MainFrm.Frame6.FontName = "黑体"
+        MainFrm.Frame7.FontName = "黑体"
+        MainFrm.Label18.FontName = "黑体"
+        MainFrm.Label19.FontName = "黑体"
+        MainFrm.Frame10.FontName = "黑体"
+        MainFrm.Label28.FontName = "黑体"
+        MainFrm.Label29.FontName = "黑体"
+        MainFrm.Check17.FontName = "黑体"
+        MainFrm.Label10.FontName = "黑体"
+        MainFrm.Label11.FontName = "黑体"
+        MainFrm.Label21.FontName = "黑体"
+        MainFrm.Label70.FontName = "黑体"
+        MainFrm.Label5.FontName = "黑体"
+        MainFrm.Label6.FontName = "黑体"
+        MainFrm.Label20.FontName = "黑体"
+        MainFrm.Message.FontName = "黑体"
+        MainFrm.AlignCombo.FontName = "黑体"
+        MainFrm.Combo2.FontName = "黑体"
+        MainFrm.Combo1.FontName = "黑体"
+        MainFrm.Label64.FontName = "黑体"
+        MainFrm.AlignCombo.Clear
+        MainFrm.AlignCombo.AddItem "0 - 左对齐"
+        MainFrm.AlignCombo.AddItem "1 - 右对齐"
+        MainFrm.AlignCombo.AddItem "2 - 居中"
+        MainFrm.Combo2.Clear
+        MainFrm.Combo2.AddItem "0 - 左对齐"
+        MainFrm.Combo2.AddItem "1 - 右对齐"
+        MainFrm.Combo2.AddItem "2 - 居中"
+        MainFrm.Combo1.Clear
+        MainFrm.Combo1.AddItem "0 - [图片][文字]"
+        MainFrm.Combo1.AddItem "1 - [文字][图片]"
+        MainFrm.Frame6.Caption = "选择一张图片"
+        MainFrm.Label20.Caption = "工作进行中"
+        MainFrm.Label21.Caption = "预览窗口处于打开状态。在继续使用本窗口前你应该关闭它。"
         MainFrm.Label12.Caption = "管理/导出"
-MainFrm.Label3.Caption = "关于"
-MainFrm.Label1.Caption = "通用"
-MainFrm.Label15.Caption = "合并预览"
-MainFrm.Label30.Caption = "记录"
-MainFrm.Label60.Caption = "合并"
-MainFrm.Label63.Caption = "列表"
-MainFrm.PreviewButton.Caption = "文本"
-MainFrm.Label22.Caption = "答题区"
-MainFrm.Label35.Caption = "图片"
-MainFrm.Label38.Caption = "空白区"
-MainFrm.Label43.Caption = "选择题"
-MainFrm.Check16.Caption = "英语模式"
+        MainFrm.Label3.Caption = "关于"
+        MainFrm.Label1.Caption = "通用"
+        MainFrm.Label70.Caption = "读取号"
+        MainFrm.Label15.Caption = "合并预览"
+        MainFrm.Label30.Caption = "记录"
+        MainFrm.Label60.Caption = "合并"
+        MainFrm.Label63.Caption = "列表"
+        MainFrm.PreviewButton.Caption = "文本"
+        MainFrm.Label22.Caption = "答题区"
+        MainFrm.Label35.Caption = "图片"
+        MainFrm.Label38.Caption = "空白区"
+        MainFrm.Label43.Caption = "选择题"
+        MainFrm.Check16.Caption = "英语模式"
+        MainFrm.Label64.Caption = "保存/读取"
         MainFrm.Frame19.Caption = "页眉"
+        MainFrm.Frame22.Caption = "保存"
+        MainFrm.Frame23.Caption = "读取"
         MainFrm.Frame11.Caption = "页脚"
         MainFrm.Check22.Caption = "分割线"
         MainFrm.Check23.Caption = "分割线"
@@ -406,6 +418,8 @@ MainFrm.Check16.Caption = "英语模式"
         MainFrm.Label25.Caption = "保存"
         MainFrm.Label33.Caption = "追踪号"
         MainFrm.Label39.Caption = "尺寸"
+        MainFrm.Label66.Caption = "保存"
+        MainFrm.Label69.Caption = "读取"
         MainFrm.Label42.Caption = "保存"
         MainFrm.Frame20.Caption = "选择一个图像"
         MainFrm.Label36.Caption = "预览"
@@ -449,8 +463,8 @@ MainFrm.Check16.Caption = "英语模式"
         MainFrm.Check17.Caption = "自动"
         MainFrm.Label10.Caption = "预览"
         MainFrm.Label11.Caption = "保存"
-        End If
-        If src = "Preview" Then Preview.Message.FontName = "黑体"
+    End If
+    If src = "Preview" Then Preview.Message.FontName = "黑体"
 End If
 End Function
 
@@ -543,10 +557,9 @@ Function translate(src As String) As String
         If src = "File: " Then translate = "文件："
         If src = "Position: " Then translate = "位置："
         If src = "[Image Information Unavailable]" Then translate = "[图像信息不可用]"
-        
-        
-        
-        
+        If src = "Completed. LoadID=" Then translate = "完成，加载号为"
+        If src = "This LoadID and/or its configuration not found" Then translate = "这个加载号和/或它的配置文件未找到"
+        If src = "Completed." Then translate = "完成。"
         
         
         
