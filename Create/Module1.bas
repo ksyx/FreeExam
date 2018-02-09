@@ -10,7 +10,7 @@ Public Const TwipsPerCM As Long = 567
 Public Const Development As Long = 1
 Public Const TitleHi As Long = 495
 Public Const DefCnt As Long = 1
-
+Public Const PresetPageNumber As Long = 10
 Public EnableTranslation, PageWidth As Long, PageHeight As Long, TopMargin As Long, BotMargin As Long, LeftMargin As Long, RightMargin As Long, AutoCls As Long
 
 Function ReverseColor(Color As Long) As Long
@@ -40,7 +40,7 @@ End Function
 
 Sub InitPreview()
     If AutoCls = 1 Then Preview.Picture2.Cls
-    Preview.Picture2.Height = PageHeight
+    Preview.Picture2.Height = PageHeight * PresetPageNumber
     Preview.Picture2.Width = PageWidth
 '    Preview.HScroll1.Max = PageWidth
  '   Preview.VScroll1.Max = PageHeight
@@ -464,7 +464,14 @@ Function translatecontrol(src As String)
         MainFrm.Label10.Caption = "预览"
         MainFrm.Label11.Caption = "保存"
     End If
-    If src = "Preview" Then Preview.Message.FontName = "黑体"
+    If src = "Preview" Then
+        Preview.Message.FontName = "黑体"
+        Preview.Label11.FontName = "黑体"
+        Preview.Label11.Caption = "你当前没有在一个正常的视角，请点我返回正常视角。"
+        Preview.Label63.FontName = "黑体"
+        Preview.Label63.Caption = " 关闭 "
+        Preview.Caption = "预览"
+    End If
 End If
 End Function
 
@@ -492,7 +499,7 @@ Function translate(src As String) As String
         If src = "Details:" Then translate = "详情："
         If src = "Time: " Then translate = "时间："
         If src = "Double click to close the window after 10 seconds. Press PrtSc to take a capture (THIS OPERATION WILL COVER YOUR CLIPBOARD). " Then translate = "10秒后双击关闭本窗口。按PrtSc键截图，此操作将覆盖您的剪贴板。"
-        
+        If src = "Preview Window - Rendering, please wait, you can't close this window while rendering" Then translate = "预览窗口 - 渲染中，请稍候，渲染期间你不能关闭本窗口"
         If src = "FreeExam" Then translate = "自由考"
         If src = "Create" Then translate = "新建"
         If src = "AutoCls" Then translate = "自动清除"
@@ -501,7 +508,7 @@ Function translate(src As String) As String
         If src = "Access Denied - You don't have enough privilege to access here. By the way, there is nothing interesting." Then translate = "访问拒绝 - 你没有足够权限访问这里。顺便一提，这里没有好玩的。"
         If src = "DevWin/PrivCheck" Then translate = "开发窗口/权限检查"
         If src = "Authentication Passed." Then translate = "验证通过"
-        
+        If src = "Preview Window" Then translate = "预览窗口"
         
         
         If src = "Click to edit" Then translate = "点击编辑"
@@ -579,7 +586,7 @@ Function translate(src As String) As String
         If src = "Image which tracknumber=" Then translate = "追踪号是以下值的图像："
         If src = " not found" Then translate = " 未找到"
         If src = "CNT=" Then translate = "计数="
-        
+        If src = "Rending work in progress, you can't close it now!" Then translate = "渲染工作进行中，你现在不能关闭它！"
         
         
         

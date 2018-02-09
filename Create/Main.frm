@@ -100,13 +100,14 @@ Begin VB.Form MainFrm
    End
    Begin VB.PictureBox Picture1 
       BackColor       =   &H00656D76&
-      Height          =   285
+      BorderStyle     =   0  'None
+      Height          =   225
       Left            =   90
       ScaleHeight     =   225
-      ScaleWidth      =   7725
+      ScaleWidth      =   7785
       TabIndex        =   4
       TabStop         =   0   'False
-      Top             =   8310
+      Top             =   8325
       Width           =   7785
       Begin VB.Shape ProgressBar 
          DrawMode        =   6  'Mask Pen Not
@@ -2733,7 +2734,7 @@ Begin VB.Form MainFrm
       Height          =   285
       Left            =   5235
       TabIndex        =   8
-      Top             =   165
+      Top             =   150
       Width           =   1590
    End
    Begin VB.Label Label4 
@@ -2814,7 +2815,7 @@ Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Option Explicit
-Dim str() As String, wholestr As String, outputs As String
+Dim str() As String, wholestr As String, outputs As String, goly As Long
 Dim showcnt As Integer, deltachange As Integer, current As Integer, strs() As String, heightdata As Integer, special() As Integer, specialinfo() As Integer, stats() As Boolean
 Sub NewMessage(Content As String, Color As Long, Optional ClearList As Boolean = False, Optional ClearOnly = False)
     current = -1
@@ -3744,7 +3745,7 @@ Private Sub Label59_Click()
     Preview.Exporter.Height = PageHeight
     Preview.Exporter.Width = PageWidth
     Dim usage As Long, cnt As Long, cntrec As Long, rrr As String, vvv As Long
-    vvv = Preview.Picture2.Height - TopMargin
+    vvv = goly - TopMargin
     While Y < vvv
         Debug.Print "-->" & Y
         cnt = cnt + 1
@@ -4802,5 +4803,6 @@ nfor:
     Next
     Preview.Export.Visible = False
     Preview.Picture2.Top = 0
+    goly = X
 End Sub
 

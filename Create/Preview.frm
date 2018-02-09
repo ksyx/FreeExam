@@ -1,11 +1,13 @@
 VERSION 5.00
 Begin VB.Form Preview 
    BackColor       =   &H00A0ACBA&
+   BorderStyle     =   4  'Fixed ToolWindow
    Caption         =   "Preview Window"
    ClientHeight    =   7065
-   ClientLeft      =   60
-   ClientTop       =   405
+   ClientLeft      =   45
+   ClientTop       =   390
    ClientWidth     =   13605
+   ControlBox      =   0   'False
    BeginProperty Font 
       Name            =   "Tahoma"
       Size            =   8.25
@@ -16,23 +18,49 @@ Begin VB.Form Preview
       Strikethrough   =   0   'False
    EndProperty
    LinkTopic       =   "Form1"
+   MaxButton       =   0   'False
    MinButton       =   0   'False
    ScaleHeight     =   7065
    ScaleWidth      =   13605
+   ShowInTaskbar   =   0   'False
    StartUpPosition =   2  'ÆÁÄ»ÖÐÐÄ
    WindowState     =   2  'Maximized
+   Begin VB.Timer Timer2 
+      Interval        =   50
+      Left            =   7590
+      Top             =   900
+   End
+   Begin VB.TextBox Text3 
+      Appearance      =   0  'Flat
+      BackColor       =   &H00A0ACBA&
+      BorderStyle     =   0  'None
+      BeginProperty Font 
+         Name            =   "Tahoma"
+         Size            =   1.5
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   15
+      Left            =   0
+      TabIndex        =   18
+      Top             =   0
+      Width           =   15
+   End
    Begin VB.PictureBox Exporter 
       AutoRedraw      =   -1  'True
       AutoSize        =   -1  'True
       BackColor       =   &H00FFFFFF&
       BorderStyle     =   0  'None
       Height          =   2325
-      Left            =   0
+      Left            =   5400
       ScaleHeight     =   2325
       ScaleWidth      =   6420
       TabIndex        =   17
       TabStop         =   0   'False
-      Top             =   0
+      Top             =   1635
       Visible         =   0   'False
       Width           =   6420
    End
@@ -40,9 +68,9 @@ Begin VB.Form Preview
       BackColor       =   &H00A0ACBA&
       Caption         =   "Advanced View"
       Height          =   825
-      Left            =   0
+      Left            =   9765
       TabIndex        =   11
-      Top             =   0
+      Top             =   540
       Visible         =   0   'False
       Width           =   1785
       Begin VB.TextBox Text1 
@@ -136,14 +164,15 @@ Begin VB.Form Preview
    End
    Begin VB.PictureBox Picture3 
       BackColor       =   &H00656D76&
-      Height          =   285
-      Left            =   -15
+      BorderStyle     =   0  'None
+      Height          =   225
+      Left            =   600
       ScaleHeight     =   225
-      ScaleWidth      =   7185
+      ScaleWidth      =   6450
       TabIndex        =   5
       TabStop         =   0   'False
-      Top             =   0
-      Width           =   7245
+      Top             =   15
+      Width           =   6450
       Begin VB.Shape ProgressBar 
          DrawMode        =   6  'Mask Pen Not
          FillColor       =   &H00FFFFFF&
@@ -176,28 +205,28 @@ Begin VB.Form Preview
    Begin VB.ListBox MsgContentList 
       Height          =   450
       ItemData        =   "Preview.frx":0008
-      Left            =   3570
+      Left            =   3705
       List            =   "Preview.frx":000A
       TabIndex        =   4
-      Top             =   315
+      Top             =   435
       Visible         =   0   'False
       Width           =   1125
    End
    Begin VB.Timer Timer1 
       Interval        =   100
-      Left            =   720
-      Top             =   -15
+      Left            =   7170
+      Top             =   855
    End
    Begin VB.PictureBox Picture1 
       BackColor       =   &H00A0ACBA&
       BorderStyle     =   0  'None
       Height          =   2820
-      Left            =   210
+      Left            =   -15
       ScaleHeight     =   2820
       ScaleWidth      =   6885
       TabIndex        =   2
       TabStop         =   0   'False
-      Top             =   495
+      Top             =   255
       Width           =   6885
       Begin VB.PictureBox Picture2 
          AutoRedraw      =   -1  'True
@@ -211,24 +240,66 @@ Begin VB.Form Preview
          Top             =   -15
          Width           =   4980
       End
+      Begin VB.Label Label11 
+         BackStyle       =   0  'Transparent
+         Caption         =   "You are not in a normal view, click me to get back to the normal view."
+         BeginProperty Font 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H00656D76&
+         Height          =   480
+         Left            =   0
+         TabIndex        =   19
+         Top             =   0
+         Width           =   5010
+      End
    End
    Begin VB.VScrollBar VScroll1 
       Height          =   2940
       LargeChange     =   100
-      Left            =   0
+      Left            =   30
       Max             =   10000
       SmallChange     =   10
       TabIndex        =   1
-      Top             =   495
+      Top             =   2220
+      Visible         =   0   'False
       Width           =   240
    End
    Begin VB.HScrollBar HScroll1 
       Height          =   240
-      Left            =   240
+      Left            =   4335
       Max             =   100
       TabIndex        =   0
-      Top             =   270
+      Top             =   6975
+      Visible         =   0   'False
       Width           =   6915
+   End
+   Begin VB.Label Label63 
+      Appearance      =   0  'Flat
+      AutoSize        =   -1  'True
+      BackColor       =   &H00B4BFCC&
+      Caption         =   " Close "
+      BeginProperty Font 
+         Name            =   "Tahoma"
+         Size            =   10.5
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   &H00656D76&
+      Height          =   255
+      Left            =   0
+      TabIndex        =   20
+      Top             =   0
+      Width           =   600
    End
 End
 Attribute VB_Name = "Preview"
@@ -237,7 +308,7 @@ Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Option Explicit
-Dim showcnt As Long, current As Long
+Dim showcnt As Long, current As Long, lasttop As Long
 Sub NewMessage(Content As String, Color As Long, Optional ClearList As Boolean = False, Optional ClearOnly = False)
     current = -1
     If (ClearOnly And Not ClearList) Then
@@ -268,8 +339,23 @@ Private Sub Form_Load()
     NewMessage translate("The size of the preview is NEAR the actual size."), vbBlack
 End Sub
 
+Private Sub Form_QueryUnload(Cancel As Integer, UnloadMode As Integer)
+    If Me.Caption = translate("Preview Window - Rendering, please wait, you can't close this window while rendering") Then
+        Cancel = 1
+        NewMessage translate("Rending work in progress, you can't close it now!"), vbRed
+    End If
+End Sub
+
 Private Sub Form_Unload(Cancel As Integer)
     MainFrm.WIP.Left = 99999
+End Sub
+
+Private Sub Label11_Click()
+    Picture2.Top = 0
+End Sub
+
+Private Sub Label63_Click()
+    Unload Me
 End Sub
 
 Private Sub Message_MouseMove(Button As Integer, Shift As Integer, X As Single, Y As Single)
@@ -289,6 +375,19 @@ End Sub
 Private Sub Text2_Change()
     If IsNumeric(Text2.Text) Then
     Picture2.Top = -Val(Text2.Text)
+    End If
+End Sub
+
+Private Sub Text3_Change()
+    Text3.Text = ""
+End Sub
+
+Private Sub Text3_KeyDown(KeyCode As Integer, Shift As Integer)
+    If KeyCode = vbKeyD Then
+        Picture2.Top = Picture2.Top - (Me.Height - 1500)
+    End If
+    If KeyCode = vbKeyU Then
+        Picture2.Top = Picture2.Top + (Me.Height - 1500)
     End If
 End Sub
 
@@ -355,7 +454,21 @@ Private Sub HScroll1_Change()
     Text1.Text = HScroll1.Value
 End Sub
 
+Private Sub Timer2_Timer()
+    If Picture2.Top <> lasttop Then
+        lasttop = Picture2.Top
+        Me.Caption = translate("Preview Window - Rendering, please wait, you can't close this window while rendering")
+        Label63.Visible = False
+    Else
+        Me.Caption = translate("Preview Window")
+        Label63.Visible = True
+    End If
+End Sub
+
 Private Sub VScroll1_Change()
-    Picture2.Top = -(Picture2.Height / VScroll1.Value)
+    Dim r As Long
+    r = PageHeight * PresetPageNumber / 100 * VScroll1.Value
+    Picture2.Top = -r - PageHeight
+    Debug.Print Picture2.Top
     Text2.Text = VScroll1.Value
 End Sub
