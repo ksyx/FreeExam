@@ -30,6 +30,15 @@ Begin VB.Form InputWin
       Alignment       =   2  'Center
       BackColor       =   &H00B4BFCC&
       BorderStyle     =   0  'None
+      BeginProperty Font 
+         Name            =   "Fixedsys"
+         Size            =   12
+         Charset         =   134
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       ForeColor       =   &H00656D76&
       Height          =   270
       Left            =   0
@@ -41,6 +50,15 @@ Begin VB.Form InputWin
    Begin VB.TextBox Text2 
       BackColor       =   &H00B4BFCC&
       BorderStyle     =   0  'None
+      BeginProperty Font 
+         Name            =   "Fixedsys"
+         Size            =   12
+         Charset         =   134
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       ForeColor       =   &H00656D76&
       Height          =   6435
       Left            =   0

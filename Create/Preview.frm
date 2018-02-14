@@ -309,6 +309,7 @@ Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Option Explicit
 Dim showcnt As Long, current As Long, lasttop As Long
+Public SystemCall As Long, WinStat As Long
 Sub NewMessage(Content As String, Color As Long, Optional ClearList As Boolean = False, Optional ClearOnly = False)
     current = -1
     If (ClearOnly And Not ClearList) Then
@@ -340,7 +341,7 @@ Private Sub Form_Load()
 End Sub
 
 Private Sub Form_QueryUnload(Cancel As Integer, UnloadMode As Integer)
-    If Me.Caption = translate("Preview Window - Rendering, please wait, you can't close this window while rendering") Then
+    If SystemCall <> SystemCallFlag And Me.Caption = translate("Preview Window - Rendering, please wait, you can't close this window while rendering") Then
         Cancel = 1
         NewMessage translate("Rending work in progress, you can't close it now!"), vbRed
     End If

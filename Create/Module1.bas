@@ -11,6 +11,8 @@ Public Const Development As Long = 1
 Public Const TitleHi As Long = 495
 Public Const DefCnt As Long = 1
 Public Const PresetPageNumber As Long = 10
+Public Const SystemCallFlag As Long = 23333
+Public Const UsingStat As Long = 123321
 Public EnableTranslation, PageWidth As Long, PageHeight As Long, TopMargin As Long, BotMargin As Long, LeftMargin As Long, RightMargin As Long, AutoCls As Long
 
 Function ReverseColor(Color As Long) As Long
@@ -39,9 +41,13 @@ Function InputText(StartText As String, Optional MultiLine As Boolean = True) As
 End Function
 
 Sub InitPreview()
+    On Error Resume Next
+    Unload Preview
+    Preview.WinStat = UsingStat
     If AutoCls = 1 Then Preview.Picture2.Cls
     Preview.Picture2.Height = PageHeight * PresetPageNumber
     Preview.Picture2.Width = PageWidth
+    Preview.SystemCall = -1
 '    Preview.HScroll1.Max = PageWidth
  '   Preview.VScroll1.Max = PageHeight
     Preview.Show
