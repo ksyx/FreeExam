@@ -134,7 +134,7 @@ Begin VB.Form MainFrm
          Height          =   195
          Left            =   60
          TabIndex        =   5
-         Top             =   0
+         Top             =   10
          Width           =   45
       End
    End
