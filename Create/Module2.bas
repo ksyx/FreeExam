@@ -54,7 +54,7 @@ Attribute VB_Name = "Notes"
 '    Timer1.Interval = 1000
 'End Sub
 'Private Sub Timer1_Timer()
-'    Dim first As long
+'    Dim first As Long
 '    If Timer1.Interval > 100 Then Timer1.Interval = Timer1.Interval - 100
 '    showcnt = showcnt + 1
 ''    If MsgContentList.ListCount <= 1 Then
@@ -72,40 +72,41 @@ Attribute VB_Name = "Notes"
 ''        If showcnt <> first Then ProgressBar.Width = showcnt / ShowCntPerMsg * Picture1.Width
 ''        Exit Sub
 ''    End If
-'    If current >= MsgContentList.ListCount Then
-'        Message.Caption = "No new messages."
+'    If MsgContentList.ListCount = 0 Then
+'        Message.Caption = translate("No new messages.")
 '        Message.ForeColor = vbWhite
 '        showcnt = ShowCntPerMsg - 1
 '        GoTo rrr
 '    End If
-'    If MsgContentList.ListCount = 0 Then
-'        Message.Caption = "No new messages."
+'    If current >= MsgContentList.ListCount Then
+'        Message.Caption = translate("No new messages.")
 '        Message.ForeColor = vbWhite
 '        showcnt = ShowCntPerMsg - 1
 '        GoTo rrr
 '    End If
 '    If showcnt = ShowCntPerMsg Then
-'        current = current + 1
-'        showcnt = 0
 '        If MsgContentList.ListCount = 0 Then
 '            ProgressBar.Width = 15
 '            Message.Caption = ""
 '            Exit Sub
 '        End If
-'        If current >= MsgContentList.ListCount Then
-'            Message.Caption = "No new messages."
+'        If current + 1 >= MsgContentList.ListCount Then
+'            Message.Caption = translate("No new messages.")
 '            Message.ForeColor = vbWhite
 '            showcnt = ShowCntPerMsg - 1
 '            GoTo rrr
 '        End If
+'        showcnt = 0
+'        current = current + 1
 '        MsgContentList.ListIndex = current
 '        MsgColorList.ListIndex = current
 '        MsgTypeList.ListIndex = current
 '        Message.Caption = MsgTypeList.Text & MsgContentList.Text
 '        Message.ForeColor = ReverseColor(MsgColorList.Text)
-'rrr:
 '    End If
+'rrr:
 '    ProgressBar.Width = showcnt / ShowCntPerMsg * Picture1.Width
+''    Message.Caption = Message.Caption & "(" & current + 1 & "/" & MsgTypeList.ListCount & ")"
 'End Sub
 
 

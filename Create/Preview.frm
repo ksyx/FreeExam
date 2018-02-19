@@ -310,28 +310,60 @@ Attribute VB_Exposed = False
 Option Explicit
 Dim showcnt As Long, current As Long, lasttop As Long
 Public SystemCall As Long, WinStat As Long
-Sub NewMessage(Content As String, Color As Long, Optional ClearList As Boolean = False, Optional ClearOnly = False)
-    current = -1
-    If (ClearOnly And Not ClearList) Then
-        RaiseSysErr "Clear message list only and do not clear message list were both turned on.", "Create/PageSettings/NewEvent"
-        Exit Sub
+Private Sub Timer1_Timer()
+    Dim first As Long
+    If Timer1.Interval > 100 Then Timer1.Interval = Timer1.Interval - 100
+    showcnt = showcnt + 1
+'    If MsgContentList.ListCount <= 1 Then
+'        first = showcnt
+'        showcnt = ShowCntPerMsg
+'        Message.Caption = ""
+'        If MsgContentList.ListCount = 1 Then
+'            current = 0
+'            MsgContentList.ListIndex = current
+'            MsgColorList.ListIndex = current
+'            MsgTypeList.ListIndex = current
+'            Message.Caption = MsgTypeList.Text & MsgContentList.Text
+'            Message.ForeColor = ReverseColor(MsgColorList.Text)
+'        End If
+'        If showcnt <> first Then ProgressBar.Width = showcnt / ShowCntPerMsg * Picture1.Width
+'        Exit Sub
+'    End If
+    If MsgContentList.ListCount = 0 Then
+        Message.Caption = translate("No new messages.")
+        Message.ForeColor = vbWhite
+        showcnt = ShowCntPerMsg - 1
+        GoTo rrr
     End If
-    If ClearList Then
-        MsgContentList.Clear
-        MsgColorList.Clear
-        MsgTypeList.Clear
-        If Message.Caption <> "" Then Message.Caption = Message.Caption & translate("(Expired)")
-        If ClearOnly Then Exit Sub
+    If current >= MsgContentList.ListCount Then
+        Message.Caption = translate("No new messages.")
+        Message.ForeColor = vbWhite
+        showcnt = ShowCntPerMsg - 1
+        GoTo rrr
     End If
-    MsgContentList.AddItem Content
-    MsgColorList.AddItem Color
-    Select Case Color
-        Case vbBlack: MsgTypeList.AddItem translate("[Info]")
-        Case vbBlue: MsgTypeList.AddItem translate("[Warning]")
-        Case vbRed: MsgTypeList.AddItem translate("[Error]")
-    End Select
-    showcnt = 49
-    Timer1_Timer
+    If showcnt = ShowCntPerMsg Then
+        If MsgContentList.ListCount = 0 Then
+            ProgressBar.Width = 15
+            Message.Caption = ""
+            Exit Sub
+        End If
+        If current + 1 >= MsgContentList.ListCount Then
+            Message.Caption = translate("No new messages.")
+            Message.ForeColor = vbWhite
+            showcnt = ShowCntPerMsg - 1
+            GoTo rrr
+        End If
+        showcnt = 0
+        current = current + 1
+        MsgContentList.ListIndex = current
+        MsgColorList.ListIndex = current
+        MsgTypeList.ListIndex = current
+        Message.Caption = MsgTypeList.Text & MsgContentList.Text
+        Message.ForeColor = ReverseColor(MsgColorList.Text)
+    End If
+rrr:
+    ProgressBar.Width = showcnt / ShowCntPerMsg * Picture1.Width
+'    Message.Caption = Message.Caption & "(" & current + 1 & "/" & MsgTypeList.ListCount & ")"
 End Sub
 
 Private Sub Form_Load()
@@ -391,56 +423,29 @@ Private Sub Text3_KeyDown(KeyCode As Integer, Shift As Integer)
         Picture2.Top = Picture2.Top + (Me.Height - 1500)
     End If
 End Sub
-
-Private Sub Timer1_Timer()
-    Dim first As Long
-    If Timer1.Interval > 100 Then Timer1.Interval = Timer1.Interval - 100
-    showcnt = showcnt + 1
-'    If MsgContentList.ListCount <= 1 Then
-'        first = showcnt
-'        showcnt = ShowCntPerMsg
-'        Message.Caption = ""
-'        If MsgContentList.ListCount = 1 Then
-'            current = 0
-'            MsgContentList.ListIndex = current
-'            MsgColorList.ListIndex = current
-'            MsgTypeList.ListIndex = current
-'            Message.Caption = MsgTypeList.Text & MsgContentList.Text
-'            Message.ForeColor = ReverseColor(MsgColorList.Text)
-'        End If
-'        If showcnt <> first Then ProgressBar.Width = showcnt / ShowCntPerMsg * Picture1.Width
-'        Exit Sub
-'    End If
-    If current >= MsgContentList.ListCount Then
-        Message.Caption = translate("No new messages.")
-        Message.ForeColor = vbWhite
-        showcnt = ShowCntPerMsg - 1
-        GoTo rrr
+Sub NewMessage(Content As String, Color As Long, Optional ClearList As Boolean = False, Optional ClearOnly = False)
+'    current = -1
+    If (ClearOnly And Not ClearList) Then
+        RaiseSysErr "Clear message list only and do not clear message list were both turned on.", "Create/PageSettings/NewEvent"
+        Exit Sub
     End If
-    If showcnt = ShowCntPerMsg Then
-        current = current + 1
-        showcnt = 0
-        If MsgContentList.ListCount = 0 Then
-            ProgressBar.Width = 15
-            Message.Caption = ""
-            Exit Sub
-        End If
-        If current >= MsgContentList.ListCount Then
-            Message.Caption = translate("No new messages.")
-            Message.ForeColor = vbWhite
-            showcnt = ShowCntPerMsg - 1
-            GoTo rrr
-        End If
-        MsgContentList.ListIndex = current
-        MsgColorList.ListIndex = current
-        MsgTypeList.ListIndex = current
-        Message.Caption = MsgTypeList.Text & MsgContentList.Text
-        Message.ForeColor = ReverseColor(MsgColorList.Text)
-rrr:
+    If ClearList Then
+        MsgContentList.Clear
+        MsgColorList.Clear
+        MsgTypeList.Clear
+        If Message.Caption <> "" Then Message.Caption = Message.Caption & translate("(Expired)")
+        If ClearOnly Then Exit Sub
     End If
-    ProgressBar.Width = showcnt / ShowCntPerMsg * Picture1.Width
+    MsgContentList.AddItem Content
+    MsgColorList.AddItem Color
+    Select Case Color
+        Case vbBlack: MsgTypeList.AddItem translate("[Info]")
+        Case vbBlue: MsgTypeList.AddItem translate("[Warning]")
+        Case vbRed: MsgTypeList.AddItem translate("[Error]")
+    End Select
+ '   showcnt = 49
+    Timer1_Timer
 End Sub
-
 Private Sub Form_Resize()
     On Error Resume Next
     HScroll1.Width = Me.Width - 567 * 5

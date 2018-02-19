@@ -2110,61 +2110,6 @@ Begin VB.Form MainFrm
          Width           =   915
       End
    End
-   Begin VB.PictureBox Copyright 
-      BackColor       =   &H00A0ACBA&
-      BorderStyle     =   0  'None
-      Height          =   7590
-      Left            =   60
-      ScaleHeight     =   7590
-      ScaleWidth      =   7770
-      TabIndex        =   159
-      TabStop         =   0   'False
-      Top             =   510
-      Visible         =   0   'False
-      Width           =   7770
-      Begin VB.Label Label71 
-         Appearance      =   0  'Flat
-         AutoSize        =   -1  'True
-         BackColor       =   &H00A0ACBA&
-         Caption         =   "Version: Demo 2.7.8.20180217, Commit 89d2342"
-         BeginProperty Font 
-            Name            =   "Tahoma"
-            Size            =   10.5
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         ForeColor       =   &H00656D76&
-         Height          =   255
-         Left            =   180
-         TabIndex        =   170
-         Top             =   435
-         Width           =   4650
-      End
-      Begin VB.Label Label68 
-         Appearance      =   0  'Flat
-         AutoSize        =   -1  'True
-         BackColor       =   &H00A0ACBA&
-         Caption         =   " Copyright (c) ksyx 2018, All Rights Reserved. "
-         BeginProperty Font 
-            Name            =   "Tahoma"
-            Size            =   10.5
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         ForeColor       =   &H00656D76&
-         Height          =   255
-         Left            =   120
-         TabIndex        =   160
-         Top             =   105
-         Width           =   4290
-      End
-   End
    Begin VB.Frame SaveLoad 
       BackColor       =   &H00A0ACBA&
       BorderStyle     =   0  'None
@@ -2399,6 +2344,187 @@ Begin VB.Form MainFrm
          Left            =   120
          Top             =   540
          Width           =   870
+      End
+   End
+   Begin VB.PictureBox Copyright 
+      BackColor       =   &H00A0ACBA&
+      BorderStyle     =   0  'None
+      Height          =   7590
+      Left            =   60
+      ScaleHeight     =   7590
+      ScaleWidth      =   7770
+      TabIndex        =   159
+      TabStop         =   0   'False
+      Top             =   510
+      Visible         =   0   'False
+      Width           =   7770
+      Begin VB.Label Label71 
+         Appearance      =   0  'Flat
+         AutoSize        =   -1  'True
+         BackColor       =   &H00A0ACBA&
+         Caption         =   "Version: Demo 2.7.8.20180217, Commit 89d2342"
+         BeginProperty Font 
+            Name            =   "Tahoma"
+            Size            =   10.5
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H00656D76&
+         Height          =   255
+         Left            =   180
+         TabIndex        =   170
+         Top             =   435
+         Width           =   4650
+      End
+      Begin VB.Label Label68 
+         Appearance      =   0  'Flat
+         AutoSize        =   -1  'True
+         BackColor       =   &H00A0ACBA&
+         Caption         =   " Copyright (c) ksyx 2018, All Rights Reserved. "
+         BeginProperty Font 
+            Name            =   "Tahoma"
+            Size            =   10.5
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H00656D76&
+         Height          =   255
+         Left            =   120
+         TabIndex        =   160
+         Top             =   105
+         Width           =   4290
+      End
+   End
+   Begin VB.PictureBox Tools 
+      BackColor       =   &H00A0ACBA&
+      BorderStyle     =   0  'None
+      Height          =   1380
+      Left            =   60
+      ScaleHeight     =   1380
+      ScaleWidth      =   7770
+      TabIndex        =   171
+      TabStop         =   0   'False
+      Top             =   585
+      Visible         =   0   'False
+      Width           =   7770
+      Begin VB.Label Label72 
+         AutoSize        =   -1  'True
+         BackStyle       =   0  'Transparent
+         Caption         =   "Note: All of the tools there is provided by system."
+         BeginProperty Font 
+            Name            =   "Tahoma"
+            Size            =   10.5
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H00656D76&
+         Height          =   255
+         Left            =   135
+         TabIndex        =   175
+         Top             =   480
+         Width           =   4515
+      End
+      Begin VB.Label Label73 
+         Appearance      =   0  'Flat
+         AutoSize        =   -1  'True
+         BackColor       =   &H00B4BFCC&
+         Caption         =   " Paint "
+         BeginProperty Font 
+            Name            =   "Tahoma"
+            Size            =   10.5
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H00656D76&
+         Height          =   255
+         Left            =   2430
+         TabIndex        =   174
+         Top             =   150
+         Width           =   570
+      End
+      Begin VB.Shape Shape0 
+         BackColor       =   &H00B4BFCC&
+         BackStyle       =   1  'Opaque
+         BorderColor     =   &H00B4BFCC&
+         Height          =   330
+         Index           =   35
+         Left            =   2370
+         Top             =   120
+         Width           =   705
+      End
+      Begin VB.Label Label76 
+         Appearance      =   0  'Flat
+         AutoSize        =   -1  'True
+         BackColor       =   &H00B4BFCC&
+         Caption         =   " Calcutator "
+         BeginProperty Font 
+            Name            =   "Tahoma"
+            Size            =   10.5
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H00656D76&
+         Height          =   255
+         Left            =   105
+         TabIndex        =   173
+         Top             =   120
+         Width           =   1065
+      End
+      Begin VB.Shape Shape0 
+         BackColor       =   &H00B4BFCC&
+         BackStyle       =   1  'Opaque
+         BorderColor     =   &H00B4BFCC&
+         Height          =   330
+         Index           =   33
+         Left            =   90
+         Top             =   105
+         Width           =   1155
+      End
+      Begin VB.Label Label75 
+         Appearance      =   0  'Flat
+         AutoSize        =   -1  'True
+         BackColor       =   &H00B4BFCC&
+         Caption         =   " Notepad "
+         BeginProperty Font 
+            Name            =   "Tahoma"
+            Size            =   10.5
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H00656D76&
+         Height          =   255
+         Left            =   1335
+         TabIndex        =   172
+         Top             =   150
+         Width           =   900
+      End
+      Begin VB.Shape Shape0 
+         BackColor       =   &H00B4BFCC&
+         BackStyle       =   1  'Opaque
+         BorderColor     =   &H00B4BFCC&
+         Height          =   315
+         Index           =   34
+         Left            =   1320
+         Top             =   120
+         Width           =   975
       End
    End
    Begin VB.PictureBox Manage 
@@ -2820,7 +2946,7 @@ Begin VB.Form MainFrm
    Begin VB.Label Label2 
       AutoSize        =   -1  'True
       BackStyle       =   0  'Transparent
-      Caption         =   "Subject1"
+      Caption         =   "Tools"
       BeginProperty Font 
          Name            =   "Tahoma"
          Size            =   12
@@ -2835,8 +2961,7 @@ Begin VB.Form MainFrm
       Left            =   1140
       TabIndex        =   0
       Top             =   135
-      Visible         =   0   'False
-      Width           =   945
+      Width           =   585
    End
    Begin VB.Shape Shape1 
       BackColor       =   &H00B4BFCC&
@@ -2857,7 +2982,7 @@ Option Explicit
 Dim str() As String, wholestr As String, outputs As String, goly As Long
 Dim showcnt As Integer, deltachange As Integer, current As Integer, strs() As String, heightdata As Integer, special() As Integer, specialinfo() As Integer, stats() As Boolean
 Sub NewMessage(Content As String, Color As Long, Optional ClearList As Boolean = False, Optional ClearOnly = False)
-    current = -1
+'    current = -1
     If (ClearOnly And Not ClearList) Then
         RaiseSysErr "Clear message list only and do not clear message list were both turned on.", "Create/PageSettings/NewEvent"
         Exit Sub
@@ -2876,7 +3001,7 @@ Sub NewMessage(Content As String, Color As Long, Optional ClearList As Boolean =
         Case vbBlue: MsgTypeList.AddItem translate("[Warning]")
         Case vbRed: MsgTypeList.AddItem translate("[Error]")
     End Select
-    showcnt = 49
+ '   showcnt = 49
     Timer1_Timer
 End Sub
 
@@ -3027,6 +3152,29 @@ Private Sub Label19_Click()
     Frame5.Visible = True
 End Sub
 
+Private Sub Label2_Click()
+    Tools.Visible = True
+    Shape1.Left = Label2.Left - 120
+    Shape1.Width = Label2.Width + 240
+    Frame1.Visible = False
+    Frame2.Visible = False
+    Label10.Visible = False
+    Label11.Visible = False
+    List1.Visible = False
+    Label14.Visible = False
+    Label13.Visible = False
+    Frame8.Visible = False
+    Manage.Visible = False
+    InsText.Visible = False
+    AnswerLine.Visible = False
+    LogMgr.Visible = False
+    General.Visible = False
+    Merge.Visible = False
+    Copyright.Visible = False
+    SaveLoad.Visible = False
+    ABCD.Visible = False
+End Sub
+
 Private Sub Label22_Click()
     AnswerLine.Visible = Not False
     InsText.Visible = Not True
@@ -3167,6 +3315,7 @@ Private Sub Label29_Click()
 End Sub
 
 Private Sub Label3_Click()
+    Tools.Visible = False
     Shape1.Left = Label3.Left - 100
     Shape1.Width = Label3.Width + 200
     Frame1.Visible = False
@@ -3944,6 +4093,36 @@ nextiii:
     Unload Preview
 End Sub
 
+Private Sub Label73_Click()
+    Dim ret As Long
+    ret = Shell("mspaint.exe", vbNormalFocus)
+    If ret = 0 Then
+        NewMessage translate("Unable to start the program"), vbRed
+    Else
+        NewMessage translate("Success. PID=") & ret, vbBlack
+    End If
+End Sub
+
+Private Sub Label75_Click()
+    Dim ret As Long
+    ret = Shell("notepad.exe", vbNormalFocus)
+    If ret = 0 Then
+        NewMessage translate("Unable to start the program"), vbRed
+    Else
+        NewMessage translate("Success. PID=") & ret, vbBlack
+    End If
+End Sub
+
+Private Sub Label76_Click()
+    Dim ret As Long
+    ret = Shell("calc.exe", vbNormalFocus)
+    If ret = 0 Then
+        NewMessage translate("Unable to start the program"), vbRed
+    Else
+        NewMessage translate("Success. PID=") & ret, vbBlack
+    End If
+End Sub
+
 Private Sub List2_Click()
     Text2.Text = strs(List2.ListIndex)
 End Sub
@@ -4060,31 +4239,33 @@ Private Sub Timer1_Timer()
         GoTo rrr
     End If
     If showcnt = ShowCntPerMsg Then
-        current = current + 1
-        showcnt = 0
         If MsgContentList.ListCount = 0 Then
             ProgressBar.Width = 15
             Message.Caption = ""
             Exit Sub
         End If
-        If current >= MsgContentList.ListCount Then
+        If current + 1 >= MsgContentList.ListCount Then
             Message.Caption = translate("No new messages.")
             Message.ForeColor = vbWhite
             showcnt = ShowCntPerMsg - 1
             GoTo rrr
         End If
+        showcnt = 0
+        current = current + 1
         MsgContentList.ListIndex = current
         MsgColorList.ListIndex = current
         MsgTypeList.ListIndex = current
         Message.Caption = MsgTypeList.Text & MsgContentList.Text
         Message.ForeColor = ReverseColor(MsgColorList.Text)
-rrr:
     End If
+rrr:
     ProgressBar.Width = showcnt / ShowCntPerMsg * Picture1.Width
+'    Message.Caption = Message.Caption & "(" & current + 1 & "/" & MsgTypeList.ListCount & ")"
 End Sub
 
 
 Private Sub Label1_Click()
+    Tools.Visible = False
     Shape1.Left = Label1.Left - 120
     Shape1.Width = Label1.Width + 240
     Frame1.Visible = Not False
@@ -4775,6 +4956,7 @@ cont:
 End Sub
 
 Private Sub Label12_Click()
+    Tools.Visible = False
     Shape1.Left = Label12.Left - 100
     Shape1.Width = Label12.Width + 200
     Frame1.Visible = False

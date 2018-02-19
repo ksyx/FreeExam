@@ -163,6 +163,9 @@ Function translatecontrol(src As String)
     End If
     If src = "MainFrm" Then
         MainFrm.Caption = "自由考 创建考卷"
+        MainFrm.Label76.Alignment = 2
+        MainFrm.Label75.Alignment = 2
+        MainFrm.Label73.Alignment = 2
         MainFrm.Label12.AutoSize = True
         MainFrm.Label3.AutoSize = True
         MainFrm.Label1.AutoSize = True
@@ -317,6 +320,7 @@ Function translatecontrol(src As String)
         MainFrm.Label70.FontName = "黑体"
         MainFrm.Frame19.FontName = "黑体"
         MainFrm.Frame11.FontName = "黑体"
+        MainFrm.Label72.FontName = "黑体"
         MainFrm.Check22.FontName = "黑体"
         MainFrm.Check23.FontName = "黑体"
         MainFrm.Label61.FontName = "黑体"
@@ -351,6 +355,9 @@ Function translatecontrol(src As String)
         MainFrm.Option1.FontName = "黑体"
         MainFrm.Option2.FontName = "黑体"
         MainFrm.Frame14.FontName = "黑体"
+        MainFrm.Label76.FontName = "黑体"
+        MainFrm.Label75.FontName = "黑体"
+        MainFrm.Label73.FontName = "黑体"
         MainFrm.Frame1.FontName = "黑体"
         MainFrm.Label7.FontName = "黑体"
         MainFrm.Label8.FontName = "黑体"
@@ -358,6 +365,7 @@ Function translatecontrol(src As String)
         MainFrm.Label10.FontName = "黑体"
         MainFrm.Frame2.FontName = "黑体"
         MainFrm.Label9.FontName = "黑体"
+        MainFrm.Label2.FontName = "黑体"
         MainFrm.Label51.FontName = "黑体"
         MainFrm.Label17.FontName = "黑体"
         MainFrm.Frame6.FontName = "黑体"
@@ -401,7 +409,12 @@ Function translatecontrol(src As String)
         MainFrm.Label15.Caption = "合并预览"
         MainFrm.Label30.Caption = "记录"
         MainFrm.Label60.Caption = "合并"
+        MainFrm.Label72.Caption = "注意：此处所有工具由系统提供"
         MainFrm.Label63.Caption = "列表"
+        MainFrm.Label76.Caption = "计算器"
+        MainFrm.Label75.Caption = "记事本"
+        MainFrm.Label73.Caption = "画图"
+        MainFrm.Label2.Caption = "工具"
         MainFrm.PreviewButton.Caption = "文本"
         MainFrm.Label22.Caption = "答题区"
         MainFrm.Label35.Caption = "图片"
@@ -593,8 +606,8 @@ Function translate(src As String) As String
         If src = " not found" Then translate = " 未找到"
         If src = "CNT=" Then translate = "计数="
         If src = "Rending work in progress, you can't close it now!" Then translate = "渲染工作进行中，你现在不能关闭它！"
-        
-        
+        If src = "Unable to start the program" Then translate = "无法启动程序"
+        If src = "Success. PID=" Then translate = "成功。进程号（PID）为"
         
         If src = "Initiating" Then translate = "加载中"
         If src = "Special Input" Then translate = "特殊输入"

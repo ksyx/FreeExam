@@ -155,9 +155,9 @@ Attribute VB_Exposed = False
 Option Explicit
 Dim showcnt As Integer, current As Integer
 Sub NewMessage(Content As String, Color As Long, Optional ClearList As Boolean = False, Optional ClearOnly = False)
-    current = -1
+'    current = -1
     If (ClearOnly And Not ClearList) Then
-        RaiseSysErr translate("Clear message list only and do not clear message list were both turned on."), translate("Create/PageSettings/NewEvent")
+        RaiseSysErr "Clear message list only and do not clear message list were both turned on.", "Create/PageSettings/NewEvent"
         Exit Sub
     End If
     If ClearList Then
@@ -174,10 +174,9 @@ Sub NewMessage(Content As String, Color As Long, Optional ClearList As Boolean =
         Case vbBlue: MsgTypeList.AddItem translate("[Warning]")
         Case vbRed: MsgTypeList.AddItem translate("[Error]")
     End Select
-    showcnt = 49
+ '   showcnt = 49
     Timer1_Timer
 End Sub
-
 Private Sub Check1_Click()
     AutoCls = Check1.Value
     SaveSetting translate("FreeExam"), translate("Create"), translate("AutoCls"), AutoCls
@@ -218,15 +217,9 @@ Private Sub Picture1_MouseMove(Button As Integer, Shift As Integer, X As Single,
 End Sub
 
 Private Sub Timer1_Timer()
-    Dim first As Integer
+    Dim first As Long
     If Timer1.Interval > 100 Then Timer1.Interval = Timer1.Interval - 100
     showcnt = showcnt + 1
-    If MsgContentList.ListCount = 0 Then
-        Message.Caption = translate("No new messages.")
-        Message.ForeColor = vbWhite
-        showcnt = ShowCntPerMsg - 1
-        GoTo rrr
-    End If
 '    If MsgContentList.ListCount <= 1 Then
 '        first = showcnt
 '        showcnt = ShowCntPerMsg
@@ -242,6 +235,12 @@ Private Sub Timer1_Timer()
 '        If showcnt <> first Then ProgressBar.Width = showcnt / ShowCntPerMsg * Picture1.Width
 '        Exit Sub
 '    End If
+    If MsgContentList.ListCount = 0 Then
+        Message.Caption = translate("No new messages.")
+        Message.ForeColor = vbWhite
+        showcnt = ShowCntPerMsg - 1
+        GoTo rrr
+    End If
     If current >= MsgContentList.ListCount Then
         Message.Caption = translate("No new messages.")
         Message.ForeColor = vbWhite
@@ -249,27 +248,28 @@ Private Sub Timer1_Timer()
         GoTo rrr
     End If
     If showcnt = ShowCntPerMsg Then
-        current = current + 1
-        showcnt = 0
         If MsgContentList.ListCount = 0 Then
             ProgressBar.Width = 15
             Message.Caption = ""
             Exit Sub
         End If
-        If current >= MsgContentList.ListCount Then
+        If current + 1 >= MsgContentList.ListCount Then
             Message.Caption = translate("No new messages.")
             Message.ForeColor = vbWhite
             showcnt = ShowCntPerMsg - 1
             GoTo rrr
         End If
+        showcnt = 0
+        current = current + 1
         MsgContentList.ListIndex = current
         MsgColorList.ListIndex = current
         MsgTypeList.ListIndex = current
         Message.Caption = MsgTypeList.Text & MsgContentList.Text
         Message.ForeColor = ReverseColor(MsgColorList.Text)
-rrr:
     End If
+rrr:
     ProgressBar.Width = showcnt / ShowCntPerMsg * Picture1.Width
+'    Message.Caption = Message.Caption & "(" & current + 1 & "/" & MsgTypeList.ListCount & ")"
 End Sub
 
 Private Sub Label3_Click()
