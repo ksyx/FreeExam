@@ -27,6 +27,11 @@ Sub RaiseSysErr(Detail As String, Module As String)
     SystemError.Show 1
 End Sub
 
+Sub ExitProgram()
+    On Error Resume Next
+    End
+End Sub
+
 Function InputText(StartText As String, Optional MultiLine As Boolean = True) As String
     InputWin.Text2.Text = StartText
     If MultiLine = False Then
@@ -389,6 +394,7 @@ Function translatecontrol(src As String)
         MainFrm.Combo2.FontName = "黑体"
         MainFrm.Combo1.FontName = "黑体"
         MainFrm.Label64.FontName = "黑体"
+        MainFrm.Label74.FontName = "黑体"
         MainFrm.AlignCombo.Clear
         MainFrm.AlignCombo.AddItem "0 - 左对齐"
         MainFrm.AlignCombo.AddItem "1 - 右对齐"
@@ -426,6 +432,7 @@ Function translatecontrol(src As String)
         MainFrm.Frame19.Caption = "页眉"
         MainFrm.Frame22.Caption = "保存"
         MainFrm.Frame23.Caption = "读取"
+        MainFrm.Label74.Caption = "退出"
         MainFrm.Frame11.Caption = "页脚"
         MainFrm.Check22.Caption = "分割线"
         MainFrm.Check23.Caption = "分割线"

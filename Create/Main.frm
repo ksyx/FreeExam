@@ -7,6 +7,7 @@ Begin VB.Form MainFrm
    ClientLeft      =   45
    ClientTop       =   390
    ClientWidth     =   7920
+   ControlBox      =   0   'False
    BeginProperty Font 
       Name            =   "Tahoma"
       Size            =   8.25
@@ -962,7 +963,7 @@ Begin VB.Form MainFrm
          Appearance      =   0  'Flat
          AutoSize        =   -1  'True
          BackColor       =   &H00A0ACBA&
-         Caption         =   "Version: Demo 2.7.12.20180219, Commit be10161"
+         Caption         =   "Version: Demo 2.7.12.20180219, Commit e451362"
          BeginProperty Font 
             Name            =   "Tahoma"
             Size            =   10.5
@@ -2862,6 +2863,26 @@ Begin VB.Form MainFrm
          Width           =   675
       End
    End
+   Begin VB.Label Label74 
+      AutoSize        =   -1  'True
+      BackStyle       =   0  'Transparent
+      Caption         =   "Exit"
+      BeginProperty Font 
+         Name            =   "Tahoma"
+         Size            =   12
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   &H00656D76&
+      Height          =   285
+      Left            =   7335
+      TabIndex        =   176
+      Top             =   135
+      Width           =   390
+   End
    Begin VB.Label Label1 
       AutoSize        =   -1  'True
       BackStyle       =   0  'Transparent
@@ -2897,9 +2918,9 @@ Begin VB.Form MainFrm
       EndProperty
       ForeColor       =   &H00656D76&
       Height          =   285
-      Left            =   5235
+      Left            =   4920
       TabIndex        =   8
-      Top             =   150
+      Top             =   120
       Width           =   1590
    End
    Begin VB.Label Label4 
@@ -2917,9 +2938,9 @@ Begin VB.Form MainFrm
       EndProperty
       ForeColor       =   &H00656D76&
       Height          =   285
-      Left            =   6135
+      Left            =   6225
       TabIndex        =   3
-      Top             =   165
+      Top             =   1170
       Visible         =   0   'False
       Width           =   690
    End
@@ -2938,9 +2959,9 @@ Begin VB.Form MainFrm
       EndProperty
       ForeColor       =   &H00656D76&
       Height          =   285
-      Left            =   7065
+      Left            =   6600
       TabIndex        =   1
-      Top             =   135
+      Top             =   120
       Width           =   645
    End
    Begin VB.Label Label2 
@@ -4101,6 +4122,10 @@ Private Sub Label73_Click()
     Else
         NewMessage translate("Success. PID=") & ret, vbBlack
     End If
+End Sub
+
+Private Sub Label74_Click()
+    ExitProgram
 End Sub
 
 Private Sub Label75_Click()
