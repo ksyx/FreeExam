@@ -458,6 +458,7 @@ Private Sub Text2_Change()
         Case "b": Label6.Caption = "^b^^b^"
         Case "i": Label6.Caption = "^i^^i^"
         Case "u": Label6.Caption = "^u^^u^"
+        Case "d": Label6.Caption = "^d^^d^"
         Case "e": Label6.Caption = "^ee^^ed^"
         Case "s": Label6.Caption = "^se^^sd^"
     End Select

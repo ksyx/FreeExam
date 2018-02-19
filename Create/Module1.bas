@@ -7,7 +7,7 @@ Option Explicit
 
 Public Const ShowCntPerMsg As Long = 50
 Public Const TwipsPerCM As Long = 567
-Public Const Development As Long = 1
+Public Const Development As Long = 0
 Public Const TitleHi As Long = 495
 Public Const DefCnt As Long = 1
 Public Const PresetPageNumber As Long = 10
@@ -347,6 +347,7 @@ Function translatecontrol(src As String)
         MainFrm.Frame18.FontName = "黑体"
         MainFrm.Label52.FontName = "黑体"
         MainFrm.Label53.FontName = "黑体"
+        MainFrm.Check16.FontName = "黑体"
         MainFrm.Label54.FontName = "黑体"
         MainFrm.Label55.FontName = "黑体"
         MainFrm.Label56.FontName = "黑体"
