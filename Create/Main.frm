@@ -2362,7 +2362,7 @@ Begin VB.Form MainFrm
          Appearance      =   0  'Flat
          AutoSize        =   -1  'True
          BackColor       =   &H00A0ACBA&
-         Caption         =   "Version: Demo 2.7.9.20180219, Commit 0df8337"
+         Caption         =   "Version: Demo 2.7.10.20180219, Commit be10161"
          BeginProperty Font 
             Name            =   "Tahoma"
             Size            =   10.5
@@ -2377,7 +2377,7 @@ Begin VB.Form MainFrm
          Left            =   180
          TabIndex        =   170
          Top             =   435
-         Width           =   4590
+         Width           =   4755
       End
       Begin VB.Label Label68 
          Appearance      =   0  'Flat
