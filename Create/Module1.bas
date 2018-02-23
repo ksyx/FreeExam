@@ -7,7 +7,7 @@ Option Explicit
 
 Public Const ShowCntPerMsg As Long = 50
 Public Const TwipsPerCM As Long = 567
-Public Const Development As Long = 0
+Public Const Development As Long = 1
 Public Const TitleHi As Long = 495
 Public Const DefCnt As Long = 1
 Public Const PresetPageNumber As Long = 10
