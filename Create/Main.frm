@@ -963,7 +963,7 @@ Begin VB.Form MainFrm
          Appearance      =   0  'Flat
          AutoSize        =   -1  'True
          BackColor       =   &H00A0ACBA&
-         Caption         =   "Version: Demo 2.7.12.20180219, Commit e451362"
+         Caption         =   "Version: Demo 2.7.13.20180223, Commit 9da4713"
          BeginProperty Font 
             Name            =   "Tahoma"
             Size            =   10.5
