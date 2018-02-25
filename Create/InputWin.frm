@@ -184,6 +184,11 @@ Private Sub Text2_KeyUp(KeyCode As Integer, Shift As Integer)
         Integrated.InitWindow
         Integrated.Show 1
     End If
+    If KeyCode = vbKeyF4 Then
+        Integrated.WinMode = 4
+        Integrated.InitWindow
+        Integrated.Show 1
+    End If
 End Sub
 Private Sub Text1_KeyUp(KeyCode As Integer, Shift As Integer)
     If KeyCode = vbKeyF2 Then

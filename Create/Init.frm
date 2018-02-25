@@ -3,7 +3,7 @@ Begin VB.Form Integrated
    BackColor       =   &H00A0ACBA&
    BorderStyle     =   4  'Fixed ToolWindow
    Caption         =   "Initiating"
-   ClientHeight    =   1770
+   ClientHeight    =   540
    ClientLeft      =   45
    ClientTop       =   390
    ClientWidth     =   5655
@@ -20,7 +20,7 @@ Begin VB.Form Integrated
    LinkTopic       =   "Form2"
    MaxButton       =   0   'False
    MinButton       =   0   'False
-   ScaleHeight     =   1770
+   ScaleHeight     =   540
    ScaleWidth      =   5655
    ShowInTaskbar   =   0   'False
    StartUpPosition =   2  '屏幕中心
@@ -55,77 +55,516 @@ Begin VB.Form Integrated
          Width           =   5025
       End
    End
-   Begin VB.Frame Frame3 
+   Begin VB.Frame Frame4 
       BackColor       =   &H00A0ACBA&
       BorderStyle     =   0  'None
       Caption         =   "Frame2"
-      Height          =   1800
+      Height          =   1725
       Left            =   0
-      TabIndex        =   8
+      TabIndex        =   14
       Top             =   0
-      Width           =   5655
-      Begin VB.TextBox Text2 
-         BackColor       =   &H00B4BFCC&
-         BorderStyle     =   0  'None
+      Width           =   2190
+      Begin VB.Label Label10 
+         BackStyle       =   0  'Transparent
+         Caption         =   "Click the shape to insert, Press Esc to exit"
          BeginProperty Font 
             Name            =   "Tahoma"
-            Size            =   20.25
+            Size            =   8.25
             Charset         =   0
-            Weight          =   400
+            Weight          =   700
             Underline       =   0   'False
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
          ForeColor       =   &H00656D76&
-         Height          =   540
-         Left            =   1500
-         MultiLine       =   -1  'True
-         TabIndex        =   9
-         Top             =   180
-         Width           =   3570
+         Height          =   390
+         Left            =   75
+         TabIndex        =   44
+         Top             =   1305
+         Width           =   2100
       End
-      Begin VB.Label Label8 
-         Alignment       =   1  'Right Justify
+      Begin VB.Label Label9 
          AutoSize        =   -1  'True
          BackStyle       =   0  'Transparent
-         Caption         =   "Code"
+         Caption         =   "┛"
          BeginProperty Font 
-            Name            =   "Tahoma"
-            Size            =   18
-            Charset         =   0
+            Name            =   "Fixedsys"
+            Size            =   12
+            Charset         =   134
             Weight          =   400
             Underline       =   0   'False
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
          ForeColor       =   &H00656D76&
-         Height          =   435
-         Left            =   435
-         TabIndex        =   13
-         Top             =   240
-         Width           =   840
+         Height          =   240
+         Index           =   27
+         Left            =   990
+         TabIndex        =   43
+         Top             =   1095
+         Width           =   240
       End
-      Begin VB.Label Label7 
+      Begin VB.Label Label9 
          AutoSize        =   -1  'True
          BackStyle       =   0  'Transparent
-         Caption         =   "Result"
+         Caption         =   "┃"
          BeginProperty Font 
-            Name            =   "Tahoma"
-            Size            =   18
-            Charset         =   0
+            Name            =   "Fixedsys"
+            Size            =   12
+            Charset         =   134
             Weight          =   400
             Underline       =   0   'False
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
          ForeColor       =   &H00656D76&
-         Height          =   435
-         Left            =   390
-         TabIndex        =   12
-         Top             =   885
-         Width           =   975
+         Height          =   240
+         Index           =   26
+         Left            =   990
+         TabIndex        =   42
+         Top             =   810
+         Width           =   240
       End
-      Begin VB.Label Label6 
+      Begin VB.Label Label9 
+         AutoSize        =   -1  'True
+         BackStyle       =   0  'Transparent
+         Caption         =   "┫"
+         BeginProperty Font 
+            Name            =   "Fixedsys"
+            Size            =   12
+            Charset         =   134
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H00656D76&
+         Height          =   240
+         Index           =   25
+         Left            =   990
+         TabIndex        =   41
+         Top             =   555
+         Width           =   240
+      End
+      Begin VB.Label Label9 
+         AutoSize        =   -1  'True
+         BackStyle       =   0  'Transparent
+         Caption         =   "┓"
+         BeginProperty Font 
+            Name            =   "Fixedsys"
+            Size            =   12
+            Charset         =   134
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H00656D76&
+         Height          =   240
+         Index           =   24
+         Left            =   975
+         TabIndex        =   40
+         Top             =   15
+         Width           =   240
+      End
+      Begin VB.Label Label9 
+         AutoSize        =   -1  'True
+         BackStyle       =   0  'Transparent
+         Caption         =   "┃"
+         BeginProperty Font 
+            Name            =   "Fixedsys"
+            Size            =   12
+            Charset         =   134
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H00656D76&
+         Height          =   240
+         Index           =   23
+         Left            =   975
+         TabIndex        =   39
+         Top             =   285
+         Width           =   240
+      End
+      Begin VB.Label Label9 
+         AutoSize        =   -1  'True
+         BackStyle       =   0  'Transparent
+         Caption         =   "━"
+         BeginProperty Font 
+            Name            =   "Fixedsys"
+            Size            =   12
+            Charset         =   134
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H00656D76&
+         Height          =   240
+         Index           =   22
+         Left            =   750
+         TabIndex        =   38
+         Top             =   1095
+         Width           =   240
+      End
+      Begin VB.Label Label9 
+         AutoSize        =   -1  'True
+         BackStyle       =   0  'Transparent
+         Caption         =   "━"
+         BeginProperty Font 
+            Name            =   "Fixedsys"
+            Size            =   12
+            Charset         =   134
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H00656D76&
+         Height          =   240
+         Index           =   21
+         Left            =   735
+         TabIndex        =   37
+         Top             =   540
+         Width           =   240
+      End
+      Begin VB.Label Label9 
+         AutoSize        =   -1  'True
+         BackStyle       =   0  'Transparent
+         Caption         =   "━"
+         BeginProperty Font 
+            Name            =   "Fixedsys"
+            Size            =   12
+            Charset         =   134
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H00656D76&
+         Height          =   240
+         Index           =   20
+         Left            =   735
+         TabIndex        =   36
+         Top             =   15
+         Width           =   240
+      End
+      Begin VB.Label Label9 
+         AutoSize        =   -1  'True
+         BackStyle       =   0  'Transparent
+         Caption         =   "┻"
+         BeginProperty Font 
+            Name            =   "Fixedsys"
+            Size            =   12
+            Charset         =   134
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H00656D76&
+         Height          =   240
+         Index           =   19
+         Left            =   495
+         TabIndex        =   35
+         Top             =   1095
+         Width           =   240
+      End
+      Begin VB.Label Label9 
+         AutoSize        =   -1  'True
+         BackStyle       =   0  'Transparent
+         Caption         =   "┃"
+         BeginProperty Font 
+            Name            =   "Fixedsys"
+            Size            =   12
+            Charset         =   134
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H00656D76&
+         Height          =   240
+         Index           =   18
+         Left            =   495
+         TabIndex        =   34
+         Top             =   825
+         Width           =   240
+      End
+      Begin VB.Label Label9 
+         AutoSize        =   -1  'True
+         BackStyle       =   0  'Transparent
+         Caption         =   "╋"
+         BeginProperty Font 
+            Name            =   "Fixedsys"
+            Size            =   12
+            Charset         =   134
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H00656D76&
+         Height          =   240
+         Index           =   17
+         Left            =   495
+         TabIndex        =   33
+         Top             =   540
+         Width           =   240
+      End
+      Begin VB.Label Label9 
+         AutoSize        =   -1  'True
+         BackStyle       =   0  'Transparent
+         Caption         =   "┃"
+         BeginProperty Font 
+            Name            =   "Fixedsys"
+            Size            =   12
+            Charset         =   134
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H00656D76&
+         Height          =   240
+         Index           =   16
+         Left            =   480
+         TabIndex        =   32
+         Top             =   270
+         Width           =   240
+      End
+      Begin VB.Label Label9 
+         AutoSize        =   -1  'True
+         BackStyle       =   0  'Transparent
+         Caption         =   "┳"
+         BeginProperty Font 
+            Name            =   "Fixedsys"
+            Size            =   12
+            Charset         =   134
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H00656D76&
+         Height          =   240
+         Index           =   15
+         Left            =   480
+         TabIndex        =   31
+         Top             =   15
+         Width           =   240
+      End
+      Begin VB.Label Label9 
+         AutoSize        =   -1  'True
+         BackStyle       =   0  'Transparent
+         Caption         =   "━"
+         BeginProperty Font 
+            Name            =   "Fixedsys"
+            Size            =   12
+            Charset         =   134
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H00656D76&
+         Height          =   240
+         Index           =   14
+         Left            =   240
+         TabIndex        =   30
+         Top             =   1095
+         Width           =   240
+      End
+      Begin VB.Label Label9 
+         AutoSize        =   -1  'True
+         BackStyle       =   0  'Transparent
+         BeginProperty Font 
+            Name            =   "Fixedsys"
+            Size            =   12
+            Charset         =   134
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H00656D76&
+         Height          =   240
+         Index           =   13
+         Left            =   225
+         TabIndex        =   29
+         Top             =   825
+         Width           =   120
+      End
+      Begin VB.Label Label9 
+         AutoSize        =   -1  'True
+         BackStyle       =   0  'Transparent
+         Caption         =   "━"
+         BeginProperty Font 
+            Name            =   "Fixedsys"
+            Size            =   12
+            Charset         =   134
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H00656D76&
+         Height          =   240
+         Index           =   12
+         Left            =   240
+         TabIndex        =   28
+         Top             =   555
+         Width           =   240
+      End
+      Begin VB.Label Label9 
+         AutoSize        =   -1  'True
+         BackStyle       =   0  'Transparent
+         BeginProperty Font 
+            Name            =   "Fixedsys"
+            Size            =   12
+            Charset         =   134
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H00656D76&
+         Height          =   240
+         Index           =   11
+         Left            =   225
+         TabIndex        =   27
+         Top             =   285
+         Width           =   120
+      End
+      Begin VB.Label Label9 
+         AutoSize        =   -1  'True
+         BackStyle       =   0  'Transparent
+         Caption         =   "━"
+         BeginProperty Font 
+            Name            =   "Fixedsys"
+            Size            =   12
+            Charset         =   134
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H00656D76&
+         Height          =   240
+         Index           =   10
+         Left            =   240
+         TabIndex        =   26
+         Top             =   15
+         Width           =   240
+      End
+      Begin VB.Label Label9 
+         AutoSize        =   -1  'True
+         BackStyle       =   0  'Transparent
+         Caption         =   "┗"
+         BeginProperty Font 
+            Name            =   "Fixedsys"
+            Size            =   12
+            Charset         =   134
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H00656D76&
+         Height          =   240
+         Index           =   4
+         Left            =   0
+         TabIndex        =   20
+         Top             =   1095
+         Width           =   240
+      End
+      Begin VB.Label Label9 
+         AutoSize        =   -1  'True
+         BackStyle       =   0  'Transparent
+         Caption         =   "┃"
+         BeginProperty Font 
+            Name            =   "Fixedsys"
+            Size            =   12
+            Charset         =   134
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H00656D76&
+         Height          =   240
+         Index           =   3
+         Left            =   0
+         TabIndex        =   19
+         Top             =   825
+         Width           =   240
+      End
+      Begin VB.Label Label9 
+         AutoSize        =   -1  'True
+         BackStyle       =   0  'Transparent
+         Caption         =   "┣"
+         BeginProperty Font 
+            Name            =   "Fixedsys"
+            Size            =   12
+            Charset         =   134
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H00656D76&
+         Height          =   240
+         Index           =   2
+         Left            =   0
+         TabIndex        =   18
+         Top             =   555
+         Width           =   240
+      End
+      Begin VB.Label Label9 
+         AutoSize        =   -1  'True
+         BackStyle       =   0  'Transparent
+         Caption         =   "┃"
+         BeginProperty Font 
+            Name            =   "Fixedsys"
+            Size            =   12
+            Charset         =   134
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H00656D76&
+         Height          =   240
+         Index           =   1
+         Left            =   0
+         TabIndex        =   17
+         Top             =   285
+         Width           =   240
+      End
+      Begin VB.Label Label9 
+         AutoSize        =   -1  'True
+         BackStyle       =   0  'Transparent
+         Caption         =   "┏"
+         BeginProperty Font 
+            Name            =   "Fixedsys"
+            Size            =   12
+            Charset         =   134
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H00656D76&
+         Height          =   240
+         Index           =   0
+         Left            =   0
+         TabIndex        =   16
+         Top             =   15
+         Width           =   240
+      End
+      Begin VB.Label Label11 
          AutoSize        =   -1  'True
          BackStyle       =   0  'Transparent
          BeginProperty Font 
@@ -140,29 +579,9 @@ Begin VB.Form Integrated
          ForeColor       =   &H00656D76&
          Height          =   870
          Left            =   1530
-         TabIndex        =   11
+         TabIndex        =   15
          Top             =   720
          Width           =   225
-      End
-      Begin VB.Label Label5 
-         AutoSize        =   -1  'True
-         BackStyle       =   0  'Transparent
-         Caption         =   "Press Enter to insert, Esc to exit"
-         BeginProperty Font 
-            Name            =   "Tahoma"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         ForeColor       =   &H00656D76&
-         Height          =   195
-         Left            =   2925
-         TabIndex        =   10
-         Top             =   1545
-         Width           =   2685
       End
    End
    Begin VB.Frame Frame2 
@@ -273,6 +692,221 @@ Begin VB.Form Integrated
          Width           =   795
       End
    End
+   Begin VB.Frame Frame3 
+      BackColor       =   &H00A0ACBA&
+      BorderStyle     =   0  'None
+      Caption         =   "Frame2"
+      Height          =   1800
+      Left            =   0
+      TabIndex        =   8
+      Top             =   0
+      Width           =   5655
+      Begin VB.TextBox Text2 
+         BackColor       =   &H00B4BFCC&
+         BorderStyle     =   0  'None
+         BeginProperty Font 
+            Name            =   "Tahoma"
+            Size            =   20.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H00656D76&
+         Height          =   540
+         Left            =   1500
+         MultiLine       =   -1  'True
+         TabIndex        =   9
+         Top             =   180
+         Width           =   3570
+      End
+      Begin VB.Label Label8 
+         Alignment       =   1  'Right Justify
+         AutoSize        =   -1  'True
+         BackStyle       =   0  'Transparent
+         Caption         =   "Code"
+         BeginProperty Font 
+            Name            =   "Tahoma"
+            Size            =   18
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H00656D76&
+         Height          =   435
+         Left            =   435
+         TabIndex        =   13
+         Top             =   240
+         Width           =   840
+      End
+      Begin VB.Label Label7 
+         AutoSize        =   -1  'True
+         BackStyle       =   0  'Transparent
+         Caption         =   "Result"
+         BeginProperty Font 
+            Name            =   "Tahoma"
+            Size            =   18
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H00656D76&
+         Height          =   435
+         Left            =   390
+         TabIndex        =   12
+         Top             =   885
+         Width           =   975
+      End
+      Begin VB.Label Label6 
+         AutoSize        =   -1  'True
+         BackStyle       =   0  'Transparent
+         BeginProperty Font 
+            Name            =   "Tahoma"
+            Size            =   36
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H00656D76&
+         Height          =   870
+         Left            =   1530
+         TabIndex        =   11
+         Top             =   720
+         Width           =   225
+      End
+      Begin VB.Label Label5 
+         AutoSize        =   -1  'True
+         BackStyle       =   0  'Transparent
+         Caption         =   "Press Enter to insert, Esc to exit"
+         BeginProperty Font 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H00656D76&
+         Height          =   195
+         Left            =   2940
+         TabIndex        =   10
+         Top             =   1515
+         Width           =   2685
+      End
+   End
+   Begin VB.Label Label9 
+      AutoSize        =   -1  'True
+      BackStyle       =   0  'Transparent
+      Caption         =   "┗"
+      BeginProperty Font 
+         Name            =   "Fixedsys"
+         Size            =   12
+         Charset         =   134
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   &H00656D76&
+      Height          =   240
+      Index           =   9
+      Left            =   0
+      TabIndex        =   25
+      Top             =   1035
+      Width           =   240
+   End
+   Begin VB.Label Label9 
+      AutoSize        =   -1  'True
+      BackStyle       =   0  'Transparent
+      Caption         =   "┃"
+      BeginProperty Font 
+         Name            =   "Fixedsys"
+         Size            =   12
+         Charset         =   134
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   &H00656D76&
+      Height          =   240
+      Index           =   8
+      Left            =   0
+      TabIndex        =   24
+      Top             =   810
+      Width           =   240
+   End
+   Begin VB.Label Label9 
+      AutoSize        =   -1  'True
+      BackStyle       =   0  'Transparent
+      Caption         =   "┣"
+      BeginProperty Font 
+         Name            =   "Fixedsys"
+         Size            =   12
+         Charset         =   134
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   &H00656D76&
+      Height          =   240
+      Index           =   7
+      Left            =   0
+      TabIndex        =   23
+      Top             =   540
+      Width           =   240
+   End
+   Begin VB.Label Label9 
+      AutoSize        =   -1  'True
+      BackStyle       =   0  'Transparent
+      Caption         =   "┃"
+      BeginProperty Font 
+         Name            =   "Fixedsys"
+         Size            =   12
+         Charset         =   134
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   &H00656D76&
+      Height          =   240
+      Index           =   6
+      Left            =   0
+      TabIndex        =   22
+      Top             =   270
+      Width           =   240
+   End
+   Begin VB.Label Label9 
+      AutoSize        =   -1  'True
+      BackStyle       =   0  'Transparent
+      Caption         =   "┏"
+      BeginProperty Font 
+         Name            =   "Fixedsys"
+         Size            =   12
+         Charset         =   134
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   &H00656D76&
+      Height          =   240
+      Index           =   5
+      Left            =   0
+      TabIndex        =   21
+      Top             =   0
+      Width           =   240
+   End
 End
 Attribute VB_Name = "Integrated"
 Attribute VB_GlobalNameSpace = False
@@ -288,6 +922,7 @@ Sub InitWindow()
         Frame1.Visible = True
         Frame2.Visible = False
         Frame3.Visible = False
+        Frame4.Visible = False
         Me.Width = Frame1.Width
         Me.Height = Frame1.Height + TitleHi
         Me.Caption = translate("Initiating")
@@ -296,6 +931,7 @@ Sub InitWindow()
         Frame1.Visible = False
         Frame2.Visible = True
         Frame3.Visible = False
+        Frame4.Visible = False
         Me.Width = Frame2.Width
         Me.Height = Frame2.Height + TitleHi
         Me.Caption = translate("Special Input")
@@ -305,14 +941,38 @@ Sub InitWindow()
         Frame1.Visible = False
         Frame2.Visible = False
         Frame3.Visible = True
+        Frame4.Visible = False
         Me.Width = Frame3.Width
         Me.Height = Frame3.Height + TitleHi
         Me.Caption = translate("Format")
         Text2.Text = ""
     End If
+    If WinMode = 4 Then
+        Frame1.Visible = False
+        Frame2.Visible = False
+        Frame3.Visible = False
+        Frame4.Visible = True
+        Me.Width = Frame4.Width
+        Me.Height = Frame4.Height + TitleHi
+        Me.Caption = translate("Table Maker")
+    End If
     If EnableTranslation = 1 Then
         Message.Font = "黑体"
     End If
+End Sub
+
+Private Sub Form_KeyDown(KeyCode As Integer, Shift As Integer)
+    If KeyCode = vbKeyEscape Then
+        Me.Hide
+    End If
+End Sub
+
+Private Sub Form_Load()
+    translatecontrol Me.Name
+End Sub
+
+Private Sub Label9_Click(Index As Integer)
+    InputWin.Text2.SelText = Label9(Index).Caption
 End Sub
 
 Private Sub Text1_Change()
@@ -493,6 +1153,7 @@ Debug.Print "CHANGE"
 
         Case Else: Label3.Caption = ""
     End Select
+    If Label3.Caption <> "" Then Exit Sub
     Label3.FontSize = 12
     If Left(Text1.Text, 3) = "tot" Then
         Label3.Caption = "共"

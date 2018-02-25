@@ -111,6 +111,7 @@ Function translatecontrol(src As String)
         Integrated.Label8.Alignment = 2
         Integrated.Label7.Alignment = 2
         Integrated.Label5.Alignment = 2
+        Integrated.Label10.Caption = "黑体"
         Integrated.Label1.FontName = "黑体"
         Integrated.Label2.FontName = "黑体"
         Integrated.Label4.FontName = "黑体"
@@ -122,6 +123,7 @@ Function translatecontrol(src As String)
         Integrated.Label4.Caption = "按Enter插入，按Esc退出"
         Integrated.Label8.Caption = "代码"
         Integrated.Label7.Caption = "结果"
+        Integrated.Label10.Caption = "点击形状插入，按Esc退出"
         Integrated.Label5.Caption = "按Enter插入，按Esc退出"
     End If
     If src = "PageSettings" Then
@@ -594,7 +596,7 @@ Function translate(src As String) As String
         If src = "Completed. LoadID=" Then translate = "完成，加载号为"
         If src = "This LoadID and/or its configuration not found" Then translate = "这个加载号和/或它的配置文件未找到"
         If src = "Completed." Then translate = "完成。"
-        
+        If src = "Table Maker" Then translate = "制表"
         
         
         If src = "Nothing can be previewed." Then translate = "没有能被预览的东西"
