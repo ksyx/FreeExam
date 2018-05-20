@@ -42,7 +42,7 @@ Begin VB.Form Integrated
          Left            =   1005
          MultiLine       =   -1  'True
          ScrollBars      =   3  'Both
-         TabIndex        =   54
+         TabIndex        =   47
          Top             =   30
          Width           =   4545
       End
@@ -62,7 +62,7 @@ Begin VB.Form Integrated
          ForeColor       =   &H00656D76&
          Height          =   225
          Left            =   3750
-         TabIndex        =   52
+         TabIndex        =   53
          Top             =   1185
          Width           =   915
       End
@@ -82,7 +82,7 @@ Begin VB.Form Integrated
          ForeColor       =   &H00656D76&
          Height          =   225
          Left            =   2850
-         TabIndex        =   51
+         TabIndex        =   52
          Top             =   1185
          Width           =   915
       End
@@ -102,8 +102,9 @@ Begin VB.Form Integrated
          ForeColor       =   &H00656D76&
          Height          =   195
          Left            =   2865
-         TabIndex        =   50
+         TabIndex        =   51
          Top             =   870
+         Value           =   -1  'True
          Width           =   720
       End
       Begin VB.OptionButton Option2 
@@ -122,7 +123,7 @@ Begin VB.Form Integrated
          ForeColor       =   &H00656D76&
          Height          =   195
          Left            =   3735
-         TabIndex        =   49
+         TabIndex        =   50
          Top             =   870
          Width           =   915
       End
@@ -142,7 +143,7 @@ Begin VB.Form Integrated
          ForeColor       =   &H00656D76&
          Height          =   435
          Left            =   270
-         TabIndex        =   53
+         TabIndex        =   54
          Top             =   255
          Width           =   705
       End
@@ -162,7 +163,7 @@ Begin VB.Form Integrated
          ForeColor       =   &H00656D76&
          Height          =   435
          Left            =   315
-         TabIndex        =   48
+         TabIndex        =   49
          Top             =   885
          Width           =   2340
       End
@@ -180,7 +181,7 @@ Begin VB.Form Integrated
          ForeColor       =   &H00656D76&
          Height          =   870
          Left            =   1500
-         TabIndex        =   47
+         TabIndex        =   48
          Top             =   825
          Width           =   3570
       End

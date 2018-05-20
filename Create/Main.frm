@@ -648,7 +648,7 @@ Begin VB.Form MainFrm
          Appearance      =   0  'Flat
          AutoSize        =   -1  'True
          BackColor       =   &H00A0ACBA&
-         Caption         =   "Version: Demo 2.9.1.20180520"
+         Caption         =   "Version: Demo 2.9.2.20180520"
          BeginProperty Font 
             Name            =   "Tahoma"
             Size            =   10.5
