@@ -7,7 +7,7 @@ Option Explicit
 
 Public Const ShowCntPerMsg As Long = 50
 Public Const TwipsPerCM As Long = 567
-Public Const Development As Long = 1
+Public Const Development As Long = 0
 Public Const TitleHi As Long = 495
 Public Const DefCnt As Long = 1
 Public Const PresetPageNumber As Long = 10
@@ -118,6 +118,9 @@ Function translatecontrol(src As String)
         Integrated.Label8.FontName = "黑体"
         Integrated.Label7.FontName = "黑体"
         Integrated.Label5.FontName = "黑体"
+        Integrated.Label12.FontName = "黑体"
+        Integrated.Label14.FontName = "黑体"
+        Integrated.Label15.FontName = "黑体"
         Integrated.Label1.Caption = "代码"
         Integrated.Label2.Caption = "结果"
         Integrated.Label4.Caption = "按Enter插入，按Esc退出"
@@ -125,6 +128,9 @@ Function translatecontrol(src As String)
         Integrated.Label7.Caption = "结果"
         Integrated.Label10.Caption = "点击形状插入，按Esc退出"
         Integrated.Label5.Caption = "按Enter插入，按Esc退出"
+        Integrated.Label12.Caption = "按F2插入，按F3跳转选项，按Esc退出"
+        Integrated.Label14.Caption = "当前选项"
+        Integrated.Label15.Caption = "文本"
     End If
     If src = "PageSettings" Then
         PageSettings.Caption = "页面设置"
@@ -319,6 +325,7 @@ Function translatecontrol(src As String)
         MainFrm.Label63.FontName = "黑体"
         MainFrm.PreviewButton.FontName = "黑体"
         MainFrm.Label22.FontName = "黑体"
+        MainFrm.Label77.FontName = "黑体"
         MainFrm.Label35.FontName = "黑体"
         MainFrm.Label38.FontName = "黑体"
         MainFrm.Label43.FontName = "黑体"
@@ -415,6 +422,7 @@ Function translatecontrol(src As String)
         MainFrm.Label3.Caption = "关于"
         MainFrm.Label1.Caption = "通用"
         MainFrm.Label70.Caption = "读取号"
+        MainFrm.Label77.Caption = "提取器"
         MainFrm.Label15.Caption = "合并预览"
         MainFrm.Label30.Caption = "记录"
         MainFrm.Label60.Caption = "合并"
@@ -568,7 +576,7 @@ Function translate(src As String) As String
         If src = "The input B is too large that we can't process that." Then translate = "输入B太大以至于我们无法处理它。"
         
         If src = "The input C is too large that we can't process that." Then translate = "输入C太大以至于我们无法处理它。"
-        
+        If src = "Option Picker" Then translate = "选项提取器"
         If src = "The input D is too large that we can't process that." Then translate = "输入D太大以至于我们无法处理它。"
         
         
