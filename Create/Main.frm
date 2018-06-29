@@ -23,6 +23,232 @@ Begin VB.Form MainFrm
    ScaleHeight     =   8700
    ScaleWidth      =   7920
    StartUpPosition =   2  'ÆÁÄ»ÖÐÐÄ
+   Begin VB.PictureBox Tools 
+      BackColor       =   &H00A0ACBA&
+      BorderStyle     =   0  'None
+      Height          =   5100
+      Left            =   60
+      ScaleHeight     =   5100
+      ScaleWidth      =   7770
+      TabIndex        =   171
+      TabStop         =   0   'False
+      Top             =   570
+      Visible         =   0   'False
+      Width           =   7770
+      Begin VB.Frame Frame24 
+         BackColor       =   &H00A0ACBA&
+         Caption         =   "Self-Repair"
+         ForeColor       =   &H00656D76&
+         Height          =   1980
+         Left            =   75
+         TabIndex        =   179
+         Top             =   1350
+         Width           =   4620
+         Begin VB.Frame Frame25 
+            BackColor       =   &H00A0ACBA&
+            Caption         =   "Problem 1"
+            ForeColor       =   &H00656D76&
+            Height          =   1560
+            Left            =   180
+            TabIndex        =   180
+            Top             =   225
+            Width           =   3960
+            Begin VB.Label Label80 
+               Alignment       =   2  'Center
+               Appearance      =   0  'Flat
+               AutoSize        =   -1  'True
+               BackColor       =   &H00B4BFCC&
+               Caption         =   " Go "
+               BeginProperty Font 
+                  Name            =   "Tahoma"
+                  Size            =   10.5
+                  Charset         =   0
+                  Weight          =   400
+                  Underline       =   0   'False
+                  Italic          =   0   'False
+                  Strikethrough   =   0   'False
+               EndProperty
+               ForeColor       =   &H00656D76&
+               Height          =   255
+               Left            =   2955
+               TabIndex        =   183
+               Top             =   1170
+               Width           =   630
+            End
+            Begin VB.Label Label79 
+               BackStyle       =   0  'Transparent
+               Caption         =   "Solution: Reload page margins"
+               BeginProperty Font 
+                  Name            =   "Tahoma"
+                  Size            =   10.5
+                  Charset         =   0
+                  Weight          =   400
+                  Underline       =   0   'False
+                  Italic          =   0   'False
+                  Strikethrough   =   0   'False
+               EndProperty
+               ForeColor       =   &H00656D76&
+               Height          =   285
+               Left            =   60
+               TabIndex        =   182
+               Top             =   795
+               Width           =   3825
+            End
+            Begin VB.Label Label78 
+               BackStyle       =   0  'Transparent
+               Caption         =   "Problem: The result is weird using function With Image"
+               BeginProperty Font 
+                  Name            =   "Tahoma"
+                  Size            =   10.5
+                  Charset         =   0
+                  Weight          =   400
+                  Underline       =   0   'False
+                  Italic          =   0   'False
+                  Strikethrough   =   0   'False
+               EndProperty
+               ForeColor       =   &H00656D76&
+               Height          =   525
+               Left            =   75
+               TabIndex        =   181
+               Top             =   255
+               Width           =   3825
+            End
+            Begin VB.Shape Shape0 
+               BackColor       =   &H00B4BFCC&
+               BackStyle       =   1  'Opaque
+               BorderColor     =   &H00B4BFCC&
+               Height          =   330
+               Index           =   37
+               Left            =   2805
+               Top             =   1140
+               Width           =   915
+            End
+         End
+      End
+      Begin VB.Frame Frame21 
+         BackColor       =   &H00A0ACBA&
+         Caption         =   "Tools"
+         ForeColor       =   &H00656D76&
+         Height          =   1185
+         Left            =   45
+         TabIndex        =   174
+         Top             =   60
+         Width           =   4620
+         Begin VB.Label Label72 
+            AutoSize        =   -1  'True
+            BackStyle       =   0  'Transparent
+            Caption         =   "Note: All of the tools there is provided by system."
+            BeginProperty Font 
+               Name            =   "Tahoma"
+               Size            =   10.5
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            ForeColor       =   &H00656D76&
+            Height          =   255
+            Left            =   60
+            TabIndex        =   178
+            Top             =   630
+            Width           =   4515
+         End
+         Begin VB.Label Label73 
+            Appearance      =   0  'Flat
+            AutoSize        =   -1  'True
+            BackColor       =   &H00B4BFCC&
+            Caption         =   " Paint "
+            BeginProperty Font 
+               Name            =   "Tahoma"
+               Size            =   10.5
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            ForeColor       =   &H00656D76&
+            Height          =   255
+            Left            =   2415
+            TabIndex        =   177
+            Top             =   270
+            Width           =   570
+         End
+         Begin VB.Label Label75 
+            Appearance      =   0  'Flat
+            AutoSize        =   -1  'True
+            BackColor       =   &H00B4BFCC&
+            Caption         =   " Notepad "
+            BeginProperty Font 
+               Name            =   "Tahoma"
+               Size            =   10.5
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            ForeColor       =   &H00656D76&
+            Height          =   255
+            Left            =   1350
+            TabIndex        =   176
+            Top             =   255
+            Width           =   900
+         End
+         Begin VB.Label Label76 
+            Appearance      =   0  'Flat
+            AutoSize        =   -1  'True
+            BackColor       =   &H00B4BFCC&
+            Caption         =   " Calcutator "
+            BeginProperty Font 
+               Name            =   "Tahoma"
+               Size            =   10.5
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            ForeColor       =   &H00656D76&
+            Height          =   255
+            Left            =   120
+            TabIndex        =   175
+            Top             =   255
+            Width           =   1065
+         End
+         Begin VB.Shape Shape0 
+            BackColor       =   &H00B4BFCC&
+            BackStyle       =   1  'Opaque
+            BorderColor     =   &H00B4BFCC&
+            Height          =   330
+            Index           =   33
+            Left            =   90
+            Top             =   210
+            Width           =   1155
+         End
+         Begin VB.Shape Shape0 
+            BackColor       =   &H00B4BFCC&
+            BackStyle       =   1  'Opaque
+            BorderColor     =   &H00B4BFCC&
+            Height          =   315
+            Index           =   34
+            Left            =   1320
+            Top             =   240
+            Width           =   975
+         End
+         Begin VB.Shape Shape0 
+            BackColor       =   &H00B4BFCC&
+            BackStyle       =   1  'Opaque
+            BorderColor     =   &H00B4BFCC&
+            Height          =   330
+            Index           =   35
+            Left            =   2355
+            Top             =   225
+            Width           =   705
+         End
+      End
+   End
    Begin VB.PictureBox WIP 
       BackColor       =   &H00A0ACBA&
       ForeColor       =   &H00B4BFCC&
@@ -137,680 +363,6 @@ Begin VB.Form MainFrm
          TabIndex        =   5
          Top             =   10
          Width           =   45
-      End
-   End
-   Begin VB.Frame ABCD 
-      BackColor       =   &H00A0ACBA&
-      BorderStyle     =   0  'None
-      Caption         =   "Frame11"
-      Height          =   6300
-      Left            =   15
-      TabIndex        =   114
-      Top             =   2010
-      Visible         =   0   'False
-      Width           =   7905
-      Begin VB.Frame Frame18 
-         BackColor       =   &H00A0ACBA&
-         Caption         =   "Texts &^"
-         ForeColor       =   &H00656D76&
-         Height          =   1545
-         Left            =   0
-         TabIndex        =   122
-         Top             =   1185
-         Width           =   7635
-         Begin VB.CheckBox Check21 
-            Appearance      =   0  'Flat
-            BackColor       =   &H00A0ACBA&
-            Caption         =   "D"
-            ForeColor       =   &H00656D76&
-            Height          =   195
-            Left            =   135
-            TabIndex        =   141
-            Top             =   1200
-            Value           =   1  'Checked
-            Width           =   390
-         End
-         Begin VB.TextBox Text12 
-            Appearance      =   0  'Flat
-            BackColor       =   &H00B4BFCC&
-            BorderStyle     =   0  'None
-            ForeColor       =   &H00656D76&
-            Height          =   285
-            Left            =   -765
-            TabIndex        =   129
-            Top             =   9999
-            Visible         =   0   'False
-            Width           =   6960
-         End
-         Begin VB.TextBox Text11 
-            Appearance      =   0  'Flat
-            BackColor       =   &H00B4BFCC&
-            BorderStyle     =   0  'None
-            ForeColor       =   &H00656D76&
-            Height          =   285
-            Left            =   -2040
-            TabIndex        =   127
-            Top             =   1545
-            Visible         =   0   'False
-            Width           =   6960
-         End
-         Begin VB.TextBox Text10 
-            Appearance      =   0  'Flat
-            BackColor       =   &H00B4BFCC&
-            BorderStyle     =   0  'None
-            ForeColor       =   &H00656D76&
-            Height          =   285
-            Left            =   1110
-            TabIndex        =   125
-            Top             =   9999
-            Visible         =   0   'False
-            Width           =   6960
-         End
-         Begin VB.TextBox Text8 
-            Appearance      =   0  'Flat
-            BackColor       =   &H00B4BFCC&
-            BorderStyle     =   0  'None
-            ForeColor       =   &H00656D76&
-            Height          =   285
-            Left            =   1035
-            TabIndex        =   123
-            Top             =   9999
-            Visible         =   0   'False
-            Width           =   6960
-         End
-         Begin VB.Label Label55 
-            Alignment       =   2  'Center
-            Appearance      =   0  'Flat
-            AutoSize        =   -1  'True
-            BackColor       =   &H00B4BFCC&
-            Caption         =   " Click to edit "
-            BeginProperty Font 
-               Name            =   "Tahoma"
-               Size            =   10.5
-               Charset         =   0
-               Weight          =   400
-               Underline       =   0   'False
-               Italic          =   0   'False
-               Strikethrough   =   0   'False
-            EndProperty
-            ForeColor       =   &H00656D76&
-            Height          =   255
-            Left            =   3450
-            TabIndex        =   136
-            Top             =   1170
-            Width           =   1170
-         End
-         Begin VB.Label Label54 
-            Alignment       =   2  'Center
-            Appearance      =   0  'Flat
-            AutoSize        =   -1  'True
-            BackColor       =   &H00B4BFCC&
-            Caption         =   " Click to edit "
-            BeginProperty Font 
-               Name            =   "Tahoma"
-               Size            =   10.5
-               Charset         =   0
-               Weight          =   400
-               Underline       =   0   'False
-               Italic          =   0   'False
-               Strikethrough   =   0   'False
-            EndProperty
-            ForeColor       =   &H00656D76&
-            Height          =   255
-            Left            =   3465
-            TabIndex        =   135
-            Top             =   870
-            Width           =   1170
-         End
-         Begin VB.Label Label53 
-            Alignment       =   2  'Center
-            Appearance      =   0  'Flat
-            BackColor       =   &H00B4BFCC&
-            Caption         =   " Click to edit "
-            BeginProperty Font 
-               Name            =   "Tahoma"
-               Size            =   10.5
-               Charset         =   0
-               Weight          =   400
-               Underline       =   0   'False
-               Italic          =   0   'False
-               Strikethrough   =   0   'False
-            EndProperty
-            ForeColor       =   &H00656D76&
-            Height          =   255
-            Left            =   630
-            TabIndex        =   134
-            Top             =   585
-            Width           =   6855
-         End
-         Begin VB.Label Label52 
-            Alignment       =   2  'Center
-            Appearance      =   0  'Flat
-            BackColor       =   &H00B4BFCC&
-            Caption         =   " Click to edit "
-            BeginProperty Font 
-               Name            =   "Tahoma"
-               Size            =   10.5
-               Charset         =   0
-               Weight          =   400
-               Underline       =   0   'False
-               Italic          =   0   'False
-               Strikethrough   =   0   'False
-            EndProperty
-            ForeColor       =   &H00656D76&
-            Height          =   255
-            Left            =   630
-            TabIndex        =   133
-            Top             =   300
-            Width           =   6810
-         End
-         Begin VB.Label Label50 
-            Alignment       =   1  'Right Justify
-            AutoSize        =   -1  'True
-            BackStyle       =   0  'Transparent
-            Caption         =   "D"
-            ForeColor       =   &H00656D76&
-            Height          =   195
-            Left            =   390
-            TabIndex        =   130
-            Top             =   1200
-            Visible         =   0   'False
-            Width           =   105
-         End
-         Begin VB.Label Label49 
-            Alignment       =   1  'Right Justify
-            AutoSize        =   -1  'True
-            BackStyle       =   0  'Transparent
-            Caption         =   "C"
-            ForeColor       =   &H00656D76&
-            Height          =   195
-            Left            =   390
-            TabIndex        =   128
-            Top             =   885
-            Width           =   105
-         End
-         Begin VB.Label Label44 
-            Alignment       =   1  'Right Justify
-            AutoSize        =   -1  'True
-            BackStyle       =   0  'Transparent
-            Caption         =   "B"
-            ForeColor       =   &H00656D76&
-            Height          =   195
-            Left            =   405
-            TabIndex        =   126
-            Top             =   555
-            Width           =   90
-         End
-         Begin VB.Label Label48 
-            Alignment       =   1  'Right Justify
-            AutoSize        =   -1  'True
-            BackStyle       =   0  'Transparent
-            Caption         =   "A"
-            ForeColor       =   &H00656D76&
-            Height          =   195
-            Left            =   390
-            TabIndex        =   124
-            Top             =   240
-            Width           =   105
-         End
-         Begin VB.Shape Shape0 
-            BackColor       =   &H00B4BFCC&
-            BackStyle       =   1  'Opaque
-            BorderColor     =   &H00B4BFCC&
-            Height          =   210
-            Index           =   4
-            Left            =   600
-            Top             =   330
-            Width           =   6885
-         End
-         Begin VB.Shape Shape0 
-            BackColor       =   &H00B4BFCC&
-            BackStyle       =   1  'Opaque
-            BorderColor     =   &H00B4BFCC&
-            Height          =   225
-            Index           =   5
-            Left            =   600
-            Top             =   600
-            Width           =   6855
-         End
-         Begin VB.Shape Shape0 
-            BackColor       =   &H00B4BFCC&
-            BackStyle       =   1  'Opaque
-            BorderColor     =   &H00B4BFCC&
-            Height          =   255
-            Index           =   6
-            Left            =   570
-            Top             =   1170
-            Width           =   6915
-         End
-         Begin VB.Shape Shape0 
-            BackColor       =   &H00B4BFCC&
-            BackStyle       =   1  'Opaque
-            BorderColor     =   &H00B4BFCC&
-            Height          =   270
-            Index           =   7
-            Left            =   570
-            Top             =   870
-            Width           =   6915
-         End
-      End
-      Begin VB.Frame Frame17 
-         BackColor       =   &H00A0ACBA&
-         Caption         =   "Format"
-         ForeColor       =   &H00656D76&
-         Height          =   1125
-         Left            =   30
-         TabIndex        =   115
-         Top             =   15
-         Width           =   5280
-         Begin VB.ComboBox Combo4 
-            BackColor       =   &H00B4BFCC&
-            ForeColor       =   &H00656D76&
-            Height          =   315
-            ItemData        =   "Main.frx":0008
-            Left            =   810
-            List            =   "Main.frx":000A
-            Sorted          =   -1  'True
-            Style           =   2  'Dropdown List
-            TabIndex        =   143
-            Top             =   195
-            Width           =   1905
-         End
-         Begin VB.OptionButton Option4 
-            Appearance      =   0  'Flat
-            BackColor       =   &H00A0ACBA&
-            Caption         =   "ABCD"
-            ForeColor       =   &H00656D76&
-            Height          =   390
-            Left            =   2775
-            TabIndex        =   138
-            Top             =   570
-            Value           =   -1  'True
-            Width           =   525
-         End
-         Begin VB.OptionButton Option3 
-            Appearance      =   0  'Flat
-            BackColor       =   &H00A0ACBA&
-            Caption         =   "ABCD"
-            ForeColor       =   &H00656D76&
-            Height          =   195
-            Left            =   2790
-            TabIndex        =   137
-            Top             =   315
-            Width           =   720
-         End
-         Begin VB.TextBox Text9 
-            BackColor       =   &H00B4BFCC&
-            ForeColor       =   &H00656D76&
-            Height          =   285
-            Left            =   810
-            MaxLength       =   3
-            TabIndex        =   118
-            Top             =   540
-            Width           =   1905
-         End
-         Begin VB.CheckBox Check20 
-            BackColor       =   &H00B4BFCC&
-            Caption         =   "I"
-            BeginProperty Font 
-               Name            =   "Tahoma"
-               Size            =   8.25
-               Charset         =   0
-               Weight          =   400
-               Underline       =   0   'False
-               Italic          =   -1  'True
-               Strikethrough   =   0   'False
-            EndProperty
-            ForeColor       =   &H00656D76&
-            Height          =   225
-            Left            =   1110
-            Style           =   1  'Graphical
-            TabIndex        =   117
-            Top             =   855
-            Width           =   270
-         End
-         Begin VB.CheckBox Check19 
-            Appearance      =   0  'Flat
-            BackColor       =   &H00B4BFCC&
-            Caption         =   "B"
-            BeginProperty Font 
-               Name            =   "Tahoma"
-               Size            =   8.25
-               Charset         =   0
-               Weight          =   700
-               Underline       =   0   'False
-               Italic          =   0   'False
-               Strikethrough   =   0   'False
-            EndProperty
-            ForeColor       =   &H00656D76&
-            Height          =   225
-            Left            =   825
-            Style           =   1  'Graphical
-            TabIndex        =   116
-            Top             =   855
-            Width           =   270
-         End
-         Begin VB.Label Label47 
-            Alignment       =   1  'Right Justify
-            AutoSize        =   -1  'True
-            BackStyle       =   0  'Transparent
-            Caption         =   "Size"
-            ForeColor       =   &H00656D76&
-            Height          =   195
-            Left            =   465
-            TabIndex        =   121
-            Top             =   585
-            Width           =   285
-         End
-         Begin VB.Label Label46 
-            Alignment       =   1  'Right Justify
-            AutoSize        =   -1  'True
-            BackStyle       =   0  'Transparent
-            Caption         =   "Font"
-            ForeColor       =   &H00656D76&
-            Height          =   195
-            Left            =   435
-            TabIndex        =   120
-            Top             =   285
-            Width           =   330
-         End
-         Begin VB.Label Label45 
-            Alignment       =   1  'Right Justify
-            AutoSize        =   -1  'True
-            BackStyle       =   0  'Transparent
-            Caption         =   "Shape"
-            ForeColor       =   &H00656D76&
-            Height          =   195
-            Left            =   345
-            TabIndex        =   119
-            Top             =   840
-            Width           =   450
-         End
-      End
-      Begin VB.Label Label77 
-         Appearance      =   0  'Flat
-         AutoSize        =   -1  'True
-         BackColor       =   &H00B4BFCC&
-         Caption         =   " Picker "
-         BeginProperty Font 
-            Name            =   "Tahoma"
-            Size            =   10.5
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         ForeColor       =   &H00656D76&
-         Height          =   255
-         Left            =   75
-         TabIndex        =   177
-         Top             =   2820
-         Width           =   660
-      End
-      Begin VB.Label Label58 
-         AutoSize        =   -1  'True
-         BackColor       =   &H00A0ACBA&
-         Caption         =   "Label58"
-         Height          =   195
-         Left            =   2520
-         TabIndex        =   142
-         Top             =   4590
-         Visible         =   0   'False
-         Width           =   555
-      End
-      Begin VB.Label Label57 
-         Appearance      =   0  'Flat
-         AutoSize        =   -1  'True
-         BackColor       =   &H00B4BFCC&
-         Caption         =   " Save "
-         BeginProperty Font 
-            Name            =   "Tahoma"
-            Size            =   10.5
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         ForeColor       =   &H00656D76&
-         Height          =   255
-         Left            =   7050
-         TabIndex        =   140
-         Top             =   2895
-         Width           =   570
-      End
-      Begin VB.Label Label56 
-         Appearance      =   0  'Flat
-         AutoSize        =   -1  'True
-         BackColor       =   &H00B4BFCC&
-         Caption         =   " Preview "
-         BeginProperty Font 
-            Name            =   "Tahoma"
-            Size            =   10.5
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         ForeColor       =   &H00656D76&
-         Height          =   255
-         Left            =   6060
-         TabIndex        =   139
-         Top             =   2865
-         Width           =   825
-      End
-      Begin VB.Shape Shape0 
-         BackColor       =   &H00B4BFCC&
-         BackStyle       =   1  'Opaque
-         BorderColor     =   &H00B4BFCC&
-         Height          =   330
-         Index           =   23
-         Left            =   6015
-         Top             =   2835
-         Width           =   870
-      End
-      Begin VB.Shape Shape0 
-         BackColor       =   &H00B4BFCC&
-         BackStyle       =   1  'Opaque
-         BorderColor     =   &H00B4BFCC&
-         Height          =   330
-         Index           =   24
-         Left            =   6990
-         Top             =   2850
-         Width           =   675
-      End
-      Begin VB.Shape Shape0 
-         BackColor       =   &H00B4BFCC&
-         BackStyle       =   1  'Opaque
-         BorderColor     =   &H00B4BFCC&
-         Height          =   330
-         Index           =   36
-         Left            =   60
-         Top             =   2790
-         Width           =   675
-      End
-   End
-   Begin VB.PictureBox Copyright 
-      BackColor       =   &H00A0ACBA&
-      BorderStyle     =   0  'None
-      Height          =   7590
-      Left            =   60
-      ScaleHeight     =   7590
-      ScaleWidth      =   7770
-      TabIndex        =   159
-      TabStop         =   0   'False
-      Top             =   510
-      Visible         =   0   'False
-      Width           =   7770
-      Begin VB.Label Label71 
-         Appearance      =   0  'Flat
-         AutoSize        =   -1  'True
-         BackColor       =   &H00A0ACBA&
-         Caption         =   "Version: Demo 2.9.2.20180520"
-         BeginProperty Font 
-            Name            =   "Tahoma"
-            Size            =   10.5
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         ForeColor       =   &H00656D76&
-         Height          =   255
-         Left            =   180
-         TabIndex        =   170
-         Top             =   435
-         Width           =   2910
-      End
-      Begin VB.Label Label68 
-         Appearance      =   0  'Flat
-         AutoSize        =   -1  'True
-         BackColor       =   &H00A0ACBA&
-         Caption         =   " Copyright (c) ksyx 2018, All Rights Reserved. "
-         BeginProperty Font 
-            Name            =   "Tahoma"
-            Size            =   10.5
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         ForeColor       =   &H00656D76&
-         Height          =   255
-         Left            =   120
-         TabIndex        =   160
-         Top             =   105
-         Width           =   4290
-      End
-   End
-   Begin VB.PictureBox Tools 
-      BackColor       =   &H00A0ACBA&
-      BorderStyle     =   0  'None
-      Height          =   1380
-      Left            =   60
-      ScaleHeight     =   1380
-      ScaleWidth      =   7770
-      TabIndex        =   171
-      TabStop         =   0   'False
-      Top             =   585
-      Visible         =   0   'False
-      Width           =   7770
-      Begin VB.Label Label72 
-         AutoSize        =   -1  'True
-         BackStyle       =   0  'Transparent
-         Caption         =   "Note: All of the tools there is provided by system."
-         BeginProperty Font 
-            Name            =   "Tahoma"
-            Size            =   10.5
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         ForeColor       =   &H00656D76&
-         Height          =   255
-         Left            =   135
-         TabIndex        =   175
-         Top             =   480
-         Width           =   4515
-      End
-      Begin VB.Label Label73 
-         Appearance      =   0  'Flat
-         AutoSize        =   -1  'True
-         BackColor       =   &H00B4BFCC&
-         Caption         =   " Paint "
-         BeginProperty Font 
-            Name            =   "Tahoma"
-            Size            =   10.5
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         ForeColor       =   &H00656D76&
-         Height          =   255
-         Left            =   2430
-         TabIndex        =   174
-         Top             =   150
-         Width           =   570
-      End
-      Begin VB.Shape Shape0 
-         BackColor       =   &H00B4BFCC&
-         BackStyle       =   1  'Opaque
-         BorderColor     =   &H00B4BFCC&
-         Height          =   330
-         Index           =   35
-         Left            =   2370
-         Top             =   120
-         Width           =   705
-      End
-      Begin VB.Label Label76 
-         Appearance      =   0  'Flat
-         AutoSize        =   -1  'True
-         BackColor       =   &H00B4BFCC&
-         Caption         =   " Calcutator "
-         BeginProperty Font 
-            Name            =   "Tahoma"
-            Size            =   10.5
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         ForeColor       =   &H00656D76&
-         Height          =   255
-         Left            =   105
-         TabIndex        =   173
-         Top             =   120
-         Width           =   1065
-      End
-      Begin VB.Shape Shape0 
-         BackColor       =   &H00B4BFCC&
-         BackStyle       =   1  'Opaque
-         BorderColor     =   &H00B4BFCC&
-         Height          =   330
-         Index           =   33
-         Left            =   90
-         Top             =   105
-         Width           =   1155
-      End
-      Begin VB.Label Label75 
-         Appearance      =   0  'Flat
-         AutoSize        =   -1  'True
-         BackColor       =   &H00B4BFCC&
-         Caption         =   " Notepad "
-         BeginProperty Font 
-            Name            =   "Tahoma"
-            Size            =   10.5
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         ForeColor       =   &H00656D76&
-         Height          =   255
-         Left            =   1335
-         TabIndex        =   172
-         Top             =   150
-         Width           =   900
-      End
-      Begin VB.Shape Shape0 
-         BackColor       =   &H00B4BFCC&
-         BackStyle       =   1  'Opaque
-         BorderColor     =   &H00B4BFCC&
-         Height          =   315
-         Index           =   34
-         Left            =   1320
-         Top             =   120
-         Width           =   975
       End
    End
    Begin VB.Frame InsText 
@@ -996,7 +548,7 @@ Begin VB.Form MainFrm
             BackColor       =   &H00A0ACBA&
             ForeColor       =   &H00656D76&
             Height          =   2850
-            Left            =   0
+            Left            =   15
             TabIndex        =   32
             Top             =   0
             Width           =   7695
@@ -1045,9 +597,9 @@ Begin VB.Form MainFrm
                BackColor       =   &H00B4BFCC&
                ForeColor       =   &H00656D76&
                Height          =   315
-               ItemData        =   "Main.frx":000C
+               ItemData        =   "Main.frx":0008
                Left            =   75
-               List            =   "Main.frx":0016
+               List            =   "Main.frx":0012
                Style           =   2  'Dropdown List
                TabIndex        =   38
                Top             =   540
@@ -1191,9 +743,9 @@ Begin VB.Form MainFrm
             BackColor       =   &H00B4BFCC&
             ForeColor       =   &H00656D76&
             Height          =   315
-            ItemData        =   "Main.frx":0044
+            ItemData        =   "Main.frx":0040
             Left            =   810
-            List            =   "Main.frx":0051
+            List            =   "Main.frx":004D
             Style           =   2  'Dropdown List
             TabIndex        =   22
             Top             =   1080
@@ -1244,9 +796,9 @@ Begin VB.Form MainFrm
             BackColor       =   &H00B4BFCC&
             ForeColor       =   &H00656D76&
             Height          =   315
-            ItemData        =   "Main.frx":0086
+            ItemData        =   "Main.frx":0082
             Left            =   825
-            List            =   "Main.frx":0093
+            List            =   "Main.frx":008F
             Sorted          =   -1  'True
             Style           =   2  'Dropdown List
             TabIndex        =   19
@@ -1621,341 +1173,6 @@ Begin VB.Form MainFrm
          Width           =   870
       End
    End
-   Begin VB.PictureBox Manage 
-      BackColor       =   &H00A0ACBA&
-      BorderStyle     =   0  'None
-      Height          =   1380
-      Left            =   75
-      ScaleHeight     =   1380
-      ScaleWidth      =   7770
-      TabIndex        =   9
-      TabStop         =   0   'False
-      Top             =   510
-      Visible         =   0   'False
-      Width           =   7770
-      Begin VB.Label Label64 
-         Appearance      =   0  'Flat
-         AutoSize        =   -1  'True
-         BackColor       =   &H00B4BFCC&
-         Caption         =   " Save/Load "
-         BeginProperty Font 
-            Name            =   "Tahoma"
-            Size            =   10.5
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         ForeColor       =   &H00656D76&
-         Height          =   255
-         Left            =   3480
-         TabIndex        =   161
-         Top             =   150
-         Width           =   1095
-      End
-      Begin VB.Label Label63 
-         Appearance      =   0  'Flat
-         AutoSize        =   -1  'True
-         BackColor       =   &H00B4BFCC&
-         Caption         =   " List "
-         BeginProperty Font 
-            Name            =   "Tahoma"
-            Size            =   10.5
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         ForeColor       =   &H00656D76&
-         Height          =   255
-         Left            =   3000
-         TabIndex        =   158
-         Top             =   165
-         Width           =   420
-      End
-      Begin VB.Label Label60 
-         Appearance      =   0  'Flat
-         AutoSize        =   -1  'True
-         BackColor       =   &H00B4BFCC&
-         Caption         =   " Merge "
-         BeginProperty Font 
-            Name            =   "Tahoma"
-            Size            =   10.5
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         ForeColor       =   &H00656D76&
-         Height          =   255
-         Left            =   2235
-         TabIndex        =   144
-         Top             =   135
-         Width           =   675
-      End
-      Begin VB.Label Label30 
-         Appearance      =   0  'Flat
-         AutoSize        =   -1  'True
-         BackColor       =   &H00B4BFCC&
-         Caption         =   " Logs "
-         BeginProperty Font 
-            Name            =   "Tahoma"
-            Size            =   10.5
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         ForeColor       =   &H00656D76&
-         Height          =   255
-         Left            =   1590
-         TabIndex        =   61
-         Top             =   120
-         Width           =   555
-      End
-      Begin VB.Label Label15 
-         Appearance      =   0  'Flat
-         AutoSize        =   -1  'True
-         BackColor       =   &H00B4BFCC&
-         Caption         =   " MergePreview "
-         BeginProperty Font 
-            Name            =   "Tahoma"
-            Size            =   10.5
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         ForeColor       =   &H00656D76&
-         Height          =   255
-         Left            =   105
-         TabIndex        =   10
-         Top             =   120
-         Width           =   1380
-      End
-      Begin VB.Shape Shape0 
-         BackColor       =   &H00B4BFCC&
-         BackStyle       =   1  'Opaque
-         BorderColor     =   &H00B4BFCC&
-         Height          =   330
-         Index           =   19
-         Left            =   90
-         Top             =   105
-         Width           =   1410
-      End
-      Begin VB.Shape Shape0 
-         BackColor       =   &H00B4BFCC&
-         BackStyle       =   1  'Opaque
-         BorderColor     =   &H00B4BFCC&
-         Height          =   315
-         Index           =   20
-         Left            =   1605
-         Top             =   105
-         Width           =   540
-      End
-      Begin VB.Shape Shape0 
-         BackColor       =   &H00B4BFCC&
-         BackStyle       =   1  'Opaque
-         BorderColor     =   &H00B4BFCC&
-         Height          =   330
-         Index           =   21
-         Left            =   2250
-         Top             =   105
-         Width           =   660
-      End
-      Begin VB.Shape Shape0 
-         BackColor       =   &H00B4BFCC&
-         BackStyle       =   1  'Opaque
-         BorderColor     =   &H00B4BFCC&
-         Height          =   330
-         Index           =   22
-         Left            =   2970
-         Top             =   120
-         Width           =   450
-      End
-      Begin VB.Shape Shape0 
-         BackColor       =   &H00B4BFCC&
-         BackStyle       =   1  'Opaque
-         BorderColor     =   &H00B4BFCC&
-         Height          =   330
-         Index           =   30
-         Left            =   3465
-         Top             =   120
-         Width           =   1200
-      End
-   End
-   Begin VB.PictureBox General 
-      BackColor       =   &H00A0ACBA&
-      BorderStyle     =   0  'None
-      Height          =   1380
-      Left            =   75
-      ScaleHeight     =   1380
-      ScaleWidth      =   7770
-      TabIndex        =   2
-      TabStop         =   0   'False
-      Top             =   525
-      Width           =   7770
-      Begin VB.Label Label43 
-         Appearance      =   0  'Flat
-         AutoSize        =   -1  'True
-         BackColor       =   &H00B4BFCC&
-         Caption         =   " ABCD(&O) "
-         BeginProperty Font 
-            Name            =   "Tahoma"
-            Size            =   10.5
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         ForeColor       =   &H00656D76&
-         Height          =   255
-         Left            =   4785
-         TabIndex        =   113
-         Top             =   60
-         Width           =   945
-      End
-      Begin VB.Label Label38 
-         Appearance      =   0  'Flat
-         AutoSize        =   -1  'True
-         BackColor       =   &H00B4BFCC&
-         Caption         =   " Blank Area(&B) "
-         BeginProperty Font 
-            Name            =   "Tahoma"
-            Size            =   10.5
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         ForeColor       =   &H00656D76&
-         Height          =   255
-         Left            =   3390
-         TabIndex        =   96
-         Top             =   60
-         Width           =   1335
-      End
-      Begin VB.Label Label35 
-         Appearance      =   0  'Flat
-         AutoSize        =   -1  'True
-         BackColor       =   &H00B4BFCC&
-         Caption         =   " Picture(&P) "
-         BeginProperty Font 
-            Name            =   "Tahoma"
-            Size            =   10.5
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         ForeColor       =   &H00656D76&
-         Height          =   255
-         Left            =   2310
-         TabIndex        =   94
-         Top             =   45
-         Width           =   1020
-      End
-      Begin VB.Label Label22 
-         Appearance      =   0  'Flat
-         AutoSize        =   -1  'True
-         BackColor       =   &H00B4BFCC&
-         Caption         =   " Answerline(&T) "
-         BeginProperty Font 
-            Name            =   "Tahoma"
-            Size            =   10.5
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         ForeColor       =   &H00656D76&
-         Height          =   255
-         Left            =   930
-         TabIndex        =   46
-         Top             =   45
-         Width           =   1335
-      End
-      Begin VB.Label PreviewButton 
-         Appearance      =   0  'Flat
-         AutoSize        =   -1  'True
-         BackColor       =   &H00B4BFCC&
-         Caption         =   " Text(&T) "
-         BeginProperty Font 
-            Name            =   "Tahoma"
-            Size            =   10.5
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         ForeColor       =   &H00656D76&
-         Height          =   255
-         Left            =   75
-         TabIndex        =   45
-         Top             =   45
-         Width           =   810
-      End
-      Begin VB.Shape Shape0 
-         BackColor       =   &H00B4BFCC&
-         BackStyle       =   1  'Opaque
-         BorderColor     =   &H00B4BFCC&
-         Height          =   285
-         Index           =   25
-         Left            =   30
-         Top             =   30
-         Width           =   870
-      End
-      Begin VB.Shape Shape0 
-         BackColor       =   &H00B4BFCC&
-         BackStyle       =   1  'Opaque
-         BorderColor     =   &H00B4BFCC&
-         Height          =   300
-         Index           =   26
-         Left            =   930
-         Top             =   30
-         Width           =   1365
-      End
-      Begin VB.Shape Shape0 
-         BackColor       =   &H00B4BFCC&
-         BackStyle       =   1  'Opaque
-         BorderColor     =   &H00B4BFCC&
-         Height          =   300
-         Index           =   27
-         Left            =   2310
-         Top             =   30
-         Width           =   1035
-      End
-      Begin VB.Shape Shape0 
-         BackColor       =   &H00B4BFCC&
-         BackStyle       =   1  'Opaque
-         BorderColor     =   &H00B4BFCC&
-         Height          =   285
-         Index           =   28
-         Left            =   3360
-         Top             =   60
-         Width           =   1395
-      End
-      Begin VB.Shape Shape0 
-         BackColor       =   &H00B4BFCC&
-         BackStyle       =   1  'Opaque
-         BorderColor     =   &H00B4BFCC&
-         Height          =   285
-         Index           =   29
-         Left            =   4770
-         Top             =   45
-         Width           =   990
-      End
-   End
    Begin VB.Frame Merge 
       BackColor       =   &H00A0ACBA&
       BorderStyle     =   0  'None
@@ -2044,9 +1261,9 @@ Begin VB.Form MainFrm
             BackColor       =   &H00A0ACBA&
             ForeColor       =   &H00656D76&
             Height          =   315
-            ItemData        =   "Main.frx":00C8
+            ItemData        =   "Main.frx":00C4
             Left            =   4020
-            List            =   "Main.frx":00D8
+            List            =   "Main.frx":00D4
             Style           =   2  'Dropdown List
             TabIndex        =   151
             Top             =   255
@@ -2057,9 +1274,9 @@ Begin VB.Form MainFrm
             BackColor       =   &H00A0ACBA&
             ForeColor       =   &H00656D76&
             Height          =   315
-            ItemData        =   "Main.frx":0119
+            ItemData        =   "Main.frx":0115
             Left            =   3345
-            List            =   "Main.frx":0129
+            List            =   "Main.frx":0125
             Style           =   2  'Dropdown List
             TabIndex        =   149
             Top             =   240
@@ -2519,9 +1736,9 @@ Begin VB.Form MainFrm
       Width           =   7800
       Begin VB.ListBox MsgContentList 
          Height          =   450
-         ItemData        =   "Main.frx":013F
+         ItemData        =   "Main.frx":013B
          Left            =   2775
-         List            =   "Main.frx":0141
+         List            =   "Main.frx":013D
          TabIndex        =   49
          Top             =   1830
          Visible         =   0   'False
@@ -2823,9 +2040,9 @@ Begin VB.Form MainFrm
          BackColor       =   &H00A0ACBA&
          ForeColor       =   &H00656D76&
          Height          =   315
-         ItemData        =   "Main.frx":0143
+         ItemData        =   "Main.frx":013F
          Left            =   30
-         List            =   "Main.frx":0150
+         List            =   "Main.frx":014C
          Style           =   2  'Dropdown List
          TabIndex        =   98
          Top             =   2325
@@ -2894,6 +2111,889 @@ Begin VB.Form MainFrm
          Width           =   900
       End
    End
+   Begin VB.Frame ABCD 
+      BackColor       =   &H00A0ACBA&
+      BorderStyle     =   0  'None
+      Caption         =   "Frame11"
+      Height          =   6300
+      Left            =   15
+      TabIndex        =   114
+      Top             =   2010
+      Visible         =   0   'False
+      Width           =   7905
+      Begin VB.Frame Frame18 
+         BackColor       =   &H00A0ACBA&
+         Caption         =   "Texts &^"
+         ForeColor       =   &H00656D76&
+         Height          =   1545
+         Left            =   0
+         TabIndex        =   122
+         Top             =   1185
+         Width           =   7635
+         Begin VB.CheckBox Check21 
+            Appearance      =   0  'Flat
+            BackColor       =   &H00A0ACBA&
+            Caption         =   "D"
+            ForeColor       =   &H00656D76&
+            Height          =   195
+            Left            =   135
+            TabIndex        =   141
+            Top             =   1200
+            Value           =   1  'Checked
+            Width           =   390
+         End
+         Begin VB.TextBox Text12 
+            Appearance      =   0  'Flat
+            BackColor       =   &H00B4BFCC&
+            BorderStyle     =   0  'None
+            ForeColor       =   &H00656D76&
+            Height          =   285
+            Left            =   -765
+            TabIndex        =   129
+            Top             =   9999
+            Visible         =   0   'False
+            Width           =   6960
+         End
+         Begin VB.TextBox Text11 
+            Appearance      =   0  'Flat
+            BackColor       =   &H00B4BFCC&
+            BorderStyle     =   0  'None
+            ForeColor       =   &H00656D76&
+            Height          =   285
+            Left            =   -2040
+            TabIndex        =   127
+            Top             =   1545
+            Visible         =   0   'False
+            Width           =   6960
+         End
+         Begin VB.TextBox Text10 
+            Appearance      =   0  'Flat
+            BackColor       =   &H00B4BFCC&
+            BorderStyle     =   0  'None
+            ForeColor       =   &H00656D76&
+            Height          =   285
+            Left            =   1110
+            TabIndex        =   125
+            Top             =   9999
+            Visible         =   0   'False
+            Width           =   6960
+         End
+         Begin VB.TextBox Text8 
+            Appearance      =   0  'Flat
+            BackColor       =   &H00B4BFCC&
+            BorderStyle     =   0  'None
+            ForeColor       =   &H00656D76&
+            Height          =   285
+            Left            =   1035
+            TabIndex        =   123
+            Top             =   9999
+            Visible         =   0   'False
+            Width           =   6960
+         End
+         Begin VB.Label Label55 
+            Alignment       =   2  'Center
+            Appearance      =   0  'Flat
+            AutoSize        =   -1  'True
+            BackColor       =   &H00B4BFCC&
+            Caption         =   " Click to edit "
+            BeginProperty Font 
+               Name            =   "Tahoma"
+               Size            =   10.5
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            ForeColor       =   &H00656D76&
+            Height          =   255
+            Left            =   3450
+            TabIndex        =   136
+            Top             =   1170
+            Width           =   1170
+         End
+         Begin VB.Label Label54 
+            Alignment       =   2  'Center
+            Appearance      =   0  'Flat
+            AutoSize        =   -1  'True
+            BackColor       =   &H00B4BFCC&
+            Caption         =   " Click to edit "
+            BeginProperty Font 
+               Name            =   "Tahoma"
+               Size            =   10.5
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            ForeColor       =   &H00656D76&
+            Height          =   255
+            Left            =   3465
+            TabIndex        =   135
+            Top             =   870
+            Width           =   1170
+         End
+         Begin VB.Label Label53 
+            Alignment       =   2  'Center
+            Appearance      =   0  'Flat
+            BackColor       =   &H00B4BFCC&
+            Caption         =   " Click to edit "
+            BeginProperty Font 
+               Name            =   "Tahoma"
+               Size            =   10.5
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            ForeColor       =   &H00656D76&
+            Height          =   255
+            Left            =   630
+            TabIndex        =   134
+            Top             =   585
+            Width           =   6855
+         End
+         Begin VB.Label Label52 
+            Alignment       =   2  'Center
+            Appearance      =   0  'Flat
+            BackColor       =   &H00B4BFCC&
+            Caption         =   " Click to edit "
+            BeginProperty Font 
+               Name            =   "Tahoma"
+               Size            =   10.5
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            ForeColor       =   &H00656D76&
+            Height          =   255
+            Left            =   630
+            TabIndex        =   133
+            Top             =   300
+            Width           =   6810
+         End
+         Begin VB.Label Label50 
+            Alignment       =   1  'Right Justify
+            AutoSize        =   -1  'True
+            BackStyle       =   0  'Transparent
+            Caption         =   "D"
+            ForeColor       =   &H00656D76&
+            Height          =   195
+            Left            =   390
+            TabIndex        =   130
+            Top             =   1200
+            Visible         =   0   'False
+            Width           =   105
+         End
+         Begin VB.Label Label49 
+            Alignment       =   1  'Right Justify
+            AutoSize        =   -1  'True
+            BackStyle       =   0  'Transparent
+            Caption         =   "C"
+            ForeColor       =   &H00656D76&
+            Height          =   195
+            Left            =   390
+            TabIndex        =   128
+            Top             =   885
+            Width           =   105
+         End
+         Begin VB.Label Label44 
+            Alignment       =   1  'Right Justify
+            AutoSize        =   -1  'True
+            BackStyle       =   0  'Transparent
+            Caption         =   "B"
+            ForeColor       =   &H00656D76&
+            Height          =   195
+            Left            =   405
+            TabIndex        =   126
+            Top             =   555
+            Width           =   90
+         End
+         Begin VB.Label Label48 
+            Alignment       =   1  'Right Justify
+            AutoSize        =   -1  'True
+            BackStyle       =   0  'Transparent
+            Caption         =   "A"
+            ForeColor       =   &H00656D76&
+            Height          =   195
+            Left            =   390
+            TabIndex        =   124
+            Top             =   240
+            Width           =   105
+         End
+         Begin VB.Shape Shape0 
+            BackColor       =   &H00B4BFCC&
+            BackStyle       =   1  'Opaque
+            BorderColor     =   &H00B4BFCC&
+            Height          =   210
+            Index           =   4
+            Left            =   600
+            Top             =   330
+            Width           =   6885
+         End
+         Begin VB.Shape Shape0 
+            BackColor       =   &H00B4BFCC&
+            BackStyle       =   1  'Opaque
+            BorderColor     =   &H00B4BFCC&
+            Height          =   225
+            Index           =   5
+            Left            =   600
+            Top             =   600
+            Width           =   6855
+         End
+         Begin VB.Shape Shape0 
+            BackColor       =   &H00B4BFCC&
+            BackStyle       =   1  'Opaque
+            BorderColor     =   &H00B4BFCC&
+            Height          =   255
+            Index           =   6
+            Left            =   570
+            Top             =   1170
+            Width           =   6915
+         End
+         Begin VB.Shape Shape0 
+            BackColor       =   &H00B4BFCC&
+            BackStyle       =   1  'Opaque
+            BorderColor     =   &H00B4BFCC&
+            Height          =   270
+            Index           =   7
+            Left            =   570
+            Top             =   870
+            Width           =   6915
+         End
+      End
+      Begin VB.Frame Frame17 
+         BackColor       =   &H00A0ACBA&
+         Caption         =   "Format"
+         ForeColor       =   &H00656D76&
+         Height          =   1125
+         Left            =   30
+         TabIndex        =   115
+         Top             =   15
+         Width           =   5280
+         Begin VB.ComboBox Combo4 
+            BackColor       =   &H00B4BFCC&
+            ForeColor       =   &H00656D76&
+            Height          =   315
+            ItemData        =   "Main.frx":0181
+            Left            =   810
+            List            =   "Main.frx":0183
+            Sorted          =   -1  'True
+            Style           =   2  'Dropdown List
+            TabIndex        =   143
+            Top             =   195
+            Width           =   1905
+         End
+         Begin VB.OptionButton Option4 
+            Appearance      =   0  'Flat
+            BackColor       =   &H00A0ACBA&
+            Caption         =   "ABCD"
+            ForeColor       =   &H00656D76&
+            Height          =   390
+            Left            =   2775
+            TabIndex        =   138
+            Top             =   570
+            Value           =   -1  'True
+            Width           =   525
+         End
+         Begin VB.OptionButton Option3 
+            Appearance      =   0  'Flat
+            BackColor       =   &H00A0ACBA&
+            Caption         =   "ABCD"
+            ForeColor       =   &H00656D76&
+            Height          =   195
+            Left            =   2790
+            TabIndex        =   137
+            Top             =   315
+            Width           =   720
+         End
+         Begin VB.TextBox Text9 
+            BackColor       =   &H00B4BFCC&
+            ForeColor       =   &H00656D76&
+            Height          =   285
+            Left            =   810
+            MaxLength       =   3
+            TabIndex        =   118
+            Top             =   540
+            Width           =   1905
+         End
+         Begin VB.CheckBox Check20 
+            BackColor       =   &H00B4BFCC&
+            Caption         =   "I"
+            BeginProperty Font 
+               Name            =   "Tahoma"
+               Size            =   8.25
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   -1  'True
+               Strikethrough   =   0   'False
+            EndProperty
+            ForeColor       =   &H00656D76&
+            Height          =   225
+            Left            =   1110
+            Style           =   1  'Graphical
+            TabIndex        =   117
+            Top             =   855
+            Width           =   270
+         End
+         Begin VB.CheckBox Check19 
+            Appearance      =   0  'Flat
+            BackColor       =   &H00B4BFCC&
+            Caption         =   "B"
+            BeginProperty Font 
+               Name            =   "Tahoma"
+               Size            =   8.25
+               Charset         =   0
+               Weight          =   700
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            ForeColor       =   &H00656D76&
+            Height          =   225
+            Left            =   825
+            Style           =   1  'Graphical
+            TabIndex        =   116
+            Top             =   855
+            Width           =   270
+         End
+         Begin VB.Label Label47 
+            Alignment       =   1  'Right Justify
+            AutoSize        =   -1  'True
+            BackStyle       =   0  'Transparent
+            Caption         =   "Size"
+            ForeColor       =   &H00656D76&
+            Height          =   195
+            Left            =   465
+            TabIndex        =   121
+            Top             =   585
+            Width           =   285
+         End
+         Begin VB.Label Label46 
+            Alignment       =   1  'Right Justify
+            AutoSize        =   -1  'True
+            BackStyle       =   0  'Transparent
+            Caption         =   "Font"
+            ForeColor       =   &H00656D76&
+            Height          =   195
+            Left            =   435
+            TabIndex        =   120
+            Top             =   285
+            Width           =   330
+         End
+         Begin VB.Label Label45 
+            Alignment       =   1  'Right Justify
+            AutoSize        =   -1  'True
+            BackStyle       =   0  'Transparent
+            Caption         =   "Shape"
+            ForeColor       =   &H00656D76&
+            Height          =   195
+            Left            =   345
+            TabIndex        =   119
+            Top             =   840
+            Width           =   450
+         End
+      End
+      Begin VB.Label Label77 
+         Appearance      =   0  'Flat
+         AutoSize        =   -1  'True
+         BackColor       =   &H00B4BFCC&
+         Caption         =   " Picker "
+         BeginProperty Font 
+            Name            =   "Tahoma"
+            Size            =   10.5
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H00656D76&
+         Height          =   255
+         Left            =   75
+         TabIndex        =   173
+         Top             =   2820
+         Width           =   660
+      End
+      Begin VB.Label Label58 
+         AutoSize        =   -1  'True
+         BackColor       =   &H00A0ACBA&
+         Caption         =   "Label58"
+         Height          =   195
+         Left            =   2520
+         TabIndex        =   142
+         Top             =   4590
+         Visible         =   0   'False
+         Width           =   555
+      End
+      Begin VB.Label Label57 
+         Appearance      =   0  'Flat
+         AutoSize        =   -1  'True
+         BackColor       =   &H00B4BFCC&
+         Caption         =   " Save "
+         BeginProperty Font 
+            Name            =   "Tahoma"
+            Size            =   10.5
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H00656D76&
+         Height          =   255
+         Left            =   7050
+         TabIndex        =   140
+         Top             =   2895
+         Width           =   570
+      End
+      Begin VB.Label Label56 
+         Appearance      =   0  'Flat
+         AutoSize        =   -1  'True
+         BackColor       =   &H00B4BFCC&
+         Caption         =   " Preview "
+         BeginProperty Font 
+            Name            =   "Tahoma"
+            Size            =   10.5
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H00656D76&
+         Height          =   255
+         Left            =   6060
+         TabIndex        =   139
+         Top             =   2865
+         Width           =   825
+      End
+      Begin VB.Shape Shape0 
+         BackColor       =   &H00B4BFCC&
+         BackStyle       =   1  'Opaque
+         BorderColor     =   &H00B4BFCC&
+         Height          =   330
+         Index           =   23
+         Left            =   6015
+         Top             =   2835
+         Width           =   870
+      End
+      Begin VB.Shape Shape0 
+         BackColor       =   &H00B4BFCC&
+         BackStyle       =   1  'Opaque
+         BorderColor     =   &H00B4BFCC&
+         Height          =   330
+         Index           =   24
+         Left            =   6990
+         Top             =   2850
+         Width           =   675
+      End
+      Begin VB.Shape Shape0 
+         BackColor       =   &H00B4BFCC&
+         BackStyle       =   1  'Opaque
+         BorderColor     =   &H00B4BFCC&
+         Height          =   330
+         Index           =   36
+         Left            =   60
+         Top             =   2790
+         Width           =   675
+      End
+   End
+   Begin VB.PictureBox Manage 
+      BackColor       =   &H00A0ACBA&
+      BorderStyle     =   0  'None
+      Height          =   1380
+      Left            =   75
+      ScaleHeight     =   1380
+      ScaleWidth      =   7770
+      TabIndex        =   9
+      TabStop         =   0   'False
+      Top             =   510
+      Visible         =   0   'False
+      Width           =   7770
+      Begin VB.Label Label64 
+         Appearance      =   0  'Flat
+         AutoSize        =   -1  'True
+         BackColor       =   &H00B4BFCC&
+         Caption         =   " Save/Load "
+         BeginProperty Font 
+            Name            =   "Tahoma"
+            Size            =   10.5
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H00656D76&
+         Height          =   255
+         Left            =   3480
+         TabIndex        =   161
+         Top             =   150
+         Width           =   1095
+      End
+      Begin VB.Label Label63 
+         Appearance      =   0  'Flat
+         AutoSize        =   -1  'True
+         BackColor       =   &H00B4BFCC&
+         Caption         =   " List "
+         BeginProperty Font 
+            Name            =   "Tahoma"
+            Size            =   10.5
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H00656D76&
+         Height          =   255
+         Left            =   3000
+         TabIndex        =   158
+         Top             =   165
+         Width           =   420
+      End
+      Begin VB.Label Label60 
+         Appearance      =   0  'Flat
+         AutoSize        =   -1  'True
+         BackColor       =   &H00B4BFCC&
+         Caption         =   " Merge "
+         BeginProperty Font 
+            Name            =   "Tahoma"
+            Size            =   10.5
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H00656D76&
+         Height          =   255
+         Left            =   2235
+         TabIndex        =   144
+         Top             =   135
+         Width           =   675
+      End
+      Begin VB.Label Label30 
+         Appearance      =   0  'Flat
+         AutoSize        =   -1  'True
+         BackColor       =   &H00B4BFCC&
+         Caption         =   " Logs "
+         BeginProperty Font 
+            Name            =   "Tahoma"
+            Size            =   10.5
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H00656D76&
+         Height          =   255
+         Left            =   1590
+         TabIndex        =   61
+         Top             =   120
+         Width           =   555
+      End
+      Begin VB.Label Label15 
+         Appearance      =   0  'Flat
+         AutoSize        =   -1  'True
+         BackColor       =   &H00B4BFCC&
+         Caption         =   " MergePreview "
+         BeginProperty Font 
+            Name            =   "Tahoma"
+            Size            =   10.5
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H00656D76&
+         Height          =   255
+         Left            =   105
+         TabIndex        =   10
+         Top             =   120
+         Width           =   1380
+      End
+      Begin VB.Shape Shape0 
+         BackColor       =   &H00B4BFCC&
+         BackStyle       =   1  'Opaque
+         BorderColor     =   &H00B4BFCC&
+         Height          =   330
+         Index           =   19
+         Left            =   90
+         Top             =   105
+         Width           =   1410
+      End
+      Begin VB.Shape Shape0 
+         BackColor       =   &H00B4BFCC&
+         BackStyle       =   1  'Opaque
+         BorderColor     =   &H00B4BFCC&
+         Height          =   315
+         Index           =   20
+         Left            =   1605
+         Top             =   105
+         Width           =   540
+      End
+      Begin VB.Shape Shape0 
+         BackColor       =   &H00B4BFCC&
+         BackStyle       =   1  'Opaque
+         BorderColor     =   &H00B4BFCC&
+         Height          =   330
+         Index           =   21
+         Left            =   2250
+         Top             =   105
+         Width           =   660
+      End
+      Begin VB.Shape Shape0 
+         BackColor       =   &H00B4BFCC&
+         BackStyle       =   1  'Opaque
+         BorderColor     =   &H00B4BFCC&
+         Height          =   330
+         Index           =   22
+         Left            =   2970
+         Top             =   120
+         Width           =   450
+      End
+      Begin VB.Shape Shape0 
+         BackColor       =   &H00B4BFCC&
+         BackStyle       =   1  'Opaque
+         BorderColor     =   &H00B4BFCC&
+         Height          =   330
+         Index           =   30
+         Left            =   3465
+         Top             =   120
+         Width           =   1200
+      End
+   End
+   Begin VB.PictureBox General 
+      BackColor       =   &H00A0ACBA&
+      BorderStyle     =   0  'None
+      Height          =   1380
+      Left            =   75
+      ScaleHeight     =   1380
+      ScaleWidth      =   7770
+      TabIndex        =   2
+      TabStop         =   0   'False
+      Top             =   525
+      Width           =   7770
+      Begin VB.Label Label43 
+         Appearance      =   0  'Flat
+         AutoSize        =   -1  'True
+         BackColor       =   &H00B4BFCC&
+         Caption         =   " ABCD(&O) "
+         BeginProperty Font 
+            Name            =   "Tahoma"
+            Size            =   10.5
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H00656D76&
+         Height          =   255
+         Left            =   4785
+         TabIndex        =   113
+         Top             =   60
+         Width           =   945
+      End
+      Begin VB.Label Label38 
+         Appearance      =   0  'Flat
+         AutoSize        =   -1  'True
+         BackColor       =   &H00B4BFCC&
+         Caption         =   " Blank Area(&B) "
+         BeginProperty Font 
+            Name            =   "Tahoma"
+            Size            =   10.5
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H00656D76&
+         Height          =   255
+         Left            =   3390
+         TabIndex        =   96
+         Top             =   60
+         Width           =   1335
+      End
+      Begin VB.Label Label35 
+         Appearance      =   0  'Flat
+         AutoSize        =   -1  'True
+         BackColor       =   &H00B4BFCC&
+         Caption         =   " Picture(&P) "
+         BeginProperty Font 
+            Name            =   "Tahoma"
+            Size            =   10.5
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H00656D76&
+         Height          =   255
+         Left            =   2310
+         TabIndex        =   94
+         Top             =   45
+         Width           =   1020
+      End
+      Begin VB.Label Label22 
+         Appearance      =   0  'Flat
+         AutoSize        =   -1  'True
+         BackColor       =   &H00B4BFCC&
+         Caption         =   " Answerline(&T) "
+         BeginProperty Font 
+            Name            =   "Tahoma"
+            Size            =   10.5
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H00656D76&
+         Height          =   255
+         Left            =   930
+         TabIndex        =   46
+         Top             =   45
+         Width           =   1335
+      End
+      Begin VB.Label PreviewButton 
+         Appearance      =   0  'Flat
+         AutoSize        =   -1  'True
+         BackColor       =   &H00B4BFCC&
+         Caption         =   " Text(&T) "
+         BeginProperty Font 
+            Name            =   "Tahoma"
+            Size            =   10.5
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H00656D76&
+         Height          =   255
+         Left            =   75
+         TabIndex        =   45
+         Top             =   45
+         Width           =   810
+      End
+      Begin VB.Shape Shape0 
+         BackColor       =   &H00B4BFCC&
+         BackStyle       =   1  'Opaque
+         BorderColor     =   &H00B4BFCC&
+         Height          =   285
+         Index           =   25
+         Left            =   30
+         Top             =   30
+         Width           =   870
+      End
+      Begin VB.Shape Shape0 
+         BackColor       =   &H00B4BFCC&
+         BackStyle       =   1  'Opaque
+         BorderColor     =   &H00B4BFCC&
+         Height          =   300
+         Index           =   26
+         Left            =   930
+         Top             =   30
+         Width           =   1365
+      End
+      Begin VB.Shape Shape0 
+         BackColor       =   &H00B4BFCC&
+         BackStyle       =   1  'Opaque
+         BorderColor     =   &H00B4BFCC&
+         Height          =   300
+         Index           =   27
+         Left            =   2310
+         Top             =   30
+         Width           =   1035
+      End
+      Begin VB.Shape Shape0 
+         BackColor       =   &H00B4BFCC&
+         BackStyle       =   1  'Opaque
+         BorderColor     =   &H00B4BFCC&
+         Height          =   285
+         Index           =   28
+         Left            =   3360
+         Top             =   60
+         Width           =   1395
+      End
+      Begin VB.Shape Shape0 
+         BackColor       =   &H00B4BFCC&
+         BackStyle       =   1  'Opaque
+         BorderColor     =   &H00B4BFCC&
+         Height          =   285
+         Index           =   29
+         Left            =   4770
+         Top             =   45
+         Width           =   990
+      End
+   End
+   Begin VB.PictureBox Copyright 
+      BackColor       =   &H00A0ACBA&
+      BorderStyle     =   0  'None
+      Height          =   7590
+      Left            =   60
+      ScaleHeight     =   7590
+      ScaleWidth      =   7770
+      TabIndex        =   159
+      TabStop         =   0   'False
+      Top             =   510
+      Visible         =   0   'False
+      Width           =   7770
+      Begin VB.Label Label71 
+         Appearance      =   0  'Flat
+         AutoSize        =   -1  'True
+         BackColor       =   &H00A0ACBA&
+         Caption         =   "Version: Demo 2.10.3.20180629"
+         BeginProperty Font 
+            Name            =   "Tahoma"
+            Size            =   10.5
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H00656D76&
+         Height          =   255
+         Left            =   180
+         TabIndex        =   170
+         Top             =   435
+         Width           =   3030
+      End
+      Begin VB.Label Label68 
+         Appearance      =   0  'Flat
+         AutoSize        =   -1  'True
+         BackColor       =   &H00A0ACBA&
+         Caption         =   " Copyright (c) ksyx 2018, All Rights Reserved. "
+         BeginProperty Font 
+            Name            =   "Tahoma"
+            Size            =   10.5
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H00656D76&
+         Height          =   255
+         Left            =   120
+         TabIndex        =   160
+         Top             =   105
+         Width           =   4290
+      End
+   End
    Begin VB.Label Label74 
       AutoSize        =   -1  'True
       BackStyle       =   0  'Transparent
@@ -2910,7 +3010,7 @@ Begin VB.Form MainFrm
       ForeColor       =   &H00656D76&
       Height          =   285
       Left            =   7335
-      TabIndex        =   176
+      TabIndex        =   172
       Top             =   135
       Width           =   390
    End
@@ -3446,7 +3546,7 @@ Private Sub Label37_Click()
     Else
         Preview.Picture2.PaintPicture Preview.Exports.Picture, ((RightMargin - LeftMargin) / 2) + LeftMargin - Preview.Exports.Width / 2, TopMargin
     End If
-    Exit Sub
+'    Exit Sub
     Preview.Export.Height = Preview.Exports.Height
     Preview.Export.Width = RightMargin - LeftMargin
     Preview.Export.PaintPicture Preview.Picture2.Image, 0, 0, , , TopMargin, LeftMargin, RightMargin - LeftMargin, Preview.Exports.Height
@@ -4185,6 +4285,11 @@ Private Sub Label77_Click()
     Integrated.InitWindow
 End Sub
 
+Private Sub Label80_Click()
+    PageSettings.SolveProblem1
+    NewMessage translate("Success."), vbBlack
+End Sub
+
 Private Sub List2_Click()
     Text2.Text = strs(List2.ListIndex)
 End Sub
@@ -4444,9 +4549,11 @@ Private Sub Label10_Click()
         End If
         Debug.Print Preview.Exports.Height, BotMargin - TopMargin, Preview.Exports.Width, RightMargin - LeftMargin
         If Left(Combo1.Text, 1) = "0" Then
+            'MsgBox LeftMargin & ", " & Preview.Exports.Width
             Preview.Picture2.PaintPicture Preview.Exports.Picture, LeftMargin, TopMargin
             LeftMargin = LeftMargin + Preview.Exports.Width
         Else
+            'MsgBox RightMargin & ", " & Preview.Exports.Width
             Preview.Picture2.PaintPicture Preview.Exports.Picture, RightMargin - Preview.Exports.Width, TopMargin
             RightMargin = RightMargin - Preview.Exports.Width
             Debug.Print RightMargin

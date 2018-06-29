@@ -121,6 +121,8 @@ Function translatecontrol(src As String)
         Integrated.Label12.FontName = "黑体"
         Integrated.Label14.FontName = "黑体"
         Integrated.Label15.FontName = "黑体"
+        Integrated.Label16.FontName = "黑体"
+        Integrated.Label18.FontName = "黑体"
         Integrated.Label1.Caption = "代码"
         Integrated.Label2.Caption = "结果"
         Integrated.Label4.Caption = "按Enter插入，按Esc退出"
@@ -131,6 +133,8 @@ Function translatecontrol(src As String)
         Integrated.Label12.Caption = "按F2插入，按F3跳转选项，按Esc退出"
         Integrated.Label14.Caption = "当前选项"
         Integrated.Label15.Caption = "文本"
+        Integrated.Label16.Caption = "请记住你所需信息行的""|""或"":""后的代码后按Esc退出"
+        Integrated.Label18.Caption = "在"":""后的是格式化代码，在""|""后的是特殊输入代码"
     End If
     If src = "PageSettings" Then
         PageSettings.Caption = "页面设置"
@@ -395,8 +399,16 @@ Function translatecontrol(src As String)
         MainFrm.Label11.FontName = "黑体"
         MainFrm.Label21.FontName = "黑体"
         MainFrm.Label70.FontName = "黑体"
+        MainFrm.Label4.FontName = "黑体"
         MainFrm.Label5.FontName = "黑体"
+        MainFrm.Frame4.FontName = "黑体"
         MainFrm.Label6.FontName = "黑体"
+        MainFrm.Frame21.FontName = "黑体"
+        MainFrm.Frame24.FontName = "黑体"
+        MainFrm.Frame25.FontName = "黑体"
+        MainFrm.Label78.FontName = "黑体"
+        MainFrm.Label79.FontName = "黑体"
+        MainFrm.Label80.FontName = "黑体"
         MainFrm.Label20.FontName = "黑体"
         MainFrm.Message.FontName = "黑体"
         MainFrm.AlignCombo.FontName = "黑体"
@@ -420,6 +432,7 @@ Function translatecontrol(src As String)
         MainFrm.Label21.Caption = "预览窗口处于打开状态。在继续使用本窗口前你应该关闭它。"
         MainFrm.Label12.Caption = "管理/导出"
         MainFrm.Label3.Caption = "关于"
+        MainFrm.Frame4.Caption = "配图"
         MainFrm.Label1.Caption = "通用"
         MainFrm.Label70.Caption = "读取号"
         MainFrm.Label77.Caption = "提取器"
@@ -499,7 +512,14 @@ Function translatecontrol(src As String)
         MainFrm.Label29.Caption = "页面"
         MainFrm.Check17.Caption = "自动"
         MainFrm.Label10.Caption = "预览"
+        MainFrm.Label4.Caption = "配图"
         MainFrm.Label11.Caption = "保存"
+        MainFrm.Frame21.Caption = "工具"
+        MainFrm.Frame24.Caption = "自修复"
+        MainFrm.Frame25.Caption = "问题1"
+        MainFrm.Label78.Caption = "问题：用配图功能所反馈的结果很奇怪"
+        MainFrm.Label79.Caption = "方案：重新加载页边距"
+        MainFrm.Label80.Caption = "执行"
     End If
     If src = "Preview" Then
         Preview.Message.FontName = "黑体"
@@ -546,7 +566,7 @@ Function translate(src As String) As String
         If src = "DevWin/PrivCheck" Then translate = "开发窗口/权限检查"
         If src = "Authentication Passed." Then translate = "验证通过"
         If src = "Preview Window" Then translate = "预览窗口"
-        
+    
         
         If src = "Click to edit" Then translate = "点击编辑"
         If src = "Disabled" Then translate = "已停用"
@@ -605,8 +625,8 @@ Function translate(src As String) As String
         If src = "This LoadID and/or its configuration not found" Then translate = "这个加载号和/或它的配置文件未找到"
         If src = "Completed." Then translate = "完成。"
         If src = "Table Maker" Then translate = "制表"
-        
-        
+        If src = "Help Center of Codes" Then translate = "指令码帮助中心"
+        If src = "Success." Then translate = "成功。"
         If src = "Nothing can be previewed." Then translate = "没有能被预览的东西"
         If src = "You have not selected the position of the image." Then translate = "你还没有选择图像位置"
         If src = "Your input is so large that we can't process it." Then translate = "你的输入过大以至于我们无法处理它"
@@ -626,7 +646,7 @@ Function translate(src As String) As String
         If src = "Rending work in progress, you can't close it now!" Then translate = "渲染工作进行中，你现在不能关闭它！"
         If src = "Unable to start the program" Then translate = "无法启动程序"
         If src = "Success. PID=" Then translate = "成功。进程号（PID）为"
-        
+        If src = "[SysErr]" Then translate = "[严重错误]"
         If src = "Initiating" Then translate = "加载中"
         If src = "Special Input" Then translate = "特殊输入"
         If src = "Format" Then translate = "格式化"

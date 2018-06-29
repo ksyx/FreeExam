@@ -174,6 +174,11 @@ Private Sub Label28_Click()
 End Sub
 
 Private Sub Text2_KeyUp(KeyCode As Integer, Shift As Integer)
+    If KeyCode = vbKeyF1 Then
+        Integrated.WinMode = 6
+        Integrated.InitWindow
+        Integrated.Show 1
+    End If
     If KeyCode = vbKeyF2 Then
         Integrated.WinMode = 2
         Integrated.InitWindow

@@ -451,7 +451,7 @@ Begin VB.Form PageSettings
       Height          =   255
       Left            =   6135
       TabIndex        =   4
-      Top             =   4905
+      Top             =   4890
       Width           =   660
    End
    Begin VB.Shape Shape0 
@@ -519,7 +519,7 @@ Private Sub Label2_Click()
     LeftMargin = Val(Text1(2).Text) * TwipsPerCM
     RightMargin = PageWidth - Val(Text1(3).Text) * TwipsPerCM
     MainFrm.Show
-    Unload Me
+    Me.Hide
 End Sub
 
 Private Sub Message_MouseMove(Button As Integer, Shift As Integer, X As Single, Y As Single)
@@ -594,6 +594,9 @@ Private Sub PreviewButton_Click()
     RightMargin = PageWidth - Val(Text1(3).Text) * TwipsPerCM
 End Sub
 
+Sub SolveProblem1()
+    Label2_Click
+End Sub
 
 Private Sub Timer1_Timer()
     Dim first As Long
