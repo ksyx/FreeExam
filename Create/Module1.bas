@@ -251,6 +251,14 @@ Function translatecontrol(src As String)
         'MainFrm.Check17.AutoSize = true
         MainFrm.Label10.AutoSize = True
         MainFrm.Label11.AutoSize = True
+        MainFrm.Label81.AutoSize = False
+        MainFrm.Label83.AutoSize = False
+        MainFrm.Label82.AutoSize = False
+        MainFrm.Label84.AutoSize = False
+        MainFrm.Label81.Alignment = 2
+        MainFrm.Label83.Alignment = 2
+        MainFrm.Label82.Alignment = 2
+        MainFrm.Label84.Alignment = 2
         MainFrm.Label12.Alignment = 2
         MainFrm.Label3.Alignment = 2
         MainFrm.Label1.Alignment = 2
@@ -363,6 +371,12 @@ Function translatecontrol(src As String)
         MainFrm.Label69.FontName = "黑体"
         MainFrm.Label66.FontName = "黑体"
         MainFrm.Frame18.FontName = "黑体"
+        MainFrm.Label81.FontName = "黑体"
+        MainFrm.Label83.FontName = "黑体"
+        MainFrm.Label82.FontName = "黑体"
+        MainFrm.Label84.FontName = "黑体"
+        MainFrm.Check24.FontName = "黑体"
+        MainFrm.Frame26.FontName = "黑体"
         MainFrm.Label52.FontName = "黑体"
         MainFrm.Label53.FontName = "黑体"
         MainFrm.Check16.FontName = "黑体"
@@ -487,7 +501,13 @@ Function translatecontrol(src As String)
         MainFrm.Label55.Caption = "点击编辑"
         MainFrm.Label56.Caption = "预览"
         MainFrm.Label57.Caption = "保存"
-        
+        MainFrm.Label81.Caption = "提取器"
+        MainFrm.Label83.Caption = "预览"
+        MainFrm.Label82.Caption = "保存"
+        MainFrm.Label84.Caption = "同步"
+        MainFrm.Label84.ToolTipText = "该操作将将把当前格式应用到选择题页面中并覆盖先前格式"
+        MainFrm.Check24.Caption = "有D选项"
+        MainFrm.Frame26.Caption = "选择题页快速访问"
         MainFrm.Label5.Caption = "对齐"
         MainFrm.Label6.Caption = "字形"
         MainFrm.Frame13.Caption = "记录列表"
